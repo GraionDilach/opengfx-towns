@@ -53,14 +53,12 @@ grf {
             def_value: 1;
         }
 
-        /*
         enable_uktownset {
             type: bool;
             bit: 3;
             name: string(STR_PARAM_NAME_ENABLE_UK_TOWN_SET);
             def_value: 1;
         }
-        */
     }
 
     param 1 {
@@ -143,19 +141,43 @@ random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_STRUCT_YELLOW;
 }
 
+random_switch (FEAT_HOUSES, SELF, modest_random_struct_color) {
+    1: return PALETTE_USE_DEFAULT;
+    1: return PALETTE_STRUCT_BROWN;
+    1: return PALETTE_STRUCT_WHITE;
+    1: return PALETTE_STRUCT_CONCRETE;
+}
+
 random_switch (FEAT_HOUSES, SELF, random_church_color) {
     1: return PALETTE_USE_DEFAULT;
     1: return PALETTE_CHURCH_RED;
     1: return PALETTE_CHURCH_CREAM;
 }
 
+spriteset (tall_office_block_1_ground_childsprite) {
+    []
+    []
+    []
+    [   0,  176,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1424
+}
 
+spriteset (tall_office_block_1_building) {
+    [   0,    0,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1421
+    [  82,  456,  66,  87, -32, -56, "ogfx/buildings.png"]                   // 1422
+    [   0,   88,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1425
+    [   0,   88,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1425
+}
 
-/*
 spritelayout sprite_tall_office_block_1 {
-    ground { sprite: construction_state==3 ? 1424 : GROUNDSPRITE_CLEARED; }
+    ground { sprite: GROUNDSPRITE_CLEARED; }
+    childsprite {
+        sprite: tall_office_block_1_ground_childsprite;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
     building {
-        sprite: construction_state==0 ? 1421 : construction_state == 1 ? 1422 : 1425;
+        sprite: tall_office_block_1_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -170,7 +192,13 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_tall_office_block_1;
+                colour: modest_random_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_tall_office_block_1;
                 colour: random_struct_color();
@@ -179,6 +207,7 @@ if (enable_temperate) {
     }
 }
 
+/*
 spritelayout sprite_office_block_1 {
     ground { sprite: construction_state==3 ? 1429 : GROUNDSPRITE_CLEARED; }
     building {
@@ -1865,3 +1894,4 @@ if (enable_tropic) {
         }
     }
 }
+*/

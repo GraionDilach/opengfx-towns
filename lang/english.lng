@@ -1,6 +1,6 @@
 ##grflangid 0x00
 ##plural 0
-STR_GRF_NAME                                :OpenGFX as NewHouses {VERSION}
+STR_GRF_NAME                                :OpenGFX Houses as NewHouses {VERSION}
 STR_GRF_DESCRIPTION                         :Converts OpenGFX houses into NewGRF houses (and optionally merges UK Town Set v2.2 in) to be used alongside other setups. Can be parametered to enable vanilla temperate/arctic/sub-tropic houses on other climates. It also allows Temperate houses and all flats to also accept Food.{}{}License: GPLv2{}Artwork: Zephyris and OpenGFX contributors{}Code author: Graion Dilach
 STR_GRF_URL                                 :https://github.com/GraionDilach/opengfx-newhouses
 

@@ -154,10 +154,21 @@ random_switch (FEAT_HOUSES, SELF, random_church_color) {
     1: return PALETTE_CHURCH_CREAM;
 }
 
+// use custom town uniqueness functions instead of church/stadium flags
+switch (FEAT_HOUSES, SELF, IsUniqueHouse, same_house_count_town == 0) {return;}
+
+switch (FEAT_HOUSES, SELF, IsUniqueHouseClass, same_class_count_town == 0) {return;}
+
+// null sprite
+
+template sprite_null() { [0, 0, "gfx/null.png"]}
+
+// actual redevelopment
+
 spriteset (tall_office_block_1_ground_childsprite) {
-    []
-    []
-    []
+    sprite_null()
+    sprite_null()
+    sprite_null()
     [   0,  176,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1424
 }
 
@@ -192,6 +203,11 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        if (additional_colors == 0) {
+            graphics {
+                default: sprite_tall_office_block_1;
+            }
+        }
         if (additional_colors == 1) {
             graphics {
                 default: sprite_tall_office_block_1;
@@ -208,9 +224,9 @@ if (enable_temperate) {
 }
 
 spriteset (office_block_1_ground_childsprite) {
-    []
-    []
-    []
+    sprite_null()
+    sprite_null()
+    sprite_null()
     [   0,  264,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1429
 }
 
@@ -246,6 +262,11 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        if (additional_colors == 0) {
+            graphics {
+                default: sprite_office_block_1;
+            }
+        }
         if (additional_colors == 1) {
             graphics {
                 default: sprite_office_block_1;
@@ -261,7 +282,31 @@ if (enable_temperate) {
     }
 }
 
-/*
+spriteset (small_block_of_flats_1_ground_childsprite) {
+    sprite_null()
+    sprite_null()
+    sprite_null()
+    [   0,  264,  66,  87, -32, -56, "ogfx/base-1430-1433-house.png"] // 1433
+}
+
+spriteset (small_block_of_flats_1_building) {
+    [   0,  176,  66,  87, -32, -56, "ogfx/base-1430-1433-house.png"] // 1430
+    [   0,   88,  66,  87, -32, -56, "ogfx/base-1430-1433-house.png"] // 1431
+    [   0,    0,  66,  87, -32, -56, "ogfx/base-1430-1433-house.png"] // 1432
+    [   0,    0,  66,  87, -32, -56, "ogfx/base-1430-1433-house.png"] // 1432
+}
+
+spritelayout sprite_small_block_of_flats_1 {
+    ground { sprite: GROUNDSPRITE_CLEARED; }
+    childsprite {
+        sprite: small_block_of_flats_1_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: small_block_of_flats_1_building;
+    }
+}
+
 if (enable_temperate) {
     item(FEAT_HOUSES, item_small_block_of_flats_1, 2) {
         property {
@@ -272,6 +317,38 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_small_block_of_flats_1;
+        }
+    }
+}
+
+spriteset (church_1_ground_childsprite) {
+    sprite_null()
+    sprite_null()
+    sprite_null()
+    [ 210,    8,  64,  34, -31,  -3, "ogfx/temprtbuilds.png"] // 1437
+}
+
+spriteset (church_1_building) {
+    [  66,    8,  38,  21, -19,   3, "ogfx/temprtbuilds.png"] // 1434
+    [ 114,    8,  38,  28, -19,  -4, "ogfx/temprtbuilds.png"] // 1435
+    [ 162,    8,  38,  38, -19, -14, "ogfx/temprtbuilds.png"] // 1436
+    [ 162,    8,  38,  38, -19, -14, "ogfx/temprtbuilds.png"] // 1436
+}
+
+spritelayout sprite_church_1 {
+    ground { sprite: GROUNDSPRITE_CLEARED; }
+    childsprite {
+        sprite: church_1_ground_childsprite;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: church_1_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -279,15 +356,21 @@ if (enable_temperate) {
     item(FEAT_HOUSES, item_church_1, 3) {
         property {
             substitute: 0x03;
-            building_flags: bitmask(HOUSE_FLAG_CHURCH);
+            building_flags: 0; // use callback instead of church flag
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_church_1;
+            colour: random_church_color();
+            construction_check: IsUniqueHouse();
+        }
     }
 }
 
+/*
 spritelayout sprite_large_office_block_1 {
     ground	 	{sprite: 1420; }
      building 	{

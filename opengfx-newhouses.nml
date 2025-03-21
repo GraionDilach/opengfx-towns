@@ -67,7 +67,7 @@ grf {
             name: string(STR_PARAM_NAME_ADDITIONAL_COLORS);
             desc: string(STR_PARAM_DESC_ADDITIONAL_COLORS);
             min_value: 0;
-            max_value: 1;
+            max_value: 2;
             def_value: 1;
             names: {
                 0: string(STR_PARAM_ADDITIONAL_COLORS_NONE);

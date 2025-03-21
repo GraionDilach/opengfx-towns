@@ -1,5 +1,5 @@
 /*
-    OpenGFX as NewHouses
+    OpenGFX Houses as NewHouses
     https://github.com/GraionDilach/opengfx-newhouses
 
 
@@ -180,7 +180,9 @@ spriteset (tall_office_block_1_building) {
 }
 
 spritelayout sprite_tall_office_block_1 {
-    ground { sprite: GROUNDSPRITE_CLEARED; }
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
     childsprite {
         sprite: tall_office_block_1_ground_childsprite;
         always_draw: 1;
@@ -239,7 +241,9 @@ spriteset (office_block_1_building) {
 
 
 spritelayout sprite_office_block_1 {
-    ground { sprite: GROUNDSPRITE_CLEARED; }
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
     childsprite {
         sprite: office_block_1_ground_childsprite;
         always_draw: 1;
@@ -297,7 +301,9 @@ spriteset (small_block_of_flats_1_building) {
 }
 
 spritelayout sprite_small_block_of_flats_1 {
-    ground { sprite: GROUNDSPRITE_CLEARED; }
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
     childsprite {
         sprite: small_block_of_flats_1_ground_childsprite;
         always_draw: 1;
@@ -338,7 +344,9 @@ spriteset (church_1_building) {
 }
 
 spritelayout sprite_church_1 {
-    ground { sprite: GROUNDSPRITE_CLEARED; }
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
     childsprite {
         sprite: church_1_ground_childsprite;
         always_draw: 1;
@@ -370,11 +378,47 @@ if (enable_temperate) {
     }
 }
 
-/*
+spriteset (large_office_block_1_building) {
+    [ 306,    8,  54,  37, -26,  -8, NOCROP, "ogfx/temprtbuilds.png"] // 1440
+    [ 370,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1441
+    [ 370,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1441
+    [ 450,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1442
+}
+
+spriteset (large_office_block_1_snow) {
+    [ 306,    8,  54,  37, -26,  -8, NOCROP, "ogfx/temprtbuilds.png"] // 1440
+    [ 370,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1441
+    [ 370,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1441
+    [ 578,  568,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 4569
+}
+
+spriteset (large_office_block_1_elevator) {
+    [ 530,    8,   3,  14,   0,  -2, NOCROP, "ogfx/temprtbuilds.png"] // 1444
+    [ 530,    8,   3,  14,   0,  -2, NOCROP, "ogfx/temprtbuilds.png"] // 1444
+    [ 530,    8,   3,  14,   0,  -2, NOCROP, "ogfx/temprtbuilds.png"] // 1444
+    [ 530,    8,   3,  14,   0,  -2, NOCROP, "ogfx/temprtbuilds.png"] // 1444
+}
+
+
 spritelayout sprite_large_office_block_1 {
-    ground	 	{sprite: 1420; }
-     building 	{
-        sprite: construction_state==0 ? 1440 : construction_state !=3 ? 1441 : terrain_type != TILETYPE_SNOW ? 1442 : 4569;
+    ground {
+        sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite:  large_office_block_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    childsprite {
+        sprite:  large_office_block_1_elevator;
+        hide_sprite: construction_state != 3;
+    }
+    building {
+        sprite:  large_office_block_1_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+    childsprite {
+        sprite:  large_office_block_1_elevator;
+        hide_sprite: construction_state != 3;
     }
 }
 
@@ -382,7 +426,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_large_office_block_1, 4) {
         property {
             substitute: 0x04;
-            building_flags: bitmask(HOUSE_FLAG_ANIMATE); // lift would need creating a cdustom animation duplicate
+//            building_flags: bitmask(HOUSE_FLAG_ANIMATE); // can't get the lift working, ungh
             availability_mask: [
                 bitmask(TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -394,17 +438,53 @@ if (enable_temperate || enable_arctic || enable_tropic) {
     }
 }
 
+spriteset (town_houses_1a_ground_childsprite) {
+    sprite_null()
+    sprite_null()
+    sprite_null()
+    [  82, 3000,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1447
+}
+
+spriteset (town_houses_1a_building) {
+    [ 258, 3000,  26,  29, -14,  -5, "ogfx/buildings.png"] // 1444
+    [ 290, 3000,  26,  29, -14,  -5, "ogfx/buildings.png"] // 1445
+    [ 322, 3000,  26,  29, -14,  -5, "ogfx/buildings.png"] // 1446
+    [ 322, 3000,  26,  29, -14,  -5, "ogfx/buildings.png"] // 1446
+}
+
 spritelayout sprite_town_houses_1a {
-    ground	 	{ sprite: construction_state==3 ? 1447 : GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 1444 : construction_state == 1 ? 1445 : 1446;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: town_houses_1a_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: town_houses_1a_building;
     }
 }
 
+spriteset (town_houses_1b_ground) {
+    [ 274, 3192,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1501
+    [ 354, 3192,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1503
+    [ 434, 3192,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1505
+    [ 434, 3192,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1505
+}
+
+spriteset (town_houses_1b_building) {
+    [ 514, 3192,  38,  24, -16,  -1, "ogfx/buildings.png"] // 1502
+    [ 562, 3192,  38,  24, -16,  -1, "ogfx/buildings.png"] // 1504
+    [ 610, 3192,  38,  24, -16,  -1, "ogfx/buildings.png"] // 1506
+    [ 610, 3192,  38,  24, -16,  -1, "ogfx/buildings.png"] // 1506
+}
+
 spritelayout sprite_town_houses_1b {
-    ground	 	{ sprite: construction_state==0 ? 1501 : construction_state==1 ? 1503 : 1505; }
-    building 	{
-        sprite: construction_state==0 ? 1502 : construction_state == 1 ? 1504 : 1506;
+    ground {
+        sprite: town_houses_1b_ground;
+    }
+    building {
+        sprite: town_houses_1b_building;
     }
 }
 
@@ -440,6 +520,7 @@ if (enable_temperate) {
     }
 }
 
+/*
 spritelayout sprite_temperate_hotel_N {
     ground	 	{ sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED; }
     building 	{

@@ -1243,32 +1243,31 @@ if (enable_temperate) {
         }
     }
 }
-/*
+
+spriteset (old_houses_1a_ground_childsprite) {
+    sprite_null()
+    sprite_null() // would be 1487, though, but delay the transition
+    [  82, 3288,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1487
+    [  82, 3288,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1487
+}
+
+spriteset (old_houses_1a_building) {
+    sprite_null()
+    [ 226, 3288,  26,  28, -18,  -5, "ogfx/buildings.png"] // 1488
+    [ 226, 3288,  26,  28, -18,  -5, "ogfx/buildings.png"] // 1488
+    [ 226, 3288,  26,  28, -18,  -5, "ogfx/buildings.png"] // 1488
+}
+
 spritelayout sprite_old_houses_1a {
-    ground	 	{ sprite: construction_state > 1 ? 1487 : GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 1488;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
     }
-}
-
-spritelayout sprite_old_houses_1b {
-    ground	 	{ sprite: construction_state > 1 ? 1489 : GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 1490;
+    childsprite {
+        sprite: old_houses_1a_ground_childsprite;
+        always_draw: 1;
     }
-}
-
-spritelayout sprite_old_houses_1c {
-    ground	 	{ sprite: construction_state > 1 ? 1491 : GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 1492;
-    }
-}
-
-spritelayout sprite_old_houses_1d {
-    ground	 	{ sprite: construction_state > 1 ? 1493 : GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 1494;
+    building {
+        sprite: old_houses_1a_building;
     }
 }
 
@@ -1286,7 +1285,36 @@ if (enable_temperate) {
             default: sprite_old_houses_1a;
         }
     }
+}
 
+spriteset (old_houses_1b_ground_childsprite) {
+    sprite_null()
+    sprite_null() // would be 1489, though, but delay the transition
+    [ 322, 3336,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1489
+    [ 322, 3336,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1489
+}
+
+spriteset (old_houses_1b_building) {
+    sprite_null()
+    [ 466, 3336,  26,  28,  -8,  -4, "ogfx/buildings.png"] // 1490
+    [ 466, 3336,  26,  28,  -8,  -4, "ogfx/buildings.png"] // 1490
+    [ 466, 3336,  26,  28,  -8,  -4, "ogfx/buildings.png"] // 1490
+}
+
+spritelayout sprite_old_houses_1b {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: old_houses_1b_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: old_houses_1b_building;
+    }
+}
+
+if (enable_temperate) {
     item(FEAT_HOUSES, item_old_houses_1b, 25) {
         property {
             substitute: 0x18;
@@ -1300,7 +1328,36 @@ if (enable_temperate) {
             default: sprite_old_houses_1b;
         }
     }
+}
 
+spriteset (old_houses_1c_ground_childsprite) {
+    sprite_null()
+    sprite_null() // would be 1491, though, but delay the transition
+    [ 434, 2904,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1491
+    [ 434, 2904,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1491
+}
+
+spriteset (old_houses_1c_building) {
+    sprite_null()
+    [ 754, 2904,  30,  29, -17,  -6, "ogfx/buildings.png"] // 1492
+    [ 754, 2904,  30,  29, -17,  -6, "ogfx/buildings.png"] // 1492
+    [ 754, 2904,  30,  29, -17,  -6, "ogfx/buildings.png"] // 1492
+}
+
+spritelayout sprite_old_houses_1c {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: old_houses_1c_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: old_houses_1c_building;
+    }
+}
+
+if (enable_temperate) {
     item(FEAT_HOUSES, item_old_houses_1c, 26) {
         property {
             substitute: 0x18;
@@ -1314,7 +1371,36 @@ if (enable_temperate) {
             default: sprite_old_houses_1c;
         }
     }
+}
 
+spriteset (old_houses_1d_ground_childsprite) {
+    sprite_null()
+    sprite_null() // would be 1493, though, but delay the transition
+    [ 258, 3480,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1493
+    [ 258, 3480,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1493
+}
+
+spriteset (old_houses_1d_building) {
+    sprite_null()
+    [ 434, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"] // 1494
+    [ 434, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"] // 1494
+    [ 434, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"] // 1494
+}
+
+spritelayout sprite_old_houses_1d {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: old_houses_1d_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: old_houses_1d_building;
+    }
+}
+
+if (enable_temperate) {
     item(FEAT_HOUSES, item_old_houses_1d, 27) {
         property {
             substitute: 0x18;
@@ -1330,6 +1416,32 @@ if (enable_temperate) {
     }
 }
 
+spriteset (cottages_1_ground_childsprite) {
+    sprite_null()
+    sprite_null() // would be 1495, though, but delay the transition
+    [ 386, 3624,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1495
+    [ 386, 3624,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1495
+}
+
+spriteset (cottages_1_building) {
+    sprite_null()
+    [ 626, 3624,  26,  29, -14, -10, "ogfx/buildings.png"] // 1496
+    [ 626, 3624,  26,  29, -14, -10, "ogfx/buildings.png"] // 1496
+    [ 626, 3624,  26,  29, -14, -10, "ogfx/buildings.png"] // 1496
+}
+
+spritelayout sprite_cottages_1 {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: cottages_1_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: cottages_1_building;
+    }
+}
 
 if (enable_temperate) {
     item(FEAT_HOUSES, item_cottages_1, 28) {
@@ -1341,9 +1453,13 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_cottages_1;
+        }
     }
 }
 
+/*
 spritelayout sprite_houses_1a {
     ground	 	{ sprite: construction_state == 0 ? 1497 : construction_state == 1 ? 1498 : 1499; }
     building 	{

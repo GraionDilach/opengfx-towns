@@ -129,8 +129,6 @@ cargotable {
     PASS, MAIL, GOOD, FOOD, TOUR
 }
 
-disable_item(FEAT_HOUSES);
-
 // shared functions
 
 // hotel tourist production

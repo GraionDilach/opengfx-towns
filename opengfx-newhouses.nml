@@ -586,6 +586,8 @@ spritelayout sprite_temperate_hotel_N {
     }
     building {
         sprite: temperate_hotel_N_building;
+        // recolour_mode: RECOLOUR_REMAP;
+        // palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -595,6 +597,8 @@ spritelayout sprite_temperate_hotel_E {
     }
     building {
         sprite: temperate_hotel_E_building;
+        // recolour_mode: RECOLOUR_REMAP;
+        // palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -624,27 +628,83 @@ if (enable_temperate) {
                 local_authority_impact: 65500;
             }
         }
-        if (!cargotype_available("TOUR") || hotel_tourist != 2) {
+        if (additional_colors == 0 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
+                // colour: PALETTE_USE_DEFAULT;
             }
         }
-        if (cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (additional_colors == 0 && cargotype_available("TOUR") && hotel_tourist == 2) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
                 cargo_production: hotel_tourist_production;
                 protection: 1;
                 construction_check: same_house_count_town == 0;
+                // colour: PALETTE_USE_DEFAULT;
             }
         }
-        if (cargotype_available("TOUR") && hotel_tourist == 3) {
+        if (additional_colors == 0 && cargotype_available("TOUR") && hotel_tourist == 3) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
                 cargo_production: hotel_tourist_production;
                 protection: 1;
+                // colour: PALETTE_USE_DEFAULT;
+            }
+        }
+        if (additional_colors == 1 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
+            graphics {
+                graphics_north: sprite_temperate_hotel_N;
+                graphics_east: sprite_temperate_hotel_E;
+                // colour: modest_random_struct_color;
+            }
+        }
+        if (additional_colors == 1 && cargotype_available("TOUR") && hotel_tourist == 2) {
+            graphics {
+                graphics_north: sprite_temperate_hotel_N;
+                graphics_east: sprite_temperate_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
+                // colour: modest_random_struct_color;
+            }
+        }
+        if (additional_colors == 1 && cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_temperate_hotel_N;
+                graphics_east: sprite_temperate_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+                // colour: modest_random_struct_color;
+            }
+        }
+
+    if (additional_colors == 2 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
+            graphics {
+                graphics_north: sprite_temperate_hotel_N;
+                graphics_east: sprite_temperate_hotel_E;
+                // colour: random_struct_color;
+            }
+        }
+        if (additional_colors == 2 && cargotype_available("TOUR") && hotel_tourist == 2) {
+            graphics {
+                graphics_north: sprite_temperate_hotel_N;
+                graphics_east: sprite_temperate_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
+                // colour: random_struct_color;
+            }
+        }
+        if (additional_colors == 2 && cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_temperate_hotel_N;
+                graphics_east: sprite_temperate_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+                // colour: random_struct_color;
             }
         }
     }

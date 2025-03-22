@@ -78,17 +78,48 @@ grf {
     }
 
     param 2 {
+        church_limit {
+            type: int;
+            name: string(STR_PARAM_NAME_CHURCH_LIMIT);
+            min_value: 0;
+            max_value: 2;
+            def_value: 0;
+            names: {
+                0: string(STR_PARAM_CHURCH_LIMIT_ONE);
+                1: string(STR_PARAM_CHURCH_LIMIT_EACH);
+                2: string(STR_PARAM_CHURCH_LIMIT_LIMITLESS);
+            };
+        }
+    }
+
+    param 3 {
+        stadium_limit {
+            type: int;
+            name: string(STR_PARAM_NAME_STADIUM_LIMIT);
+            min_value: 0;
+            max_value: 2;
+            def_value: 0;
+            names: {
+                0: string(STR_PARAM_STADIUM_LIMIT_ONE);
+                1: string(STR_PARAM_STADIUM_LIMIT_EACH);
+                2: string(STR_PARAM_STADIUM_LIMIT_LIMITLESS);
+            };
+        }
+    }
+
+    param 4 {
         hotel_tourist {
             type: int;
             name: string(STR_PARAM_NAME_HOTEL_TOURIST);
             desc: string(STR_PARAM_DESC_HOTEL_TOURIST);
             min_value: 0;
-            max_value: 2;
+            max_value: 3;
             def_value: 0;
             names: {
                 0: string(STR_PARAM_HOTEL_TOURIST_NO);
                 1: string(STR_PARAM_HOTEL_TOURIST_ACCEPT);
-                2: string(STR_PARAM_HOTEL_TOURIST_PRODUCE);
+                2: string(STR_PARAM_HOTEL_TOURIST_PRODUCE_UNIQUE);
+                3: string(STR_PARAM_HOTEL_TOURIST_PRODUCE);
             };
         }
     }
@@ -153,11 +184,6 @@ random_switch (FEAT_HOUSES, SELF, random_church_color) {
     1: return PALETTE_CHURCH_RED;
     1: return PALETTE_CHURCH_CREAM;
 }
-
-// use custom town uniqueness functions instead of church/stadium flags
-switch (FEAT_HOUSES, SELF, IsUniqueHouse, same_house_count_town == 0) {return;}
-
-switch (FEAT_HOUSES, SELF, IsUniqueHouseClass, same_class_count_town == 0) {return;}
 
 // null sprite
 
@@ -224,6 +250,8 @@ if (enable_temperate) {
         }
     }
 }
+
+// 1b is a clone of 1 in OpenGFX, skipped
 
 spriteset (office_block_1_ground_childsprite) {
     sprite_null()
@@ -373,7 +401,11 @@ if (enable_temperate) {
         graphics {
             default: sprite_church_1;
             colour: random_church_color();
-            construction_check: IsUniqueHouse();
+            construction_check: (
+                church_limit == 2
+                || (church_limit == 1 && same_house_count_town == 0)
+                || (church_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -419,14 +451,25 @@ spritelayout sprite_large_office_block_1 {
     childsprite {
         sprite:  large_office_block_1_elevator;
         hide_sprite: construction_state != 3;
+        xoffset: 14;
+        yoffset: 42 - animation_frame; // should be 48-24 range when tested statically, but on dynamic that was too much
     }
+}
+
+switch (FEAT_HOUSES, SELF, large_office_block_change_lift, extra_callback_info1 % 12) {
+    return;
+}
+
+switch (FEAT_HOUSES, SELF, large_office_block_construction_check, construction_state) {
+    3: large_office_block_change_lift;
+    return 42;
 }
 
 if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_large_office_block_1, 4) {
         property {
             substitute: 0x04;
-//            building_flags: bitmask(HOUSE_FLAG_ANIMATE); // can't get the lift working, ungh
+            building_flags: bitmask(HOUSE_FLAG_ANIMATE, HOUSE_FLAG_RANDOM_ANIMATION);
             availability_mask: [
                 bitmask(TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -434,6 +477,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
         }
         graphics {
             default: sprite_large_office_block_1;
+            anim_control: large_office_block_construction_check;
         }
     }
 }
@@ -521,24 +565,6 @@ if (enable_temperate) {
 }
 
 /*
-spritelayout sprite_temperate_hotel_N {
-    ground	 	{ sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 1448 : construction_state != 3 ? 1449 : 1450;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-    }
-}
-
-spritelayout sprite_temperate_hotel_E {
-    ground	 	{ sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 1451 : construction_state != 3 ? 1452 : 1453;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-    }
-}
-
 if (enable_temperate) {
     item(FEAT_HOUSES, item_hotel_1, 7, HOUSE_SIZE_1X2) {
         property {
@@ -558,38 +584,34 @@ if (enable_temperate) {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
             }
         }
-        if (cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (cargotype_available("TOUR") && hotel_tourist > 1) {
             property {
                 building_flags: bitmask(HOUSE_FLAG_PROTECTED);
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 6]];
+                local_authority_impact: 65500;
             }
         }
-        if (!additional_colors && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
+        if (!cargotype_available("TOUR") || hotel_tourist != 2) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
             }
         }
-        if (!additional_colors && cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (cargotype_available("TOUR") && hotel_tourist == 2) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
                 cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
             }
         }
-        if (additional_colors && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
+        if (cargotype_available("TOUR") && hotel_tourist == 3) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
-                colour: random_struct_color();
-            }
-        }
-        if (additional_colors && cargotype_available("TOUR") && hotel_tourist == 2) {
-            graphics {
-                graphics_north: sprite_temperate_hotel_N;
-                graphics_east: sprite_temperate_hotel_E;
-                colour: random_struct_color();
                 cargo_production: hotel_tourist_production;
+                protection: 1;
             }
         }
     }
@@ -661,7 +683,13 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_office_block_2;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_office_block_2;
                 colour: random_struct_color();
@@ -705,6 +733,16 @@ spritelayout sprite_shops_and_offices_3 {
     }
 }
 
+//custom, to keep blue
+random_switch (FEAT_HOUSES, SELF, modest_shops_and_offices_3_color) {
+    1: return PALETTE_USE_DEFAULT;
+    1: return PALETTE_STRUCT_BLUE;
+    1: return PALETTE_STRUCT_BROWN;
+    1: return PALETTE_STRUCT_WHITE;
+    1: return PALETTE_STRUCT_GREEN;
+    1: return PALETTE_STRUCT_CONCRETE;
+}
+
 if (enable_temperate) {
     item(FEAT_HOUSES, item_shops_and_offices_3, 16) {
         property {
@@ -715,7 +753,14 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (additional_colors)
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_shops_and_offices_3;
+                colour: modest_shops_and_offices_3_color();
+            }
+        }
+        if (additional_colors == 2)
         {
             graphics {
                 default: sprite_shops_and_offices_3;
@@ -743,7 +788,7 @@ if ((enable_temperate || enable_arctic || enable_tropic)) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (additional_colors) {
+        if (additional_colors != 0) {
             graphics {
                 default: sprite_modern_office_building_1;
                 colour: random_company_color();
@@ -776,15 +821,64 @@ if (enable_temperate) {
     }
 }
 
+spritelayout sprite_stadium_1_N {
+    ground {
+        sprite: 1479;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1483;
+    }
+}
+
+spritelayout sprite_stadium_1_E {
+    ground {
+        sprite: 1480;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1484;
+    }
+}
+
+spritelayout sprite_stadium_1_W {
+    ground {
+        sprite: 1481;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1485;
+    }
+}
+
+spritelayout sprite_stadium_1_S {
+    ground {
+        sprite: 1482;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1486;
+    }
+}
+
+
 if (enable_temperate) {
     item(FEAT_HOUSES, item_stadium_1, 20, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x14;
-            building_flags: bitmask(HOUSE_FLAG_STADIUM);
+            building_flags: 0;
+            building_class: 2;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            graphics_north: sprite_stadium_1_N;
+            graphics_east: sprite_stadium_1_E;
+            graphics_south: sprite_stadium_1_S;
+            graphics_west: sprite_stadium_1_W;
+            construction_check: (
+                stadium_limit == 2
+                || (stadium_limit == 1 && same_house_count_town == 0)
+                || (stadium_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -1038,7 +1132,14 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (additional_colors)
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_tall_office_block_2;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
         {
             graphics {
                 default: sprite_tall_office_block_2;
@@ -1085,14 +1186,21 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (!additional_colors)
+        if (additional_colors == 0)
         {
             graphics {
                 default: sprite_shops_and_offices_4a;
                 colour: color_shops_and_offices_4a();
             }
         }
-        if (additional_colors)
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_shops_and_offices_4a;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
         {
             graphics {
                 default: sprite_shops_and_offices_4a;
@@ -1109,14 +1217,21 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (!additional_colors)
+        if (additional_colors == 0)
         {
             graphics {
                 default: sprite_shops_and_offices_4b;
                 colour: color_shops_and_offices_4b();
             }
         }
-        if (additional_colors)
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_shops_and_offices_4b;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
         {
             graphics {
                 default: sprite_shops_and_offices_4b;
@@ -1151,15 +1266,64 @@ if (enable_temperate) {
     }
 }
 
+spritelayout sprite_stadium_2_N {
+    ground {
+        sprite: 1554;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1558;
+    }
+}
+
+spritelayout sprite_stadium_2_E {
+    ground {
+        sprite: 1555;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1559;
+    }
+}
+
+spritelayout sprite_stadium_2_W {
+    ground {
+        sprite: 1556;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1560;
+    }
+}
+
+spritelayout sprite_stadium_2_S {
+    ground {
+        sprite: 1557;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1561;
+    }
+}
+
+
 if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_stadium_2, 40, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x20;
-            building_flags: bitmask(HOUSE_FLAG_STADIUM);
+            building_flags: 0;
+            building_class: 2;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            graphics_north: sprite_stadium_2_N;
+            graphics_east: sprite_stadium_2_E;
+            graphics_south: sprite_stadium_2_S;
+            graphics_west: sprite_stadium_2_W;
+            construction_check: (
+                stadium_limit == 2
+                || (stadium_limit == 1 && same_house_count_town == 0)
+                || (stadium_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -1221,13 +1385,19 @@ if (enable_arctic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_houses_2a;
                 colour: color_houses_2a();
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_houses_2a;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_houses_2a;
                 colour: random_struct_color();
@@ -1243,16 +1413,22 @@ if (enable_arctic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_houses_2b;
                 colour: color_houses_2b();
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
             graphics {
                 default: sprite_houses_2b;
-                colour: random_struct_color();
+                colour: random_modest_company_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_houses_2b;
+                colour: random_company_color();
             }
         }
     }
@@ -1310,8 +1486,6 @@ spritelayout sprite_houses_3 {
     ground	 	{sprite: construction_state != 3 ? GROUNDSPRITE_CLEARED : terrain_type != TILETYPE_SNOW ? 4418 : 4419; }
      building 	{
         sprite: construction_state==0 ? 4424 : construction_state==1 ? 4425 : terrain_type != TILETYPE_SNOW ? 4426 : 4427;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -1339,6 +1513,13 @@ spritelayout sprite_houses_4 {
     }
 }
 
+random_switch (FEAT_HOUSES, SELF, houses_4_color) {
+    1: return PALETTE_CC_DARK_BLUE;
+    1: return PALETTE_CC_PINK;
+    1: return PALETTE_CC_DARK_GREEN;
+    1: return PALETTE_CC_CREAM;
+}
+
 if (enable_arctic) {
     item(FEAT_HOUSES, item_houses_4, 54) {
         property {
@@ -1348,13 +1529,21 @@ if (enable_arctic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors)
+        if (additional_colors == 0)
         {
             graphics {
                 default: sprite_houses_4;
+                colour: houses_4_color();
             }
         }
-        if (additional_colors)
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_houses_4;
+                colour: random_modest_company_color();
+            }
+        }
+        if (additional_colors == 2)
         {
             graphics {
                 default: sprite_houses_4;
@@ -1383,12 +1572,18 @@ if (enable_arctic || enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_tall_office_block_3;
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_tall_office_block_3;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_tall_office_block_3;
                 colour: random_company_color();
@@ -1415,12 +1610,18 @@ if (enable_arctic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_tall_office_block_4;
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_tall_office_block_4;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_tall_office_block_4;
                 colour: random_company_color();
@@ -1447,12 +1648,18 @@ if (enable_arctic || enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_tall_office_block_5;
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_tall_office_block_5;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_tall_office_block_5;
                 colour: random_company_color();
@@ -1537,7 +1744,8 @@ if (enable_arctic) {
     item(FEAT_HOUSES, item_church_2, 61) {
         property {
             substitute: 0x3C;
-            building_flags: bitmask(HOUSE_FLAG_CHURCH);
+            building_flags: 0;
+            building_class: 1;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -1545,6 +1753,11 @@ if (enable_arctic) {
         }
         graphics {
             default: sprite_church_2;
+            construction_check: (
+                church_limit == 2
+                || (church_limit == 1 && same_house_count_town == 0)
+                || (church_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -1568,12 +1781,19 @@ if (enable_arctic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_houses_6;
             }
         }
-        if (additional_colors)
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_houses_6;
+                colour: random_modest_company_color();
+            }
+        }
+        if (additional_colors == 2)
         {
             graphics {
                 default: sprite_houses_6;
@@ -1601,12 +1821,18 @@ if (enable_arctic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_shops_and_offices_7;
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_shops_and_offices_7;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_shops_and_offices_7;
                 colour: random_struct_color();
@@ -1627,7 +1853,7 @@ spritelayout sprite_arctic_hotel_N {
 spritelayout sprite_arctic_hotel_E {
     ground	 	{ sprite: construction_state != 0 ? GROUNDSPRITE_CLEARED : 4472; }
     building 	{
-        sprite: construction_state==0 ? 0 : construction_state == 1 ? 4474 : terrain_type != TILETYPE_SNOW ? 4475 : 4584;
+        sprite: construction_state==0 ? 0 : construction_state == 1 ? 4474 : terrain_type != TILETYPE_SNOW ? 4476 : 4584;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -1653,38 +1879,86 @@ if (enable_arctic) {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
             }
         }
-        if (cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (cargotype_available("TOUR") && hotel_tourist > 1) {
             property {
                 building_flags: bitmask(HOUSE_FLAG_PROTECTED);
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 6]];
+                local_authority_impact: 65500;
             }
         }
-        if (!additional_colors && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
+        if (additional_colors == 0 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
             graphics {
                 graphics_north: sprite_arctic_hotel_N;
                 graphics_east: sprite_arctic_hotel_E;
             }
         }
-        if (!additional_colors && cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (additional_colors == 0 && cargotype_available("TOUR") && hotel_tourist == 2) {
             graphics {
                 graphics_north: sprite_arctic_hotel_N;
                 graphics_east: sprite_arctic_hotel_E;
                 cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
             }
         }
-        if (additional_colors && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
+        if (additional_colors == 0 && cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_arctic_hotel_N;
+                graphics_east: sprite_arctic_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+            }
+        }
+        if (additional_colors == 1 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
+            graphics {
+                graphics_north: sprite_arctic_hotel_N;
+                graphics_east: sprite_arctic_hotel_E;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 1 && cargotype_available("TOUR") && hotel_tourist == 2) {
+            graphics {
+                graphics_north: sprite_arctic_hotel_N;
+                graphics_east: sprite_arctic_hotel_E;
+                colour: random_modest_struct_color();
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
+            }
+        }
+        if (additional_colors == 1 && cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_arctic_hotel_N;
+                graphics_east: sprite_arctic_hotel_E;
+                colour: random_modest_struct_color();
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+            }
+        }
+        if (additional_colors == 2 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
             graphics {
                 graphics_north: sprite_arctic_hotel_N;
                 graphics_east: sprite_arctic_hotel_E;
                 colour: random_struct_color();
             }
         }
-        if (additional_colors && cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (additional_colors == 2 && cargotype_available("TOUR") && hotel_tourist == 2) {
             graphics {
                 graphics_north: sprite_arctic_hotel_N;
                 graphics_east: sprite_arctic_hotel_E;
                 colour: random_struct_color();
                 cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
+            }
+        }
+        if (additional_colors == 2 && cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_arctic_hotel_N;
+                graphics_east: sprite_arctic_hotel_E;
+                colour: random_struct_color();
+                cargo_production: hotel_tourist_production;
+                protection: 1;
             }
         }
     }
@@ -1708,12 +1982,18 @@ if (enable_arctic || enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_shops_and_offices_8;
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_shops_and_offices_8;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_shops_and_offices_8;
                 colour: random_struct_color();
@@ -1740,12 +2020,18 @@ if (enable_arctic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 default: sprite_tall_office_block_6;
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_tall_office_block_6;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_tall_office_block_6;
                 colour: random_company_color();
@@ -1919,15 +2205,31 @@ if (enable_tropic) {
     }
 }
 
+spritelayout sprite_church_3 {
+    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
+    building 	{
+        sprite: construction_state==0 ? 0 : 4604;
+    }
+}
+
 if (enable_tropic) {
     item(FEAT_HOUSES, item_church_3, 78) {
         property {
             substitute: 0x53;
-            building_flags: bitmask(HOUSE_FLAG_CHURCH);
+            building_flags: 0;
+            building_class: 1;
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            default: sprite_church_3;
+            construction_check: (
+                church_limit == 2
+                || (church_limit == 1 && same_house_count_town == 0)
+                || (church_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -1964,7 +2266,13 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if(additional_colors) {
+        if(additional_colors == 1) {
+            graphics {
+                default: sprite_flats_4;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if(additional_colors == 2) {
             graphics {
                 default: sprite_flats_4;
                 colour: random_company_color();
@@ -1992,7 +2300,13 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_flats_5;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_flats_5;
                 colour: random_company_color();
@@ -2028,13 +2342,20 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (!additional_colors) {
+        if (additional_colors == 0) {
             graphics {
                 graphics_north: sprite_tall_office_block_8_N;
                 graphics_west: sprite_tall_office_block_8_W;
             }
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                graphics_north: sprite_tall_office_block_8_N;
+                graphics_west: sprite_tall_office_block_8_W;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 graphics_north: sprite_tall_office_block_8_N;
                 graphics_west: sprite_tall_office_block_8_W;
@@ -2076,12 +2397,25 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        if (additional_colors) {
+        if (additional_colors == 1) {
+            graphics {
+                default: sprite_tall_office_block_9;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
             graphics {
                 default: sprite_tall_office_block_9;
                 colour: random_company_color();
             }
         }
+    }
+}
+
+spritelayout sprite_tall_office_block_1b {
+    ground { sprite: construction_state==3 ? 1424 : GROUNDSPRITE_CLEARED; }
+    building {
+        sprite: construction_state==0 ? 1421 : construction_state == 1 ? 1422 : 1423;
     }
 }
 */

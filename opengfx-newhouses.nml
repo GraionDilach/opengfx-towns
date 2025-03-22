@@ -2346,8 +2346,8 @@ spritelayout sprite_shopping_mall_1_N {
 spriteset (shopping_mall_1_E_ground) {
     [ 274,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4408
     [ 274,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4408
-    [ 674,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4413
-    [ 674,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4413
+    [ -31,   0, "ogfxplus/4413.png"] // 4413
+    [ -31,   0, "ogfxplus/4413.png"] // 4413
 }
 
 spriteset (shopping_mall_1_E_building) {

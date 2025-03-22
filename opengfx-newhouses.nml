@@ -411,24 +411,24 @@ if (enable_temperate) {
 }
 
 spriteset (large_office_block_1_building) {
-    [ 306,    8,  54,  37, -26,  -8, NOCROP, "ogfx/temprtbuilds.png"] // 1440
-    [ 370,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1441
-    [ 370,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1441
-    [ 450,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1442
+    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440
+    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
+    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
+    [ 450,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1442
 }
 
 spriteset (large_office_block_1_snow) {
-    [ 306,    8,  54,  37, -26,  -8, NOCROP, "ogfx/temprtbuilds.png"] // 1440
-    [ 370,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1441
-    [ 370,    8,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 1441
-    [ 578,  568,  60,  77, -30, -48, NOCROP, "ogfx/temprtbuilds.png"] // 4569
+    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440
+    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
+    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
+    [ 578,  568,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 4569
 }
 
 spriteset (large_office_block_1_elevator) {
-    [ 530,    8,   3,  14,   0,  -2, NOCROP, "ogfx/temprtbuilds.png"] // 1444
-    [ 530,    8,   3,  14,   0,  -2, NOCROP, "ogfx/temprtbuilds.png"] // 1444
-    [ 530,    8,   3,  14,   0,  -2, NOCROP, "ogfx/temprtbuilds.png"] // 1444
-    [ 530,    8,   3,  14,   0,  -2, NOCROP, "ogfx/temprtbuilds.png"] // 1444
+    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
+    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
+    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
+    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
 }
 
 
@@ -443,6 +443,8 @@ spritelayout sprite_large_office_block_1 {
     childsprite {
         sprite:  large_office_block_1_elevator;
         hide_sprite: construction_state != 3;
+        xoffset: 14;
+        yoffset: 42 - animation_frame; // should be 48-24 range when tested statically, but on dynamic that was too much
     }
     building {
         sprite:  large_office_block_1_snow;
@@ -564,7 +566,38 @@ if (enable_temperate) {
     }
 }
 
-/*
+spriteset (temperate_hotel_N_building) {
+    [ 562,    8,  64,  31, -31,  -3, "ogfx/temprtbuilds.png"] // 1448
+    [ 642,    8,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1449
+    [ 642,    8,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1449
+    [ 722,    8,  64,  74, -31, -43, ANIM, "ogfx/temprtbuilds.png"] // 1450
+}
+
+spriteset (temperate_hotel_E_building) {
+    [   2,  104,  64,  32, -31,  -4, "ogfx/temprtbuilds.png"] // 1451
+    [  82,  104,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1452
+    [  82,  104,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1452
+    [ 162,  104,  64,  71, -31, -43, ANIM, "ogfx/temprtbuilds.png"] // 1453
+}
+
+spritelayout sprite_temperate_hotel_N {
+    ground {
+         sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: temperate_hotel_N_building;
+    }
+}
+
+spritelayout sprite_temperate_hotel_E {
+    ground {
+         sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: temperate_hotel_E_building;
+    }
+}
+
 if (enable_temperate) {
     item(FEAT_HOUSES, item_hotel_1, 7, HOUSE_SIZE_1X2) {
         property {
@@ -616,7 +649,7 @@ if (enable_temperate) {
         }
     }
 }
-
+/*
 if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_statue_1, 9) {
         property {

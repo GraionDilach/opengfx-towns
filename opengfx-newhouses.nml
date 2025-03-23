@@ -4065,20 +4065,42 @@ if (enable_tropic) {
         }
     }
 }
-/*
+
+// 4614 and 4615 are copied from tall_office_block_7 over in OpenGFX
+// this one is derived from the old 32bpp project, so there's no real good option
+// but even 4601 is a better placeholder IMO
+
+spriteset (tall_office_block_8_N_building) {
+    [ 594,   88,  64,  35, -31,  -4, "ogfx/towns02.png"] // "4614"
+    [  10,   10,  32,  96,   1, -65, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4616
+    [  10,   10,  32,  96,   1, -65, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4616
+    [ 120,   10,  32, 117,   1, -86, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4618
+}
+
 spritelayout sprite_tall_office_block_8_N {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 4614 : construction_state!=3 ? 4616 : 4618;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: tall_office_block_8_N_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
+spriteset (tall_office_block_8_W_building) {
+    [ 594,   88,  64,  35, -31,   -4, "ogfx/towns02.png"] // "4615"
+    [  50,   10,  64, 121, -31,  -90, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4617
+    [  50,   10,  64, 121, -31,  -90, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4617
+    [ 160,   10,  64, 133, -31, -102, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4619
+}
+
 spritelayout sprite_tall_office_block_8_W {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 4615 : construction_state!=3 ? 4617 : 4619;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: tall_office_block_8_W_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -4116,6 +4138,24 @@ if (enable_tropic) {
     }
 }
 
+spriteset (flats_6_building) {
+    [   2,  344,  64,  31, -31,   0, "ogfx/towns02.png"] // 4620
+    [ 594,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4621
+    [ 594,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4621
+    [ 674,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4622
+}
+
+spritelayout sprite_flats_6 {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: flats_6_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
 if (enable_tropic) {
     item(FEAT_HOUSES, item_flats_6) {
         property {
@@ -4127,13 +4167,25 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_flats_6;
+        }
     }
 }
 
+spriteset (tall_office_block_9_building) {
+    [ 182,  189,  63,  30, -31,   0, "ogfx/tropical_modern_office.png"] // 4623
+    [ 123,   70,  64,  63, -30, -32, "ogfx/tropical_modern_office.png"] // 4624
+    [ 123,   70,  64,  63, -30, -32, "ogfx/tropical_modern_office.png"] // 4624
+    [ 195,  228,  63, 117, -31, -87, "ogfx/tropical_modern_office.png"] // 4625
+}
+
 spritelayout sprite_tall_office_block_9 {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 4623 : construction_state!=3 ? 4624 : 4625;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: tall_office_block_9_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -4162,7 +4214,6 @@ if (enable_tropic) {
         }
     }
 }
-*/
 
 //PLACE UK TOWN SET HERE
 

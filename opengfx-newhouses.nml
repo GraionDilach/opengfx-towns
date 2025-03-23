@@ -3749,32 +3749,19 @@ if (enable_tropic) {
     }
 }
 
-/*
+spriteset (houses_10a_building) {
+    sprite_null()
+    sprite_null()
+    [  66,    8,  64,  32, -31,  -1, "ogfx/towns02.png"] // 4597
+    [  66,    8,  64,  32, -31,  -1, "ogfx/towns02.png"] // 4597
+}
+
 spritelayout sprite_houses_10a {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 4597;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
     }
-}
-
-spritelayout sprite_houses_10b {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 4598;
-    }
-}
-
-spritelayout sprite_houses_10c {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 4599;
-    }
-}
-
-spritelayout sprite_houses_10d {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 4600;
+    building {
+        sprite: houses_10a_building;
     }
 }
 
@@ -3791,7 +3778,25 @@ if (enable_tropic) {
             default: sprite_houses_10a;
         }
     }
+}
 
+spriteset (houses_10b_building) {
+    sprite_null()
+    sprite_null()
+    [ 146,    8,  64,  54, -31, -23, "ogfx/towns02.png"] // 4598
+    [ 146,    8,  64,  54, -31, -23, "ogfx/towns02.png"] // 4598
+}
+
+spritelayout sprite_houses_10b {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: houses_10b_building;
+    }
+}
+
+if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_10b) {
         property {
             substitute: 0x51;
@@ -3804,7 +3809,25 @@ if (enable_tropic) {
             default: sprite_houses_10b;
         }
     }
+}
 
+spriteset (houses_10c_building) {
+    sprite_null()
+    sprite_null()
+    [ 226,    8,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4599
+    [ 226,    8,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4599
+}
+
+spritelayout sprite_houses_10c {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: houses_10c_building;
+    }
+}
+
+if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_10c) {
         property {
             substitute: 0x51;
@@ -3817,7 +3840,25 @@ if (enable_tropic) {
             default: sprite_houses_10c;
         }
     }
+}
 
+spriteset (houses_10d_building) {
+    sprite_null()
+    sprite_null()
+    [ 306,    8,  64,  46, -31, -15, "ogfx/towns02.png"] // 4600
+    [ 306,    8,  64,  46, -31, -15, "ogfx/towns02.png"] // 4600
+}
+
+spritelayout sprite_houses_10d {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: houses_10d_building;
+    }
+}
+
+if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_10d) {
         property {
             substitute: 0x51;
@@ -3832,6 +3873,22 @@ if (enable_tropic) {
     }
 }
 
+spriteset (flats_3_building) {
+    [ 594,   88,  64,  35, -31,  -4, "ogfx/towns02.png"] // 4601
+    [ 674,   88,  64, 112, -31, -81, "ogfx/towns02.png"] // 4602
+    [ 674,   88,  64, 112, -31, -81, "ogfx/towns02.png"] // 4602
+    [   2,  216,  64, 105, -31, -74, "ogfx/towns02.png"] // 4603
+}
+
+spritelayout sprite_flats_3 {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: flats_3_building;
+    }
+}
+
 if (enable_tropic) {
     item(FEAT_HOUSES, item_flats_3) {
         property {
@@ -3843,13 +3900,25 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_flats_3;
+        }
     }
 }
 
+spriteset (church_3_building) {
+    sprite_null()
+    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
+    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
+    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
+}
+
 spritelayout sprite_church_3 {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 0 : 4604;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: church_3_building;
     }
 }
 
@@ -3875,6 +3944,22 @@ if (enable_tropic) {
     }
 }
 
+spriteset (houses_11_building) {
+    [ 338,   88,  64,  31, -31,   0, "ogfx/towns02.png"] // 4605
+    [ 418,   88,  64,  47, -31, -16, "ogfx/towns02.png"] // 4606
+    [ 418,   88,  64,  47, -31, -16, "ogfx/towns02.png"] // 4606
+    [ 498,   88,  64,  47, -31, -17, "ogfx/towns02.png"] // 4607
+}
+
+spritelayout sprite_houses_11 {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: houses_11_building;
+    }
+}
+
 if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_11) {
         property {
@@ -3885,13 +3970,25 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_houses_11;
+        }
     }
 }
 
+spriteset (flats_4_building) {
+    [  98,  216,  64,  31, -31,   0, "ogfx/towns02.png"] // 4608
+    [ 178,  216,  64,  74, -31, -43, "ogfx/towns02.png"] // 4609
+    [ 178,  216,  64,  74, -31, -43, "ogfx/towns02.png"] // 4609
+    [ 258,  216,  64,  74, -31, -43, "ogfx/towns02.png"] // 4610
+}
+
 spritelayout sprite_flats_4 {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 4608 : construction_state!=3 ? 4609 : 4610;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: flats_4_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -3922,10 +4019,19 @@ if (enable_tropic) {
     }
 }
 
+spriteset (flats_5_building) {
+    [ 338,  216,  64,  31, -31,   0, "ogfx/towns02.png"] // 4611
+    [ 418,  216,  64,  69, -31, -38, "ogfx/towns02.png"] // 4612
+    [ 418,  216,  64,  69, -31, -38, "ogfx/towns02.png"] // 4612
+    [ 498,  216,  64,  69, -31, -38, "ogfx/towns02.png"] // 4613
+}
+
 spritelayout sprite_flats_5 {
-    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
-    building 	{
-        sprite: construction_state==0 ? 4611 : construction_state!=3 ? 4612 : 4613;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: flats_5_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -3955,7 +4061,7 @@ if (enable_tropic) {
         }
     }
 }
-
+/*
 spritelayout sprite_tall_office_block_8_N {
     ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
     building 	{

@@ -3651,7 +3651,24 @@ if (enable_arctic) {
     }
 }
 
-/*
+// all tropic-only house has GROUNDSPRITE_CLEARED as groundsprite
+
+spriteset (houses_7_building) {
+    [ 402,    8,  64,  31, -31,   0, "ogfx/towns02.png"] // 4588
+    [ 482,    8,  64,  47, -31, -16, "ogfx/towns02.png"] // 4589
+    [ 482,    8,  64,  47, -31, -16, "ogfx/towns02.png"] // 4589
+    [ 562,    8,  64,  63, -31, -32, "ogfx/towns02.png"] // 4590
+}
+
+spritelayout sprite_houses_7 {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: houses_7_building;
+    }
+}
+
 if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_7) {
         property {
@@ -3662,6 +3679,25 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_houses_7;
+        }
+    }
+}
+
+spriteset (houses_8_building) {
+    [ 642,    8,  64,  31, -31,   0, "ogfx/towns02.png"] // 4591
+    [ 722,    8,  64,  43, -31, -12, "ogfx/towns02.png"] // 4592
+    [ 722,    8,  64,  43, -31, -12, "ogfx/towns02.png"] // 4592
+    [   2,   88,  64,  40, -31,  -9, "ogfx/towns02.png"] // 4593
+}
+
+spritelayout sprite_houses_8 {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: houses_8_building;
     }
 }
 
@@ -3675,6 +3711,25 @@ if (enable_tropic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_houses_8;
+        }
+    }
+}
+
+spriteset (houses_9_building) {
+    [  82,   88,  64,  31, -31,   0, "ogfx/towns02.png"] // 4594
+    [ 162,   88,  64,  33, -31,  -2, "ogfx/towns02.png"] // 4595
+    [ 162,   88,  64,  33, -31,  -2, "ogfx/towns02.png"] // 4595
+    [ 242,   88,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4596
+}
+
+spritelayout sprite_houses_9 {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: houses_9_building;
     }
 }
 
@@ -3682,14 +3737,19 @@ if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_9) {
         property {
             substitute: 0x50;
+            years_available: [1954, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB), //CENTRE omitted, to keep it a "town houses" counterpart
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_houses_9;
+        }
     }
 }
 
+/*
 spritelayout sprite_houses_10a {
     ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
     building 	{

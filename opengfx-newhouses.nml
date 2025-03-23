@@ -739,8 +739,8 @@ if (enable_temperate) {
 spriteset (statue_1_building) {
     sprite_null()
     sprite_null()
-    [  18,   21,  22,  26,  -7, -16, "ogfx/statuefountain.png"] // 1454
-    [  18,   21,  22,  26,  -7, -16, "ogfx/statuefountain.png"] // 1454
+    [  18,   21,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
+    [  18,   21,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
 }
 
 spritelayout sprite_statue_1 {
@@ -770,8 +770,8 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 spriteset (fountain_1_building) {
     sprite_null()
     sprite_null()
-    [  41,   21,  34,  42, -17, -22, ANIM, "ogfx/statuefountain.png"] // 1455
-    [  41,   21,  34,  42, -17, -22, ANIM, "ogfx/statuefountain.png"] // 1455
+    [  41,   21,  34,  42, -17, -16, ANIM, "ogfx/statuefountain.png"] // 1455
+    [  41,   21,  34,  42, -17, -16, ANIM, "ogfx/statuefountain.png"] // 1455
 }
 
 spritelayout sprite_fountain_1 {

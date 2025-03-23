@@ -59,6 +59,13 @@ grf {
             name: string(STR_PARAM_NAME_ENABLE_UK_TOWN_SET);
             def_value: 1;
         }
+
+        enable_32bpp_arctic_hotel {
+            type: bool;
+            bit: 4;
+            name: string(STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL);
+            def_value: 0;
+        }
     }
 
     param 1 {
@@ -3173,11 +3180,34 @@ if (enable_arctic) {
         }
     }
 }
-/*
+
+spriteset (shops_and_offices_7_building) {
+    sprite_null()
+    [ 674,  904,  66,  87, -31, -56, "ogfx/buildings.png"] // 4470
+    [ 674,  904,  66,  87, -31, -56, "ogfx/buildings.png"] // 4470
+    [ 674,  904,  66,  87, -31, -56, "ogfx/buildings.png"] // 4470
+}
+
+spriteset (shops_and_offices_7_building_snow) {
+    sprite_null()
+    [ 674,  904,  66,  87, -31, -56, "ogfx/buildings.png"] // 4470
+    [ 674,  904,  66,  87, -31, -56, "ogfx/buildings.png"] // 4470
+    [ 162, 1016,  66,  87, -31, -56, "ogfx/buildings.png"] // 4582
+}
+
 spritelayout sprite_shops_and_offices_7 {
-    ground	 	{sprite: GROUNDSPRITE_CLEARED; }
-     building 	{
-        sprite: construction_state==0 ? 0 : construction_state < 3 ? 4470 : terrain_type != TILETYPE_SNOW ? 4470 : 4471;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: shops_and_offices_7_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: shops_and_offices_7_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -3212,19 +3242,87 @@ if (enable_arctic) {
     }
 }
 
+spriteset (arctic_hotel_N_ground_childsprite) {
+    [   2,    9,  64,  33, -31,  -1, "ogfx/arctichotel.png"] // 4471
+    sprite_null()
+    sprite_null()
+    sprite_null()
+}
+
+spriteset (arctic_hotel_N_building) {
+    sprite_null()
+    [ 162,    9,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4473
+    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
+    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
+}
+
+spriteset (arctic_hotel_N_building_snow) {
+    sprite_null()
+    [ 162,    9,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4473
+    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
+    [ 128,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4583
+}
+
 spritelayout sprite_arctic_hotel_N {
-    ground	 	{ sprite: construction_state != 0 ? GROUNDSPRITE_CLEARED : 4471; }
-    building 	{
-        sprite: construction_state==0 ? 0 : construction_state == 1 ? 4473 : terrain_type != TILETYPE_SNOW ? 4475 : 4583;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: arctic_hotel_N_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: arctic_hotel_N_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: arctic_hotel_N_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
+spriteset (arctic_hotel_E_ground_childsprite) {
+    [  82,    9,  64,  33, -31,  -1, "ogfx/arctichotel.png"] // 4472
+    sprite_null()
+    sprite_null()
+    sprite_null()
+}
+
+spriteset (arctic_hotel_E_building) {
+    sprite_null()
+    [ 206,    9,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4474
+    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
+    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
+}
+
+spriteset (arctic_hotel_E_building_snow) {
+    sprite_null()
+    [ 206,    9,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4474
+    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
+    [ 176,   80,  64,  64, -31, -33, "ogfx/arctichotel.png"] // 4584
+}
+
 spritelayout sprite_arctic_hotel_E {
-    ground	 	{ sprite: construction_state != 0 ? GROUNDSPRITE_CLEARED : 4472; }
-    building 	{
-        sprite: construction_state==0 ? 0 : construction_state == 1 ? 4474 : terrain_type != TILETYPE_SNOW ? 4476 : 4584;
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: arctic_hotel_E_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: arctic_hotel_E_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: arctic_hotel_E_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -3334,7 +3432,7 @@ if (enable_arctic) {
         }
     }
 }
-
+/*
 spritelayout sprite_shops_and_offices_8 {
     ground	 	{sprite: construction_state !=3 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE; }
      building 	{
@@ -3783,3 +3881,138 @@ if (enable_tropic) {
     }
 }
 */
+
+//PLACE UK TOWN SET HERE
+
+// custom derivate stuff
+// 32 bpp arctic hotel
+spriteset (old_arctic_hotel_N_ground_childsprite) {
+    [   2,    9,  64,  33, -31,  -1, "ogfx/arctichotel_old.png"] // 4471
+    sprite_null()
+    sprite_null()
+    sprite_null()
+}
+
+spriteset (old_arctic_hotel_N_building) {
+    sprite_null()
+    [ 162,    9,  32,  46, -31, -15, "ogfx/arctichotel_old.png"] // 4473
+    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel_old.png"] // 4475
+    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel_old.png"] // 4475
+}
+
+spriteset (old_arctic_hotel_N_building_snow) {
+    sprite_null()
+    [ 162,    9,  32,  46, -31, -15, "ogfx/arctichotel_old.png"] // 4473
+    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel_old.png"] // 4475
+    [ 128,   80,  32,  46, -31, -15, "ogfx/arctichotel_old.png"] // 4583
+}
+
+spritelayout sprite_old_arctic_hotel_N {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: old_arctic_hotel_N_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: old_arctic_hotel_N_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: old_arctic_hotel_N_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spriteset (old_arctic_hotel_E_ground_childsprite) {
+    [  82,    9,  64,  33, -31,  -1, "ogfx/arctichotel_old.png"] // 4472
+    sprite_null()
+    sprite_null()
+    sprite_null()
+}
+
+spriteset (old_arctic_hotel_E_building) {
+    sprite_null()
+    [ 206,    9,  64,  63, -31, -32, "ogfx/arctichotel_old.png"] // 4474
+    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel_old.png"] // 4476
+    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel_old.png"] // 4476
+}
+
+spriteset (old_arctic_hotel_E_building_snow) {
+    sprite_null()
+    [ 206,    9,  64,  63, -31, -32, "ogfx/arctichotel_old.png"] // 4474
+    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel_old.png"] // 4476
+    [ 176,   80,  64,  64, -31, -33, "ogfx/arctichotel_old.png"] // 4584
+}
+
+spritelayout sprite_old_arctic_hotel_E {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: old_arctic_hotel_E_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: old_arctic_hotel_E_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: old_arctic_hotel_E_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+if (enable_32bpp_arctic_hotel) {
+    item(FEAT_HOUSES, item_hotel_2_old, -1, HOUSE_SIZE_1X2) {
+        property {
+            substitute: 0x42;
+            accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        if (!cargotype_available("TOUR") || hotel_tourist == 0) {
+            property {
+                accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3]];
+            }
+        }
+        if (cargotype_available("TOUR") && hotel_tourist == 1) {
+            property {
+                accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
+            }
+        }
+        if (cargotype_available("TOUR") && hotel_tourist > 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+                accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 6]];
+                local_authority_impact: 65500;
+            }
+        }
+        if (!cargotype_available("TOUR") || hotel_tourist < 2) {
+            graphics {
+                graphics_north: sprite_old_arctic_hotel_N;
+                graphics_east: sprite_old_arctic_hotel_E;
+            }
+        }
+        if (cargotype_available("TOUR") && hotel_tourist == 2) {
+            graphics {
+                graphics_north: sprite_old_arctic_hotel_N;
+                graphics_east: sprite_old_arctic_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
+            }
+        }
+        if (cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_old_arctic_hotel_N;
+                graphics_east: sprite_old_arctic_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+            }
+        }
+    }
+}

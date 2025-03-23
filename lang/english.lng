@@ -12,6 +12,8 @@ STR_PARAM_NAME_ENABLE_TROPIC                :Enable Sub-Tropic houses
 
 STR_PARAM_NAME_ENABLE_UK_TOWN_SET           :Enable UK Town Set v2.2 houses
 
+STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL    :Enable old, 32bpp render-based arctic Hotel
+
 STR_PARAM_NAME_ADDITIONAL_COLORS            :Random color variations
 STR_PARAM_DESC_ADDITIONAL_COLORS            :Choose how random color assignments should behave.
 

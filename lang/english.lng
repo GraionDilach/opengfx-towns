@@ -1,8 +1,10 @@
 ##grflangid 0x00
 ##plural 0
-STR_GRF_NAME                                :OpenGFX Houses as NewHouses {VERSION}
-STR_GRF_DESCRIPTION                         :Converts OpenGFX houses into NewGRF houses (and optionally merges UK Town Set v2.2 in) to be used alongside other setups. Can be parametered to enable vanilla temperate/arctic/sub-tropic houses on other climates. It also allows Temperate houses and all flats to also accept Food.{}{}License: GPLv2{}Artwork: Zephyris and OpenGFX contributors{}Code author: Graion Dilach
-STR_GRF_URL                                 :https://github.com/GraionDilach/opengfx-newhouses
+STR_GRF_NAME                                :OpenGFX+ Towns {VERSION}
+STR_GRF_DESCRIPTION                         :Merges OpenGFX houses with UK Town Set v2.2 to allow combinations with other base sets and offer additional polish prevented due to being tied to TTD's own spritesheet. Includes all options from Universal Climate Houses.{}{}License: GPLv2{}Artwork: Zephyris and OpenGFX contributors{}Code author: Graion Dilach
+STR_GRF_URL                                 :https://github.com/GraionDilach/opengfx-towns
+
+STR_PARAM_NAME_DISABLE_BASE_HOUSES          :Disable default OpenTTD houses
 
 STR_PARAM_NAME_ENABLE_TEMPERATE             :Enable Temperate houses
 
@@ -14,6 +16,14 @@ STR_PARAM_NAME_ENABLE_UK_TOWN_SET           :Enable UK Town Set v2.2 houses
 
 STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL    :Enable old, 32bpp render-based arctic Hotel
 
+STR_PARAM_NAME_LANDSCAPE                    :Landscape
+STR_PARAM_DESC_LANDSCAPE                    :This setting allows to override the landscape to tailor it towards customized setups in OpenGFX+ Landscape or OpenGFX2.
+
+STR_PARAM_LANDSCAPE_CLIMATE                 :Use the current climate's default tile (vanilla behaviour)
+STR_PARAM_LANDSCAPE_TEMPERATE               :Force Temperate landscape
+STR_PARAM_LANDSCAPE_ARCTIC                  :Force Arctic landscape
+STR_PARAM_LANDSCAPE_SUBTROPIC               :Force Subtropic landscape
+
 STR_PARAM_NAME_ADDITIONAL_COLORS            :Random color variations
 STR_PARAM_DESC_ADDITIONAL_COLORS            :Choose how random color assignments should behave.
 
@@ -24,7 +34,7 @@ STR_PARAM_ADDITIONAL_COLORS_RAINBOW         :Rainbow (random ranges include all 
 STR_PARAM_NAME_CHURCH_LIMIT                 :Amount of churches in a town
 
 STR_PARAM_CHURCH_LIMIT_ONE                  :One church per town (vanilla)
-STR_PARAM_CHURCH_LIMIT_EACH                 :One per each climate variant
+STR_PARAM_CHURCH_LIMIT_EACH                 :One per each variant
 STR_PARAM_CHURCH_LIMIT_LIMITLESS            :No limit
 
 STR_PARAM_NAME_STADIUM_LIMIT                :Amount of stadiums in a town
@@ -34,7 +44,7 @@ STR_PARAM_STADIUM_LIMIT_EACH                :One old, one modern per town
 STR_PARAM_STADIUM_LIMIT_LIMITLESS           :No limit
 
 STR_PARAM_NAME_HOTEL_TOURIST                :Hotel's handling of Tourists
-STR_PARAM_DESC_HOTEL_TOURIST                :This setting requires an external industry NewGRF to define Tourists. If Hotels are set to "Full acceptance and production", they will also be marked as protected.
+STR_PARAM_DESC_HOTEL_TOURIST                :This setting does nothing without an external industry NewGRF defining Tourists. If Hotels are set to "Full acceptance and production", they will also be marked as protected.
 
 STR_PARAM_HOTEL_TOURIST_NO                  :Ignored (vanilla behaviour)
 STR_PARAM_HOTEL_TOURIST_ACCEPT              :Partial acceptance

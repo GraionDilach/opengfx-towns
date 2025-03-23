@@ -1,6 +1,6 @@
 /*
-    OpenGFX Houses as NewHouses
-    https://github.com/GraionDilach/opengfx-newhouses
+    OpenGFX+ Towns
+    https://github.com/GraionDilach/opengfx-towns
 
 
     This program is free software; you can redistribute it and/or
@@ -32,43 +32,67 @@ grf {
     url: string(STR_GRF_URL);
 
     param 0 {
-        enable_temperate {
+        disable_base_houses {
             type: bool;
             bit: 0;
+            name: string(STR_PARAM_NAME_DISABLE_BASE_HOUSES);
+            def_value: 0;
+        }
+
+        enable_temperate {
+            type: bool;
+            bit: 1;
             name: string(STR_PARAM_NAME_ENABLE_TEMPERATE);
             def_value: 1;
         }
 
         enable_arctic {
             type: bool;
-            bit: 1;
+            bit: 2;
             name: string(STR_PARAM_NAME_ENABLE_ARCTIC);
             def_value: 1;
         }
 
         enable_tropic {
             type: bool;
-            bit: 2;
+            bit: 3;
             name: string(STR_PARAM_NAME_ENABLE_TROPIC);
             def_value: 1;
         }
 
         enable_uktownset {
             type: bool;
-            bit: 3;
+            bit: 4;
             name: string(STR_PARAM_NAME_ENABLE_UK_TOWN_SET);
             def_value: 1;
         }
 
         enable_32bpp_arctic_hotel {
             type: bool;
-            bit: 4;
+            bit: 5;
             name: string(STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL);
             def_value: 0;
         }
     }
 
     param 1 {
+        landscape {
+            type: int;
+            name: string(STR_PARAM_NAME_LANDSCAPE);
+            desc: string(STR_PARAM_DESC_LANDSCAPE);
+            min_value: 0;
+            max_value: 3;
+            def_value: 0;
+            names: {
+                0: string(STR_PARAM_LANDSCAPE_CLIMATE);
+                1: string(STR_PARAM_LANDSCAPE_TEMPERATE);
+                2: string(STR_PARAM_LANDSCAPE_ARCTIC);
+                3: string(STR_PARAM_LANDSCAPE_SUBTROPIC);
+            };
+        }
+    }
+
+    param 2 {
         additional_colors {
             type: int;
             name: string(STR_PARAM_NAME_ADDITIONAL_COLORS);
@@ -84,7 +108,7 @@ grf {
         }
     }
 
-    param 2 {
+    param 3 {
         church_limit {
             type: int;
             name: string(STR_PARAM_NAME_CHURCH_LIMIT);
@@ -99,7 +123,7 @@ grf {
         }
     }
 
-    param 3 {
+    param 4 {
         stadium_limit {
             type: int;
             name: string(STR_PARAM_NAME_STADIUM_LIMIT);
@@ -114,7 +138,7 @@ grf {
         }
     }
 
-    param 4 {
+    param 5 {
         hotel_tourist {
             type: int;
             name: string(STR_PARAM_NAME_HOTEL_TOURIST);
@@ -221,7 +245,13 @@ random_switch (FEAT_HOUSES, SELF, random_church_color) {
 
 template sprite_null() { [0, 0, "gfx/null.png"]}
 
-// actual redevelopment
+if (disable_base_houses) {
+    disable_item(FEAT_HOUSES);
+}
+
+/// =================
+/// ==== OpenGFX ====
+/// =================
 
 spriteset (tall_office_block_1_ground_childsprite) {
     sprite_null()
@@ -4215,9 +4245,16 @@ if (enable_tropic) {
     }
 }
 
-//PLACE UK TOWN SET HERE
+/// ==========================
+/// ==== UK Town Set v2.2 ====
+/// ==========================
 
-// custom derivate stuff
+
+
+/// ==============================
+/// ==== Additional derivates ====
+/// ==============================
+
 // 32 bpp arctic hotel
 spriteset (old_arctic_hotel_N_ground_childsprite) {
     [   2,    9,  64,  33, -31,  -1, "ogfx/arctichotel_old.png"] // 4471

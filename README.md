@@ -1,7 +1,9 @@
-## Universal Climate Houses
+## OpenGFX+ Towns
 
-A simple NewGRF to enable vanilla temperate/arctic/sub-tropic houses on other climates. It also allows Temperate houses and all flats to also accept Food. Does not include additional artwork.
+Merges OpenGFX houses with UK Town Set v2.2 to allow combinations with other base sets and offer additional polish prevented due to being tied to TTD's own spritesheet.
 
-License: GPL v2
+License: GPLv2
 
-Author: Graion Dilach
+Artwork: Zephyris and OpenGFX contributors
+
+Code author: Graion Dilach

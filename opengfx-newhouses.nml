@@ -1888,14 +1888,15 @@ if (enable_temperate) {
         }
     }
 }
-
+//all of this are concrete clones
+/*
 spriteset (shops_and_offices_5_ground) {
     [ 178,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1540
     [ 338,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1542
     [ 498,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1544
     [ 498,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1544
 }
-
+*/
 spriteset (shops_and_offices_5_building) {
     [ 258,  360,  62,  48, -30, -20, "ogfx/temprtbuilds.png"] // 1541
     [ 418,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1543
@@ -1905,7 +1906,7 @@ spriteset (shops_and_offices_5_building) {
 
 spritelayout sprite_shops_and_offices_5 {
     ground {
-        sprite: shops_and_offices_5_ground;
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: shops_and_offices_5_building;

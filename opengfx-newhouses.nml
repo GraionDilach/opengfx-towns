@@ -3432,11 +3432,34 @@ if (enable_arctic) {
         }
     }
 }
-/*
+
+spriteset (shops_and_offices_8_building) {
+    [   0,    0,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4477
+    [   0,   88,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4478
+    [   0,  176,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4479
+    [   0,  176,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4479
+}
+
+spriteset (shops_and_offices_8_building_snow) {
+    [   0,    0,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4477
+    [   0,   88,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4478
+    [   0,  176,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4479
+    [   0,  264,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4577
+}
+
 spritelayout sprite_shops_and_offices_8 {
-    ground	 	{sprite: construction_state !=3 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE; }
-     building 	{
-        sprite: construction_state==0 ? 4477 : construction_state < 3 ? 4478 : terrain_type != TILETYPE_SNOW ? 4479 : 4577;
+    ground {
+        sprite: construction_state !=3 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: shops_and_offices_8_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: shops_and_offices_8_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -3471,12 +3494,42 @@ if (enable_arctic || enable_tropic) {
     }
 }
 
+spriteset (tall_office_block_6_ground_childsprite) {
+    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
+    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
+    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
+    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
+}
+
+spriteset (tall_office_block_6_building) {
+    sprite_null() // 4481 is empty
+    [ 646,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4482
+    [ 714,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4484
+    [ 714,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4484
+}
+
+spriteset (tall_office_block_6_building_snow) {
+    sprite_null() // 4481 is empty
+    [ 646,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4482
+    [ 714,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4484
+    [ 784,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4585
+}
+
 spritelayout sprite_tall_office_block_6 {
-    ground	 	{sprite: construction_state==0 ? 4480 : 4483; }
-     building 	{
-        sprite: construction_state==0 ? 4481 : construction_state < 3 ? 4482 : terrain_type != TILETYPE_SNOW ? 4484 : 4585;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
+    ground {
+        sprite: construction_state != 0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: tall_office_block_6_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: tall_office_block_6_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: tall_office_block_6_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -3508,7 +3561,7 @@ if (enable_arctic) {
         }
     }
 }
-
+/*
 spritelayout sprite_tall_office_block_7_N {
     ground	 	{ sprite: 4485; }
     building 	{

@@ -1698,12 +1698,15 @@ if (enable_temperate) {
     }
 }
 
+//all of these are concrete clones in OpenGFX
+/*
 spriteset (tall_office_block_2_ground) {
     [  66,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1530
     [ 226,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1532
     [ 386,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1534
     [ 386,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1534
 }
+*/
 
 spriteset (tall_office_block_2_building) {
     [ 146,    8,  64,  45, -31, -14, "ogfx/morebuildings.png"] // 1531
@@ -1714,7 +1717,7 @@ spriteset (tall_office_block_2_building) {
 
 spritelayout sprite_tall_office_block_2 {
     ground {
-        sprite: tall_office_block_2_ground;
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: tall_office_block_2_building;
@@ -1888,7 +1891,7 @@ if (enable_temperate) {
         }
     }
 }
-//all of this are concrete clones
+//all of these are concrete clones in OpenGFX
 /*
 spriteset (shops_and_offices_5_ground) {
     [ 178,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1540

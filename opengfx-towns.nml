@@ -4920,8 +4920,8 @@ if (enable_32bpp_arctic_hotel) {
 spriteset (transmitter_building) {
     sprite_null()
     sprite_null()
-    [  -30, -65, "ogfxplus/transmitter-animless.png"] // 1454
-    [  -30, -65, ANIM, "ogfxplus/transmitter.png"] // 1454
+    [  -30, -65, "gfx/1454-animless.png"] // 1454
+    [  -30, -65, ANIM, "gfx/1454.png"] // 1454
 }
 
 spritelayout sprite_transmitter {
@@ -4940,6 +4940,7 @@ if (enable_misc) {
             substitute: 0x09;
             name: string(STR_NAME_TRANSMITTER);
             years_available: [1930, 65535];
+            building_class: 100;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -4947,16 +4948,16 @@ if (enable_misc) {
         }
         graphics {
             default: sprite_transmitter;
-            construction_check: same_house_count_town == 0;
+            construction_check: same_class_count_town == 0;
         }
     }
 }
 
 spriteset (lighthouse_building) {
     sprite_null()
-    [  -22, -37, "ogfxplus/lighthouse-animless.png"] // 2602
-    [  -22, -37, "ogfxplus/lighthouse-animless.png"] // 2602
-    [  -22, -37, ANIM, "ogfxplus/lighthouse.png"] // 2602
+    [  -22, -37, "gfx/2602-animless.png"] // 2602
+    [  -22, -37, "gfx/2602-animless.png"] // 2602
+    [  -22, -37, ANIM, "gfx/2602.png"] // 2602
 }
 
 spritelayout sprite_lighthouse {
@@ -4986,3 +4987,103 @@ if (enable_misc) {
         }
     }
 }
+
+spriteset (radio_station_N_building) {
+    sprite_null()
+    [ -31, 0, "gfx/2093.png"] // 2093, oil refinery
+    [ -31, 0, "gfx/2094.png"] // 2094, oil refinery
+    [ -31, 0, "gfx/2095.png"] // 2095, oil refinery
+}
+
+spritelayout sprite_radio_station_N {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: radio_station_N_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spritelayout sprite_radio_station_E {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: transmitter_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_radio_station, -1, HOUSE_SIZE_1X2) {
+        property {
+            substitute: 0x42;
+            name: string(STR_NAME_RADIO_STATION);
+            accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 4]];
+            years_available: [1945, 65535];
+            population: 18;
+            mail_multiplier: 2;
+            building_class: 100;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, ABOVE_SNOWLINE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        if (additional_colors != 2) {
+            graphics {
+                graphics_north: sprite_radio_station_N;
+                graphics_east: sprite_radio_station_E;
+                construction_check: same_class_count_town == 0;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                graphics_north: sprite_radio_station_N;
+                graphics_east: sprite_radio_station_E;
+                construction_check: same_class_count_town == 0;
+                colour: random_company_color();
+            }
+        }
+    }
+}
+
+/*
+spriteset (boiler_station_building) {
+    sprite_null()
+    [  -31,  -4, "gfx/2048.png"] // 2048, power station
+    [  -31, -26, "gfx/2049.png"] // 2049, power station
+    [  -31, -33, "gfx/2050.png"] // 2050, power station
+}
+
+spritelayout sprite_boiler_station {
+    ground {
+        sprite: construction_state != 0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: boiler_station_building;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_boiler_station) {
+        property {
+            substitute: 0x12;
+            name: string(STR_NAME_BOILER_STATION);
+            building_flags: 0;
+            years_available: [1940, 65535];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, ABOVE_SNOWLINE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_boiler_station;
+            construction_check: same_house_count_town == 0;
+        }
+    }
+}
+*/

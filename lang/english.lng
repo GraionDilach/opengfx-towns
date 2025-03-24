@@ -57,3 +57,5 @@ STR_PARAM_HOTEL_TOURIST_PRODUCE             :Full acceptance and production, unl
 
 STR_NAME_TRANSMITTER                        :Transmitter
 STR_NAME_LIGHTHOUSE                         :Lighthouse
+STR_NAME_RADIO_STATION                      :Radio Station
+#STR_NAME_BOILER_STATION                     :Boiler Station

@@ -4348,8 +4348,6 @@ if (enable_temperate || enable_uktownset) {
             building_flags: 0; // use callback instead of church flag
             building_class: 1;
             years_available: [0, 65535];
-            population: 4;
-            mail_multiplier: 1;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -4521,8 +4519,6 @@ if (enable_uktownset) {
             building_flags: 0; // use callback instead of church flag
             building_class: 1;
             years_available: [0, 65535];
-            population: 4;
-            mail_multiplier: 1;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -4640,8 +4636,8 @@ if (enable_uktownset) {
             building_flags: 0; // use callback instead of church flag
             building_class: 1;
             years_available: [0, 65535];
-            population: 5;
-            mail_multiplier: 1;
+            population: 7;
+            mail_multiplier: 2;
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -4759,8 +4755,8 @@ if (enable_uktownset) {
             building_flags: 0; // use callback instead of church flag
             building_class: 1;
             years_available: [0, 65535];
-            population: 5;
-            mail_multiplier: 1;
+            population: 7;
+            mail_multiplier: 2;
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)

@@ -4920,8 +4920,8 @@ if (enable_32bpp_arctic_hotel) {
 spriteset (transmitter_building) {
     sprite_null()
     sprite_null()
-    [  -30, -78, ANIM, "ogfxplus/transmitter.png"] // 1454
-    [  -30, -78, ANIM, "ogfxplus/transmitter.png"] // 1454
+    [  -30, -65, "ogfxplus/transmitter-animless.png"] // 1454
+    [  -30, -65, ANIM, "ogfxplus/transmitter.png"] // 1454
 }
 
 spritelayout sprite_transmitter {
@@ -4954,9 +4954,9 @@ if (enable_misc) {
 
 spriteset (lighthouse_building) {
     sprite_null()
-    [  -22, -48, ANIM, "ogfxplus/lighthouse.png"] // 2602
-    [  -22, -48, ANIM, "ogfxplus/lighthouse.png"] // 2602
-    [  -22, -48, ANIM, "ogfxplus/lighthouse.png"] // 2602
+    [  -22, -37, "ogfxplus/lighthouse-animless.png"] // 2602
+    [  -22, -37, "ogfxplus/lighthouse-animless.png"] // 2602
+    [  -22, -37, ANIM, "ogfxplus/lighthouse.png"] // 2602
 }
 
 spritelayout sprite_lighthouse {

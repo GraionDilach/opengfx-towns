@@ -16,6 +16,9 @@ STR_PARAM_NAME_ENABLE_UK_TOWN_SET           :Enable UK Town Set v2.2 houses
 
 STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL    :Enable old, 32bpp render-based arctic Hotel
 
+STR_PARAM_NAME_ENABLE_MISC                  :Enable buildings derived from OpenGFX non-building artwork
+STR_PARAM_DESC_ENABLE_MISC                  :Enables towns to have their own transmitters and lighthouses.
+
 STR_PARAM_NAME_LANDSCAPE                    :Landscape
 STR_PARAM_DESC_LANDSCAPE                    :This setting allows to override the landscape to tailor it towards customized setups in OpenGFX+ Landscape or OpenGFX2.
 
@@ -50,3 +53,7 @@ STR_PARAM_HOTEL_TOURIST_NO                  :Ignored (vanilla behaviour)
 STR_PARAM_HOTEL_TOURIST_ACCEPT              :Partial acceptance
 STR_PARAM_HOTEL_TOURIST_PRODUCE_UNIQUE      :Full acceptance and production, each hotel type is limited to one per town
 STR_PARAM_HOTEL_TOURIST_PRODUCE             :Full acceptance and production, unlimited count
+
+
+STR_NAME_TRANSMITTER                        :Transmitter
+STR_NAME_LIGHTHOUSE                         :Lighthouse

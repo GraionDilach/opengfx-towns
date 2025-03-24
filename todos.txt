@@ -1,3 +1,6 @@
 Review and clear up all GROUNDSPRITE_CLEARED instances - tile edges leak through on 32bpp extra zoom as a contour and putting CLEARED under a complete building instead of the terrain's native tile is more blatantly visible
 
 expand UKTS ground tiles with desert variants
+
+lighthouse - add a function to only build it near sea
+transmitter - add a function to only build it above a certain population

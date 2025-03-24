@@ -73,6 +73,14 @@ grf {
             name: string(STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL);
             def_value: 0;
         }
+
+        enable_misc {
+            type: bool;
+            bit: 5;
+            name: string(STR_PARAM_NAME_ENABLE_MISC);
+            desc: string(STR_PARAM_DESC_ENABLE_MISC);
+            def_value: 0;
+        }
     }
 
     param 1 {
@@ -4905,6 +4913,76 @@ if (enable_32bpp_arctic_hotel) {
                 cargo_production: hotel_tourist_production;
                 protection: 1;
             }
+        }
+    }
+}
+
+spriteset (transmitter_building) {
+    sprite_null()
+    sprite_null()
+    [  -30, -78, ANIM, "ogfxplus/transmitter.png"] // 1454
+    [  -30, -78, ANIM, "ogfxplus/transmitter.png"] // 1454
+}
+
+spritelayout sprite_transmitter {
+    ground {
+        sprite: construction_state < 2 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW : GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: transmitter_building;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_transmitter) {
+        property {
+            substitute: 0x09;
+            name: string(STR_NAME_TRANSMITTER);
+            years_available: [1930, 65535];
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_transmitter;
+            construction_check: same_house_count_town == 0;
+        }
+    }
+}
+
+spriteset (lighthouse_building) {
+    sprite_null()
+    [  -22, -48, ANIM, "ogfxplus/lighthouse.png"] // 2602
+    [  -22, -48, ANIM, "ogfxplus/lighthouse.png"] // 2602
+    [  -22, -48, ANIM, "ogfxplus/lighthouse.png"] // 2602
+}
+
+spritelayout sprite_lighthouse {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: lighthouse_building;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_lighthouse) {
+        property {
+            substitute: 0x03;
+            name: string(STR_NAME_LIGHTHOUSE);
+            building_flags: 0;
+            years_available: [0, 65535];
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_lighthouse;
+            construction_check: same_house_count_town == 0;
         }
     }
 }

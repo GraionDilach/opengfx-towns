@@ -4351,8 +4351,8 @@ if (enable_temperate || enable_uktownset) {
             population: 4;
             mail_multiplier: 1;
             availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {
@@ -4524,12 +4524,250 @@ if (enable_uktownset) {
             population: 4;
             mail_multiplier: 1;
             availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {
             default: sprite_ukts_church_small_2;
+            construction_check: (
+                church_limit == 2
+                || (church_limit == 1 && same_house_count_town == 0)
+                || (church_limit == 0 && same_class_count_town == 0)
+            );
+        }
+    }
+}
+
+spriteset (ukts_church_large_1a_building) {
+    [ 1, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_1a_building_snow) {
+    [ 1, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_1b_building) {
+    [ 1, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_1b_building_snow) {
+    [ 1, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 1, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_1c_building) {
+    [ 261, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_1c_building_snow) {
+    [ 261, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_1d_building) {
+    [ 261, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_1d_building_snow) {
+    [ 261, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 261, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spritelayout sprite_ukts_church_large_1 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: ukts_church_large_1a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_church_large_1a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_church_large_1b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_church_large_1b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_church_large_1c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_church_large_1c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_church_large_1d_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+    }
+    building {
+        sprite: ukts_church_large_1d_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_church_large_1) {
+        property {
+            substitute: 0x03;
+            building_flags: 0; // use callback instead of church flag
+            building_class: 1;
+            years_available: [0, 65535];
+            population: 5;
+            mail_multiplier: 1;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_church_large_1;
+            construction_check: (
+                church_limit == 2
+                || (church_limit == 1 && same_house_count_town == 0)
+                || (church_limit == 0 && same_class_count_town == 0)
+            );
+        }
+    }
+}
+
+spriteset (ukts_church_large_2a_building) {
+    [ 196, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_2a_building_snow) {
+    [ 196, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_2b_building) {
+    [ 196, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_2b_building_snow) {
+    [ 196, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 196, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_2c_building) {
+    [ 456, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_2c_building_snow) {
+    [ 456, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_2d_building) {
+    [ 456, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spriteset (ukts_church_large_2d_building_snow) {
+    [ 456, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+    [ 456, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
+}
+
+spritelayout sprite_ukts_church_large_2 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: ukts_church_large_2a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_church_large_2a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_church_large_2b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_church_large_2b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_church_large_2c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_church_large_2c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_church_large_2d_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+    }
+    building {
+        sprite: ukts_church_large_2d_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_church_large_2) {
+        property {
+            substitute: 0x03;
+            building_flags: 0; // use callback instead of church flag
+            building_class: 1;
+            years_available: [0, 65535];
+            population: 5;
+            mail_multiplier: 1;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_church_large_2;
             construction_check: (
                 church_limit == 2
                 || (church_limit == 1 && same_house_count_town == 0)

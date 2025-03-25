@@ -4298,6 +4298,11 @@ spritelayout sprite_ukts_church_small_1 {
         always_draw: 1;
     }
     childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
         sprite: ukts_church_small_1_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
             || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
@@ -4311,8 +4316,8 @@ spritelayout sprite_ukts_church_small_1 {
     }
     childsprite {
         sprite: ukts_church_small_1_ground_tropic;
-        hide_sprite: terrain_type == TILETYPE_SNOW || !(terrain_type == TILETYPE_DESERT
-            || landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
     }
     building {
@@ -4469,6 +4474,11 @@ spritelayout sprite_ukts_church_small_2 {
         always_draw: 1;
     }
     childsprite {
+        sprite: ukts_church_small_2_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
         sprite: ukts_church_small_2_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
             || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
@@ -4482,8 +4492,8 @@ spritelayout sprite_ukts_church_small_2 {
     }
     childsprite {
         sprite: ukts_church_small_2_ground_tropic;
-        hide_sprite: terrain_type == TILETYPE_SNOW || !(terrain_type == TILETYPE_DESERT
-            || landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
     }
     building {
@@ -5028,7 +5038,7 @@ if (enable_misc) {
             mail_multiplier: 2;
             building_class: 100;
             availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, ABOVE_SNOWLINE),
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }

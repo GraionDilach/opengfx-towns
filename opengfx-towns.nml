@@ -76,7 +76,7 @@ grf {
 
         enable_misc {
             type: bool;
-            bit: 5;
+            bit: 6;
             name: string(STR_PARAM_NAME_ENABLE_MISC);
             desc: string(STR_PARAM_DESC_ENABLE_MISC);
             def_value: 0;

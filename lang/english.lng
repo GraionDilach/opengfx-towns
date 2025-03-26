@@ -54,8 +54,22 @@ STR_PARAM_HOTEL_TOURIST_ACCEPT              :Partial acceptance
 STR_PARAM_HOTEL_TOURIST_PRODUCE_UNIQUE      :Full acceptance and production, each hotel type is limited to one per town
 STR_PARAM_HOTEL_TOURIST_PRODUCE             :Full acceptance and production, unlimited count
 
+# UKTS
+# Church - reuses TTD string
+STR_NAME_COLLEGE                            :College
+# Flats - reuses TTD string
+STR_NAME_HOUSE                              :House
+# Office block - reuses TTD string
+STR_NAME_SCHOOL                             :School
+STR_NAME_SHOPS                              :Shops
+STR_NAME_SKYSCRAPER                         :Skyscraper
+# Stadium - reuses TTD string
+# Tall office block - reuses TTD string
+STR_NAME_TERRACED_HOUSES                    :Terraced houses
+# Warehouse - reuses TTD string
 
-STR_NAME_TRANSMITTER                        :Transmitter
+# Custom
 STR_NAME_LIGHTHOUSE                         :Lighthouse
-STR_NAME_RADIO_STATION                      :Radio Station
-#STR_NAME_BOILER_STATION                     :Boiler Station
+STR_NAME_RADIO_STATION                      :Radio station
+STR_NAME_TRANSMITTER                        :Transmitter
+#STR_NAME_BOILER_STATION                     :Boiler station

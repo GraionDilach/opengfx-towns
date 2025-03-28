@@ -7,5 +7,7 @@ expand UKTS ground tiles with desert variants
 lighthouse - add a function to only build it near sea
 transmitter - add a function to only build it above a certain population
 
+ukts house 5 - grab 5c from ogfx/buildings.png:549 and grab a second roof for a d variant
+
 radio station - move remap, snow frame, ground sprites (maybe a fence?)
 boiler station - rescale building to fit into a cell

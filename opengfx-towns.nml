@@ -1314,48 +1314,7 @@ if (enable_temperate) {
     }
 }
 
-spriteset (old_houses_1c_ground_childsprite) {
-    sprite_null()
-    sprite_null() // would be 1491, though, but delay the transition
-    [ 434, 2904,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1491
-    [ 434, 2904,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1491
-}
-
-spriteset (old_houses_1c_building) {
-    sprite_null()
-    [ 754, 2904,  30,  29, -17,  -6, "ogfx/buildings.png"] // 1492
-    [ 754, 2904,  30,  29, -17,  -6, "ogfx/buildings.png"] // 1492
-    [ 754, 2904,  30,  29, -17,  -6, "ogfx/buildings.png"] // 1492
-}
-
-spritelayout sprite_old_houses_1c {
-    ground {
-        sprite: GROUNDSPRITE_CLEARED;
-    }
-    childsprite {
-        sprite: old_houses_1c_ground_childsprite;
-        always_draw: 1;
-    }
-    building {
-        sprite: old_houses_1c_building;
-    }
-}
-
-if (enable_temperate) {
-    item(FEAT_HOUSES, item_old_houses_1c) {
-        property {
-            substitute: 0x18;
-            accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
-            ];
-        }
-        graphics {
-            default: sprite_old_houses_1c;
-        }
-    }
-}
+// 0x18 var C is a variant of ukts_house_3, skipped
 
 spriteset (old_houses_1d_ground_childsprite) {
     sprite_null()
@@ -1937,6 +1896,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
         }
     }
 }
+
 // 0x25 var A is a variant of ukts_house_2, skipped
 
 spriteset (houses2b_ground_childsprite) {
@@ -9852,6 +9812,113 @@ if (enable_uktownset || enable_temperate || enable_arctic) {
         }
         graphics {
             default: sprite_ukts_house_2;
+        }
+    }
+}
+
+spriteset (ukts_house_3_ground_temperate) {
+    [ 131,  145,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 131,   49,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+}
+
+spriteset (ukts_house_3_ground_arctic) {
+    [ 131,  145,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 131,   49,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+}
+
+spriteset (ukts_house_3_ground_snow) {
+    [ 131,  145,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 131,    1,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+}
+
+spriteset (ukts_house_3_ground_tropic) {
+    [ 131,  145,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 131,   49,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+}
+
+spriteset (ukts_house_3_building) {
+    [ 131,  145,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 131,   49,  64,  47, -31, -16, "uktownset22/houses.png"]
+}
+
+spriteset (ukts_house_3_building_snow) {
+    [ 131,  145,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 131,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 131,    1,  64,  47, -31, -16, "uktownset22/houses.png"]
+}
+
+spritelayout sprite_ukts_house_3 {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_house_3_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_3_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_3_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_3_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_3_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_house_3_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_house_3_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+if (enable_uktownset || enable_temperate) {
+    item(FEAT_HOUSES, item_ukts_house_3) {
+        property {
+            substitute: 0x19;
+            name: string(STR_NAME_HOUSE);
+            population: 12;
+            mail_multiplier: 4;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_house_3;
         }
     }
 }

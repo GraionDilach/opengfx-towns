@@ -10,6 +10,9 @@ transmitter - add a function to only build it above a certain population
 ukts house 5 - grab 5c from ogfx/buildings.png:549 and grab a second roof for a d variant
 
 ukts house 9 - grab 9c from ogfx/buildings.png:645 and grab a second roof for a d variant
+ukts house 10 - eanble uncommented variant and grab a second roof for a d variant
+ukts house 13 - enable uncommented variant and grab a second roof for a d variant
+ukts house 16 - slap a second roof on UKTS variant and grab ogfx/buildings.png:848
 
 radio station - move remap, snow frame, ground sprites (maybe a fence?)
 boiler station - rescale building to fit into a cell

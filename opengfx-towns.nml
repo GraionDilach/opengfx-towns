@@ -1156,48 +1156,7 @@ if (enable_temperate) {
 
 // 0x18 var C is a variant of ukts_house_3, skipped
 
-spriteset (old_houses_1d_ground_childsprite) {
-    sprite_null()
-    sprite_null() // would be 1493, though, but delay the transition
-    [ 258, 3480,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1493
-    [ 258, 3480,  64,  35, -31,  -4, "ogfx/buildings.png"] // 1493
-}
-
-spriteset (old_houses_1d_building) {
-    sprite_null()
-    [ 434, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"] // 1494
-    [ 434, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"] // 1494
-    [ 434, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"] // 1494
-}
-
-spritelayout sprite_old_houses_1d {
-    ground {
-        sprite: GROUNDSPRITE_CLEARED;
-    }
-    childsprite {
-        sprite: old_houses_1d_ground_childsprite;
-        always_draw: 1;
-    }
-    building {
-        sprite: old_houses_1d_building;
-    }
-}
-
-if (enable_temperate) {
-    item(FEAT_HOUSES, item_old_houses_1d) {
-        property {
-            substitute: 0x18;
-            accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
-            ];
-        }
-        graphics {
-            default: sprite_old_houses_1d;
-        }
-    }
-}
+// 0x18 var D is a variant of ukts_house_11, skipped
 
 spriteset (cottages_1_ground_childsprite) {
     sprite_null()
@@ -2334,92 +2293,7 @@ if (enable_arctic) {
     }
 }
 
-spriteset (houses_6_ground_childsprite) {
-    sprite_null()
-    sprite_null()
-    sprite_null()
-    [ 706, 3528,  64,  35, -31,  -4, "ogfx/buildings.png"] // 4466
-}
-
-spriteset (houses_6_ground_childsprite_snow) {
-    sprite_null()
-    sprite_null()
-    sprite_null()
-    [ 530, 3144,  64,  35, -31,  -4, "ogfx/buildings.png"] // 4580
-}
-
-spriteset (houses_6_building) {
-    [ 146, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4467
-    [ 194, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4468
-    [ 242, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4469
-    [ 242, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4469
-}
-
-spriteset (houses_6_building_snow) {
-    [ 146, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4467
-    [ 194, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4468
-    [ 242, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4469
-    [   2, 3624,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4581
-}
-
-spritelayout sprite_houses_6 {
-    ground {
-        sprite: GROUNDSPRITE_CLEARED;
-    }
-    childsprite {
-        sprite: houses_6_ground_childsprite;
-        hide_sprite: terrain_type == TILETYPE_SNOW;
-        always_draw: 1;
-    }
-    childsprite {
-        sprite: houses_6_ground_childsprite_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW;
-        always_draw: 1;
-    }
-    building {
-        sprite: houses_6_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-    }
-    building {
-        sprite: houses_6_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-    }
-}
-
-if (enable_arctic) {
-    item(FEAT_HOUSES, item_houses_6) {
-        property {
-            substitute: 0x3E;
-            availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        if (additional_colors == 0) {
-            graphics {
-                default: sprite_houses_6;
-            }
-        }
-        if (additional_colors == 1)
-        {
-            graphics {
-                default: sprite_houses_6;
-                colour: random_modest_company_color();
-            }
-        }
-        if (additional_colors == 2)
-        {
-            graphics {
-                default: sprite_houses_6;
-                colour: random_company_color();
-            }
-        }
-    }
-}
+// 0x3E is a variant of ukts_house_12, skipped
 
 spriteset (shops_and_offices_7_building) {
     sprite_null()
@@ -10385,6 +10259,264 @@ if (enable_uktownset || enable_arctic) {
         }
         graphics {
             default: sprite_ukts_house_10;
+        }
+    }
+}
+
+spriteset (ukts_house_11_ground_temperate) {
+    [ 651,  145,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 651,   49,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+}
+
+spriteset (ukts_house_11_ground_arctic) {
+    [ 651,  145,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 651,   49,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+}
+
+spriteset (ukts_house_11_ground_snow) {
+    [ 651,  145,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 651,    1,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+}
+
+spriteset (ukts_house_11_ground_tropic) {
+    [ 651,  145,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 651,   49,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+}
+
+spriteset (ukts_house_11a_building) {
+    [ 651,  145,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 434, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"] // 1494
+}
+
+spriteset (ukts_house_11a_building_snow) {
+    [ 651,  145,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 651,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 651,    1,  64,  47, -31, -16, "uktownset22/houses.png"]
+}
+
+spriteset (ukts_house_11b_building) {
+    [ 482, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"]
+    [ 530, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"]
+    [ 530, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"]
+    [ 578, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"]
+}
+
+spriteset (ukts_house_11b_building_snow) {
+    [ 482, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"]
+    [ 530, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"]
+    [ 530, 3480,  28,  27, -14,  -7, "ogfx/buildings.png"]
+    [ 322, 3528,  28,  27, -14,  -7, "ogfx/buildings.png"]
+}
+
+spritelayout sprite_ukts_house_11 {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_house_11_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_11_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_11_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_11_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_11_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_house_11a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
+    }
+    building {
+        sprite: ukts_house_11a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
+    }
+    building {
+        sprite: ukts_house_11b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
+    }
+    building {
+        sprite: ukts_house_11b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
+    }
+}
+
+if (enable_uktownset || enable_temperate) {
+    item(FEAT_HOUSES, item_ukts_house_11) {
+        property {
+            substitute: 0x19;
+            name: string(STR_NAME_HOUSE);
+            population: 12;
+            mail_multiplier: 4;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_house_11;
+        }
+    }
+}
+
+spriteset (ukts_house_12_ground_temperate) {
+    [ 716,  145,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+    [ 716,   49,  64,  47, -31, -16, "uktownset22/houses_ground_temp.png"]
+}
+
+spriteset (ukts_house_12_ground_arctic) {
+    [ 716,  145,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 716,   49,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+}
+
+spriteset (ukts_house_12_ground_snow) {
+    [ 716,  145,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+    [ 716,    1,  64,  47, -31, -16, "uktownset22/houses_ground_arctic.png"]
+}
+
+spriteset (ukts_house_12_ground_tropic) {
+    [ 716,  145,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+    [ 716,   49,  64,  47, -31, -16, "uktownset22/houses_ground_tropic.png"]
+}
+
+spriteset (ukts_house_12a_building) {
+    [ 716,  145,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 716,   49,  64,  47, -31, -16, "uktownset22/houses.png"]
+}
+
+spriteset (ukts_house_12a_building_snow) {
+    [ 716,  145,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 716,   97,  64,  47, -31, -16, "uktownset22/houses.png"]
+    [ 716,    1,  64,  47, -31, -16, "uktownset22/houses.png"]
+}
+
+spriteset (ukts_house_12b_building) {
+    [ 146, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4467
+    [ 194, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4468
+    [ 194, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4468
+    [ 242, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4469
+}
+
+spriteset (ukts_house_12b_building_snow) {
+    [ 146, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4467
+    [ 194, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4468
+    [ 194, 3576,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4468
+    [   2, 3624,  36,  25, -16,  -2, "ogfx/buildings.png"] // 4581
+}
+
+spritelayout sprite_ukts_house_12 {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_house_12_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_12_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_12_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_12_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_house_12_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_house_12a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
+    }
+    building {
+        sprite: ukts_house_12a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
+    }
+    building {
+        sprite: ukts_house_12b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
+    }
+    building {
+        sprite: ukts_house_12b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_house_12) {
+        property {
+            substitute: 0x19;
+            name: string(STR_NAME_HOUSE);
+            population: 12;
+            mail_multiplier: 4;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_house_12;
         }
     }
 }

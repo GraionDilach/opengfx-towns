@@ -10727,7 +10727,7 @@ spritelayout sprite_ukts_house_16 {
     }
 }
 
-if (enable_uktownset) {
+if (enable_uktownset || enable_temperate) {
     item(FEAT_HOUSES, item_ukts_house_16) {
         property {
             substitute: 0x19;

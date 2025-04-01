@@ -15,6 +15,7 @@ ukts house 13 - enable uncommented variant and grab a second roof for a d varian
 ukts house 16 - slap a second roof on UKTS variant and grab ogfx/buildings.png:848
 
 ukts offices 1 - recolor ew sprite to be a copy of ogfx 1425, code result in as cosmetic?
+ukts offices 3 - recolor ns sprite to be a copy of ogfx 1428, code result in as cosmetic?
 
 radio station - move remap, snow frame, ground sprites (maybe a fence?)
 boiler station - rescale building to fit into a cell

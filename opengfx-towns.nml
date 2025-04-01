@@ -299,7 +299,7 @@ switch (FEAT_HOUSES, SELF, college_construction_check, (
 
 switch (FEAT_HOUSES, SELF, switch_check_road_north_4_faced, nearby_tile_class(-1, 0)) {
     TILE_CLASS_ROAD:  4;
-    CB_RESULT_DO_NOTHING;
+    1 + pseudo_random_bits;
 }
 switch (FEAT_HOUSES, SELF, switch_check_road_east_4_faced, nearby_tile_class(0, 1)) {
     TILE_CLASS_ROAD:  3;
@@ -320,7 +320,7 @@ switch (FEAT_HOUSES, SELF, switch_check_road_initial_4_faced, animation_frame) {
 
 switch (FEAT_HOUSES, SELF, switch_check_road_north_2_faced, nearby_tile_class(-1, 0)) {
     TILE_CLASS_ROAD:  2;
-    CB_RESULT_DO_NOTHING;
+    1 + (pseudo_random_bits & 0x01);
 }
 switch (FEAT_HOUSES, SELF, switch_check_road_east_2_faced, nearby_tile_class(0, 1)) {
     TILE_CLASS_ROAD:  1;
@@ -10791,32 +10791,32 @@ spritelayout sprite_ukts_offices_1 {
     childsprite {
         sprite: ukts_offices_1_ns_ground;
         always_draw: 1;
-        hide_sprite: !(animation_frame == 2 || (animation_frame == 0 && pseudo_random_bits & 0x01 == 0));
+        hide_sprite: animation_frame != 2;
     }
     childsprite {
         sprite: ukts_offices_1_ew_ground;
         always_draw: 1;
-        hide_sprite: !(animation_frame == 1 || (animation_frame == 0 && pseudo_random_bits & 0x01 == 1));
+        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_offices_1_ns_building;
         hide_sprite: terrain_type == TILETYPE_SNOW
-            || !(animation_frame == 2 || (animation_frame == 0 && pseudo_random_bits & 0x01 == 0));
+            || animation_frame != 2;
     }
     building {
         sprite: ukts_offices_1_ns_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW
-            || !(animation_frame == 2 || (animation_frame == 0 && pseudo_random_bits & 0x01 == 0));
+            || animation_frame != 2;
     }
     building {
         sprite: ukts_offices_1_ew_building;
         hide_sprite: terrain_type == TILETYPE_SNOW
-            || !(animation_frame == 1 || (animation_frame == 0 && pseudo_random_bits & 0x01 == 1));
+            || animation_frame != 1;
     }
     building {
         sprite: ukts_offices_1_ew_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW
-            || !(animation_frame == 1 || (animation_frame == 0 && pseudo_random_bits & 0x01 == 1));
+            || animation_frame != 1;
     }
 }
 

@@ -10863,7 +10863,7 @@ spriteset (ukts_offices_2_ns_building_snow) {
 }
 
 spriteset (ukts_offices_2_ew_ground) {
-    [ 13,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 202,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 202,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 202,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 202,  274,  66,  90, -32, -59, "uktownset22/offices.png"]

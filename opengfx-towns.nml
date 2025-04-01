@@ -10711,20 +10711,6 @@ spriteset (ukts_offices_1_ew_building_snow) {
     [  68,    1,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
-// spriteset (tall_office_block_1_ground_childsprite) {
-//     sprite_null()
-//     sprite_null()
-//     sprite_null()
-//     [   0,  176,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1424
-// }
-//
-// spriteset (tall_office_block_1_building) {
-//     [   0,    0,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1421
-//     [  82,  456,  66,  87, -32, -56, "ogfx/buildings.png"]                   // 1422
-//     [   0,   88,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1425
-//     [   0,   88,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1425
-// }
-
 spritelayout sprite_ukts_offices_1 {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
@@ -10923,20 +10909,6 @@ spriteset (ukts_offices_3_ew_building_snow) {
     [ 336,    1,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
-// spriteset (office_block_1_ground_childsprite) {
-//     sprite_null()
-//     sprite_null()
-//     sprite_null()
-//     [   0,  264,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1429
-// }
-//
-// spriteset (office_block_1_building) {
-//     [   0,    0,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1426
-//     [   0,   88,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1427
-//     [   0,  176,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1428
-//     [   0,  176,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1428
-// }
-
 spritelayout sprite_ukts_offices_3 {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
@@ -10993,6 +10965,133 @@ if (enable_uktownset || enable_temperate) {
         }
     }
 }
+
+spriteset (ukts_offices_4_ns_ground) {
+    [ 403,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 403,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 403,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 403,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_4_ns_building) {
+    sprite_null()
+    [ 403,  183,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 403,  183,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 403,   92,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_4_ns_building_snow) {
+    sprite_null()
+    [ 403,  183,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 403,  183,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 403,    1,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_4_ew_ground) {
+    [ 470,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 470,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 470,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 470,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_4_ew_building) {
+    sprite_null()
+    [ 470,  183,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 470,  183,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 470,   92,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_4_ew_building_snow) {
+    sprite_null()
+    [ 470,  183,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 470,  183,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 470,    1,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spritelayout sprite_ukts_offices_4 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_offices_4_ns_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_offices_4_ew_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_offices_4_ns_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+    }
+    building {
+        sprite: ukts_offices_4_ns_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+    }
+    building {
+        sprite: ukts_offices_4_ew_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+    }
+    building {
+        sprite: ukts_offices_4_ew_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_offices_4) {
+        property {
+            substitute: 0x04;
+            name: TTD_STR_TOWN_BUILDING_NAME_OFFICES_1;
+            population: 72;
+            mail_multiplier: 20;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 6], [MAIL, 4], [GOOD, 3]];
+            availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_2_faced;
+            default: sprite_ukts_offices_4;
+        }
+    }
+}
+
+// spriteset (tall_office_block_1_ground_childsprite) {
+//     sprite_null()
+//     sprite_null()
+//     sprite_null()
+//     [   0,  176,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1424
+// }
+//
+// spriteset (tall_office_block_1_building) {
+//     [   0,    0,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1421
+//     [  82,  456,  66,  87, -32, -56, "ogfx/buildings.png"]                   // 1422
+//     [   0,   88,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1425
+//     [   0,   88,  66,  87, -32, -56, "ogfx/base-1421.1425.1424-offices.png"] // 1425
+// }
+
+// spriteset (office_block_1_ground_childsprite) {
+//     sprite_null()
+//     sprite_null()
+//     sprite_null()
+//     [   0,  264,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1429
+// }
+//
+// spriteset (office_block_1_building) {
+//     [   0,    0,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1426
+//     [   0,   88,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1427
+//     [   0,  176,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1428
+//     [   0,  176,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1428
+// }
 
 /// ==============================
 /// ==== Additional derivates ====

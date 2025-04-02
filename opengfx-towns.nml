@@ -339,6 +339,12 @@ switch (FEAT_HOUSES, SELF, switch_check_road_initial_2_faced, animation_frame) {
     CB_RESULT_DO_NOTHING;
 }
 
+switch (FEAT_HOUSES, SELF, radio_construction_check, (
+    has_population(2000)
+    && has_population(same_class_count_town * 2000)
+    && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
+)) {return;}
+
 /// =================
 /// ==== OpenGFX ====
 /// =================
@@ -11260,7 +11266,7 @@ if (enable_misc) {
         }
         graphics {
             default: sprite_transmitter;
-            construction_check: same_class_count_town == 0;
+            construction_check: radio_construction_check;
         }
     }
 }
@@ -11356,7 +11362,7 @@ if (enable_misc) {
             graphics {
                 graphics_north: sprite_radio_station_N;
                 graphics_east: sprite_radio_station_E;
-                construction_check: same_class_count_town == 0;
+                construction_check: radio_construction_check;
                 colour: random_company_color();
             }
         }

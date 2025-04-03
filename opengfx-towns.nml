@@ -1845,57 +1845,8 @@ if (enable_arctic || enable_tropic) {
 
 // 0x38 var B is a clone of UKTS house 6
 
-//this one's a mess on TTD, gotta standardize a bit
-spriteset (shops_and_offices_6_ground) {
-    [  66,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4458
-    [  66,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4458
-    [  66,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4459 is a duplicate
-    [  66,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4459 is a duplicate
-}
 
-spriteset (shops_and_offices_6_building) {
-    sprite_null()
-    [ 146,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4460
-    [ 226,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4461
-    [ 226,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4461
-}
-
-spriteset (shops_and_offices_6_building_snow) {
-    sprite_null()
-    [ 146,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4460
-    [ 226,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4461
-    [ 466,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4578
-}
-
-spritelayout sprite_shops_and_offices_6 {
-    ground {
-        sprite: shops_and_offices_6_ground;
-    }
-    building {
-        sprite: shops_and_offices_6_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW;
-    }
-    building {
-        sprite: shops_and_offices_6_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_arctic) {
-    item(FEAT_HOUSES, item_shops_and_offices_6) {
-        property {
-            substitute: 0x3A;
-            accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_shops_and_offices_6;
-        }
-    }
-}
+// 0x3A is a clone of UKTS offices 6
 
 // gonna reorg this one for polish
 spriteset (church_2_ground) {
@@ -11071,6 +11022,204 @@ if (enable_uktownset) {
     }
 }
 
+spriteset (ukts_offices_5_ns_ground) {
+    [   1,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [   1,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [   1,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [   1,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_5_ns_building) {
+    sprite_null()
+    [   1,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [   1,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [   1,  456,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_5_ns_building_snow) {
+    sprite_null()
+    [   1,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [   1,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [   1,  365,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_5_ew_ground) {
+    [  68,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [  68,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [  68,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [  68,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_5_ew_building) {
+    sprite_null()
+    [  68,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [  68,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [  68,  456,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_5_ew_building_snow) {
+    sprite_null()
+    [  68,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [  68,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [  68,  365,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spritelayout sprite_ukts_offices_5 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_offices_5_ns_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_offices_5_ew_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_offices_5_ns_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+    }
+    building {
+        sprite: ukts_offices_5_ns_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+    }
+    building {
+        sprite: ukts_offices_5_ew_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+    }
+    building {
+        sprite: ukts_offices_5_ew_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_offices_5) {
+        property {
+            substitute: 0x04;
+            name: TTD_STR_TOWN_BUILDING_NAME_OFFICES_1;
+            population: 72;
+            mail_multiplier: 20;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 6], [MAIL, 4], [GOOD, 3]];
+            availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_2_faced;
+            default: sprite_ukts_offices_5;
+        }
+    }
+}
+
+spriteset (ukts_offices_6_ns_ground) {
+    [ 135,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 135,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 135,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 135,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_6_ns_building) {
+    sprite_null()
+    [ 135,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 135,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 135,  456,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_6_ns_building_snow) {
+    sprite_null()
+    [ 135,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 135,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 135,  365,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_6_ew_ground) {
+    [ 202,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 202,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 202,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 202,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_6_ew_building) {
+    sprite_null()
+    [ 202,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 202,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 202,  456,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spriteset (ukts_offices_6_ew_building_snow) {
+    sprite_null()
+    [ 202,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 202,  547,  66,  90, -32, -59, "uktownset22/offices.png"]
+    [ 202,  365,  66,  90, -32, -59, "uktownset22/offices.png"]
+}
+
+spritelayout sprite_ukts_offices_6 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_offices_6_ns_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_offices_6_ew_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_offices_6_ns_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+    }
+    building {
+        sprite: ukts_offices_6_ns_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+    }
+    building {
+        sprite: ukts_offices_6_ew_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+    }
+    building {
+        sprite: ukts_offices_6_ew_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+    }
+}
+
+if (enable_uktownset || enable_arctic) {
+    item(FEAT_HOUSES, item_ukts_offices_6) {
+        property {
+            substitute: 0x04;
+            name: TTD_STR_TOWN_BUILDING_NAME_OFFICES_1;
+            population: 72;
+            mail_multiplier: 20;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 6], [MAIL, 4], [GOOD, 3]];
+            availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_2_faced;
+            default: sprite_ukts_offices_6;
+        }
+    }
+}
+
 // spriteset (tall_office_block_1_ground_childsprite) {
 //     sprite_null()
 //     sprite_null()
@@ -11098,6 +11247,27 @@ if (enable_uktownset) {
 //     [   0,  176,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1428
 //     [   0,  176,  66,  87, -32, -56, "ogfx/base-1426-1429-flats.png"] // 1428
 // }
+
+//spriteset (shops_and_offices_6_ground) {
+//    [  66,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4458
+//    [  66,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4458
+//    [  66,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4459 is a duplicate
+//    [  66,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4459 is a duplicate
+//}
+//
+//spriteset (shops_and_offices_6_building) {
+//    sprite_null()
+//    [ 146,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4460
+//    [ 226,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4461
+//    [ 226,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4461
+//}
+//
+//spriteset (shops_and_offices_6_building_snow) {
+//    sprite_null()
+//    [ 146,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4460
+//    [ 226,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4461
+//    [ 466,  792,  66,  87, -31, -56, "ogfx/buildings.png"] // 4578
+//}
 
 /// ==============================
 /// ==== Additional derivates ====

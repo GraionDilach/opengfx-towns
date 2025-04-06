@@ -1295,6 +1295,10 @@ spriteset (shopping_mall_1_N_building) {
 
 spritelayout sprite_shopping_mall_1_N {
     ground {
+        sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        always_draw: 1;
         sprite: shopping_mall_1_N_ground;
     }
     building {
@@ -1318,6 +1322,10 @@ spriteset (shopping_mall_1_E_building) {
 
 spritelayout sprite_shopping_mall_1_E {
     ground {
+        sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        always_draw: 1;
         sprite: shopping_mall_1_E_ground;
     }
     building {
@@ -1341,6 +1349,10 @@ spriteset (shopping_mall_1_W_building) {
 
 spritelayout sprite_shopping_mall_1_W {
     ground {
+        sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        always_draw: 1;
         sprite: shopping_mall_1_W_ground;
     }
     building {
@@ -1357,6 +1369,10 @@ spriteset (shopping_mall_1_S_ground) {
 
 spritelayout sprite_shopping_mall_1_S {
     ground {
+        sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        always_draw: 1;
         sprite: shopping_mall_1_S_ground;
     }
     //no building sprite

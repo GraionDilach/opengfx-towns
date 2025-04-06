@@ -361,22 +361,22 @@ switch (FEAT_HOUSES, SELF, radio_construction_check, (
 spriteset (large_office_block_1_building) {
     [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440
     [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
-    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
+//    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
     [ 450,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1442
 }
 
 spriteset (large_office_block_1_snow) {
     [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440
     [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
-    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
+//    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
     [ 578,  568,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 4569
 }
 
 spriteset (large_office_block_1_elevator) {
     [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
-    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
-    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
-    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
+//    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
+//    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
+//    [ 530,    8,   3,  14,   0,  -2, "ogfx/temprtbuilds.png"] // 1444
 }
 
 
@@ -439,14 +439,14 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 spriteset (temperate_hotel_N_building) {
     [ 562,    8,  64,  31, -31,  -3, "ogfx/temprtbuilds.png"] // 1448
     [ 642,    8,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1449
-    [ 642,    8,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1449
+//    [ 642,    8,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1449
     [ 722,    8,  64,  74, -31, -43, ANIM, "ogfx/temprtbuilds.png"] // 1450
 }
 
 spriteset (temperate_hotel_E_building) {
     [   2,  104,  64,  32, -31,  -4, "ogfx/temprtbuilds.png"] // 1451
     [  82,  104,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1452
-    [  82,  104,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1452
+//    [  82,  104,  64,  67, -31, -39, "ogfx/temprtbuilds.png"] // 1452
     [ 162,  104,  64,  71, -31, -43, ANIM, "ogfx/temprtbuilds.png"] // 1453
 }
 
@@ -582,9 +582,9 @@ if (enable_temperate) {
 
 spriteset (statue_1_building) {
     sprite_null()
-    sprite_null()
+//    sprite_null()
     [  18,   21,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
-    [  18,   21,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
+//    [  18,   21,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
 }
 
 spritelayout sprite_statue_1 {
@@ -613,9 +613,9 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 
 spriteset (fountain_1_building) {
     sprite_null()
-    sprite_null()
+//    sprite_null()
     [  41,   21,  34,  42, -17, -16, ANIM, "ogfx/statuefountain.png"] // 1455
-    [  41,   21,  34,  42, -17, -16, ANIM, "ogfx/statuefountain.png"] // 1455
+//    [  41,   21,  34,  42, -17, -16, ANIM, "ogfx/statuefountain.png"] // 1455
 }
 
 spritelayout sprite_fountain_1 {
@@ -645,8 +645,8 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 spriteset (park_1_building) {
     sprite_null()
     [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
-    [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
-    [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
+//    [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
+//    [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
 }
 
 spritelayout sprite_park_1 {
@@ -676,8 +676,8 @@ if (enable_temperate) {
 spriteset (park_2_building) {
     sprite_null()
     [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
-    [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
-    [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
+//    [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
+//    [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
 }
 
 spritelayout sprite_park_2 {
@@ -708,7 +708,7 @@ spriteset (office_block_2_building) {
     [ 434,  104,  52,  31, -25,  -3, "ogfx/temprtbuilds.png"] // 1458
     [ 498,  104,  52,  61, -25, -33, "ogfx/temprtbuilds.png"] // 1459
     [ 562,  104,  52,  61, -25, -33, "ogfx/temprtbuilds.png"] // 1460
-    [ 562,  104,  52,  61, -25, -33, "ogfx/temprtbuilds.png"] // 1460
+//    [ 562,  104,  52,  61, -25, -33, "ogfx/temprtbuilds.png"] // 1460
 }
 
 spritelayout sprite_office_block_2 {
@@ -756,7 +756,7 @@ spriteset (modern_office_building_1_building) {
     [ 642,  104,  52, 115, -24, -88, "ogfx/temprtbuilds.png"] // 1470
     [ 706,  104,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1471
     [   2,  232,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1472
-    [   2,  232,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1472
+//    [   2,  232,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1472
 }
 
 spritelayout sprite_modern_office_building_1 {
@@ -798,7 +798,7 @@ spriteset (warehouse_1_building) {
     [  82,  232,  48,  29, -23,  -5, "ogfx/temprtbuilds.png"] // 1473
     [ 146,  232,  48,  43, -23, -19, "ogfx/temprtbuilds.png"] // 1474
     [ 210,  232,  48,  44, -23, -20, "ogfx/temprtbuilds.png"] // 1475
-    [ 210,  232,  48,  44, -23, -20, "ogfx/temprtbuilds.png"] // 1475
+//    [ 210,  232,  48,  44, -23, -20, "ogfx/temprtbuilds.png"] // 1475
 }
 
 spritelayout sprite_warehouse_1 {
@@ -829,16 +829,16 @@ if (enable_temperate) {
 
 spriteset (stadium_1_N_ground) {
     [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
-    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
-    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
-    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
+//    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
+//    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
+//    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
 }
 
 spriteset (stadium_1_N_building) {
     sprite_null()
     [   0, 352, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1483
-    [   0, 352, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1483
-    [   0, 352, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1483
+//    [   0, 352, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1483
+//    [   0, 352, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1483
 }
 
 spritelayout sprite_stadium_1_N {
@@ -852,16 +852,16 @@ spritelayout sprite_stadium_1_N {
 
 spriteset (stadium_1_E_ground) {
     [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
-    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
-    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
-    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
+//    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
+//    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
+//    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
 }
 
 spriteset (stadium_1_E_building) {
     sprite_null()
     [   0, 440, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1484
-    [   0, 440, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1484
-    [   0, 440, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1484
+//    [   0, 440, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1484
+//    [   0, 440, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1484
 }
 
 spritelayout sprite_stadium_1_E {
@@ -875,16 +875,16 @@ spritelayout sprite_stadium_1_E {
 
 spriteset (stadium_1_W_ground) {
     [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
-    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
-    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
-    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
+//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
+//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
+//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
 }
 
 spriteset (stadium_1_W_building) {
     sprite_null()
     [   0, 528, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1485
-    [   0, 528, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1485
-    [   0, 528, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1485
+//    [   0, 528, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1485
+//    [   0, 528, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1485
 }
 
 spritelayout sprite_stadium_1_W {
@@ -898,16 +898,16 @@ spritelayout sprite_stadium_1_W {
 
 spriteset (stadium_1_S_ground) {
     [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
-    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
-    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
-    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
+//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
+//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
+//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
 }
 
 spriteset (stadium_1_S_building) {
     sprite_null()
     [   0, 616, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1486
-    [   0, 616, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1486
-    [   0, 616, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1486
+//    [   0, 616, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1486
+//    [   0, 616, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1486
 }
 
 spritelayout sprite_stadium_1_S {
@@ -976,7 +976,7 @@ spriteset (tall_office_block_2_building) {
     [ 146,    8,  64,  45, -31, -14, "ogfx/morebuildings.png"] // 1531
     [ 306,    8,  64, 106, -31, -75, "ogfx/morebuildings.png"] // 1533
     [ 466,    8,  64, 106, -31, -75, "ogfx/morebuildings.png"] // 1535
-    [ 466,    8,  64, 106, -31, -75, "ogfx/morebuildings.png"] // 1535
+//    [ 466,    8,  64, 106, -31, -75, "ogfx/morebuildings.png"] // 1535
 }
 
 spritelayout sprite_tall_office_block_2 {
@@ -1039,7 +1039,7 @@ spriteset (shops_and_offices_5_building) {
     [ 258,  360,  62,  48, -30, -20, "ogfx/temprtbuilds.png"] // 1541
     [ 418,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1543
     [ 578,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1545
-    [ 578,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1545
+//    [ 578,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1545
 }
 
 spritelayout sprite_shops_and_offices_5 {
@@ -1068,9 +1068,9 @@ if (enable_temperate || enable_tropic) {
 
 spriteset (theater_1_building) {
     sprite_null()
-    sprite_null() // was 1553
+//    sprite_null() // was 1553
     [ 642,    8,  64,  55, -31, -24, ANIM, "ogfx/morebuildings.png"] // 1553
-    [ 642,    8,  64,  55, -31, -24, ANIM, "ogfx/morebuildings.png"] // 1553
+//    [ 642,    8,  64,  55, -31, -24, ANIM, "ogfx/morebuildings.png"] // 1553
 }
 
 spritelayout sprite_theater_1 {
@@ -1100,16 +1100,16 @@ if (enable_temperate) {
 
 spriteset (stadium_2_N_ground) {
     [   0, 176, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1554
-    [   0, 176, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1554
-    [   0, 176, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1554
-    [   0, 176, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1554
+//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1554
+//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1554
+//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1554
 }
 
 spriteset (stadium_2_N_building) {
     sprite_null()
     [   0, 352, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1558
-    [   0, 352, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1558
-    [   0, 352, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1558
+//    [   0, 352, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1558
+//    [   0, 352, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1558
 }
 
 spritelayout sprite_stadium_2_N {
@@ -1123,16 +1123,16 @@ spritelayout sprite_stadium_2_N {
 
 spriteset (stadium_2_E_ground) {
     [   0,  88, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1555
-    [   0,  88, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1555
-    [   0,  88, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1555
-    [   0,  88, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1555
+//    [   0,  88, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1555
+//    [   0,  88, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1555
+//    [   0,  88, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1555
 }
 
 spriteset (stadium_2_E_building) {
     sprite_null()
     [   0, 440, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1559
-    [   0, 440, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1559
-    [   0, 440, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1559
+//    [   0, 440, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1559
+//    [   0, 440, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1559
 }
 
 spritelayout sprite_stadium_2_E {
@@ -1146,16 +1146,16 @@ spritelayout sprite_stadium_2_E {
 
 spriteset (stadium_2_W_ground) {
     [   0,   0, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1556
-    [   0,   0, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1556
-    [   0,   0, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1556
-    [   0,   0, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1556
+//    [   0,   0, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1556
+//    [   0,   0, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1556
+//    [   0,   0, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1556
 }
 
 spriteset (stadium_2_W_building) {
     sprite_null()
     [   0, 616, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1560
-    [   0, 616, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1560
-    [   0, 616, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1560
+//    [   0, 616, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1560
+//    [   0, 616, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1560
 }
 
 spritelayout sprite_stadium_2_W {
@@ -1169,16 +1169,16 @@ spritelayout sprite_stadium_2_W {
 
 spriteset (stadium_2_S_ground) {
     [   0, 264, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1557
-    [   0, 264, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1557
-    [   0, 264, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1557
-    [   0, 264, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1557
+//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1557
+//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1557
+//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1557
 }
 
 spriteset (stadium_2_S_building) {
     sprite_null()
     [   0, 528, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1561
-    [   0, 528, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1561
-    [   0, 528, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1561
+//    [   0, 528, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1561
+//    [   0, 528, 66, 87, -32, -56, "ogfx/base-1554-football.png"] // 1561
 }
 
 spritelayout sprite_stadium_2_S {
@@ -1214,7 +1214,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 spriteset (offices_1_building) {
     sprite_null()
     [ 338,  568,  37, 132, -18, -108, "ogfx/temprtbuilds.png"] // 1563
-    [ 338,  568,  37, 132, -18, -108, "ogfx/temprtbuilds.png"] // 1563
+//    [ 338,  568,  37, 132, -18, -108, "ogfx/temprtbuilds.png"] // 1563
     [ 466,  568,  37, 132, -18, -108, "ogfx/temprtbuilds.png"] // 1565
 }
 
@@ -1248,9 +1248,9 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 
 spriteset (cinema_1_building) {
     sprite_null()
-    sprite_null() // was 4405
+//    sprite_null() // was 4405
     [  82,  136,  64,  49, -31, -18, ANIM, "ogfx/morebuildings.png"] // 4405
-    [  82,  136,  64,  49, -31, -18, ANIM, "ogfx/morebuildings.png"] // 4405
+//    [  82,  136,  64,  49, -31, -18, ANIM, "ogfx/morebuildings.png"] // 4405
 }
 
 spritelayout sprite_cinema_1 {
@@ -1281,16 +1281,16 @@ if (enable_temperate) {
 
 spriteset (shopping_mall_1_N_ground) {
     [ 178,  136,  64,  33, -31,  -2, "ogfx/morebuildings.png"] // 4406
-    [ 178,  136,  64,  33, -31,  -2, "ogfx/morebuildings.png"] // 4406
+//    [ 178,  136,  64,  33, -31,  -2, "ogfx/morebuildings.png"] // 4406
     [ 514,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4411
-    [ 514,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4411
+//    [ 514,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4411
 }
 
 spriteset (shopping_mall_1_N_building) {
     sprite_null() // 4407 is an empty sprite
-    sprite_null() // 4407 is an empty sprite
+//    sprite_null() // 4407 is an empty sprite
     [ 594,  136,  64,  21, -31,  -6, "ogfx/morebuildings.png"] // 4412
-    [ 594,  136,  64,  21, -31,  -6, "ogfx/morebuildings.png"] // 4412
+//    [ 594,  136,  64,  21, -31,  -6, "ogfx/morebuildings.png"] // 4412
 }
 
 spritelayout sprite_shopping_mall_1_N {
@@ -1304,16 +1304,16 @@ spritelayout sprite_shopping_mall_1_N {
 
 spriteset (shopping_mall_1_E_ground) {
     [ 274,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4408
-    [ 274,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4408
+//    [ 274,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4408
     [ -31,   0, "ogfxplus/4413.png"] // 4413
-    [ -31,   0, "ogfxplus/4413.png"] // 4413
+//    [ -31,   0, "ogfxplus/4413.png"] // 4413
 }
 
 spriteset (shopping_mall_1_E_building) {
     sprite_null()
-    sprite_null()
+//    sprite_null()
     [ 754,  136,  32,  28,   1, -15, "ogfx/morebuildings.png"] // 4414
-    [ 754,  136,  32,  28,   1, -15, "ogfx/morebuildings.png"] // 4414
+//    [ 754,  136,  32,  28,   1, -15, "ogfx/morebuildings.png"] // 4414
 }
 
 spritelayout sprite_shopping_mall_1_E {
@@ -1327,16 +1327,16 @@ spritelayout sprite_shopping_mall_1_E {
 
 spriteset (shopping_mall_1_W_ground) {
     [ 354,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4409
-    [ 354,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4409
+//    [ 354,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4409
     [   2,  200,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4415
-    [   2,  200,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4415
+//    [   2,  200,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4415
 }
 
 spriteset (shopping_mall_1_W_building) {
     sprite_null()
-    sprite_null()
+//    sprite_null()
     [  82,  200,  32,  19, -31,  -6, "ogfx/morebuildings.png"] // 4416
-    [  82,  200,  32,  19, -31,  -6, "ogfx/morebuildings.png"] // 4416
+//    [  82,  200,  32,  19, -31,  -6, "ogfx/morebuildings.png"] // 4416
 }
 
 spritelayout sprite_shopping_mall_1_W {
@@ -1350,9 +1350,9 @@ spritelayout sprite_shopping_mall_1_W {
 
 spriteset (shopping_mall_1_S_ground) {
     [ 434,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4410
-    [ 434,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4410
+//    [ 434,  136,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4410
     [ 130,  200,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4417
-    [ 130,  200,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4417
+//    [ 130,  200,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 4417
 }
 
 spritelayout sprite_shopping_mall_1_S {
@@ -1391,13 +1391,13 @@ spriteset (tall_office_block_3_building) {
     [ 306,  200,  64,  54, -31, -23, "ogfx/morebuildings.png"] // 4435
     [ 386,  200,  64,  95, -31, -64, "ogfx/morebuildings.png"] // 4436
     [ 466,  200,  64,  95, -31, -64, "ogfx/morebuildings.png"] // 4437
-    [ 466,  200,  64,  95, -31, -64, "ogfx/morebuildings.png"] // 4437
+//    [ 466,  200,  64,  95, -31, -64, "ogfx/morebuildings.png"] // 4437
 }
 
 spriteset (tall_office_block_3_building_snow) {
     [ 306,  200,  64,  54, -31, -23, "ogfx/morebuildings.png"] // 4435
     [ 386,  200,  64,  95, -31, -64, "ogfx/morebuildings.png"] // 4436
-    [ 466,  200,  64,  95, -31, -64, "ogfx/morebuildings.png"] // 4437
+//    [ 466,  200,  64,  95, -31, -64, "ogfx/morebuildings.png"] // 4437
     [ 546,  200,  64,  95, -31, -64, "ogfx/morebuildings.png"] // 4574
 }
 
@@ -1452,13 +1452,13 @@ spriteset (tall_office_block_4_building) {
     [ 311,  308,  54,  60, -25, -31, "ogfx/morebuildings.png"] // 4439
     [ 375,  308,  53,  92, -25, -64, "ogfx/morebuildings.png"] // 4440
     [ 439,  308,  53,  92, -25, -64, "ogfx/morebuildings.png"] // 4441
-    [ 439,  308,  53,  92, -25, -64, "ogfx/morebuildings.png"] // 4441
+//    [ 439,  308,  53,  92, -25, -64, "ogfx/morebuildings.png"] // 4441
 }
 
 spriteset (tall_office_block_4_building_snow) {
     [ 311,  308,  54,  60, -25, -31, "ogfx/morebuildings.png"] // 4439
     [ 375,  308,  53,  92, -25, -64, "ogfx/morebuildings.png"] // 4440
-    [ 439,  308,  53,  92, -25, -64, "ogfx/morebuildings.png"] // 4441
+//    [ 439,  308,  53,  92, -25, -64, "ogfx/morebuildings.png"] // 4441
     [ 499,  308,  53,  92, -25, -64, "ogfx/morebuildings.png"] // 4575
 }
 
@@ -1513,13 +1513,13 @@ spriteset (tall_office_block_5_building) {
     [   2,  308,  64,  43, -31,  -12, "ogfx/morebuildings.png"] // 4443
     [   0,    0,  64, 149, -31, -119, "ogfx/base-4444.4445.4576-offices.png"] // 4444
     [   0,  150,  64, 149, -31, -119, "ogfx/base-4444.4445.4576-offices.png"] // 4445
-    [   0,  150,  64, 149, -31, -119, "ogfx/base-4444.4445.4576-offices.png"] // 4445
+//    [   0,  150,  64, 149, -31, -119, "ogfx/base-4444.4445.4576-offices.png"] // 4445
 }
 
 spriteset (tall_office_block_5_building_snow) {
     [   2,  308,  64,  43, -31,  -12, "ogfx/morebuildings.png"] // 4443
     [   0,    0,  64, 149, -31, -119, "ogfx/base-4444.4445.4576-offices.png"] // 4444
-    [   0,  150,  64, 149, -31, -119, "ogfx/base-4444.4445.4576-offices.png"] // 4445
+//    [   0,  150,  64, 149, -31, -119, "ogfx/base-4444.4445.4576-offices.png"] // 4445
     [   0,  300,  64, 149, -31, -119, "ogfx/base-4444.4445.4576-offices.png"] // 4576
 }
 
@@ -1574,14 +1574,13 @@ if (enable_arctic || enable_tropic) {
 
 // 0x38 var B is a clone of UKTS house 6
 
-
 // 0x3A is a clone of UKTS offices 6
 
 // gonna reorg this one for polish
 spriteset (church_2_ground) {
     [  80,   10,  64,  31, -31,   0, "ogfx/arcticchurch.png"] // 4463
-    [  80,   10,  64,  31, -31,   0, "ogfx/arcticchurch.png"] // 4463
-    [  80,   10,  64,  31, -31,   0, "ogfx/arcticchurch.png"] // 4463
+//    [  80,   10,  64,  31, -31,   0, "ogfx/arcticchurch.png"] // 4463
+//    [  80,   10,  64,  31, -31,   0, "ogfx/arcticchurch.png"] // 4463
     [   0,    0,  64,  31, -31,   0, "ogfx/base-4462-arctic-church-groundtile.png"] // 4462
 }
 
@@ -1589,13 +1588,13 @@ spriteset (church_2_building) {
     sprite_null()
     [ 150,   10,  64,  44, -31, -13, "ogfx/arcticchurch.png"] // 4464
     [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
-    [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
+//    [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
 }
 
 spriteset (church_2_building_snow) {
     sprite_null()
     [ 150,   10,  64,  44, -31, -13, "ogfx/arcticchurch.png"] // 4464
-    [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
+//    [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
     [ 290,   10,  64,  49, -31, -18, "ogfx/arcticchurch.png"] // 4579
 }
 
@@ -1639,21 +1638,21 @@ if (enable_arctic) {
 spriteset (arctic_hotel_N_ground_childsprite) {
     [   2,    9,  64,  33, -31,  -1, "ogfx/arctichotel.png"] // 4471
     sprite_null()
-    sprite_null()
-    sprite_null()
+//    sprite_null()
+//    sprite_null()
 }
 
 spriteset (arctic_hotel_N_building) {
     sprite_null()
     [ 162,    9,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4473
     [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
-    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
+//    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
 }
 
 spriteset (arctic_hotel_N_building_snow) {
     sprite_null()
     [ 162,    9,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4473
-    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
+//    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
     [ 128,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4583
 }
 
@@ -1682,21 +1681,21 @@ spritelayout sprite_arctic_hotel_N {
 spriteset (arctic_hotel_E_ground_childsprite) {
     [  82,    9,  64,  33, -31,  -1, "ogfx/arctichotel.png"] // 4472
     sprite_null()
-    sprite_null()
-    sprite_null()
+//    sprite_null()
+//    sprite_null()
 }
 
 spriteset (arctic_hotel_E_building) {
     sprite_null()
     [ 206,    9,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4474
     [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
-    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
+//    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
 }
 
 spriteset (arctic_hotel_E_building_snow) {
     sprite_null()
     [ 206,    9,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4474
-    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
+//    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
     [ 176,   80,  64,  64, -31, -33, "ogfx/arctichotel.png"] // 4584
 }
 
@@ -1831,22 +1830,22 @@ if (enable_arctic) {
 
 spriteset (tall_office_block_6_ground_childsprite) {
     [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
-    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
-    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
-    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
+//    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
+//    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
+//    [ -31,   0, "ogfxplus/4480.png"] // 4480, converted to an overlay
 }
 
 spriteset (tall_office_block_6_building) {
     sprite_null() // 4481 is empty
     [ 646,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4482
     [ 714,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4484
-    [ 714,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4484
+//    [ 714,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4484
 }
 
 spriteset (tall_office_block_6_building_snow) {
     sprite_null() // 4481 is empty
     [ 646,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4482
-    [ 714,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4484
+//    [ 714,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4484
     [ 784,    2,  64,  87, -31, -56, "ogfx/morebuilding2.png"] // 4585
 }
 
@@ -1903,21 +1902,21 @@ if (enable_arctic) {
 spriteset (tall_office_block_7_N_ground) {
     [  68,   68,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // "4487"
     [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
-    [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
-    [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
+//    [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
+//    [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
 }
 
 spriteset (tall_office_block_7_N_building) {
     sprite_null()
     [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
-    [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
+//    [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
     [ 212,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4491
 }
 
 spriteset (tall_office_block_7_N_building_snow) {
     sprite_null()
     [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
-    [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
+//    [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
     [ 504,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4586
 }
 
@@ -1938,21 +1937,21 @@ spritelayout sprite_tall_office_block_7_N {
 spriteset (tall_office_block_7_W_ground) {
     [   2,   68,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // "4488"
     [   2,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4486
-    [   2,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4486
+//    [   2,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4486
     [ -31,   0, "ogfxplus/4486.png"] // 4486, merged black blob from unused tile to fix transparency
 }
 
 spriteset (tall_office_block_7_W_building) {
     sprite_null()
     [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
-    [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
+//    [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
     [ 138,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4492
 }
 
 spriteset (tall_office_block_7_W_building_snow) {
     sprite_null()
     [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
-    [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
+//    [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
     [ 430,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4587
 }
 
@@ -1991,7 +1990,7 @@ if (enable_arctic) {
 spriteset (houses_7_building) {
     [ 402,    8,  64,  31, -31,   0, "ogfx/towns02.png"] // 4588
     [ 482,    8,  64,  47, -31, -16, "ogfx/towns02.png"] // 4589
-    [ 482,    8,  64,  47, -31, -16, "ogfx/towns02.png"] // 4589
+//    [ 482,    8,  64,  47, -31, -16, "ogfx/towns02.png"] // 4589
     [ 562,    8,  64,  63, -31, -32, "ogfx/towns02.png"] // 4590
 }
 
@@ -2023,7 +2022,7 @@ if (enable_tropic) {
 spriteset (houses_8_building) {
     [ 642,    8,  64,  31, -31,   0, "ogfx/towns02.png"] // 4591
     [ 722,    8,  64,  43, -31, -12, "ogfx/towns02.png"] // 4592
-    [ 722,    8,  64,  43, -31, -12, "ogfx/towns02.png"] // 4592
+//    [ 722,    8,  64,  43, -31, -12, "ogfx/towns02.png"] // 4592
     [   2,   88,  64,  40, -31,  -9, "ogfx/towns02.png"] // 4593
 }
 
@@ -2055,7 +2054,7 @@ if (enable_tropic) {
 spriteset (houses_9_building) {
     [  82,   88,  64,  31, -31,   0, "ogfx/towns02.png"] // 4594
     [ 162,   88,  64,  33, -31,  -2, "ogfx/towns02.png"] // 4595
-    [ 162,   88,  64,  33, -31,  -2, "ogfx/towns02.png"] // 4595
+//    [ 162,   88,  64,  33, -31,  -2, "ogfx/towns02.png"] // 4595
     [ 242,   88,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4596
 }
 
@@ -2086,9 +2085,9 @@ if (enable_tropic) {
 
 spriteset (houses_10a_building) {
     sprite_null()
-    sprite_null()
+//    sprite_null()
     [  66,    8,  64,  32, -31,  -1, "ogfx/towns02.png"] // 4597
-    [  66,    8,  64,  32, -31,  -1, "ogfx/towns02.png"] // 4597
+//    [  66,    8,  64,  32, -31,  -1, "ogfx/towns02.png"] // 4597
 }
 
 spritelayout sprite_houses_10a {
@@ -2117,9 +2116,9 @@ if (enable_tropic) {
 
 spriteset (houses_10b_building) {
     sprite_null()
-    sprite_null()
+//    sprite_null()
     [ 146,    8,  64,  54, -31, -23, "ogfx/towns02.png"] // 4598
-    [ 146,    8,  64,  54, -31, -23, "ogfx/towns02.png"] // 4598
+//    [ 146,    8,  64,  54, -31, -23, "ogfx/towns02.png"] // 4598
 }
 
 spritelayout sprite_houses_10b {
@@ -2148,9 +2147,9 @@ if (enable_tropic) {
 
 spriteset (houses_10c_building) {
     sprite_null()
-    sprite_null()
+//    sprite_null()
     [ 226,    8,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4599
-    [ 226,    8,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4599
+//    [ 226,    8,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4599
 }
 
 spritelayout sprite_houses_10c {
@@ -2179,9 +2178,9 @@ if (enable_tropic) {
 
 spriteset (houses_10d_building) {
     sprite_null()
-    sprite_null()
+//    sprite_null()
     [ 306,    8,  64,  46, -31, -15, "ogfx/towns02.png"] // 4600
-    [ 306,    8,  64,  46, -31, -15, "ogfx/towns02.png"] // 4600
+//    [ 306,    8,  64,  46, -31, -15, "ogfx/towns02.png"] // 4600
 }
 
 spritelayout sprite_houses_10d {
@@ -2211,7 +2210,7 @@ if (enable_tropic) {
 spriteset (flats_3_building) {
     [ 594,   88,  64,  35, -31,  -4, "ogfx/towns02.png"] // 4601
     [ 674,   88,  64, 112, -31, -81, "ogfx/towns02.png"] // 4602
-    [ 674,   88,  64, 112, -31, -81, "ogfx/towns02.png"] // 4602
+//    [ 674,   88,  64, 112, -31, -81, "ogfx/towns02.png"] // 4602
     [   2,  216,  64, 105, -31, -74, "ogfx/towns02.png"] // 4603
 }
 
@@ -2244,8 +2243,8 @@ if (enable_tropic) {
 spriteset (church_3_building) {
     sprite_null()
     [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
-    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
-    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
+//    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
+//    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
 }
 
 spritelayout sprite_church_3 {
@@ -2279,7 +2278,7 @@ if (enable_tropic) {
 spriteset (houses_11_building) {
     [ 338,   88,  64,  31, -31,   0, "ogfx/towns02.png"] // 4605
     [ 418,   88,  64,  47, -31, -16, "ogfx/towns02.png"] // 4606
-    [ 418,   88,  64,  47, -31, -16, "ogfx/towns02.png"] // 4606
+//    [ 418,   88,  64,  47, -31, -16, "ogfx/towns02.png"] // 4606
     [ 498,   88,  64,  47, -31, -17, "ogfx/towns02.png"] // 4607
 }
 
@@ -2311,7 +2310,7 @@ if (enable_tropic) {
 spriteset (flats_4_building) {
     [  98,  216,  64,  31, -31,   0, "ogfx/towns02.png"] // 4608
     [ 178,  216,  64,  74, -31, -43, "ogfx/towns02.png"] // 4609
-    [ 178,  216,  64,  74, -31, -43, "ogfx/towns02.png"] // 4609
+//    [ 178,  216,  64,  74, -31, -43, "ogfx/towns02.png"] // 4609
     [ 258,  216,  64,  74, -31, -43, "ogfx/towns02.png"] // 4610
 }
 
@@ -2354,7 +2353,7 @@ if (enable_tropic) {
 spriteset (flats_5_building) {
     [ 338,  216,  64,  31, -31,   0, "ogfx/towns02.png"] // 4611
     [ 418,  216,  64,  69, -31, -38, "ogfx/towns02.png"] // 4612
-    [ 418,  216,  64,  69, -31, -38, "ogfx/towns02.png"] // 4612
+//    [ 418,  216,  64,  69, -31, -38, "ogfx/towns02.png"] // 4612
     [ 498,  216,  64,  69, -31, -38, "ogfx/towns02.png"] // 4613
 }
 
@@ -2401,7 +2400,7 @@ if (enable_tropic) {
 spriteset (tall_office_block_8_N_building) {
     [ 594,   88,  64,  35, -31,  -4, "ogfx/towns02.png"] // "4614"
     [  10,   10,  32,  96,   1, -65, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4616
-    [  10,   10,  32,  96,   1, -65, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4616
+//    [  10,   10,  32,  96,   1, -65, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4616
     [ 120,   10,  32, 117,   1, -86, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4618
 }
 
@@ -2419,7 +2418,7 @@ spritelayout sprite_tall_office_block_8_N {
 spriteset (tall_office_block_8_W_building) {
     [ 594,   88,  64,  35, -31,   -4, "ogfx/towns02.png"] // "4615"
     [  50,   10,  64, 121, -31,  -90, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4617
-    [  50,   10,  64, 121, -31,  -90, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4617
+//    [  50,   10,  64, 121, -31,  -90, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4617
     [ 160,   10,  64, 133, -31, -102, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4619
 }
 
@@ -2469,7 +2468,7 @@ if (enable_tropic) {
 spriteset (flats_6_building) {
     [   2,  344,  64,  31, -31,   0, "ogfx/towns02.png"] // 4620
     [ 594,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4621
-    [ 594,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4621
+//    [ 594,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4621
     [ 674,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4622
 }
 
@@ -2504,7 +2503,7 @@ if (enable_tropic) {
 spriteset (tall_office_block_9_building) {
     [ 182,  189,  63,  30, -31,   0, "ogfx/tropical_modern_office.png"] // 4623
     [ 123,   70,  64,  63, -30, -32, "ogfx/tropical_modern_office.png"] // 4624
-    [ 123,   70,  64,  63, -30, -32, "ogfx/tropical_modern_office.png"] // 4624
+//    [ 123,   70,  64,  63, -30, -32, "ogfx/tropical_modern_office.png"] // 4624
     [ 195,  228,  63, 117, -31, -87, "ogfx/tropical_modern_office.png"] // 4625
 }
 
@@ -2578,56 +2577,56 @@ spriteset (ukts_church_small_1_ground_tropic) {
 spriteset (ukts_church_small_1a_building) {
     [ 66, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 66,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 66,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 66,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 66,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_1a_building_snow) {
     [ 66, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 66,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 66,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 66,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 66,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_1b_building) {
     [ 66, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 66, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 66, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 66, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 66, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_1b_building_snow) {
     [ 66, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 66, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 66, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 66, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 66, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_1c_building) {
     [ 326, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 326,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 326,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 326,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 326,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_1c_building_snow) {
     [ 326, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 326,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 326,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 326,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 326,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_1d_building) {
     [ 326, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 326, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 326, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 326, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 326, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_1d_building_snow) {
     [ 326, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 326, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 326, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 326, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 326, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
@@ -2750,56 +2749,56 @@ spriteset (ukts_church_small_2_ground_tropic) {
 spriteset (ukts_church_small_2a_building) {
     [ 131, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 131,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 131,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 131,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 131,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_2a_building_snow) {
     [ 131, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 131,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 131,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 131,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 131,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_2b_building) {
     [ 131, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 131, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 131, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 131, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 131, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_2b_building_snow) {
     [ 131, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 131, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 131, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 131, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 131, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_2c_building) {
     [ 391, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 391,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 391,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 391,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 391,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_2c_building_snow) {
     [ 391, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 391,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 391,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 391,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 391,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_2d_building) {
     [ 391, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 391, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 391, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 391, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 391, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_small_2d_building_snow) {
     [ 391, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 391, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 391, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 391, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 391, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
@@ -2894,56 +2893,56 @@ if (enable_uktownset) {
 spriteset (ukts_church_large_1a_building) {
     [ 1, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 1,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_1a_building_snow) {
     [ 1, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 1,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 1,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_1b_building) {
     [ 1, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 1, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_1b_building_snow) {
     [ 1, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 1, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 1, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_1c_building) {
     [ 261, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 261,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_1c_building_snow) {
     [ 261, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 261,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 261,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_1d_building) {
     [ 261, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 261, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_1d_building_snow) {
     [ 261, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 261, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 261, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
@@ -3009,56 +3008,56 @@ if (enable_uktownset) {
 spriteset (ukts_church_large_2a_building) {
     [ 196, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 196,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_2a_building_snow) {
     [ 196, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 196,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 196,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_2b_building) {
     [ 196, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 196, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_2b_building_snow) {
     [ 196, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 196, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 196, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_2c_building) {
     [ 456, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 456,  49, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_2c_building_snow) {
     [ 456, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 456,  97, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 456,   1, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_2d_building) {
     [ 456, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 456, 241, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
 spriteset (ukts_church_large_2d_building_snow) {
     [ 456, 337, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
-    [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
+//    [ 456, 289, 64, 47, -31, -16, "uktownset22/churches.png"]
     [ 456, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 

@@ -3309,112 +3309,96 @@ if (enable_uktownset) {
 }
 
 spriteset (ukts_college_N_ground_temperate) {
-    sprite_null()
     [ 10, 90, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 10, 50, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 10, 10, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_E_ground_temperate) {
-    sprite_null()
     [ 80, 90, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 80, 50, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 80, 10, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_W_ground_temperate) {
-    sprite_null()
     [ 150, 90, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 150, 50, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 150, 10, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_S_ground_temperate) {
-    sprite_null()
     [ 220, 90, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 220, 50, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 220, 10, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_N_ground_arctic) {
-    sprite_null()
     [ 10, 330, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 10, 290, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 10, 250, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_E_ground_arctic) {
-    sprite_null()
     [ 80, 330, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 80, 290, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 80, 250, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_W_ground_arctic) {
-    sprite_null()
     [ 150, 330, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 150, 290, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 150, 250, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_S_ground_arctic) {
-    sprite_null()
     [ 220, 330, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 220, 290, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 220, 250, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_N_ground_snow) {
-    sprite_null()
     [ 10, 450, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 10, 410, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 10, 370, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_E_ground_snow) {
-    sprite_null()
     [ 80, 450, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 80, 410, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 80, 370, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_W_ground_snow) {
-    sprite_null()
     [ 150, 450, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 150, 410, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 150, 370, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_S_ground_snow) {
-    sprite_null()
     [ 220, 450, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 220, 410, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 220, 370, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_N_ground_tropic) {
-    sprite_null()
     [ 10, 210, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 10, 170, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 10, 130, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_E_ground_tropic) {
-    sprite_null()
     [ 80, 210, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 80, 170, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 80, 130, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_W_ground_tropic) {
-    sprite_null()
     [ 150, 210, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 150, 170, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 150, 130, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
 }
 
 spriteset (ukts_college_S_ground_tropic) {
-    sprite_null()
     [ 220, 210, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 220, 170, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
     [ 220, 130, 64, 31, -31, 0, "uktownset22/college_ground_split.png"]
@@ -3423,13 +3407,11 @@ spriteset (ukts_college_S_ground_tropic) {
 spriteset (ukts_college_1a_N_building) {
     [ 10, 250, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10,  90, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1a_E_building) {
     [ 80, 250, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80,  90, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
@@ -3437,13 +3419,11 @@ spriteset (ukts_college_1a_E_building) {
 spriteset (ukts_college_1a_W_building) {
     [ 150, 250, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150,  90, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1a_S_building) {
     [ 220, 250, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220,  90, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
@@ -3451,13 +3431,11 @@ spriteset (ukts_college_1a_S_building) {
 spriteset (ukts_college_1a_N_building_snow) {
     [ 10, 250, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10,  10, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1a_E_building_snow) {
     [ 80, 250, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80,  10, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
@@ -3465,13 +3443,11 @@ spriteset (ukts_college_1a_E_building_snow) {
 spriteset (ukts_college_1a_W_building_snow) {
     [ 150, 250, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150,  10, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1a_S_building_snow) {
     [ 220, 250, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220,  10, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
@@ -3647,56 +3623,56 @@ spritelayout sprite_ukts_college_1a_S {
 spriteset (ukts_college_1b_N_building) {
     [ 410, 250, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410,  90, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1b_E_building) {
     [ 480, 250, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480,  90, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1b_W_building) {
     [ 550, 250, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550,  90, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1b_S_building) {
     [ 620, 250, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620,  90, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1b_N_building_snow) {
     [ 410, 250, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410,  10, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1b_E_building_snow) {
     [ 480, 250, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480,  10, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1b_W_building_snow) {
     [ 550, 250, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550,  10, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1b_S_building_snow) {
     [ 620, 250, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620,  10, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -3872,56 +3848,56 @@ spritelayout sprite_ukts_college_1b_S {
 spriteset (ukts_college_1c_N_building) {
     [ 10, 570, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 410, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1c_E_building) {
     [ 80, 570, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 410, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1c_W_building) {
     [ 150, 570, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 410, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1c_S_building) {
     [ 220, 570, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 410, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1c_N_building_snow) {
     [ 10, 570, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 330, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1c_E_building_snow) {
     [ 80, 570, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 330, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1c_W_building_snow) {
     [ 150, 570, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 330, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1c_S_building_snow) {
     [ 220, 570, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 330, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -4097,56 +4073,56 @@ spritelayout sprite_ukts_college_1c_S {
 spriteset (ukts_college_1d_N_building) {
     [ 410, 570, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 410, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1d_E_building) {
     [ 480, 570, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 410, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1d_W_building) {
     [ 550, 570, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 410, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1d_S_building) {
     [ 620, 570, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 410, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1d_N_building_snow) {
     [ 410, 570, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 490, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 330, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1d_E_building_snow) {
     [ 480, 570, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 330, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1d_W_building_snow) {
     [ 550, 570, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 330, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_1d_S_building_snow) {
     [ 620, 570, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 490, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 330, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -4375,56 +4351,56 @@ if (enable_uktownset) {
 spriteset (ukts_college_2a_N_building) {
     [ 10, 890, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 730, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2a_E_building) {
     [ 80, 890, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 730, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2a_W_building) {
     [ 150, 890, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 730, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2a_S_building) {
     [ 220, 890, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 730, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2a_N_building_snow) {
     [ 10, 890, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 650, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2a_E_building_snow) {
     [ 80, 890, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 650, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2a_W_building_snow) {
     [ 150, 890, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 650, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2a_S_building_snow) {
     [ 220, 890, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 650, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -4599,56 +4575,56 @@ spritelayout sprite_ukts_college_2a_S {
 spriteset (ukts_college_2b_N_building) {
     [ 410, 890, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 730, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2b_E_building) {
     [ 480, 890, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 730, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2b_W_building) {
     [ 550, 890, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 730, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2b_S_building) {
     [ 620, 890, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 730, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2b_N_building_snow) {
     [ 410, 890, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 650, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2b_E_building_snow) {
     [ 480, 890, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 650, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2b_W_building_snow) {
     [ 550, 890, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 810, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 650, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2b_S_building_snow) {
     [ 620, 890, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 810, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 650, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -4824,56 +4800,56 @@ spritelayout sprite_ukts_college_2b_S {
 spriteset (ukts_college_2c_N_building) {
     [ 10, 1210, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1050, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2c_E_building) {
     [ 80, 1210, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1050, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2c_W_building) {
     [ 150, 1210, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1050, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2c_S_building) {
     [ 220, 1210, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1050, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2c_N_building_snow) {
     [ 410, 1210, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410,  970, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2c_E_building_snow) {
     [ 480, 1210, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480,  970, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2c_W_building_snow) {
     [ 550, 1210, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550,  970, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2c_S_building_snow) {
     [ 620, 1210, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620,  970, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -5049,56 +5025,56 @@ spritelayout sprite_ukts_college_2c_S {
 spriteset (ukts_college_2d_N_building) {
     [ 410, 1210, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1050, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2d_E_building) {
     [ 480, 1210, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1050, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2d_W_building) {
     [ 550, 1210, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1050, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2d_S_building) {
     [ 620, 1210, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1050, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2d_N_building_snow) {
     [ 410, 1210, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 1130, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410,  970, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2d_E_building_snow) {
     [ 480, 1210, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480,  970, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2d_W_building_snow) {
     [ 550, 1210, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 1130, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550,  970, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_2d_S_building_snow) {
     [ 620, 1210, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 1130, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620,  970, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -5327,56 +5303,56 @@ if (enable_uktownset) {
 spriteset (ukts_college_3a_N_building) {
     [ 10, 1530, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1370, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3a_E_building) {
     [ 80, 1530, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1370, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3a_W_building) {
     [ 150, 1530, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1370, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3a_S_building) {
     [ 220, 1530, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1370, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3a_N_building_snow) {
     [ 10, 1530, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1290, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3a_E_building_snow) {
     [ 80, 1530, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1290, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3a_W_building_snow) {
     [ 150, 1530, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1290, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3a_S_building_snow) {
     [ 220, 1530, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1290, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -5551,56 +5527,56 @@ spritelayout sprite_ukts_college_3a_S {
 spriteset (ukts_college_3b_N_building) {
     [ 410, 1530, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1370, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3b_E_building) {
     [ 480, 1530, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1370, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3b_W_building) {
     [ 550, 1530, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1370, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3b_S_building) {
     [ 620, 1530, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1370, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3b_N_building_snow) {
     [ 410, 1530, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 1450, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1290, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3b_E_building_snow) {
     [ 480, 1530, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1290, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3b_W_building_snow) {
     [ 550, 1530, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 1450, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1290, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3b_S_building_snow) {
     [ 620, 1530, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 1450, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1290, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -5776,56 +5752,56 @@ spritelayout sprite_ukts_college_3b_S {
 spriteset (ukts_college_3c_N_building) {
     [ 10, 1850, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1690, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3c_E_building) {
     [ 80, 1850, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1690, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3c_W_building) {
     [ 150, 1850, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1690, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3c_S_building) {
     [ 220, 1850, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1690, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3c_N_building_snow) {
     [ 410, 1850, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1610, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3c_E_building_snow) {
     [ 480, 1850, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1610, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3c_W_building_snow) {
     [ 550, 1850, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1610, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3c_S_building_snow) {
     [ 620, 1850, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1610, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -6001,56 +5977,56 @@ spritelayout sprite_ukts_college_3c_S {
 spriteset (ukts_college_3d_N_building) {
     [ 410, 1850, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1690, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3d_E_building) {
     [ 480, 1850, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1690, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3d_W_building) {
     [ 550, 1850, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1690, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3d_S_building) {
     [ 620, 1850, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1690, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3d_N_building_snow) {
     [ 410, 1850, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 1770, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1610, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3d_E_building_snow) {
     [ 480, 1850, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1610, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3d_W_building_snow) {
     [ 550, 1850, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 1770, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1610, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_3d_S_building_snow) {
     [ 620, 1850, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 1770, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1610, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -6279,56 +6255,56 @@ if (enable_uktownset) {
 spriteset (ukts_college_4a_N_building) {
     [ 10, 2170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 2010, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4a_E_building) {
     [ 80, 2170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 2010, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4a_W_building) {
     [ 150, 2170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 2010, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4a_S_building) {
     [ 220, 2170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 2010, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4a_N_building_snow) {
     [ 10, 2170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 1930, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4a_E_building_snow) {
     [ 80, 2170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 1930, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4a_W_building_snow) {
     [ 150, 2170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 1930, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4a_S_building_snow) {
     [ 220, 2170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 1930, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -6503,56 +6479,56 @@ spritelayout sprite_ukts_college_4a_S {
 spriteset (ukts_college_4b_N_building) {
     [ 410, 2170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2010, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4b_E_building) {
     [ 480, 2170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2010, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4b_W_building) {
     [ 550, 2170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2010, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4b_S_building) {
     [ 620, 2170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2010, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4b_N_building_snow) {
     [ 410, 2170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 1930, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4b_E_building_snow) {
     [ 480, 2170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 1930, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4b_W_building_snow) {
     [ 550, 2170, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 2090, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 1930, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4b_S_building_snow) {
     [ 620, 2170, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 2090, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 1930, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -6728,56 +6704,56 @@ spritelayout sprite_ukts_college_4b_S {
 spriteset (ukts_college_4c_N_building) {
     [ 10, 2490, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 10, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 10, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 2330, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4c_E_building) {
     [ 80, 2490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 80, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 80, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 80, 2330, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4c_W_building) {
     [ 150, 2490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 150, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 150, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 150, 2330, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4c_S_building) {
     [ 220, 2490, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 220, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 220, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 220, 2330, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4c_N_building_snow) {
     [ 410, 2490, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2250, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4c_E_building_snow) {
     [ 480, 2490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2250, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4c_W_building_snow) {
     [ 550, 2490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2250, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4c_S_building_snow) {
     [ 620, 2490, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2250, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
@@ -6953,56 +6929,56 @@ spritelayout sprite_ukts_college_4c_S {
 spriteset (ukts_college_4d_N_building) {
     [ 410, 2490, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2330, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4d_E_building) {
     [ 480, 2490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2330, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4d_W_building) {
     [ 550, 2490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2330, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4d_S_building) {
     [ 620, 2490, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2330, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4d_N_building_snow) {
     [ 410, 2490, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
-    [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
+//    [ 410, 2410, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 410, 2250, 64, 59, -31, -28, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4d_E_building_snow) {
     [ 480, 2490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 480, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 480, 2250, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4d_W_building_snow) {
     [ 550, 2490, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
-    [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
+//    [ 550, 2410, 64, 75, -31, -44, "uktownset22/college_split.png"]
     [ 550, 2250, 64, 75, -31, -44, "uktownset22/college_split.png"]
 }
 
 spriteset (ukts_college_4d_S_building_snow) {
     [ 620, 2490, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
-    [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
+//    [ 620, 2410, 64, 31, -31, 0, "uktownset22/college_split.png"]
     [ 620, 2250, 64, 31, -31, 0, "uktownset22/college_split.png"]
 }
 

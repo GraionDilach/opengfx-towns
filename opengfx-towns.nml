@@ -270,6 +270,8 @@ if (disable_base_houses) {
 
 // 20 college
 
+// 30 park/statue/fountain
+
 // 100 radio stuff (transmitter/radio house)
 
 
@@ -343,6 +345,11 @@ switch (FEAT_HOUSES, SELF, radio_construction_check, (
     has_population(2000)
     && has_population(same_class_count_town * 2000)
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
+)) {return;}
+
+switch (FEAT_HOUSES, SELF, amenities_construction_check, (
+    has_population(2000)
+    && has_population(same_class_count_town * 2000)
 )) {return;}
 
 /// =================
@@ -628,6 +635,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_statue_1) {
         property {
             substitute: 0x09;
+            building_class: 30;
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
@@ -635,6 +643,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
         }
         graphics {
             default: sprite_statue_1;
+            construction_check: amenities_construction_check;
         }
     }
 }
@@ -659,6 +668,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_fountain_1) {
         property {
             substitute: 0x0A;
+            building_class: 30;
             availability_mask: [
                 bitmask(TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
@@ -666,6 +676,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
         }
         graphics {
             default: sprite_fountain_1;
+            construction_check: amenities_construction_check;
         }
     }
 }
@@ -690,6 +701,7 @@ if (enable_temperate) {
     item(FEAT_HOUSES, item_park_1) {
         property {
             substitute: 0x0B;
+            building_class: 30;
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
@@ -697,6 +709,7 @@ if (enable_temperate) {
         }
         graphics {
             default: sprite_park_1;
+            construction_check: amenities_construction_check;
         }
     }
 }
@@ -721,6 +734,7 @@ if (enable_temperate) {
     item(FEAT_HOUSES, item_park_2) {
         property {
             substitute: 0x0C;
+            building_class: 30;
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
@@ -728,6 +742,7 @@ if (enable_temperate) {
         }
         graphics {
             default: sprite_park_2;
+            construction_check: amenities_construction_check;
         }
     }
 }

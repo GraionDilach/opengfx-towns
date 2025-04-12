@@ -350,8 +350,8 @@ switch (FEAT_HOUSES, SELF, radio_construction_check, (
 switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) {return;}
 
 switch (FEAT_HOUSES, SELF, amenities_construction_check, (
-    has_houses(20)
-    && has_houses(same_class_count_town * 20)
+    has_houses((same_class_count_town + 1) * 20)
+    && !nearest_house_matching_criterion(6, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 /// =================
@@ -12191,7 +12191,7 @@ spritelayout sprite_statue_1_on_bush {
     ground {
         sprite: construction_state == 0
         ? GROUNDSPRITE_CLEARED
-        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW_2_4 : 4000;
+        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW : 4000;
     }
     building {
         sprite: statue_1_building;
@@ -12219,7 +12219,7 @@ spritelayout sprite_statue_2_on_bush {
     ground {
         sprite: construction_state == 0
         ? GROUNDSPRITE_CLEARED
-        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW_2_4 : 4000;
+        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW : 4000;
     }
     building {
         sprite: statue_2_building;
@@ -12244,9 +12244,9 @@ if (enable_misc) {
 }
 
 spriteset (transmitter_building) {
-    sprite_null()
-    sprite_null()
-    [  -30, -65, "gfx/1454-animless.png"] // 1454
+    [  -30, -65, "gfx/1454-start.png"]
+    [  -30, -65, "gfx/1454-headless.png"]
+    [  -30, -65, "gfx/1454-animless.png"]
     [  -30, -65, ANIM, "gfx/1454.png"] // 1454
 }
 

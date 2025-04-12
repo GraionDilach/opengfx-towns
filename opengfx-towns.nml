@@ -654,6 +654,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 spriteset (fountain_1_building) {
     sprite_null()
 //    sprite_null()
+    [   0,    0,  34,  42, -17, -16, "ogfxplus/1455-base.png"]
     [  41,   21,  34,  42, -17, -16, ANIM, "ogfx/statuefountain.png"] // 1455
 //    [  41,   21,  34,  42, -17, -16, ANIM, "ogfx/statuefountain.png"] // 1455
 }
@@ -12238,6 +12239,40 @@ if (enable_misc) {
         }
         graphics {
             default: sprite_statue_2_on_bush;
+            construction_check: amenities_construction_check;
+        }
+    }
+}
+
+spriteset (fountain_2_building) {
+    sprite_null()
+//    sprite_null()
+    [   0,    0,  34,  42, -17, -16, "ogfxplus/1455-v2-base.png"]
+    [   0,    0,  34,  42, -17, -16, ANIM, "ogfxplus/1455-v2.png"]
+//    [  41,   21,  34,  42, -17, -16, ANIM, "ogfx/statuefountain.png"] // 1455
+}
+
+spritelayout sprite_fountain_2 {
+    ground {
+         sprite: construction_state!=0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: fountain_2_building;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_fountain_2) {
+        property {
+            substitute: 0x0A;
+            building_class: 30;
+            availability_mask: [
+                bitmask(TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_fountain_2;
             construction_check: amenities_construction_check;
         }
     }

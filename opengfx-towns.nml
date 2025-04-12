@@ -12161,14 +12161,14 @@ spriteset (statue_2_building) {
 //    [  18,   21,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
 }
 
-spritelayout sprite_statue_2 {
-    ground {
-         sprite: construction_state!=0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
-    }
-    building {
-        sprite: statue_2_building;
-    }
-}
+// spritelayout sprite_statue_2 {
+//     ground {
+//          sprite: construction_state!=0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+//     }
+//     building {
+//         sprite: statue_2_building;
+//     }
+// }
 
 // blends into concrete
 // if (enable_misc) {

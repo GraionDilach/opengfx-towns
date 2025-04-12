@@ -688,7 +688,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 spriteset (park_1_building) {
     sprite_null()
     [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
-//    [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
+    [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
 //    [  11,    0,  64,  80, -31, -49, ANIM, "ogfx/1456_1457_parks.png"] // 1456
 }
 
@@ -721,7 +721,7 @@ if (enable_temperate) {
 spriteset (park_2_building) {
     sprite_null()
     [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
-//    [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
+    [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
 //    [  91,   10,  64,  70, -31, -39, "ogfx/1456_1457_parks.png"] // 1457
 }
 

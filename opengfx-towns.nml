@@ -354,6 +354,10 @@ switch (FEAT_HOUSES, SELF, amenities_construction_check, (
     && !nearest_house_matching_criterion(6, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
+switch (FEAT_HOUSES, SELF, park_construction_check, (
+    amenities_construction_check() && terrain_type != TILETYPE_DESERT
+)) {return;}
+
 /// =================
 /// ==== OpenGFX ====
 /// =================
@@ -713,7 +717,7 @@ if (enable_temperate) {
         }
         graphics {
             default: sprite_park_1;
-            construction_check: amenities_construction_check;
+            construction_check: park_construction_check;
         }
     }
 }
@@ -746,7 +750,7 @@ if (enable_temperate) {
         }
         graphics {
             default: sprite_park_2;
-            construction_check: amenities_construction_check;
+            construction_check: park_construction_check;
         }
     }
 }

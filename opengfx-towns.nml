@@ -7214,7 +7214,7 @@ if (enable_uktownset || enable_temperate) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -7321,7 +7321,7 @@ if (enable_uktownset || enable_temperate) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -7428,7 +7428,7 @@ if (enable_uktownset) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -7535,7 +7535,7 @@ if (enable_uktownset) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -7642,7 +7642,7 @@ if (enable_uktownset) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -7749,7 +7749,7 @@ if (enable_uktownset) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -7856,7 +7856,7 @@ if (enable_uktownset) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -7963,7 +7963,7 @@ if (enable_uktownset || enable_temperate) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -8070,7 +8070,7 @@ if (enable_uktownset) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -8177,7 +8177,7 @@ if (enable_uktownset) {
             name: TTD_STR_TOWN_BUILDING_NAME_FLATS_1;
             population: 32;
             mail_multiplier: 16;
-            years_available: [1961, 65535];
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 5], [MAIL, 2], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),

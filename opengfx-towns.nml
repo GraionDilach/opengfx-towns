@@ -12350,6 +12350,34 @@ spritelayout sprite_lighthouse {
     }
 }
 
+switch (FEAT_HOUSES, SELF, lighthouse_water_check,
+    nearby_tile_is_water(-2,-1)
+    || nearby_tile_is_water(-2, 0)
+    || nearby_tile_is_water(-2, 1)
+    || nearby_tile_is_water(-1,-2)
+    || nearby_tile_is_water(-1,-1)
+    || nearby_tile_is_water(-1, 0)
+    || nearby_tile_is_water(-1, 1)
+    || nearby_tile_is_water(-1, 2)
+    || nearby_tile_is_water( 0,-2)
+    || nearby_tile_is_water( 0,-1)
+    || nearby_tile_is_water( 0, 1)
+    || nearby_tile_is_water( 0, 2)
+    || nearby_tile_is_water( 1,-2)
+    || nearby_tile_is_water( 1,-1)
+    || nearby_tile_is_water( 1, 0)
+    || nearby_tile_is_water( 1, 1)
+    || nearby_tile_is_water( 1, 2)
+    || nearby_tile_is_water( 2,-1)
+    || nearby_tile_is_water( 2, 0)
+    || nearby_tile_is_water( 2, 1)
+) {return;}
+
+switch (FEAT_HOUSES, SELF, lighthouse_construction_check,
+    same_house_count_town == 0 &&
+    lighthouse_water_check()
+) {return;}
+
 if (enable_misc) {
     item(FEAT_HOUSES, item_lighthouse) {
         property {
@@ -12358,13 +12386,14 @@ if (enable_misc) {
             building_flags: 0;
             years_available: [0, 65535];
             availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                ALL_TOWNZONES,
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
         graphics {
             default: sprite_lighthouse;
-            construction_check: same_house_count_town == 0;
+            construction_check: lighthouse_construction_check;
+            protection: lighthouse_water_check;
         }
     }
 }

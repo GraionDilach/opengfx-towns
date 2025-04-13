@@ -12205,7 +12205,8 @@ spritelayout sprite_statue_1_on_bush {
     ground {
         sprite: construction_state == 0
         ? GROUNDSPRITE_CLEARED
-        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW : 4000;
+        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : 4000;
     }
     building {
         sprite: statue_1_building;
@@ -12233,7 +12234,8 @@ spritelayout sprite_statue_2_on_bush {
     ground {
         sprite: construction_state == 0
         ? GROUNDSPRITE_CLEARED
-        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW : 4000;
+        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : 4000;
     }
     building {
         sprite: statue_2_building;
@@ -12301,7 +12303,8 @@ spriteset (transmitter_building) {
 spritelayout sprite_transmitter {
     ground {
         sprite: construction_state < 2 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW : GROUNDSPRITE_NORMAL;
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
     building {
         sprite: transmitter_building;

@@ -271,7 +271,7 @@ if (disable_base_houses) {
 // 30 park/statue/fountain
 
 // 100 radio stuff (transmitter/radio house)
-
+// 101 workshop (sawmill derivates)
 
 switch (FEAT_HOUSES, SELF, stadium_construction_check, (
     stadium_limit == 2
@@ -354,6 +354,12 @@ switch (FEAT_HOUSES, SELF, amenities_construction_check, (
 
 switch (FEAT_HOUSES, SELF, park_construction_check, (
     amenities_construction_check() && terrain_type != TILETYPE_DESERT
+)) {return;}
+
+switch (FEAT_HOUSES, SELF, workshop_construction_check, (
+    has_population(650)
+//    && has_population(same_class_count_town * 650)
+//    && !nearest_house_matching_criterion(7, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 /// =================
@@ -12393,6 +12399,78 @@ if (enable_misc) {
                 default: sprite_warehouse_2;
                 colour: random_company_color();
             }
+        }
+    }
+}
+
+spriteset (workshop_1_building) {
+    [ -24,  -4, "gfx/2061.png"]
+    [ -23, -17, "gfx/2062.png"]
+    [ -24, -18, "gfx/2063.png"]
+}
+
+spritelayout sprite_workshop_1 {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: workshop_1_building;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_workshop_1) {
+        property {
+            substitute: 0x12;
+            name: string(STR_NAME_WORKSHOP);
+            years_available: [0, 65535];
+            building_class: 101;
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_workshop_1;
+            construction_check: workshop_construction_check;
+        }
+    }
+}
+
+spriteset (workshop_2_building) {
+    [ -27, -12, "gfx/2067.png"]
+    [ -27, -12, "gfx/2068.png"]
+    [ -26, -14, "gfx/2069.png"]
+}
+
+spritelayout sprite_workshop_2 {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: workshop_2_building;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_workshop_2) {
+        property {
+            substitute: 0x12;
+            name: string(STR_NAME_WORKSHOP);
+            years_available: [0, 65535];
+            building_class: 101;
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_workshop_2;
+            construction_check: workshop_construction_check;
         }
     }
 }

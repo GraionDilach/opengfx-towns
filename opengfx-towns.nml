@@ -172,7 +172,7 @@ grf {
 }
 
 cargotable {
-    PASS, MAIL, GOOD, FOOD, TOUR
+    PASS, MAIL, GOOD, FOOD, TOUR, WATR
 }
 
 // shared functions
@@ -12296,6 +12296,67 @@ if (enable_misc) {
         }
     }
 }
+
+spriteset (water_tower_building) {
+    [  -23, -42, "gfx/2344.png"] // 2344
+    [  -23, -42, "gfx/2345.png"] // 2345
+    [  -23, -42, "gfx/2346.png"] // 2346
+}
+
+spritelayout sprite_water_tower {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: GROUNDSPRITE_CONCRETE;
+        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
+    }
+    building {
+        sprite: water_tower_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_misc && cargotype_available("WATR")) {
+    item(FEAT_HOUSES, item_water_tower) {
+        property {
+            substitute: 0x09;
+            name: TTD_STR_INDUSTRY_NAME_WATER_TOWER;
+            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 2], [WATR, 8]];
+            availability_mask: [
+                ALL_TOWNZONES,
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_water_tower;
+                construction_check: same_house_count_town == 0;
+                protection: 1;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_water_tower;
+                construction_check: same_house_count_town == 0;
+                protection: 1;
+                colour: random_company_color();
+            }
+        }
+    }
+}
+
 
 spriteset (transmitter_building) {
     [  -30, -65, "gfx/1454-start.png"]

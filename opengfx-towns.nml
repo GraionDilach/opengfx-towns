@@ -205,7 +205,6 @@ random_switch (FEAT_HOUSES, SELF, random_company_color) {
     1: return PALETTE_CC_WHITE;
 }
 
-/*
 random_switch (FEAT_HOUSES, SELF, random_modest_company_color) {
     1: return PALETTE_CC_DARK_BLUE;
     1: return PALETTE_CC_PALE_GREEN;
@@ -218,7 +217,6 @@ random_switch (FEAT_HOUSES, SELF, random_modest_company_color) {
     1: return PALETTE_CC_GREY;
     1: return PALETTE_CC_WHITE;
 }
-*/
 
 random_switch (FEAT_HOUSES, SELF, modest_skyscraper_color) {
     1: return PALETTE_CC_DARK_BLUE;
@@ -12343,7 +12341,7 @@ if (enable_misc && cargotype_available("WATR")) {
                 default: sprite_water_tower;
                 construction_check: same_house_count_town == 0;
                 protection: 1;
-                colour: modest_skyscraper_color();
+                colour: random_modest_company_color();
             }
         }
         if (additional_colors == 2) {
@@ -12357,6 +12355,47 @@ if (enable_misc && cargotype_available("WATR")) {
     }
 }
 
+spriteset (warehouse_2_building) {
+    [   0,   0,  64,  49, -32, -19, "gfx/industry_warehouse.png"]
+    [  65,   0,  64,  49, -32, -19, "gfx/industry_warehouse.png"]
+    [ 130,   0,  64,  49, -32, -19, "gfx/industry_warehouse.png"]
+}
+
+spritelayout sprite_warehouse_2 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: warehouse_2_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_warehouse_2) {
+        property {
+            substitute: 0x12;
+            years_available: [0, 65535];
+            availability_mask: [
+                bitmask(TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_warehouse_2;
+                colour: random_modest_company_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_warehouse_2;
+                colour: random_company_color();
+            }
+        }
+    }
+}
 
 spriteset (transmitter_building) {
     [  -30, -65, "gfx/1454-start.png"]

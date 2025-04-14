@@ -272,6 +272,8 @@ if (disable_base_houses) {
 
 // 100 radio stuff (transmitter/radio house)
 // 101 workshop (sawmill derivates)
+// 102 university
+// 103 courthouse
 
 switch (FEAT_HOUSES, SELF, stadium_construction_check, (
     stadium_limit == 2
@@ -12473,6 +12475,170 @@ if (enable_misc) {
             construction_check: workshop_construction_check;
         }
     }
+}
+
+spriteset (university_n_ground_childsprite) {
+    sprite_null()
+    sprite_null()
+    [ -31,   0, "gfx/2182.png"]
+}
+
+spriteset (university_n_building) {
+    sprite_null()
+    [ -31, -16, "gfx/2180.png"]
+    [ -31, -16, "gfx/2180.png"]
+}
+
+spritelayout sprite_university_n {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: university_n_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: university_n_building;
+    }
+}
+
+spriteset (university_w_ground_childsprite) {
+    sprite_null()
+    sprite_null()
+    [ -31,   0, "gfx/2183.png"]
+}
+
+spriteset (university_w_building) {
+    sprite_null()
+    [ -31, -18, "gfx/2181.png"]
+    [ -31, -18, "gfx/2181.png"]
+}
+
+spritelayout sprite_university_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: university_w_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: university_w_building;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, university_construction_check,
+    has_population(4500)
+    && has_population(same_class_count_town * 4500)
+    && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
+) {return;}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_university, -1, HOUSE_SIZE_2X1){
+		property {
+			substitute: 0x4A;
+			name: string(STR_NAME_UNIVERSITY);
+			building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            building_class: 102;
+			population: 255;
+			mail_multiplier: 70;
+			accepted_cargos: [[PASS, 8],[MAIL, 8]];
+			local_authority_impact: 300;
+			removal_cost_multiplier: 250;
+			years_available: [0, 65535];
+			availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+		}
+		graphics {
+			graphics_north: sprite_university_n;
+			graphics_west: sprite_university_w;
+			construction_check: university_construction_check;
+		}
+	}
+}
+
+spriteset (courthouse_n_ground_childsprite) {
+    sprite_null()
+    sprite_null()
+    [ -31,   0, "gfx/2184.png"]
+}
+
+spriteset (courthouse_n_building) {
+    sprite_null()
+    [   1, -19, "gfx/2186.png"]
+    [   1, -19, "gfx/2186.png"]
+}
+
+spritelayout sprite_courthouse_n {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: courthouse_n_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: courthouse_n_building;
+    }
+}
+
+spriteset (courthouse_w_ground_childsprite) {
+    sprite_null()
+    sprite_null()
+    [ -31,   0, "gfx/2185.png"]
+}
+
+spriteset (courthouse_w_building) {
+    sprite_null()
+    [ -20, -39, "gfx/2187.png"]
+    [ -20, -39, "gfx/2187.png"]
+}
+
+spritelayout sprite_courthouse_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: courthouse_w_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: courthouse_w_building;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, courthouse_construction_check,
+    has_population(1500)
+    && has_population(same_class_count_town * 1500)
+    && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
+) {return;}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_courthouse, -1, HOUSE_SIZE_2X1){
+		property {
+			substitute: 0x4A;
+			name: string(STR_NAME_COURTHOUSE);
+			building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            building_class: 103;
+			population: 255;
+			mail_multiplier: 70;
+			accepted_cargos: [[PASS, 8],[MAIL, 8]];
+			local_authority_impact: 300;
+			removal_cost_multiplier: 250;
+			years_available: [0, 65535];
+			availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+		}
+		graphics {
+			graphics_north: sprite_courthouse_n;
+			graphics_west: sprite_courthouse_w;
+			construction_check: courthouse_construction_check;
+		}
+	}
 }
 
 spriteset (transmitter_building) {

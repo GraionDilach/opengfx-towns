@@ -12730,7 +12730,7 @@ if (enable_misc) {
 
 spriteset (courthouse_n_ground_childsprite) {
     sprite_null()
-    sprite_null()
+    [ -31,   0, "gfx/2184-stage1.png"]
     [ -31,   0, "gfx/2184.png"]
 }
 
@@ -12755,7 +12755,7 @@ spritelayout sprite_courthouse_n {
 
 spriteset (courthouse_w_ground_childsprite) {
     sprite_null()
-    sprite_null()
+    [ -31,   0, "gfx/2185-stage1.png"]
     [ -31,   0, "gfx/2185.png"]
 }
 

@@ -2336,14 +2336,14 @@ if (enable_tropic) {
 
 spriteset (church_3_building) {
     sprite_null()
-    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
+    [ -31, -25, "ogfxplus/4604.png"] // 4604
 //    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
 //    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
 }
 
 spritelayout sprite_church_3 {
     ground {
-        sprite: GROUNDSPRITE_CLEARED;
+        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     building {
         sprite: church_3_building;

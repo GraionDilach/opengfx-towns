@@ -12619,9 +12619,9 @@ if (enable_misc) {
 }
 
 spriteset (workshop_2_building) {
-    [ -27, -12, "gfx/2067.png"]
-    [ -27, -12, "gfx/2068.png"]
-    [ -26, -14, "gfx/2069.png"]
+    [ -25, -10, "gfx/2067.png"]
+    [ -25, -10, "gfx/2068.png"]
+    [ -24, -12, "gfx/2069.png"]
 }
 
 spritelayout sprite_workshop_2 {

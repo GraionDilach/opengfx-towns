@@ -12648,13 +12648,13 @@ if (enable_misc) {
 
 spriteset (university_n_ground_childsprite) {
     sprite_null()
-    sprite_null()
+    [ -31,   0, "gfx/2182-stage1.png"]
     [ -31,   0, "gfx/2182.png"]
 }
 
 spriteset (university_n_building) {
     sprite_null()
-    [ -31, -16, "gfx/2180.png"]
+    [ -31, -16, "gfx/2180-stage1.png"]
     [ -31, -16, "gfx/2180.png"]
 }
 
@@ -12673,13 +12673,13 @@ spritelayout sprite_university_n {
 
 spriteset (university_w_ground_childsprite) {
     sprite_null()
-    sprite_null()
+    [ -31,   0, "gfx/2183-stage1.png"]
     [ -31,   0, "gfx/2183.png"]
 }
 
 spriteset (university_w_building) {
     sprite_null()
-    [ -31, -18, "gfx/2181.png"]
+    [ -31, -18, "gfx/2181-stage1.png"]
     [ -31, -18, "gfx/2181.png"]
 }
 

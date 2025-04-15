@@ -12736,7 +12736,7 @@ spriteset (courthouse_n_ground_childsprite) {
 
 spriteset (courthouse_n_building) {
     sprite_null()
-    [   1, -19, "gfx/2186.png"]
+    [   1, -19, "gfx/2186-stage1.png"]
     [   1, -19, "gfx/2186.png"]
 }
 
@@ -12761,7 +12761,7 @@ spriteset (courthouse_w_ground_childsprite) {
 
 spriteset (courthouse_w_building) {
     sprite_null()
-    [ -20, -39, "gfx/2187.png"]
+    [ -20, -39, "gfx/2187-stage1.png"]
     [ -20, -39, "gfx/2187.png"]
 }
 

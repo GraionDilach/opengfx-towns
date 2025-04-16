@@ -389,15 +389,19 @@ switch (FEAT_HOUSES, SELF, ukts_warehouse_construction_check, (
 
 // temperate church - substituted with UKTS counterpart
 
-spriteset (large_office_block_1_building) {
+spriteset (large_office_block_1_ground) {
     [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440
+}
+
+spriteset (large_office_block_1_building) {
+    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440; too tall to fit into the mere groundsprite
     [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
 //    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
     [ 450,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1442
 }
 
 spriteset (large_office_block_1_snow) {
-    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440
+    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440, too tall to fit into the mere groundsprite
     [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
 //    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
     [ 578,  568,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 4569
@@ -414,6 +418,10 @@ spriteset (large_office_block_1_elevator) {
 spritelayout sprite_large_office_block_1 {
     ground {
         sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: large_office_block_1_ground;
+        always_draw: 1;
     }
     building {
         sprite:  large_office_block_1_building;

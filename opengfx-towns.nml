@@ -13806,8 +13806,12 @@ if (enable_misc && cargotype_available("WATR")) {
     }
 }
 
-spriteset (warehouse_2_building) {
+spriteset (warehouse_2_ground) {
     [   0,   0,  64,  49, -32, -19, "gfx/industry_warehouse.png"]
+}
+
+spriteset (warehouse_2_building) {
+    sprite_null()
     [  65,   0,  64,  49, -32, -19, "gfx/industry_warehouse.png"]
     [ 130,   0,  64,  49, -32, -19, "gfx/industry_warehouse.png"]
 }
@@ -13815,6 +13819,10 @@ spriteset (warehouse_2_building) {
 spritelayout sprite_warehouse_2 {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: warehouse_2_ground;
+        always_draw: 1;
     }
     building {
         sprite: warehouse_2_building;

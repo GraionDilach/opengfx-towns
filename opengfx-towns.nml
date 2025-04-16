@@ -10332,9 +10332,6 @@ if (enable_uktownset || enable_temperate) {
 
 spriteset (ukts_offices_1_ns_ground) {
     [   1,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [   1,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [   1,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [   1,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_1_ns_building) {
@@ -10352,9 +10349,6 @@ spriteset (ukts_offices_1_ns_building_snow) {
 }
 
 spriteset (ukts_offices_1_ew_ground) {
-    [  68,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [  68,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [  68,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
     [  68,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -10431,9 +10425,6 @@ if (enable_uktownset || enable_temperate) {
 
 spriteset (ukts_offices_2_ns_ground) {
     [ 135,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 135,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 135,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 135,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_2_ns_building) {
@@ -10451,9 +10442,6 @@ spriteset (ukts_offices_2_ns_building_snow) {
 }
 
 spriteset (ukts_offices_2_ew_ground) {
-    [ 202,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 202,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 202,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 202,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -10530,9 +10518,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_3_ns_ground) {
     [ 269,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 269,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 269,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 269,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_3_ns_building) {
@@ -10550,9 +10535,6 @@ spriteset (ukts_offices_3_ns_building_snow) {
 }
 
 spriteset (ukts_offices_3_ew_ground) {
-    [ 336,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 336,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 336,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 336,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -10629,9 +10611,6 @@ if (enable_uktownset || enable_temperate) {
 
 spriteset (ukts_offices_4_ns_ground) {
     [ 403,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 403,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 403,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 403,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_4_ns_building) {
@@ -10649,9 +10628,6 @@ spriteset (ukts_offices_4_ns_building_snow) {
 }
 
 spriteset (ukts_offices_4_ew_ground) {
-    [ 470,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 470,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 470,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 470,  274,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -10728,9 +10704,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_5_ns_ground) {
     [   1,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [   1,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [   1,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [   1,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_5_ns_building) {
@@ -10748,9 +10721,6 @@ spriteset (ukts_offices_5_ns_building_snow) {
 }
 
 spriteset (ukts_offices_5_ew_ground) {
-    [  68,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [  68,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [  68,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
     [  68,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -10827,9 +10797,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_6_ew_ground) {
     [ 135,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 135,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 135,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 135,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_6_ew_building) {
@@ -10847,9 +10814,6 @@ spriteset (ukts_offices_6_ew_building_snow) {
 }
 
 spriteset (ukts_offices_6_ns_ground) {
-    [ 202,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 202,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 202,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 202,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -10926,9 +10890,6 @@ if (enable_uktownset || enable_arctic) {
 
 spriteset (ukts_offices_7_ns_ground) {
     [ 269,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 269,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 269,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 269,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_7_ns_building) {
@@ -10946,9 +10907,6 @@ spriteset (ukts_offices_7_ns_building_snow) {
 }
 
 spriteset (ukts_offices_7_ew_ground) {
-    [ 336,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 336,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 336,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 336,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11025,9 +10983,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_8_ns_ground) {
     [ 403,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 403,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 403,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 403,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_8_ns_building) {
@@ -11045,9 +11000,6 @@ spriteset (ukts_offices_8_ns_building_snow) {
 }
 
 spriteset (ukts_offices_8_ew_ground) {
-    [ 470,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 470,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 470,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 470,  638,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11124,9 +11076,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_9_ns_ground) {
     [   1,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [   1,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [   1,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [   1,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_9_ns_building) {
@@ -11144,9 +11093,6 @@ spriteset (ukts_offices_9_ns_building_snow) {
 }
 
 spriteset (ukts_offices_9_ew_ground) {
-    [  68,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [  68,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [  68,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
     [  68,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11223,9 +11169,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_10_ns_ground) {
     [ 135,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 135,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 135,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 135,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_10_ns_building) {
@@ -11243,9 +11186,6 @@ spriteset (ukts_offices_10_ns_building_snow) {
 }
 
 spriteset (ukts_offices_10_ew_ground) {
-    [ 202,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 202,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 202,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 202,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11322,9 +11262,6 @@ if (enable_uktownset || enable_arctic) {
 
 spriteset (ukts_offices_11_ns_ground) {
     [ 269,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 269,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 269,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 269,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_11_ns_building) {
@@ -11342,9 +11279,6 @@ spriteset (ukts_offices_11_ns_building_snow) {
 }
 
 spriteset (ukts_offices_11_ew_ground) {
-    [ 336,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 336,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 336,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 336,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11421,9 +11355,6 @@ if (enable_uktownset || enable_temperate) {
 
 spriteset (ukts_offices_12_ns_ground) {
     [ 403,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 403,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 403,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 403,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_12_ns_building) {
@@ -11441,9 +11372,6 @@ spriteset (ukts_offices_12_ns_building_snow) {
 }
 
 spriteset (ukts_offices_12_ew_ground) {
-    [ 470,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 470,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 470,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 470,  1002,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11520,9 +11448,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_13_ns_ground) {
     [   1, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [   1, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [   1, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [   1, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_13_ns_building) {
@@ -11540,9 +11465,6 @@ spriteset (ukts_offices_13_ns_building_snow) {
 }
 
 spriteset (ukts_offices_13_ew_ground) {
-    [  68, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [  68, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [  68, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
     [  68, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11619,9 +11541,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_14_ns_ground) {
     [ 135, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 135, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 135, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 135, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_14_ns_building) {
@@ -11639,9 +11558,6 @@ spriteset (ukts_offices_14_ns_building_snow) {
 }
 
 spriteset (ukts_offices_14_ew_ground) {
-    [ 202, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 202, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 202, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 202, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11718,9 +11634,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_15_ns_ground) {
     [ 269, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 269, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 269, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 269, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_15_ns_building) {
@@ -11738,9 +11651,6 @@ spriteset (ukts_offices_15_ns_building_snow) {
 }
 
 spriteset (ukts_offices_15_ew_ground) {
-    [ 336, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 336, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 336, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 336, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
@@ -11817,9 +11727,6 @@ if (enable_uktownset) {
 
 spriteset (ukts_offices_16_ns_ground) {
     [ 403, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 403, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 403, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 403, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
 spriteset (ukts_offices_16_ns_building) {
@@ -11837,9 +11744,6 @@ spriteset (ukts_offices_16_ns_building_snow) {
 }
 
 spriteset (ukts_offices_16_ew_ground) {
-    [ 470, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-    [ 470, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
-//    [ 470, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
     [ 470, 1366,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 

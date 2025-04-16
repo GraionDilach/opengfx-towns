@@ -24651,8 +24651,12 @@ if (enable_misc) {
 	}
 }
 
-spriteset (transmitter_building) {
+spriteset (transmitter_ground) {
     [  -30, -65, "gfx/1454-start.png"]
+}
+
+spriteset (transmitter_building) {
+    sprite_null()
     [  -30, -65, "gfx/1454-headless.png"]
     [  -30, -65, "gfx/1454-animless.png"]
     [  -30, -65, ANIM, "gfx/1454.png"] // 1454
@@ -24663,6 +24667,10 @@ spritelayout sprite_transmitter {
         sprite: construction_state < 2 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: transmitter_ground;
+        always_draw: 1;
     }
     building {
         sprite: transmitter_building;
@@ -24773,6 +24781,10 @@ spritelayout sprite_radio_station_N {
 spritelayout sprite_radio_station_E {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: transmitter_ground;
+        always_draw: 1;
     }
     building {
         sprite: transmitter_building;

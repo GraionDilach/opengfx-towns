@@ -11952,6 +11952,1350 @@ if (enable_uktownset) {
 //     [   0,  264,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4577
 // }
 
+spriteset (ukts_shops_1_e_ground) {
+    [   1,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_e_building) {
+    sprite_null()
+    [   1,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [   1,   82,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_e_building_snow) {
+    sprite_null()
+    [   1,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [   1,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_s_ground) {
+    [  66,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_s_building) {
+    sprite_null()
+    [  66,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [  66,   82,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_s_building_snow) {
+    sprite_null()
+    [  66,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [  66,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_w_ground) {
+    [ 131,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_w_building) {
+    sprite_null()
+    [ 131,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 131,   82,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_w_building_snow) {
+    sprite_null()
+    [ 131,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 131,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_n_ground) {
+    [ 196,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_n_building) {
+    sprite_null()
+    [ 196,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 196,   82,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_1_n_building_snow) {
+    sprite_null()
+    [ 196,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 196,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spritelayout sprite_ukts_shops_1 {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_1_n_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 4;
+    }
+    childsprite {
+        sprite: ukts_shops_1_e_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 3;
+    }
+    childsprite {
+        sprite: ukts_shops_1_s_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_shops_1_w_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_shops_1_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_1_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_1_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_1_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_1_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_1_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_1_w_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_1_w_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_shops_1) {
+        property {
+            substitute: 0x0E;
+            name: string(STR_NAME_SHOPS);
+            population: 40;
+            mail_multiplier: 10;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 2], [FOOD, 3], [GOOD, 1]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_4_faced;
+            default: sprite_ukts_shops_1;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (ukts_shops_2_e_ground) {
+    [ 261,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_e_building) {
+    sprite_null()
+    [ 261,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 261,   82,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_e_building_snow) {
+    sprite_null()
+    [ 261,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 261,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_s_ground) {
+    [ 326,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_s_building) {
+    sprite_null()
+    [ 326,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 326,   82,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_s_building_snow) {
+    sprite_null()
+    [ 326,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 326,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_w_ground) {
+    [ 391,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_w_building) {
+    sprite_null()
+    [ 391,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 391,   82,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_w_building_snow) {
+    sprite_null()
+    [ 391,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 391,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_n_ground) {
+    [ 456,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_n_building) {
+    sprite_null()
+    [ 456,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 456,   82,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_2_n_building_snow) {
+    sprite_null()
+    [ 456,  163,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 456,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spritelayout sprite_ukts_shops_2 {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_2_n_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 4;
+    }
+    childsprite {
+        sprite: ukts_shops_2_e_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 3;
+    }
+    childsprite {
+        sprite: ukts_shops_2_s_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_shops_2_w_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_shops_2_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_2_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_2_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_2_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_2_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_2_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_2_w_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_2_w_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_shops_2) {
+        property {
+            substitute: 0x0E;
+            name: string(STR_NAME_SHOPS);
+            population: 40;
+            mail_multiplier: 10;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 2], [FOOD, 3], [GOOD, 1]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_4_faced;
+            default: sprite_ukts_shops_2;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (ukts_shops_3_e_ground) {
+    [   1,  568,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_e_building) {
+    sprite_null()
+    [   1,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [   1,  406,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_e_building_snow) {
+    sprite_null()
+    [   1,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [   1,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_s_ground) {
+    [  66,  568,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_s_building) {
+    sprite_null()
+    [  66,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [  66,  406,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_s_building_snow) {
+    sprite_null()
+    [  66,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [  66,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_w_ground) {
+    [ 131,  568,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_w_building) {
+    sprite_null()
+    [ 131,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 131,  406,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_w_building_snow) {
+    sprite_null()
+    [ 131,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 131,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_n_ground) {
+    [ 196,  568,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_n_building) {
+    sprite_null()
+    [ 196,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 196,  406,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_3_n_building_snow) {
+    sprite_null()
+    [ 196,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 196,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spritelayout sprite_ukts_shops_3 {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_3_n_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 4;
+    }
+    childsprite {
+        sprite: ukts_shops_3_e_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 3;
+    }
+    childsprite {
+        sprite: ukts_shops_3_s_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_shops_3_w_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_shops_3_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_3_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_3_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_3_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_3_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_3_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_3_w_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_3_w_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_shops_3) {
+        property {
+            substitute: 0x0E;
+            name: string(STR_NAME_SHOPS);
+            population: 40;
+            mail_multiplier: 10;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 2], [FOOD, 3], [GOOD, 1]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_4_faced;
+            default: sprite_ukts_shops_3;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (ukts_shops_4_e_ground) {
+    [ 261,  568,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_e_building) {
+    sprite_null()
+    [ 261,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 261,  406,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_e_building_snow) {
+    sprite_null()
+    [ 261,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 261,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_s_ground) {
+    [ 326,  568,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_s_building) {
+    sprite_null()
+    [ 326,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 326,  406,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_s_building_snow) {
+    sprite_null()
+    [ 326,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 326,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_w_ground) {
+    [ 391,  568,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_w_building) {
+    sprite_null()
+    [ 391,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 391,  406,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_w_building_snow) {
+    sprite_null()
+    [ 391,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 391,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_n_ground) {
+    [ 456,  568,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_n_building) {
+    sprite_null()
+    [ 456,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 456,  406,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_4_n_building_snow) {
+    sprite_null()
+    [ 456,  487,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 456,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spritelayout sprite_ukts_shops_4 {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_4_n_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 4;
+    }
+    childsprite {
+        sprite: ukts_shops_4_e_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 3;
+    }
+    childsprite {
+        sprite: ukts_shops_4_s_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_shops_4_w_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_shops_4_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_4_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_4_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_4_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_4_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_4_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_4_w_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_4_w_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_shops_4) {
+        property {
+            substitute: 0x0E;
+            name: string(STR_NAME_SHOPS);
+            population: 40;
+            mail_multiplier: 10;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 2], [FOOD, 3], [GOOD, 1]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_4_faced;
+            default: sprite_ukts_shops_4;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (ukts_shops_5_e_ground) {
+    [   1,  892,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_e_building) {
+    sprite_null()
+    [   1,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [   1,  730,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_e_building_snow) {
+    sprite_null()
+    [   1,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [   1,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_s_ground) {
+    [  66,  892,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_s_building) {
+    sprite_null()
+    [  66,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [  66,  730,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_s_building_snow) {
+    sprite_null()
+    [  66,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [  66,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_w_ground) {
+    [ 131,  892,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_w_building) {
+    sprite_null()
+    [ 131,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 131,  730,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_w_building_snow) {
+    sprite_null()
+    [ 131,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 131,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_n_ground) {
+    [ 196,  892,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_n_building) {
+    sprite_null()
+    [ 196,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 196,  730,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_5_n_building_snow) {
+    sprite_null()
+    [ 196,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 196,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spritelayout sprite_ukts_shops_5 {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_5_n_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 4;
+    }
+    childsprite {
+        sprite: ukts_shops_5_e_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 3;
+    }
+    childsprite {
+        sprite: ukts_shops_5_s_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_shops_5_w_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_shops_5_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_5_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_5_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_5_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_5_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_5_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_5_w_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_5_w_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_shops_5) {
+        property {
+            substitute: 0x0E;
+            name: string(STR_NAME_SHOPS);
+            population: 40;
+            mail_multiplier: 10;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 2], [FOOD, 3], [GOOD, 1]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_4_faced;
+            default: sprite_ukts_shops_5;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (ukts_shops_6_e_ground) {
+    [  261,  892,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_e_building) {
+    sprite_null()
+    [ 261,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 261,  730,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_e_building_snow) {
+    sprite_null()
+    [ 261,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 261,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_s_ground) {
+    [ 326,  892,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_s_building) {
+    sprite_null()
+    [ 326,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 326,  730,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_s_building_snow) {
+    sprite_null()
+    [ 326,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 326,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_w_ground) {
+    [ 391,  892,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_w_building) {
+    sprite_null()
+    [ 391,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 391,  730,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_w_building_snow) {
+    sprite_null()
+    [ 391,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 391,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_n_ground) {
+    [ 456,  892,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_n_building) {
+    sprite_null()
+    [ 456,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 456,  730,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_6_n_building_snow) {
+    sprite_null()
+    [ 456,  811,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 456,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spritelayout sprite_ukts_shops_6 {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_6_n_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 4;
+    }
+    childsprite {
+        sprite: ukts_shops_6_e_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 3;
+    }
+    childsprite {
+        sprite: ukts_shops_6_s_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_shops_6_w_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_shops_6_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_6_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_6_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_6_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_6_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_6_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_6_w_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_6_w_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_shops_6) {
+        property {
+            substitute: 0x0E;
+            name: string(STR_NAME_SHOPS);
+            population: 40;
+            mail_multiplier: 10;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 2], [FOOD, 3], [GOOD, 1]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_4_faced;
+            default: sprite_ukts_shops_6;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (ukts_shops_7_e_ground) {
+    [   1,  1216,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_e_building) {
+    sprite_null()
+    [   1,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [   1,  1054,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_e_building_snow) {
+    sprite_null()
+    [   1,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [   1,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_s_ground) {
+    [  66,  1216,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_s_building) {
+    sprite_null()
+    [  66,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [  66,  1054,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_s_building_snow) {
+    sprite_null()
+    [  66,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [  66,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_w_ground) {
+    [ 131,  1216,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_w_building) {
+    sprite_null()
+    [ 131,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 131,  1054,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_w_building_snow) {
+    sprite_null()
+    [ 131,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 131,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_n_ground) {
+    [ 196,  1216,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_n_building) {
+    sprite_null()
+    [ 196,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 196,  1054,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_7_n_building_snow) {
+    sprite_null()
+    [ 196,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 196,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spritelayout sprite_ukts_shops_7 {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_7_n_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 4;
+    }
+    childsprite {
+        sprite: ukts_shops_7_e_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 3;
+    }
+    childsprite {
+        sprite: ukts_shops_7_s_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_shops_7_w_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_shops_7_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_7_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_7_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_7_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_7_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_7_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_7_w_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_7_w_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_shops_7) {
+        property {
+            substitute: 0x0E;
+            name: string(STR_NAME_SHOPS);
+            population: 40;
+            mail_multiplier: 10;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 2], [FOOD, 3], [GOOD, 1]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_4_faced;
+            default: sprite_ukts_shops_7;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (ukts_shops_8_e_ground) {
+    [ 261,  1216,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_e_building) {
+    sprite_null()
+    [ 261,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 261,  1054,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_e_building_snow) {
+    sprite_null()
+    [ 261,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 261,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_s_ground) {
+    [ 326,  1216,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_s_building) {
+    sprite_null()
+    [ 326,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 326,  1054,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_s_building_snow) {
+    sprite_null()
+    [ 326,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 326,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_w_ground) {
+    [ 391,  1216,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_w_building) {
+    sprite_null()
+    [ 391,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 391,  1054,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_w_building_snow) {
+    sprite_null()
+    [ 391,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 391,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_n_ground) {
+    [ 456,  1216,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_n_building) {
+    sprite_null()
+    [ 456,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 456,  1054,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spriteset (ukts_shops_8_n_building_snow) {
+    sprite_null()
+    [ 456,  1135,  64,  80, -31, -49, "uktownset22/shops.png"]
+    [ 456,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
+}
+
+spritelayout sprite_ukts_shops_8 {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_8_n_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 4;
+    }
+    childsprite {
+        sprite: ukts_shops_8_e_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 3;
+    }
+    childsprite {
+        sprite: ukts_shops_8_s_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 2;
+    }
+    childsprite {
+        sprite: ukts_shops_8_w_ground;
+        always_draw: 1;
+        hide_sprite: animation_frame != 1;
+    }
+    building {
+        sprite: ukts_shops_8_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_8_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_8_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_8_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_8_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_8_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_8_w_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_shops_8_w_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW
+            || animation_frame != 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_shops_8) {
+        property {
+            substitute: 0x0E;
+            name: string(STR_NAME_SHOPS);
+            population: 40;
+            mail_multiplier: 10;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 2], [FOOD, 3], [GOOD, 1]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            anim_control: switch_check_road_initial_4_faced;
+            default: sprite_ukts_shops_8;
+            colour: random_company_color();
+        }
+    }
+}
+
 /// ==============================
 /// ==== Additional derivates ====
 /// ==============================

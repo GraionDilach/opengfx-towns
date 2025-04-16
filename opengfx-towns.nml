@@ -267,6 +267,8 @@ if (disable_base_houses) {
 // 10 stadium
 
 // 20 college
+// 21 school
+// 22 warehouse (ukts)
 
 // 30 park/statue/fountain
 
@@ -351,7 +353,7 @@ switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) {retu
 
 switch (FEAT_HOUSES, SELF, amenities_construction_check, (
     has_houses((same_class_count_town + 1) * 20)
-    && !nearest_house_matching_criterion(6, SEARCH_HOUSE_BY_CLASS)
+    && !nearest_house_matching_criterion(3, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, park_construction_check, (
@@ -362,6 +364,12 @@ switch (FEAT_HOUSES, SELF, workshop_construction_check, (
     has_population(650)
 //    && has_population(same_class_count_town * 650)
 //    && !nearest_house_matching_criterion(7, SEARCH_HOUSE_BY_CLASS)
+)) {return;}
+
+switch (FEAT_HOUSES, SELF, ukts_warehouse_construction_check, (
+    has_population(1000)
+    && has_population(same_class_count_town * 2000)
+    && !nearest_house_matching_criterion(5, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 /// =================
@@ -13312,6 +13320,230 @@ if (enable_uktownset) {
             anim_control: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_8;
             colour: random_company_color();
+        }
+    }
+}
+
+spriteset (ukts_warehouse_1_ground) {
+    [   1,  169,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spriteset (ukts_warehouse_1_building) {
+    sprite_null()
+    [   1,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [   1,   57,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spriteset (ukts_warehouse_1_building_snow) {
+    sprite_null()
+    [   1,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [   1,    1,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spritelayout sprite_ukts_warehouse_1 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_warehouse_1_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_warehouse_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_warehouse_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_warehouse_1) {
+        property {
+            substitute: 0x12;
+            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
+            building_class: 22;
+            population: 4;
+            mail_multiplier: 8;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_warehouse_1;
+            construction_check: ukts_warehouse_construction_check;
+        }
+    }
+}
+
+spriteset (ukts_warehouse_2_ground) {
+    [  66,  169,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spriteset (ukts_warehouse_2_building) {
+    sprite_null()
+    [  66,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [  66,   57,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spriteset (ukts_warehouse_2_building_snow) {
+    sprite_null()
+    [  66,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [  66,    1,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spritelayout sprite_ukts_warehouse_2 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_warehouse_2_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_warehouse_2_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_warehouse_2_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_warehouse_2) {
+        property {
+            substitute: 0x12;
+            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
+            building_class: 22;
+            population: 4;
+            mail_multiplier: 8;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_warehouse_2;
+            construction_check: ukts_warehouse_construction_check;
+        }
+    }
+}
+
+spriteset (ukts_warehouse_3_ground) {
+    [ 131,  169,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spriteset (ukts_warehouse_3_building) {
+    sprite_null()
+    [ 131,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [ 131,   57,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spriteset (ukts_warehouse_3_building_snow) {
+    sprite_null()
+    [ 131,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [ 131,    1,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spritelayout sprite_ukts_warehouse_3 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_warehouse_3_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_warehouse_3_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_warehouse_3_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_warehouse_3) {
+        property {
+            substitute: 0x12;
+            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
+            building_class: 22;
+            population: 4;
+            mail_multiplier: 8;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_warehouse_3;
+            construction_check: ukts_warehouse_construction_check;
+        }
+    }
+}
+
+spriteset (ukts_warehouse_4_ground) {
+    [ 196,  169,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spriteset (ukts_warehouse_4_building) {
+    sprite_null()
+    [ 196,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [ 196,   57,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spriteset (ukts_warehouse_4_building_snow) {
+    sprite_null()
+    [ 196,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [ 196,    1,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+}
+
+spritelayout sprite_ukts_warehouse_4 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_warehouse_4_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_warehouse_4_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_warehouse_4_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_warehouse_4) {
+        property {
+            substitute: 0x12;
+            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
+            building_class: 22;
+            population: 4;
+            mail_multiplier: 8;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_ukts_warehouse_4;
+            construction_check: ukts_warehouse_construction_check;
         }
     }
 }

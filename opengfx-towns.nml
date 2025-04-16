@@ -656,7 +656,7 @@ spritelayout sprite_statue_1 {
     }
 }
 
-if (enable_temperate || enable_arctic || enable_tropic) {
+if (enable_temperate || enable_arctic || enable_tropic || enable_uktownset) {
     item(FEAT_HOUSES, item_statue_1) {
         property {
             substitute: 0x09;
@@ -690,7 +690,7 @@ spritelayout sprite_fountain_1 {
     }
 }
 
-if (enable_temperate || enable_arctic || enable_tropic) {
+if (enable_temperate || enable_arctic || enable_tropic || enable_uktownset) {
     item(FEAT_HOUSES, item_fountain_1) {
         property {
             substitute: 0x0A;
@@ -723,7 +723,7 @@ spritelayout sprite_park_1 {
     }
 }
 
-if (enable_temperate) {
+if (enable_temperate || enable_uktownset) {
     item(FEAT_HOUSES, item_park_1) {
         property {
             substitute: 0x0B;
@@ -756,7 +756,7 @@ spritelayout sprite_park_2 {
     }
 }
 
-if (enable_temperate) {
+if (enable_temperate || enable_uktownset) {
     item(FEAT_HOUSES, item_park_2) {
         property {
             substitute: 0x0C;

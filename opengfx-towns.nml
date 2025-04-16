@@ -2559,21 +2559,27 @@ if (enable_tropic) {
     }
 }
 
+spriteset (flats_6_ground) {
+    [ -31,   0, "ogfxplus/4620.png"] // 4620
+}
+
 spriteset (flats_6_building) {
-    [   2,  344,  64,  31, -31,   0, "ogfx/towns02.png"] // 4620
-    [ 594,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4621
-//    [ 594,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4621
-    [ 674,  216,  64,  67, -31, -36, "ogfx/towns02.png"] // 4622
+    sprite_null()
+    [ -31, -36, "ogfxplus/4621.png"] // 4621
+//    [ -31, -36, "ogfxplus/4621.png"] // 4621
+    [ -31, -36, "ogfxplus/4622.png"] // 4622
 }
 
 spritelayout sprite_flats_6 {
     ground {
-        sprite: GROUNDSPRITE_CLEARED;
+        sprite: construction_state > 0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: flats_6_ground;
+        always_draw: 1;
     }
     building {
         sprite: flats_6_building;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
     }
 }
 

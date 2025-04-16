@@ -1945,7 +1945,7 @@ spriteset (tall_office_block_6_building_snow) {
 
 spritelayout sprite_tall_office_block_6 {
     ground {
-        sprite: construction_state != 0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: tall_office_block_6_ground_childsprite;
@@ -2315,7 +2315,7 @@ spriteset (flats_3_building) {
 
 spritelayout sprite_flats_3 {
     ground {
-        sprite: construction_state > 0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: flats_3_ground;
@@ -2589,7 +2589,7 @@ spriteset (flats_6_building_snow) {
 
 spritelayout sprite_flats_6 {
     ground {
-        sprite: construction_state > 0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: flats_6_ground;

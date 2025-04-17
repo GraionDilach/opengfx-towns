@@ -24145,6 +24145,47 @@ if (enable_misc) {
     }
 }
 
+spriteset (flats_3_mini_ground) {
+    [ -32,  -41, "ogfxplus/4601-mini.png"] // 4601
+}
+
+spriteset (flats_3_mini_building) {
+    sprite_null()
+    [ -32, -41, "ogfxplus/4602-mini.png"] // 4602
+    [ -32, -41, "ogfxplus/4603-mini.png"] // 4603
+}
+
+spritelayout sprite_flats_3_mini {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: flats_3_mini_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: flats_3_mini_building;
+    }
+}
+
+if (enable_tropic) {
+    item(FEAT_HOUSES, item_flats_3_mini) {
+        property {
+            substitute: 0x52;
+            years_available: [1929, 65535];
+            accepted_cargos: [[PASS, 6], [MAIL, 2], [GOOD, 1], [FOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_flats_3_mini;
+        }
+    }
+}
+
+
 spriteset (toyland_house_2_building) {
     sprite_null()
     [  -28, -16, "gfx/4635.png"] // 4635

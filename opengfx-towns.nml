@@ -298,8 +298,7 @@ switch (FEAT_HOUSES, SELF, church_construction_check, (
 switch (FEAT_HOUSES, PARENT, has_population, required, population >= required) {return;}
 
 switch (FEAT_HOUSES, SELF, college_construction_check, (
-    has_population(3000)
-    && has_population(same_class_count_town * 3000)
+    has_population((same_class_count_town + 1) * 3000)
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
@@ -346,8 +345,7 @@ switch (FEAT_HOUSES, SELF, switch_check_road_initial_2_faced, animation_frame) {
 }
 
 switch (FEAT_HOUSES, SELF, radio_construction_check, (
-    has_population(2000)
-    && has_population(same_class_count_town * 2000)
+    has_population((same_class_count_town + 1) * 2000)
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
@@ -363,30 +361,27 @@ switch (FEAT_HOUSES, SELF, park_construction_check, (
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, workshop_construction_check, (
-    has_population(650)
-//    && has_population(same_class_count_town * 650)
+    has_population((same_class_count_town + 1) * 650)
 //    && !nearest_house_matching_criterion(7, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, ukts_skyscraper_construction_check, (
     has_population(5000)
-    && has_population(same_class_count_town * 2500)
+    && has_population((same_class_count_town + 1) * 2500)
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, ukts_tall_office_block_construction_check, (
     has_population(2000)
-    && has_population(same_class_count_town * 1000)
+    && has_population((same_class_count_town + 1) * 1000)
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, ukts_warehouse_construction_check, (
-    has_population(1000)
-    && has_population(same_class_count_town * 2000)
+    has_population((same_class_count_town + 1) * 1000)
     && !nearest_house_matching_criterion(5, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, school_construction_check, (
-    has_population(3000)
-    && has_population(same_class_count_town * 3000)
+    has_population((same_class_count_town + 1) * 1000)
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
@@ -25876,8 +25871,7 @@ spritelayout sprite_university_w {
 }
 
 switch (FEAT_HOUSES, SELF, university_construction_check,
-    has_population(4500)
-    && has_population(same_class_count_town * 4500)
+    has_population((same_class_count_town + 1) * 4500)
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
 ) {return;}
 
@@ -25958,8 +25952,7 @@ spritelayout sprite_courthouse_w {
 }
 
 switch (FEAT_HOUSES, SELF, courthouse_construction_check,
-    has_population(1500)
-    && has_population(same_class_count_town * 1500)
+    has_population((same_class_count_town + 1) * 1500)
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
 ) {return;}
 

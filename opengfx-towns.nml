@@ -394,14 +394,14 @@ spriteset (large_office_block_1_ground) {
 }
 
 spriteset (large_office_block_1_building) {
-    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440; too tall to fit into the mere groundsprite
+    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440
     [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
 //    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
     [ 450,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1442
 }
 
 spriteset (large_office_block_1_snow) {
-    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440, too tall to fit into the mere groundsprite
+    [ 306,    8,  54,  37, -26,  -8, "ogfx/temprtbuilds.png"] // 1440
     [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
 //    [ 370,    8,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 1441
     [ 578,  568,  60,  77, -30, -48, "ogfx/temprtbuilds.png"] // 4569
@@ -475,6 +475,14 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 
 // 0x06 var B is a house_7 variant, skipped
 
+spriteset (temperate_hotel_N_ground) {
+    [   1,    8,  64,  31, -31,  -3, "ogfxplus/temphotel.png"] // 1448
+}
+
+spriteset (temperate_hotel_E_ground) {
+    [ 196,    8,  64,  32, -31,  -4, "ogfxplus/temphotel.png"] // 1451
+}
+
 spriteset (temperate_hotel_N_building) {
     [   1,    8,  64,  31, -31,  -3, "ogfxplus/temphotel.png"] // 1448
     [  66,    8,  64,  67, -31, -39, "ogfxplus/temphotel.png"] // 1449
@@ -507,6 +515,10 @@ spritelayout sprite_temperate_hotel_N {
     ground {
          sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
+    childsprite {
+        sprite: temperate_hotel_N_ground;
+        always_draw: 1;
+    }
     building {
         sprite: temperate_hotel_N_building;
         recolour_mode: RECOLOUR_REMAP;
@@ -524,6 +536,10 @@ spritelayout sprite_temperate_hotel_N {
 spritelayout sprite_temperate_hotel_E {
     ground {
          sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: temperate_hotel_E_ground;
+        always_draw: 1;
     }
     building {
         sprite: temperate_hotel_E_building;
@@ -781,6 +797,10 @@ if (enable_temperate || enable_uktownset) {
     }
 }
 
+spriteset (office_block_2_ground) {
+    [ 434,  104,  52,  31, -25,  -3, "ogfx/temprtbuilds.png"] // 1458
+}
+
 spriteset (office_block_2_building) {
     [ 434,  104,  52,  31, -25,  -3, "ogfx/temprtbuilds.png"] // 1458
     [ 498,  104,  52,  61, -25, -33, "ogfx/temprtbuilds.png"] // 1459
@@ -797,6 +817,10 @@ spriteset (office_block_2_building_snow) {
 spritelayout sprite_office_block_2 {
     ground {
         sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: office_block_2_ground;
+        always_draw: 1;
     }
     building {
         sprite: office_block_2_building;

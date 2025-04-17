@@ -908,19 +908,37 @@ if ((enable_temperate || enable_arctic || enable_tropic)) {
     }
 }
 
+spriteset (warehouse_1_ground) {
+    [  82,  232,  48,  29, -22,  -2, "ogfx/temprtbuilds.png"] // 1473
+}
+
 spriteset (warehouse_1_building) {
-    [  82,  232,  48,  29, -23,  -5, "ogfx/temprtbuilds.png"] // 1473
-    [ 146,  232,  48,  43, -23, -19, "ogfx/temprtbuilds.png"] // 1474
-    [ 210,  232,  48,  44, -23, -20, "ogfx/temprtbuilds.png"] // 1475
-//    [ 210,  232,  48,  44, -23, -20, "ogfx/temprtbuilds.png"] // 1475
+    [  82,  232,  48,  29, -22,  -2, "ogfx/temprtbuilds.png"] // 1473
+    [ 146,  232,  48,  43, -22, -16, "ogfx/temprtbuilds.png"] // 1474
+    [ 210,  232,  48,  44, -22, -17, "ogfx/temprtbuilds.png"] // 1475
+}
+
+spriteset (warehouse_1_building_snow) {
+    [  82,  232,  48,  29, -22,  -2, "ogfx/temprtbuilds.png"] // 1473
+    [ 146,  232,  48,  43, -22, -16, "ogfx/temprtbuilds.png"] // 1474
+    [ -22, -17, "ogfxplus/1475-snow.png"]
 }
 
 spritelayout sprite_warehouse_1 {
     ground {
         sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
+    childsprite {
+        sprite: warehouse_1_ground;
+        always_draw: 1;
+    }
     building {
         sprite: warehouse_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: warehouse_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -930,7 +948,7 @@ if (enable_temperate) {
             substitute: 0x12;
             availability_mask: [
                 bitmask(TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

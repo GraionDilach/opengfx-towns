@@ -269,6 +269,8 @@ if (disable_base_houses) {
 // 20 college
 // 21 school
 // 22 warehouse (ukts)
+// 23 tall office (ukts)
+// 24 skyscraper (ukts)
 
 // 30 park/statue/fountain
 
@@ -368,10 +370,12 @@ switch (FEAT_HOUSES, SELF, workshop_construction_check, (
 
 switch (FEAT_HOUSES, SELF, ukts_skyscraper_construction_check, (
     has_population(5000)
+    && has_population(same_class_count_town * 2500)
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, ukts_tall_office_block_construction_check, (
     has_population(2000)
+    && has_population(same_class_count_town * 1000)
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, ukts_warehouse_construction_check, (
@@ -20751,6 +20755,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -20902,6 +20907,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -21053,6 +21059,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -21204,6 +21211,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -21355,6 +21363,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -21506,6 +21515,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -21657,6 +21667,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -21808,6 +21819,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -21959,6 +21971,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -22110,6 +22123,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -22261,6 +22275,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -22412,6 +22427,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -22563,6 +22579,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -22714,6 +22731,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -22865,6 +22883,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -23016,6 +23035,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: TTD_STR_TOWN_BUILDING_NAME_TALL_OFFICE_BLOCK_1;
+            building_class: 23;
             population: 80;
             mail_multiplier: 21;
             years_available: [1970, 65535];
@@ -23167,6 +23187,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: string(STR_NAME_SKYSCRAPER);
+            building_class: 24;
             population: 120;
             mail_multiplier: 32;
             years_available: [1985, 65535];
@@ -23318,6 +23339,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: string(STR_NAME_SKYSCRAPER);
+            building_class: 24;
             population: 120;
             mail_multiplier: 32;
             years_available: [1985, 65535];
@@ -23469,6 +23491,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: string(STR_NAME_SKYSCRAPER);
+            building_class: 24;
             population: 120;
             mail_multiplier: 32;
             years_available: [1985, 65535];
@@ -23620,6 +23643,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: string(STR_NAME_SKYSCRAPER);
+            building_class: 24;
             population: 120;
             mail_multiplier: 32;
             years_available: [1985, 65535];
@@ -23771,6 +23795,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: string(STR_NAME_SKYSCRAPER);
+            building_class: 24;
             population: 120;
             mail_multiplier: 32;
             years_available: [1985, 65535];
@@ -23922,6 +23947,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: string(STR_NAME_SKYSCRAPER);
+            building_class: 24;
             population: 120;
             mail_multiplier: 32;
             years_available: [1985, 65535];
@@ -24073,6 +24099,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: string(STR_NAME_SKYSCRAPER);
+            building_class: 24;
             population: 120;
             mail_multiplier: 32;
             years_available: [1985, 65535];
@@ -24224,6 +24251,7 @@ if (enable_uktownset) {
         property {
             substitute: 0x1E;
             name: string(STR_NAME_SKYSCRAPER);
+            building_class: 24;
             population: 120;
             mail_multiplier: 32;
             years_available: [1985, 65535];

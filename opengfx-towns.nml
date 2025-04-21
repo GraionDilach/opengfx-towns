@@ -26014,7 +26014,18 @@ spriteset (lighthouse_building) {
 
 spritelayout sprite_lighthouse {
     ground {
-        sprite: construction_state > 2 ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: GROUNDSPRITE_CONCRETE;
+        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
     }
     building {
         sprite: lighthouse_building;

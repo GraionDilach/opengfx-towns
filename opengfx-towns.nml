@@ -12022,6 +12022,1260 @@ if (enable_uktownset) {
 //     [   0,  264,  66,  87, -32, -56, "ogfx/base-4477-4479.4577-office.png"] // 4577
 // }
 
+spriteset (ukts_school_1_N_ground_temperate) {
+    [  10,  210,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10,  110,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10,   10,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_E_ground_temperate) {
+    [  80,  210,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80,  110,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80,   10,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_W_ground_temperate) {
+    [ 150,  210,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150,  110,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150,   10,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_S_ground_temperate) {
+    [ 220,  210,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220,  110,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220,   10,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_N_ground_arctic) {
+    [  10, 1460,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 1360,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 1260,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_E_ground_arctic) {
+    [  80, 1460,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 1360,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 1260,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_W_ground_arctic) {
+    [ 150, 1460,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 1360,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 1260,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_S_ground_arctic) {
+    [ 220, 1460,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 1360,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 1260,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_N_ground_tropic) {
+    [  10, 2710,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 2610,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 2510,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_E_ground_tropic) {
+    [  80, 2710,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 2610,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 2510,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_W_ground_tropic) {
+    [ 150, 2710,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 2610,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 2510,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1_S_ground_tropic) {
+    [ 220, 2710,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 2610,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 2510,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_N_ground_temperate) {
+    [  10,  520,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10,  420,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10,  320,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_E_ground_temperate) {
+    [  80,  520,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80,  420,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80,  320,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_W_ground_temperate) {
+    [ 150,  520,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150,  420,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150,  320,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_S_ground_temperate) {
+    [ 220,  520,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220,  420,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220,  320,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_N_ground_arctic) {
+    [  10, 1770,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 1670,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 1570,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_E_ground_arctic) {
+    [  80, 1770,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 1670,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 1570,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_W_ground_arctic) {
+    [ 150, 1770,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 1670,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 1570,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_S_ground_arctic) {
+    [ 220, 1770,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 1670,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 1570,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_N_ground_tropic) {
+    [  10, 3020,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 2920,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 2820,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_E_ground_tropic) {
+    [  80, 3020,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 2920,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 2820,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_W_ground_tropic) {
+    [ 150, 3020,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 2920,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 2820,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_2_S_ground_tropic) {
+    [ 220, 3020,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 2920,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 2820,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_N_ground_temperate) {
+    [  10,  830,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10,  730,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10,  630,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_E_ground_temperate) {
+    [  80,  830,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80,  730,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80,  630,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_W_ground_temperate) {
+    [ 150,  830,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150,  730,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150,  630,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_S_ground_temperate) {
+    [ 220,  830,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220,  730,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220,  630,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_N_ground_arctic) {
+    [  10, 2080,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 1980,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 1880,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_E_ground_arctic) {
+    [  80, 2080,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 1980,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 1880,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_W_ground_arctic) {
+    [ 150, 2080,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 1980,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 1880,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_S_ground_arctic) {
+    [ 220, 2080,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 1980,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 1880,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_N_ground_tropic) {
+    [  10, 3330,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 3230,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 3130,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_E_ground_tropic) {
+    [  80, 3330,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 3230,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 3130,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_W_ground_tropic) {
+    [ 150, 3330,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 3230,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 3130,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_3_S_ground_tropic) {
+    [ 220, 3330,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 3230,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 3130,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_N_ground_temperate) {
+    [  10, 1140,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 1040,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10,  940,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_E_ground_temperate) {
+    [  80, 1140,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 1040,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80,  940,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_W_ground_temperate) {
+    [ 150, 1140,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 1040,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150,  940,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_S_ground_temperate) {
+    [ 220, 1140,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 1040,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220,  940,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_N_ground_arctic) {
+    [  10, 2390,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 2290,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 2190,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_E_ground_arctic) {
+    [  80, 2390,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 2290,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 2190,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_W_ground_arctic) {
+    [ 150, 2390,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 2290,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 2190,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_S_ground_arctic) {
+    [ 220, 2390,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 2290,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 2190,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_N_ground_tropic) {
+    [  10, 3640,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 3540,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+    [  10, 3440,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_E_ground_tropic) {
+    [  80, 3640,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 3540,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [  80, 3440,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_W_ground_tropic) {
+    [ 150, 3640,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 3540,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+    [ 150, 3440,  64,  75, -31, -44, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_4_S_ground_tropic) {
+    [ 220, 3640,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 3540,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+    [ 220, 3440,  64,  31, -31,   0, "uktownset22/school_ground_split.png"]
+}
+
+spriteset (ukts_school_1a_N) {
+    [  10,  310,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [  10,  210,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [  10,  110,  64,  63, -31, -32, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1a_E) {
+    [  80,  310,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [  80,  210,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [  80,  110,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1a_W) {
+    [ 150,  310,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 150,  210,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 150,  110,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1a_S) {
+    [ 220,  310,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 220,  210,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 220,  110,  64,  31, -31,   0, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1a_N_snow) {
+    [  10,  310,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [  10,  210,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [  10,   10,  64,  63, -31, -32, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1a_E_snow) {
+    [  80,  310,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [  80,  210,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [  80,   10,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1a_W_snow) {
+    [ 150,  310,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 150,  210,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 150,   10,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1a_S_snow) {
+    [ 220,  310,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 220,  210,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 220,   10,  64,  31, -31,   0, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1b_N) {
+    [ 410,  310,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [ 410,  210,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [ 410,  110,  64,  63, -31, -32, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1b_E) {
+    [ 480,  310,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 480,  210,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 480,  110,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1b_W) {
+    [ 550,  310,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 550,  210,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 550,  110,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1b_S) {
+    [ 620,  310,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 620,  210,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 620,  110,  64,  31, -31,   0, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1b_N_snow) {
+    [ 410,  310,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [ 410,  210,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [ 410,   10,  64,  63, -31, -32, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1b_E_snow) {
+    [ 480,  310,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 480,  210,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 480,   10,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1b_W_snow) {
+    [ 550,  310,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 550,  210,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 550,   10,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1b_S_snow) {
+    [ 620,  310,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 620,  210,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 620,   10,  64,  31, -31,   0, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1c_N) {
+    [  10, 1950,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [  10, 1850,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [  10, 1750,  64,  63, -31, -32, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1c_E) {
+    [  80, 1950,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [  80, 1850,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [  80, 1750,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1c_W) {
+    [ 150, 1950,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 150, 1850,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 150, 1750,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1c_S) {
+    [ 220, 1950,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 220, 1850,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 220, 1750,  64,  31, -31,   0, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1c_N_snow) {
+    [  10, 1950,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [  10, 1850,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [  10, 1650,  64,  63, -31, -32, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1c_E_snow) {
+    [  80, 1950,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [  80, 1850,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [  80, 1650,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1c_W_snow) {
+    [ 150, 1950,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 150, 1850,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 150, 1650,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1c_S_snow) {
+    [ 220, 1950,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 220, 1850,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 220, 1650,  64,  31, -31,   0, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1d_N) {
+    [ 410, 1950,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [ 410, 1850,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [ 410, 1750,  64,  63, -31, -32, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1d_E) {
+    [ 480, 1950,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 480, 1850,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 480, 1750,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1d_W) {
+    [ 550, 1950,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 550, 1850,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 550, 1750,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1d_S) {
+    [ 620, 1950,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 620, 1850,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 620, 1750,  64,  31, -31,   0, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1d_N_snow) {
+    [ 410, 1950,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [ 410, 1850,  64,  63, -31, -32, "uktownset22/school_split.png"]
+    [ 410, 1650,  64,  63, -31, -32, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1d_E_snow) {
+    [ 480, 1950,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 480, 1850,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 480, 1650,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1d_W_snow) {
+    [ 550, 1950,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 550, 1850,  64,  79, -31, -48, "uktownset22/school_split.png"]
+    [ 550, 1650,  64,  79, -31, -48, "uktownset22/school_split.png"]
+}
+
+spriteset (ukts_school_1d_S_snow) {
+    [ 620, 1950,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 620, 1850,  64,  31, -31,   0, "uktownset22/school_split.png"]
+    [ 620, 1650,  64,  31, -31,   0, "uktownset22/school_split.png"]
+}
+
+spritelayout sprite_ukts_school_1a_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1a_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1a_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1b_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1b_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1b_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1c_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1c_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1c_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1d_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1d_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1d_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1a_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1a_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1a_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1b_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1b_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1b_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1c_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1c_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1c_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1d_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1d_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1d_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1a_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1a_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1a_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1b_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1b_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1b_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1c_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1c_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1c_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1d_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1d_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1d_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1a_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1a_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1a_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1b_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1b_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1b_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1c_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1c_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1c_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_school_1d_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_school_1_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_school_1d_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_school_1d_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, ukts_school_1_N, random_bits & 0x03) {
+    1: sprite_ukts_school_1a_N;
+    2: sprite_ukts_school_1b_N;
+    3: sprite_ukts_school_1c_N;
+    default: sprite_ukts_school_1d_N;
+}
+
+switch (FEAT_HOUSES, SELF, ukts_school_1_W, random_bits & 0x03) {
+    1: sprite_ukts_school_1a_W;
+    2: sprite_ukts_school_1b_W;
+    3: sprite_ukts_school_1c_W;
+    default: sprite_ukts_school_1d_W;
+}
+
+switch (FEAT_HOUSES, SELF, ukts_school_1_E, random_bits & 0x03) {
+    1: sprite_ukts_school_1a_E;
+    2: sprite_ukts_school_1b_E;
+    3: sprite_ukts_school_1c_E;
+    default: sprite_ukts_school_1d_E;
+}
+
+switch (FEAT_HOUSES, SELF, ukts_school_1_S, random_bits & 0x03) {
+    1: sprite_ukts_school_1a_S;
+    2: sprite_ukts_school_1b_S;
+    3: sprite_ukts_school_1c_S;
+    default: sprite_ukts_school_1d_S;
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_school_1, -1, HOUSE_SIZE_2X2) {
+        property {
+            substitute: 0x28;
+            name: string(STR_NAME_SCHOOL);
+            population: 64;
+            mail_multiplier: 4;
+            accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
+            building_class: 21;
+            years_available: [0, 65535];
+            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            graphics_north: ukts_school_1_N;
+            graphics_east: ukts_school_1_E;
+            graphics_south: ukts_school_1_S;
+            graphics_west: ukts_school_1_W;
+            construction_check: school_construction_check;
+        }
+    }
+}
+
 spriteset (ukts_shops_1_e_ground) {
     [   1,  244,  64,  80, -31, -49, "uktownset22/shops.png"]
 }

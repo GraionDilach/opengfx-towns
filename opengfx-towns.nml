@@ -986,9 +986,15 @@ spriteset (stadium_1_N_building) {
 
 spritelayout sprite_stadium_1_N {
     ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
         sprite: stadium_1_N_ground;
     }
-     building {
+    building {
         sprite: stadium_1_N_building;
     }
 }
@@ -1009,9 +1015,15 @@ spriteset (stadium_1_E_building) {
 
 spritelayout sprite_stadium_1_E {
     ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
         sprite: stadium_1_E_ground;
     }
-     building {
+    building {
         sprite: stadium_1_E_building;
     }
 }
@@ -1032,9 +1044,15 @@ spriteset (stadium_1_W_building) {
 
 spritelayout sprite_stadium_1_W {
     ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
         sprite: stadium_1_W_ground;
     }
-     building {
+    building {
         sprite: stadium_1_W_building;
     }
 }
@@ -1055,9 +1073,15 @@ spriteset (stadium_1_S_building) {
 
 spritelayout sprite_stadium_1_S {
     ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
         sprite: stadium_1_S_ground;
     }
-     building {
+    building {
         sprite: stadium_1_S_building;
     }
 }
@@ -1257,9 +1281,15 @@ spriteset (stadium_2_N_building) {
 
 spritelayout sprite_stadium_2_N {
     ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
         sprite: stadium_2_N_ground;
     }
-     building {
+    building {
         sprite: stadium_2_N_building;
     }
 }
@@ -1280,9 +1310,15 @@ spriteset (stadium_2_E_building) {
 
 spritelayout sprite_stadium_2_E {
     ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
         sprite: stadium_2_E_ground;
     }
-     building {
+    building {
         sprite: stadium_2_E_building;
     }
 }
@@ -1303,9 +1339,15 @@ spriteset (stadium_2_W_building) {
 
 spritelayout sprite_stadium_2_W {
     ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
         sprite: stadium_2_W_ground;
     }
-     building {
+    building {
         sprite: stadium_2_W_building;
     }
 }
@@ -1326,9 +1368,15 @@ spriteset (stadium_2_S_building) {
 
 spritelayout sprite_stadium_2_S {
     ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
         sprite: stadium_2_S_ground;
     }
-     building {
+    building {
         sprite: stadium_2_S_building;
     }
 }

@@ -18075,7 +18075,7 @@ if (enable_uktownset) {
             years_available: [0, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {
@@ -18083,6 +18083,1714 @@ if (enable_uktownset) {
             graphics_east: sprite_ukts_stadium_1_E;
             graphics_south: sprite_ukts_stadium_1_S;
             graphics_west: sprite_ukts_stadium_1_W;
+            construction_check: stadium_construction_check;
+        }
+    }
+}
+
+spriteset (ukts_stadium_2_N_ground_temperate) {
+    [ 410,  210,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410,  110,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410,   10,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_E_ground_temperate) {
+    [ 480,  210,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480,  110,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480,   10,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_W_ground_temperate) {
+    [ 550,  210,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550,  110,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550,   10,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_S_ground_temperate) {
+    [ 620,  210,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620,  110,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620,   10,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_N_ground_arctic) {
+    [ 410,  840,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410,  740,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410,  640,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_E_ground_arctic) {
+    [ 480,  840,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480,  740,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480,  640,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_W_ground_arctic) {
+    [ 550,  840,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550,  740,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550,  640,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_S_ground_arctic) {
+    [ 620,  840,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620,  740,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620,  640,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_N_ground_tropic) {
+    [ 410, 1460,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410, 1360,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410, 1260,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_E_ground_tropic) {
+    [ 480, 1460,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480, 1360,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480, 1260,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_W_ground_tropic) {
+    [ 550, 1460,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550, 1360,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550, 1260,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2_S_ground_tropic) {
+    [ 620, 1460,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620, 1360,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620, 1260,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_2a_N) {
+    [ 410,  310,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  210,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  110,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2a_E) {
+    [ 480,  310,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  210,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  110,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2a_W) {
+    [ 550,  310,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  210,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  110,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2a_S) {
+    [ 620,  310,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  210,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  110,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2a_N_snow) {
+    [ 410,  310,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  210,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,   10,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2a_E_snow) {
+    [ 480,  310,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  210,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,   10,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2a_W_snow) {
+    [ 550,  310,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  210,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,   10,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2a_S_snow) {
+    [ 620,  310,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  210,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,   10,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2b_N) {
+    [ 410, 1150,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410, 1050,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  950,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2b_E) {
+    [ 480, 1150,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480, 1050,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  950,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2b_W) {
+    [ 550, 1150,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550, 1050,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  950,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2b_S) {
+    [ 620, 1150,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620, 1050,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  950,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2b_N_snow) {
+    [ 410, 1150,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410, 1050,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  850,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2b_E_snow) {
+    [ 480, 1150,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480, 1050,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  850,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2b_W_snow) {
+    [ 550, 1150,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550, 1050,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  850,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_2b_S_snow) {
+    [ 620, 1150,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620, 1050,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  850,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spritelayout sprite_ukts_stadium_2a_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_2a_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_2a_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_2a_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_2a_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_2a_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_2a_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_2a_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_2a_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_2a_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_2a_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_2a_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_2b_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_2b_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_2b_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_2b_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_2b_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_2b_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_2b_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_2b_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_2b_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_2b_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_2_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_2b_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_2b_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_2_N, random_bits & 0x01) {
+    1: sprite_ukts_stadium_2a_N;
+    default: sprite_ukts_stadium_2b_N;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_2_W, random_bits & 0x01) {
+    1: sprite_ukts_stadium_2a_W;
+    default: sprite_ukts_stadium_2b_W;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_2_E, random_bits & 0x01) {
+    1: sprite_ukts_stadium_2a_E;
+    default: sprite_ukts_stadium_2b_E;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_2_S, random_bits & 0x01) {
+    1: sprite_ukts_stadium_2a_S;
+    default: sprite_ukts_stadium_2b_S;
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_stadium_2, -1, HOUSE_SIZE_2X2) {
+        property {
+            substitute: 0x14;
+            building_flags: 0;
+            building_class: 10;
+            years_available: [0, 65535];
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            graphics_north: sprite_ukts_stadium_2_N;
+            graphics_east: sprite_ukts_stadium_2_E;
+            graphics_south: sprite_ukts_stadium_2_S;
+            graphics_west: sprite_ukts_stadium_2_W;
+            construction_check: stadium_construction_check;
+        }
+    }
+}
+
+spriteset (ukts_stadium_3_N_ground_temperate) {
+    [  10,  520,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [  10,  420,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [  10,  320,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_E_ground_temperate) {
+    [  80,  520,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [  80,  420,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [  80,  320,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_W_ground_temperate) {
+    [ 150,  520,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 150,  420,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 150,  320,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_S_ground_temperate) {
+    [ 220,  520,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 220,  420,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 220,  320,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_N_ground_arctic) {
+    [  10, 1150,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [  10, 1050,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [  10,  950,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_E_ground_arctic) {
+    [  80, 1150,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [  80, 1050,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [  80,  950,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_W_ground_arctic) {
+    [ 150, 1150,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 150, 1050,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 150,  950,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_S_ground_arctic) {
+    [ 220, 1150,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 220, 1050,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 220,  950,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_N_ground_tropic) {
+    [  10, 1770,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [  10, 1670,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [  10, 1570,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_E_ground_tropic) {
+    [  80, 1770,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [  80, 1670,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [  80, 1570,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_W_ground_tropic) {
+    [ 150, 1770,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 150, 1670,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 150, 1570,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3_S_ground_tropic) {
+    [ 220, 1770,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 220, 1670,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 220, 1570,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_3a_N) {
+    [  10,  730,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [  10,  630,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [  10,  530,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3a_E) {
+    [  80,  730,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [  80,  630,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [  80,  530,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3a_W) {
+    [ 150,  730,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 150,  630,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 150,  530,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3a_S) {
+    [ 220,  730,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 220,  630,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 220,  530,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3a_N_snow) {
+    [  10,  730,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [  10,  630,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [  10,  430,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3a_E_snow) {
+    [  80,  730,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [  80,  630,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [  80,  430,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3a_W_snow) {
+    [ 150,  730,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 150,  630,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 150,  430,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3a_S_snow) {
+    [ 220,  730,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 220,  630,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 220,  430,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3b_N) {
+    [  10, 1570,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [  10, 1470,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [  10, 1370,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3b_E) {
+    [  80, 1570,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [  80, 1470,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [  80, 1370,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3b_W) {
+    [ 150, 1570,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 150, 1470,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 150, 1370,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3b_S) {
+    [ 220, 1570,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 220, 1470,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 220, 1370,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3b_N_snow) {
+    [  10, 1570,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [  10, 1470,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [  10, 1270,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3b_E_snow) {
+    [  80, 1570,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [  80, 1470,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [  80, 1270,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3b_W_snow) {
+    [ 150, 1570,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 150, 1470,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 150, 1270,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_3b_S_snow) {
+    [ 220, 1570,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 220, 1470,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 220, 1270,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spritelayout sprite_ukts_stadium_3a_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_3a_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_3a_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_3a_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_3a_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_3a_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_3a_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_3a_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_3a_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_3a_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_3a_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_3a_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_3b_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_3b_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_3b_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_3b_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_3b_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_3b_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_3b_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_3b_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_3b_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_3b_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_3_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_3b_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_3b_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_3_N, random_bits & 0x01) {
+    1: sprite_ukts_stadium_3a_N;
+    default: sprite_ukts_stadium_3b_N;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_3_W, random_bits & 0x01) {
+    1: sprite_ukts_stadium_3a_W;
+    default: sprite_ukts_stadium_3b_W;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_3_E, random_bits & 0x01) {
+    1: sprite_ukts_stadium_3a_E;
+    default: sprite_ukts_stadium_3b_E;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_3_S, random_bits & 0x01) {
+    1: sprite_ukts_stadium_3a_S;
+    default: sprite_ukts_stadium_3b_S;
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_stadium_3, -1, HOUSE_SIZE_2X2) {
+        property {
+            substitute: 0x20;
+            building_flags: 0;
+            building_class: 10;
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            graphics_north: sprite_ukts_stadium_3_N;
+            graphics_east: sprite_ukts_stadium_3_E;
+            graphics_south: sprite_ukts_stadium_3_S;
+            graphics_west: sprite_ukts_stadium_3_W;
+            construction_check: stadium_construction_check;
+        }
+    }
+}
+
+spriteset (ukts_stadium_4_N_ground_temperate) {
+    [ 410,  520,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410,  420,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410,  320,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_E_ground_temperate) {
+    [ 480,  520,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480,  420,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480,  320,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_W_ground_temperate) {
+    [ 550,  520,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550,  420,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550,  320,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_S_ground_temperate) {
+    [ 620,  520,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620,  420,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620,  320,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_N_ground_arctic) {
+    [ 410, 1150,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410, 1050,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410,  950,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_E_ground_arctic) {
+    [ 480, 1150,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480, 1050,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480,  950,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_W_ground_arctic) {
+    [ 550, 1150,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550, 1050,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550,  950,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_S_ground_arctic) {
+    [ 620, 1150,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620, 1050,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620,  950,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_N_ground_tropic) {
+    [ 410, 1770,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410, 1670,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+    [ 410, 1570,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_E_ground_tropic) {
+    [ 480, 1770,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480, 1670,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 480, 1570,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_W_ground_tropic) {
+    [ 550, 1770,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550, 1670,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+    [ 550, 1570,  64,  75, -31, -44, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4_S_ground_tropic) {
+    [ 620, 1770,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620, 1670,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+    [ 620, 1570,  64,  31, -31,   0, "uktownset22/stadium_ground_split.png"]
+}
+
+spriteset (ukts_stadium_4a_N) {
+    [ 410,  730,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  630,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  530,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4a_E) {
+    [ 480,  730,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  630,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  530,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4a_W) {
+    [ 550,  730,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  630,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  530,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4a_S) {
+    [ 620,  730,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  630,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  530,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4a_N_snow) {
+    [ 410,  730,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  630,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410,  430,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4a_E_snow) {
+    [ 480,  730,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  630,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480,  430,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4a_W_snow) {
+    [ 550,  730,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  630,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550,  430,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4a_S_snow) {
+    [ 620,  730,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  630,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620,  430,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4b_N) {
+    [ 410, 1570,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410, 1470,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410, 1370,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4b_E) {
+    [ 480, 1570,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480, 1470,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480, 1370,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4b_W) {
+    [ 550, 1570,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550, 1470,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550, 1370,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4b_S) {
+    [ 620, 1570,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620, 1470,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620, 1370,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4b_N_snow) {
+    [ 410, 1570,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410, 1470,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+    [ 410, 1270,  64,  59, -31, -28, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4b_E_snow) {
+    [ 480, 1570,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480, 1470,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 480, 1270,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4b_W_snow) {
+    [ 550, 1570,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550, 1470,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+    [ 550, 1270,  64,  75, -31, -44, "uktownset22/stadium_split.png"]
+}
+
+spriteset (ukts_stadium_4b_S_snow) {
+    [ 620, 1570,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620, 1470,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+    [ 620, 1270,  64,  31, -31,   0, "uktownset22/stadium_split.png"]
+}
+
+spritelayout sprite_ukts_stadium_4a_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_4a_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_4a_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_4a_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_4a_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_4a_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_4a_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_4a_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_4a_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_4a_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_4a_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_4a_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_4b_N {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_N_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_4b_N;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_4b_N_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_4b_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_W_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_4b_W;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_4b_W_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_4b_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_E_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_4b_E;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_4b_E_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_stadium_4b_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_stadium_4_S_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_stadium_4b_S;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_stadium_4b_S_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_4_N, random_bits & 0x01) {
+    1: sprite_ukts_stadium_4a_N;
+    default: sprite_ukts_stadium_4b_N;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_4_W, random_bits & 0x01) {
+    1: sprite_ukts_stadium_4a_W;
+    default: sprite_ukts_stadium_4b_W;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_4_E, random_bits & 0x01) {
+    1: sprite_ukts_stadium_4a_E;
+    default: sprite_ukts_stadium_4b_E;
+}
+
+switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_4_S, random_bits & 0x01) {
+    1: sprite_ukts_stadium_4a_S;
+    default: sprite_ukts_stadium_4b_S;
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_stadium_4, -1, HOUSE_SIZE_2X2) {
+        property {
+            substitute: 0x20;
+            building_flags: 0;
+            building_class: 10;
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            graphics_north: sprite_ukts_stadium_4_N;
+            graphics_east: sprite_ukts_stadium_4_E;
+            graphics_south: sprite_ukts_stadium_4_S;
+            graphics_west: sprite_ukts_stadium_4_W;
             construction_check: stadium_construction_check;
         }
     }

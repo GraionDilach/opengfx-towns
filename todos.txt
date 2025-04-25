@@ -1,4 +1,4 @@
-modern office building - create a transparent ground frame, create snow frame
+modern office building - ground frame
 
 expand UKTS ground tiles with desert variants
 

@@ -881,7 +881,12 @@ spriteset (modern_office_building_1_building) {
     [ 642,  104,  52, 115, -24, -88, "ogfx/temprtbuilds.png"] // 1470
     [ 706,  104,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1471
     [   2,  232,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1472
-//    [   2,  232,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1472
+}
+
+spriteset (modern_office_building_1_building_snow) {
+    [ 642,  104,  52, 115, -24, -88, "ogfx/temprtbuilds.png"] // 1470
+    [ 706,  104,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1471
+    [   0,    0,  54, 115, -25, -88, "ogfxplus/1472-snow.png"]
 }
 
 spritelayout sprite_modern_office_building_1 {
@@ -892,6 +897,13 @@ spritelayout sprite_modern_office_building_1 {
         sprite: modern_office_building_1_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: modern_office_building_1_building_snow;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -901,7 +913,7 @@ if ((enable_temperate || enable_arctic || enable_tropic)) {
             substitute: 0x11;
             availability_mask: [
                 bitmask(TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors == 0) {

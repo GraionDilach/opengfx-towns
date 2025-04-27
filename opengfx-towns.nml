@@ -32706,6 +32706,40 @@ spritelayout sprite_hq_stage_1 {
 if (enable_misc) {
     item(FEAT_HOUSES, item_hq_stage_1) {
         property {
+            substitute: 0x06;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 1], [FOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_hq_stage_1;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (hq_stage_3) {
+    sprite_null()
+    [-31, -5, "gfx/hqshop3.png"]
+}
+
+spritelayout sprite_hq_stage_3 {
+    ground {
+        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: hq_stage_3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_hq_stage_3) {
+        property {
             substitute: 0x3A;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 2]];
             availability_mask: [
@@ -32714,7 +32748,7 @@ if (enable_misc) {
             ];
         }
         graphics {
-            default: sprite_hq_stage_1;
+            default: sprite_hq_stage_3;
             colour: random_company_color();
         }
     }

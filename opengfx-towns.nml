@@ -32689,12 +32689,14 @@ if (enable_misc) {
 
 spriteset (hq_stage_1) {
     sprite_null()
-    [   1,   1,  64,  31, -31, 0, "gfx/hqshop1.png"]
+    [   1,   0,  64,  35, -31, -4, "gfx/hqshop1.png"]
 }
 
 spritelayout sprite_hq_stage_1 {
     ground {
-        sprite: GROUNDSPRITE_GRASS;
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
     building {
         sprite: hq_stage_1;

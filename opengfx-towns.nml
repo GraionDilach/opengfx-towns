@@ -32360,6 +32360,8 @@ spritelayout sprite_university_n {
     }
     building {
         sprite: university_n_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -32385,6 +32387,8 @@ spritelayout sprite_university_w {
     }
     building {
         sprite: university_w_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -32411,11 +32415,22 @@ if (enable_misc) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
 		}
-		graphics {
-			graphics_north: sprite_university_n;
-			graphics_west: sprite_university_w;
-			construction_check: university_construction_check;
-		}
+		if (additional_colors != 2) {
+            graphics {
+                graphics_north: sprite_university_n;
+                graphics_west: sprite_university_w;
+                construction_check: university_construction_check;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                graphics_north: sprite_university_n;
+                graphics_west: sprite_university_w;
+                construction_check: university_construction_check;
+                colour: random_struct_color();
+            }
+        }
 	}
 }
 

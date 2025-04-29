@@ -32441,6 +32441,8 @@ spritelayout sprite_courthouse_n {
     }
     building {
         sprite: courthouse_n_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -32466,6 +32468,8 @@ spritelayout sprite_courthouse_w {
     }
     building {
         sprite: courthouse_w_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -32492,11 +32496,22 @@ if (enable_misc) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
 		}
-		graphics {
-			graphics_north: sprite_courthouse_n;
-			graphics_west: sprite_courthouse_w;
-			construction_check: courthouse_construction_check;
-		}
+        if (additional_colors != 2) {
+            graphics {
+                graphics_north: sprite_courthouse_n;
+			    graphics_west: sprite_courthouse_w;
+			    construction_check: courthouse_construction_check;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                graphics_north: sprite_courthouse_n;
+			    graphics_west: sprite_courthouse_w;
+			    construction_check: courthouse_construction_check;
+                colour: random_struct_color();
+            }
+        }
 	}
 }
 
@@ -32689,7 +32704,7 @@ if (enable_misc) {
 
 spriteset (hq_stage_1) {
     sprite_null()
-    [   1,   0,  64,  35, -31, -4, "gfx/hqshop1.png"]
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1.png"]
 }
 
 spritelayout sprite_hq_stage_1 {

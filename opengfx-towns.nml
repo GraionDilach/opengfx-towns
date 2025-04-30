@@ -1269,9 +1269,14 @@ if (enable_temperate || enable_tropic) {
 
 spriteset (theater_1_building) {
     sprite_null()
-//    sprite_null() // was 1553
+    [   0,    0,  64,  55, -31, -24, "ogfxplus/1553-stage1.png"]
     [ 642,    8,  64,  55, -31, -24, ANIM, "ogfx/morebuildings.png"] // 1553
-//    [ 642,    8,  64,  55, -31, -24, ANIM, "ogfx/morebuildings.png"] // 1553
+}
+
+spriteset (theater_1_building_snow) {
+    sprite_null()
+    [   0,    0,  64,  55, -31, -24, "ogfxplus/1553-stage1.png"]
+    [   0,    0,  64,  55, -31, -24, ANIM, "ogfxplus/1553-snow.png"]
 }
 
 spritelayout sprite_theater_1 {
@@ -1280,6 +1285,11 @@ spritelayout sprite_theater_1 {
     }
     building {
         sprite: theater_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: theater_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -1290,7 +1300,7 @@ if (enable_temperate) {
             years_available: [1950, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

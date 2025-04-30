@@ -2,6 +2,8 @@ modern office building - ground frame
 
 stadium 1 - desert, construction frames
 
+tall office block 2 - ground frame
+
 expand UKTS ground tiles with desert variants
 
 ukts house 5 - grab 5c from ogfx/buildings.png:549 and grab a second roof for a d variant

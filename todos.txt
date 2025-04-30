@@ -3,6 +3,7 @@ modern office building - ground frame
 stadium 1 - desert, construction frames
 
 tall office block 2 - ground frame
+shops_and_offices_5 - ground frame
 
 expand UKTS ground tiles with desert variants
 

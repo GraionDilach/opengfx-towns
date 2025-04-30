@@ -1230,7 +1230,12 @@ spriteset (shops_and_offices_5_building) {
     [ 258,  360,  62,  48, -30, -20, "ogfx/temprtbuilds.png"] // 1541
     [ 418,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1543
     [ 578,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1545
-//    [ 578,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1545
+}
+
+spriteset (shops_and_offices_5_building_snow) {
+    [ 258,  360,  62,  48, -30, -20, "ogfx/temprtbuilds.png"] // 1541
+    [ 418,  360,  62,  83, -30, -55, "ogfx/temprtbuilds.png"] // 1543
+    [   0,    0,  62,  83, -30, -55, "ogfxplus/1545-snow.png"]
 }
 
 spritelayout sprite_shops_and_offices_5 {
@@ -1239,6 +1244,11 @@ spritelayout sprite_shops_and_offices_5 {
     }
     building {
         sprite: shops_and_offices_5_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: shops_and_offices_5_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -1248,7 +1258,7 @@ if (enable_temperate || enable_tropic) {
             substitute: 0x1E;
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

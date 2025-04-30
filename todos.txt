@@ -1,5 +1,7 @@
 modern office building - ground frame
 
+stadium 1 - desert, construction frames
+
 expand UKTS ground tiles with desert variants
 
 ukts house 5 - grab 5c from ogfx/buildings.png:549 and grab a second roof for a d variant
@@ -11,6 +13,8 @@ ukts house 16 - slap a second roof on UKTS variant and grab ogfx/buildings.png:8
 
 ukts offices 1 - recolor ew sprite to be a copy of ogfx 1425, code result in as cosmetic?
 ukts offices 3 - recolor ns sprite to be a copy of ogfx 1428, code result in as cosmetic?
+
+hq stage 5? (needs two slots and I'm already near the NML 0.7.6 limit though)
 
 radio station - move remap, snow frame, ground sprites (maybe a fence?)
 boiler station - rescale building to fit into a cell

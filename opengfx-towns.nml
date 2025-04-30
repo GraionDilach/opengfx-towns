@@ -1153,9 +1153,8 @@ if (enable_temperate) {
 
 spriteset (tall_office_block_2_building) {
     [ 146,    8,  64,  45, -31, -14, "ogfx/morebuildings.png"] // 1531
-    [ 306,    8,  64, 106, -31, -75, "ogfx/morebuildings.png"] // 1533
-    [ 466,    8,  64, 106, -31, -75, "ogfx/morebuildings.png"] // 1535
-//    [ 466,    8,  64, 106, -31, -75, "ogfx/morebuildings.png"] // 1535
+    [   0,    0,  64, 106, -31, -75, "ogfxplus/1533.png"] // 1533
+    [   0,    0,  64, 106, -31, -75, "ogfxplus/1535.png"] // 1535
 }
 
 spritelayout sprite_tall_office_block_2 {
@@ -1164,8 +1163,8 @@ spritelayout sprite_tall_office_block_2 {
     }
     building {
         sprite: tall_office_block_2_building;
-        // recolour_mode: RECOLOUR_REMAP;
-        // palette: PALETTE_USE_DEFAULT;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -1188,14 +1187,14 @@ if (enable_temperate) {
         {
             graphics {
                 default: sprite_tall_office_block_2;
-                // colour: random_modest_struct_color();
+                colour: random_modest_struct_color();
             }
         }
         if (additional_colors == 2)
         {
             graphics {
                 default: sprite_tall_office_block_2;
-                // colour: random_struct_color();
+                colour: random_struct_color();
             }
         }
     }

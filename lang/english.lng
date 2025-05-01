@@ -14,10 +14,21 @@ STR_PARAM_NAME_ENABLE_TROPIC                :Enable Sub-Tropic houses
 
 STR_PARAM_NAME_ENABLE_UK_TOWN_SET           :Enable UK Town Set v2.2 houses
 
+STR_PARAM_NAME_ENABLE_TOYLAND               :Enable a sensible subset of buildings derived from OpenGFX Toyland
+
 STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL    :Enable old, 32bpp render-based arctic Hotel
 
+STR_PARAM_NAME_ENABLE_BANK                  :Enable buildings derived from OpenGFX banks
+STR_PARAM_DESC_ENABLE_BANK                  :Enables towns to use the OpenGFX banks for courthouses/universities.
+
+STR_PARAM_NAME_ENABLE_INDUSTRIES            :Enable buildings derived from other OpenGFX industries
+STR_PARAM_DESC_ENABLE_INDUSTRIES            :Adds the Sawmill huts as Workshops, the Food Processing Plant depot as a warehouse and the Water Tower (only built if there is a Water cargo type defined).
+
+STR_PARAM_NAME_ENABLE_HQ                    :Enable buildings derived from OpenGFX company headquarters
+STR_PARAM_DESC_ENABLE_HQ                    :Enables the stage 1/stage 2 HQ as a Town House and the stage 3/4 variants as office buildings.
+
 STR_PARAM_NAME_ENABLE_MISC                  :Enable buildings derived from OpenGFX non-building artwork
-STR_PARAM_DESC_ENABLE_MISC                  :Enables towns to have their own transmitters and lighthouses.
+STR_PARAM_DESC_ENABLE_MISC                  :Enables OpenGFX landmarks and additional derivates mixed from various source sprites.
 
 STR_PARAM_NAME_LANDSCAPE                    :Landscape
 STR_PARAM_DESC_LANDSCAPE                    :This setting allows to override the landscape to tailor it towards customized setups in OpenGFX+ Landscape or OpenGFX2.

@@ -74,16 +74,47 @@ grf {
         // zbase arctic bit 6
         // zbase tropic bit 7
 
-        enable_32bpp_arctic_hotel {
+        enable_toyland {
             type: bool;
             bit: 8;
+            name: string(STR_PARAM_NAME_ENABLE_TOYLAND);
+            def_value: 0;
+        }
+
+        enable_32bpp_arctic_hotel {
+            type: bool;
+            bit: 9;
             name: string(STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL);
+            def_value: 0;
+        }
+
+        enable_bank {
+            type: bool;
+            bit: 10;
+            name: string(STR_PARAM_NAME_ENABLE_BANK);
+            desc: string(STR_PARAM_DESC_ENABLE_BANK);
+            def_value: 0;
+        }
+
+        enable_industries {
+            type: bool;
+            bit: 11;
+            name: string(STR_PARAM_NAME_ENABLE_INDUSTRIES);
+            desc: string(STR_PARAM_DESC_ENABLE_INDUSTRIES);
+            def_value: 0;
+        }
+
+        enable_hq {
+            type: bool;
+            bit: 12;
+            name: string(STR_PARAM_NAME_ENABLE_HQ);
+            desc: string(STR_PARAM_DESC_ENABLE_HQ);
             def_value: 0;
         }
 
         enable_misc {
             type: bool;
-            bit: 9;
+            bit: 13;
             name: string(STR_PARAM_NAME_ENABLE_MISC);
             desc: string(STR_PARAM_DESC_ENABLE_MISC);
             def_value: 0;
@@ -32035,7 +32066,7 @@ spritelayout sprite_toyland_house_2 {
     }
 }
 
-if (enable_misc) {
+if (enable_toyland) {
     item(FEAT_HOUSES, item_toyland_house_2) {
         property {
             substitute: 0x12; // 0x5D
@@ -32072,7 +32103,7 @@ spritelayout sprite_toyland_house_6 {
     }
 }
 
-if (enable_misc) {
+if (enable_toyland) {
     item(FEAT_HOUSES, item_toyland_house_6) {
         property {
             substitute: 0x1B; //0x61
@@ -32105,7 +32136,7 @@ spritelayout sprite_toyland_tall_office_block_1 {
     }
 }
 
-if (enable_misc) {
+if (enable_toyland) {
     item(FEAT_HOUSES, item_toyland_tall_office_block_1) {
         property {
             substitute: 0x62;
@@ -32138,7 +32169,7 @@ spritelayout sprite_toyland_shops_and_offices_2 {
     }
 }
 
-if (enable_misc) {
+if (enable_toyland) {
     item(FEAT_HOUSES, item_toyland_shops_and_offices_2) {
         property {
             substitute: 0x69;
@@ -32171,7 +32202,7 @@ spritelayout sprite_toyland_tall_office_block_2 {
     }
 }
 
-if (enable_misc) {
+if (enable_toyland) {
     item(FEAT_HOUSES, item_toyland_tall_office_block_2) {
         property {
             substitute: 0x6A;
@@ -32216,7 +32247,7 @@ spritelayout sprite_water_tower {
     }
 }
 
-if (enable_misc && cargotype_available("WATR")) {
+if (enable_industries && cargotype_available("WATR")) {
     item(FEAT_HOUSES, item_water_tower) {
         property {
             substitute: 0x09;
@@ -32273,7 +32304,7 @@ spritelayout sprite_warehouse_2 {
     }
 }
 
-if (enable_misc) {
+if (enable_industries) {
     item(FEAT_HOUSES, item_warehouse_2) {
         property {
             substitute: 0x12;
@@ -32315,7 +32346,7 @@ spritelayout sprite_workshop_1 {
     }
 }
 
-if (enable_misc) {
+if (enable_industries) {
     item(FEAT_HOUSES, item_workshop_1) {
         property {
             substitute: 0x12;
@@ -32351,7 +32382,7 @@ spritelayout sprite_workshop_2 {
     }
 }
 
-if (enable_misc) {
+if (enable_industries) {
     item(FEAT_HOUSES, item_workshop_2) {
         property {
             substitute: 0x12;
@@ -32429,7 +32460,7 @@ switch (FEAT_HOUSES, SELF, university_construction_check,
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
 ) {return;}
 
-if (enable_misc) {
+if (enable_bank) {
     item(FEAT_HOUSES, item_university, -1, HOUSE_SIZE_2X1){
 		property {
 			substitute: 0x4A;
@@ -32525,7 +32556,7 @@ switch (FEAT_HOUSES, SELF, courthouse_construction_check,
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
 ) {return;}
 
-if (enable_misc) {
+if (enable_bank) {
     item(FEAT_HOUSES, item_courthouse, -1, HOUSE_SIZE_2X1){
 		property {
 			substitute: 0x4A;
@@ -32767,7 +32798,7 @@ spritelayout sprite_hq_stage_1 {
     }
 }
 
-if (enable_misc) {
+if (enable_hq) {
     item(FEAT_HOUSES, item_hq_stage_1) {
         property {
             substitute: 0x06;
@@ -32801,7 +32832,7 @@ spritelayout sprite_hq_stage_3 {
     }
 }
 
-if (enable_misc) {
+if (enable_hq) {
     item(FEAT_HOUSES, item_hq_stage_3) {
         property {
             substitute: 0x3A;
@@ -32834,7 +32865,7 @@ spritelayout sprite_hq_stage_4 {
     }
 }
 
-if (enable_misc) {
+if (enable_hq) {
     item(FEAT_HOUSES, item_hq_stage_4) {
         property {
             substitute: 0x40;
@@ -32867,7 +32898,7 @@ spritelayout sprite_boiler_station {
     }
 }
 
-if (enable_misc) {
+if (enable_industries) {
     item(FEAT_HOUSES, item_boiler_station) {
         property {
             substitute: 0x12;

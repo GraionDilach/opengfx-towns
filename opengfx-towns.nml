@@ -520,11 +520,11 @@ replace( PALETTE_NEWSTRUCT_CRASH ) {
         0x47: 0x02;
         0x48: 0x03;
         0x49: 0x03;
-        0x4A: 0x05;
+        0x4A: 0x04;
         0x4B: 0x05;
         0x4C: 0x06;
         0x4D: 0x07;
-        0x4E: 0x08;
+        0x4E: 0x07;
         0x4F: 0x08;
     }
 }
@@ -1854,8 +1854,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 spriteset (cinema_1_building) {
     sprite_null()
 //    sprite_null() // was 4405
-    [  82,  136,  64,  49, -31, -18, ANIM, "ogfx/morebuildings.png"] // 4405
-//    [  82,  136,  64,  49, -31, -18, ANIM, "ogfx/morebuildings.png"] // 4405
+    [   0,   0,  64,  49, -31, -18, ANIM, "ogfxplus/4405.png"]
 }
 
 spritelayout sprite_cinema_1 {
@@ -1864,6 +1863,8 @@ spritelayout sprite_cinema_1 {
     }
     building {
         sprite: cinema_1_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -1876,8 +1877,26 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        graphics {
-            default: sprite_cinema_1;
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_cinema_1;
+                colour: PALETTE_NEWSTRUCT_CRASH;
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_cinema_1;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_cinema_1;
+                colour: random_struct_color();
+            }
         }
     }
 }

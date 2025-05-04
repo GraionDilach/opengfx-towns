@@ -1301,7 +1301,7 @@ if (enable_temperate || enable_tropic) {
 spriteset (theater_1_building) {
     sprite_null()
     [   0,    0,  64,  55, -31, -24, "ogfxplus/1553-stage1.png"]
-    [ 642,    8,  64,  55, -31, -24, ANIM, "ogfx/morebuildings.png"] // 1553
+    [   0,    0,  64,  55, -31, -24, ANIM, "ogfxplus/1553.png"]
 }
 
 spriteset (theater_1_building_snow) {
@@ -1317,10 +1317,14 @@ spritelayout sprite_theater_1 {
     building {
         sprite: theater_1_building;
         hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: theater_1_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -1334,8 +1338,25 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        graphics {
-            default: sprite_theater_1;
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_theater_1;
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_theater_1;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_theater_1;
+                colour: random_struct_color();
+            }
         }
     }
 }

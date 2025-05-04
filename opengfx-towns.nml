@@ -434,7 +434,6 @@ replace( PALETTE_NEWCC_CLASSIC_WHITE ) {
     }
 }
 
-
 random_switch (FEAT_HOUSES, SELF, random_company_color) {
     1: return PALETTE_OLDCC_DARK_BLUE;
     1: return PALETTE_OLDCC_PALE_GREEN;
@@ -514,6 +513,55 @@ random_switch (FEAT_HOUSES, SELF, modest_skyscraper_color) {
     1: return PALETTE_NEWCC_CLASSIC_WHITE;
 }
 
+PALETTE_NEWSTRUCT_CRASH = reserve_sprites(1);
+replace( PALETTE_NEWSTRUCT_CRASH ) {
+    recolour_sprite {
+        0x46: 0x01;
+        0x47: 0x02;
+        0x48: 0x03;
+        0x49: 0x03;
+        0x4A: 0x05;
+        0x4B: 0x05;
+        0x4C: 0x06;
+        0x4D: 0x07;
+        0x4E: 0x08;
+        0x4F: 0x08;
+    }
+}
+
+PALETTE_NEWSTRUCT_CREAM = reserve_sprites(1);
+replace( PALETTE_NEWSTRUCT_CREAM ) {
+    recolour_sprite {
+        0x47: 0x72;
+        0x48..0x4F: 0x72..0x79;
+    }
+}
+
+PALETTE_NEWSTRUCT_MAUVE = reserve_sprites(1);
+replace( PALETTE_NEWSTRUCT_MAUVE ) {
+    recolour_sprite {
+        0x47: 0x80;
+        0x48..0x4F: 0x80..0x87;
+    }
+}
+
+PALETTE_NEWSTRUCT_BLACK = reserve_sprites(1);
+replace( PALETTE_NEWSTRUCT_BLACK ) {
+    recolour_sprite {
+        0x47: 0x01;
+        0x48: 0x01;
+        0x49..0x4F: 0x01..0x07;
+    }
+}
+
+PALETTE_NEWSTRUCT_BROWN = reserve_sprites(1);
+replace( PALETTE_NEWSTRUCT_BROWN ) {
+    recolour_sprite {
+        0x47: 0x20;
+        0x48..0x4F: 0x20..0x27;
+    }
+}
+
 random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_USE_DEFAULT;
     1: return PALETTE_STRUCT_BLUE;
@@ -523,6 +571,11 @@ random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_STRUCT_GREEN;
     1: return PALETTE_STRUCT_CONCRETE;
     1: return PALETTE_STRUCT_YELLOW;
+    1: return PALETTE_NEWSTRUCT_CRASH;
+    1: return PALETTE_NEWSTRUCT_CREAM;
+    1: return PALETTE_NEWSTRUCT_MAUVE;
+    1: return PALETTE_NEWSTRUCT_BLACK;
+    1: return PALETTE_NEWSTRUCT_BROWN;
 }
 
 random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
@@ -530,6 +583,10 @@ random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
     1: return PALETTE_STRUCT_BROWN;
     1: return PALETTE_STRUCT_WHITE;
     1: return PALETTE_STRUCT_CONCRETE;
+    1: return PALETTE_NEWSTRUCT_CRASH;
+    1: return PALETTE_NEWSTRUCT_CREAM;
+    1: return PALETTE_NEWSTRUCT_MAUVE;
+    1: return PALETTE_NEWSTRUCT_BROWN;
 }
 
 // null sprite
@@ -1432,6 +1489,16 @@ if (enable_temperate) {
 //     [ 386,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1534
 // }
 
+// drop MAUVE on modest because that's what the windows use
+random_switch (FEAT_HOUSES, SELF, random_modest_tall_office_block_2_color) {
+    1: return PALETTE_USE_DEFAULT;
+    1: return PALETTE_STRUCT_BROWN;
+    1: return PALETTE_STRUCT_WHITE;
+    1: return PALETTE_STRUCT_CONCRETE;
+    1: return PALETTE_NEWSTRUCT_CRASH;
+    1: return PALETTE_NEWSTRUCT_CREAM;
+    1: return PALETTE_NEWSTRUCT_BROWN;
+}
 
 spriteset (tall_office_block_2_building) {
     [ 146,    8,  64,  45, -31, -14, "ogfx/morebuildings.png"] // 1531
@@ -1482,7 +1549,7 @@ if (enable_temperate) {
         {
             graphics {
                 default: sprite_tall_office_block_2;
-                colour: random_modest_struct_color();
+                colour: random_modest_tall_office_block_2_color();
             }
         }
         if (additional_colors == 2)

@@ -1853,8 +1853,14 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 
 spriteset (cinema_1_building) {
     sprite_null()
-//    sprite_null() // was 4405
+    [   0,   0,  64,  49, -31, -18, "ogfxplus/4405-stage1.png"]
     [   0,   0,  64,  49, -31, -18, ANIM, "ogfxplus/4405.png"]
+}
+
+spriteset (cinema_1_building_snow) {
+    sprite_null()
+    [   0,   0,  64,  49, -31, -18, "ogfxplus/4405-stage1.png"]
+    [   0,   0,  64,  49, -31, -18, ANIM, "ogfxplus/4405-snow.png"]
 }
 
 spritelayout sprite_cinema_1 {
@@ -1863,6 +1869,13 @@ spritelayout sprite_cinema_1 {
     }
     building {
         sprite: cinema_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: cinema_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -1874,7 +1887,7 @@ if (enable_temperate) {
             substitute: 0x27;
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors == 0)

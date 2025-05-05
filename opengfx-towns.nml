@@ -2594,7 +2594,11 @@ spriteset (tall_office_block_7_N_building_snow) {
 
 spritelayout sprite_tall_office_block_7_N {
     ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
         sprite: tall_office_block_7_N_ground;
+        always_draw: 1;
     }
     building {
         sprite: tall_office_block_7_N_building;
@@ -2629,7 +2633,11 @@ spriteset (tall_office_block_7_W_building_snow) {
 
 spritelayout sprite_tall_office_block_7_W {
     ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
         sprite: tall_office_block_7_W_ground;
+        always_draw: 1;
     }
     building {
         sprite: tall_office_block_7_W_building;

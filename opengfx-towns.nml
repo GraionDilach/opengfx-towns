@@ -2248,31 +2248,31 @@ if (enable_arctic || enable_tropic) {
 
 // 0x3A is a clone of UKTS offices 6
 
-// gonna reorg this one for polish
 spriteset (church_2_ground) {
-    [  80,   10,  64,  31, -31,   0, "ogfx/arcticchurch.png"] // 4463
-//    [  80,   10,  64,  31, -31,   0, "ogfx/arcticchurch.png"] // 4463
-//    [  80,   10,  64,  31, -31,   0, "ogfx/arcticchurch.png"] // 4463
-    [   0,    0,  64,  31, -31,   0, "ogfx/base-4462-arctic-church-groundtile.png"] // 4462
+    [  -31,   0, "ogfxplus/4464-bareland.png"]
+    [  -31,   0, "ogfxplus/4464-transparent.png"]
+    [  -31,   0, "ogfxplus/4465-transparent.png"]
 }
 
 spriteset (church_2_building) {
     sprite_null()
-    [ 150,   10,  64,  44, -31, -13, "ogfx/arcticchurch.png"] // 4464
+    [ -31, -13, "ogfxplus/4464.png"] // 4464
     [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
-//    [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
 }
 
 spriteset (church_2_building_snow) {
     sprite_null()
-    [ 150,   10,  64,  44, -31, -13, "ogfx/arcticchurch.png"] // 4464
-//    [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
+    [ -31, -13, "ogfxplus/4464.png"] // 4464
     [ 290,   10,  64,  49, -31, -18, "ogfx/arcticchurch.png"] // 4579
 }
 
 spritelayout sprite_church_2 {
     ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
         sprite: church_2_ground;
+        always_draw: 1;
     }
     building {
         sprite: church_2_building;

@@ -32523,7 +32523,6 @@ spriteset (toyland_house_2_building) {
     sprite_null()
     [  -28, -16, "gfx/4635.png"] // 4635
     [  -28, -16, "gfx/4635.png"] // 4635
-    [  -28, -16, "gfx/4635.png"] // 4635
 }
 
 spritelayout sprite_toyland_house_2 {
@@ -32556,7 +32555,6 @@ if (enable_toyland) {
 
 spriteset (toyland_house_6_building) {
     sprite_null()
-    [  -25, -20, "gfx/4647.png"] // 4647
     [  -25, -20, "gfx/4647.png"] // 4647
     [  -25, -20, "gfx/4647.png"] // 4647
 }
@@ -32593,7 +32591,6 @@ spriteset (toyland_tall_office_block_1_building) {
     sprite_null()
     [  -30, -67, "gfx/4650.png"] // 4650
     [  -30, -67, "gfx/4650.png"] // 4650
-    [  -30, -67, "gfx/4650.png"] // 4650
 }
 
 spritelayout sprite_toyland_tall_office_block_1 {
@@ -32626,7 +32623,6 @@ spriteset (toyland_shops_and_offices_2_building) {
     sprite_null()
     [  -25, -54, ANIM, "gfx/4671.png"] // 4671
     [  -25, -54, ANIM, "gfx/4671.png"] // 4671
-    [  -25, -54, ANIM, "gfx/4671.png"] // 4671
 }
 
 spritelayout sprite_toyland_shops_and_offices_2 {
@@ -32657,7 +32653,6 @@ if (enable_toyland) {
 
 spriteset (toyland_tall_office_block_2_building) {
     sprite_null()
-    [  -22, -65, "gfx/4674.png"] // 4674
     [  -22, -65, "gfx/4674.png"] // 4674
     [  -22, -65, "gfx/4674.png"] // 4674
 }

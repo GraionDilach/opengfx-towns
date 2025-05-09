@@ -1836,7 +1836,7 @@ spritelayout sprite_offices_1 {
     ground {
         sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE; // duplicated
     }
-    building {
+    childsprite {
         sprite: offices_1_ground;
         always_draw: 1;
     }
@@ -2270,7 +2270,7 @@ spritelayout sprite_church_2 {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
-    building {
+    childsprite {
         sprite: church_2_ground;
         always_draw: 1;
     }
@@ -2596,7 +2596,7 @@ spritelayout sprite_tall_office_block_7_N {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
-    building {
+    childsprite {
         sprite: tall_office_block_7_N_ground;
         always_draw: 1;
     }
@@ -2635,7 +2635,7 @@ spritelayout sprite_tall_office_block_7_W {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
-    building {
+    childsprite {
         sprite: tall_office_block_7_W_ground;
         always_draw: 1;
     }

@@ -32486,7 +32486,7 @@ spritelayout sprite_flats_3_mini {
     }
 }
 
-if (enable_tropic) {
+if (enable_tropic && enable_misc) {
     item(FEAT_HOUSES, item_flats_3_mini) {
         property {
             substitute: 0x52;
@@ -32537,7 +32537,7 @@ spritelayout sprite_flats_3_mini2 {
     }
 }
 
-if (enable_tropic) {
+if (enable_tropic && enable_misc) {
     item(FEAT_HOUSES, item_flats_3_mini2) {
         property {
             substitute: 0x52;

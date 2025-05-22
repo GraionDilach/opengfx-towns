@@ -2309,28 +2309,23 @@ if (enable_arctic) {
 
 spriteset (arctic_hotel_N_ground_childsprite) {
     [   2,    9,  64,  33, -31,  -1, "ogfx/arctichotel.png"] // 4471
-    sprite_null()
-//    sprite_null()
-//    sprite_null()
 }
 
 spriteset (arctic_hotel_N_building) {
     sprite_null()
     [ 162,    9,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4473
     [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
-//    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
 }
 
 spriteset (arctic_hotel_N_building_snow) {
     sprite_null()
     [ 162,    9,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4473
-//    [   3,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4475
     [ 128,   80,  32,  46, -31, -15, "ogfx/arctichotel.png"] // 4583
 }
 
 spritelayout sprite_arctic_hotel_N {
     ground {
-        sprite: GROUNDSPRITE_CLEARED;
+        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: arctic_hotel_N_ground_childsprite;
@@ -2352,28 +2347,23 @@ spritelayout sprite_arctic_hotel_N {
 
 spriteset (arctic_hotel_E_ground_childsprite) {
     [  82,    9,  64,  33, -31,  -1, "ogfx/arctichotel.png"] // 4472
-    sprite_null()
-//    sprite_null()
-//    sprite_null()
 }
 
 spriteset (arctic_hotel_E_building) {
     sprite_null()
     [ 206,    9,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4474
     [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
-//    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
 }
 
 spriteset (arctic_hotel_E_building_snow) {
     sprite_null()
     [ 206,    9,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4474
-//    [  51,   80,  64,  63, -31, -32, "ogfx/arctichotel.png"] // 4476
     [ 176,   80,  64,  64, -31, -33, "ogfx/arctichotel.png"] // 4584
 }
 
 spritelayout sprite_arctic_hotel_E {
     ground {
-        sprite: GROUNDSPRITE_CLEARED;
+        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: arctic_hotel_E_ground_childsprite;

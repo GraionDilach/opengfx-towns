@@ -1686,6 +1686,13 @@ spriteset (stadium_2_N_ground) {
 spriteset (stadium_2_N_building) {
     sprite_null()
     [   0,   0, 66, 87, -32, -56, "ogfxplus/1558.png"]
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1558.png"]
+}
+
+spriteset (stadium_2_N_building_snow) {
+    sprite_null()
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1558.png"]
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1558-snow.png"]
 }
 
 spritelayout sprite_stadium_2_N {
@@ -1700,6 +1707,13 @@ spritelayout sprite_stadium_2_N {
     }
     building {
         sprite: stadium_2_N_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: stadium_2_N_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -1712,6 +1726,13 @@ spriteset (stadium_2_E_ground) {
 spriteset (stadium_2_E_building) {
     sprite_null()
     [   0,  88, 66, 87, -32, -56, "ogfxplus/1558.png"]
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1558.png"]
+}
+
+spriteset (stadium_2_E_building_snow) {
+    sprite_null()
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1558.png"]
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1558-snow.png"]
 }
 
 spritelayout sprite_stadium_2_E {
@@ -1726,6 +1747,13 @@ spritelayout sprite_stadium_2_E {
     }
     building {
         sprite: stadium_2_E_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: stadium_2_E_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -1738,6 +1766,13 @@ spriteset (stadium_2_W_ground) {
 spriteset (stadium_2_W_building) {
     sprite_null()
     [   0, 264, 66, 87, -32, -56, "ogfxplus/1558.png"]
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1558.png"]
+}
+
+spriteset (stadium_2_W_building_snow) {
+    sprite_null()
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1558.png"]
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1558-snow.png"]
 }
 
 spritelayout sprite_stadium_2_W {
@@ -1752,6 +1787,13 @@ spritelayout sprite_stadium_2_W {
     }
     building {
         sprite: stadium_2_W_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: stadium_2_W_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -1764,6 +1806,13 @@ spriteset (stadium_2_S_ground) {
 spriteset (stadium_2_S_building) {
     sprite_null()
     [   0, 176, 66, 87, -32, -56, "ogfxplus/1558.png"]
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1558.png"]
+}
+
+spriteset (stadium_2_S_building_snow) {
+    sprite_null()
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1558.png"]
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1558-snow.png"]
 }
 
 spritelayout sprite_stadium_2_S {
@@ -1778,6 +1827,13 @@ spritelayout sprite_stadium_2_S {
     }
     building {
         sprite: stadium_2_S_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: stadium_2_S_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -1791,7 +1847,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
             building_class: 11;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors == 0)

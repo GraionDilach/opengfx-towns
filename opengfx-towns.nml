@@ -1323,16 +1323,12 @@ if (enable_temperate) {
 
 spriteset (stadium_1_N_ground) {
     [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
-//    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
-//    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
-//    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
 }
 
 spriteset (stadium_1_N_building) {
     sprite_null()
-    [   0, 352, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1483
-//    [   0, 352, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1483
-//    [   0, 352, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1483
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1483.png"]
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1483.png"]
 }
 
 spritelayout sprite_stadium_1_N {
@@ -1347,21 +1343,19 @@ spritelayout sprite_stadium_1_N {
     }
     building {
         sprite: stadium_1_N_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
 spriteset (stadium_1_E_ground) {
     [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
-//    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
-//    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
-//    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
 }
 
 spriteset (stadium_1_E_building) {
     sprite_null()
-    [   0, 440, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1484
-//    [   0, 440, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1484
-//    [   0, 440, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1484
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1483.png"]
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1483.png"]
 }
 
 spritelayout sprite_stadium_1_E {
@@ -1376,21 +1370,19 @@ spritelayout sprite_stadium_1_E {
     }
     building {
         sprite: stadium_1_E_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
 spriteset (stadium_1_W_ground) {
     [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
-//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
-//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
-//    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
 }
 
 spriteset (stadium_1_W_building) {
     sprite_null()
-    [   0, 528, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1485
-//    [   0, 528, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1485
-//    [   0, 528, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1485
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1483.png"]
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1483.png"]
 }
 
 spritelayout sprite_stadium_1_W {
@@ -1405,21 +1397,18 @@ spritelayout sprite_stadium_1_W {
     }
     building {
         sprite: stadium_1_W_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
 spriteset (stadium_1_S_ground) {
     [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
-//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
-//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
-//    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
 }
 
 spriteset (stadium_1_S_building) {
     sprite_null()
-    [   0, 616, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1486
-//    [   0, 616, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1486
-//    [   0, 616, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1486
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1483.png"]
 }
 
 spritelayout sprite_stadium_1_S {
@@ -1434,6 +1423,8 @@ spritelayout sprite_stadium_1_S {
     }
     building {
         sprite: stadium_1_S_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -1448,12 +1439,37 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        graphics {
-            graphics_north: sprite_stadium_1_N;
-            graphics_east: sprite_stadium_1_E;
-            graphics_south: sprite_stadium_1_S;
-            graphics_west: sprite_stadium_1_W;
-            construction_check: stadium_construction_check;
+        if (additional_colors == 0)
+        {
+            graphics {
+                graphics_north: sprite_stadium_1_N;
+                graphics_east: sprite_stadium_1_E;
+                graphics_south: sprite_stadium_1_S;
+                graphics_west: sprite_stadium_1_W;
+                construction_check: stadium_construction_check;
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                graphics_north: sprite_stadium_1_N;
+                graphics_east: sprite_stadium_1_E;
+                graphics_south: sprite_stadium_1_S;
+                graphics_west: sprite_stadium_1_W;
+                construction_check: stadium_construction_check;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                graphics_north: sprite_stadium_1_N;
+                graphics_east: sprite_stadium_1_E;
+                graphics_south: sprite_stadium_1_S;
+                graphics_west: sprite_stadium_1_W;
+                construction_check: stadium_construction_check;
+                colour: random_struct_color();
+            }
         }
     }
 }

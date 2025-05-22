@@ -1322,7 +1322,7 @@ if (enable_temperate) {
 // 0x13 is a variant of UKTS offices_11
 
 spriteset (stadium_1_N_ground) {
-    [   0, 0, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1479
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1479.png"]
 }
 
 spriteset (stadium_1_N_building) {
@@ -1331,25 +1331,39 @@ spriteset (stadium_1_N_building) {
     [   0,   0, 66, 87, -32, -56, "ogfxplus/1483.png"]
 }
 
+spriteset (stadium_1_N_building_snow) {
+    sprite_null()
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1483.png"]
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1483-snow.png"]
+}
+
 spritelayout sprite_stadium_1_N {
     ground {
-        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+        sprite: construction_state != 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
                 : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
                     : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: stadium_1_N_ground;
+        always_draw: 1;
     }
     building {
         sprite: stadium_1_N_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: stadium_1_N_building_snow;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
 spriteset (stadium_1_E_ground) {
-    [   0, 88, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1480
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1479.png"]
 }
 
 spriteset (stadium_1_E_building) {
@@ -1358,25 +1372,39 @@ spriteset (stadium_1_E_building) {
     [   0,  88, 66, 87, -32, -56, "ogfxplus/1483.png"]
 }
 
+spriteset (stadium_1_E_building_snow) {
+    sprite_null()
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1483.png"]
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1483-snow.png"]
+}
+
 spritelayout sprite_stadium_1_E {
     ground {
-        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+        sprite: construction_state != 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
                 : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
                     : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: stadium_1_E_ground;
+        always_draw: 1;
     }
     building {
         sprite: stadium_1_E_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: stadium_1_E_building_snow;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
 spriteset (stadium_1_W_ground) {
-    [   0, 176, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1481
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1479.png"]
 }
 
 spriteset (stadium_1_W_building) {
@@ -1385,46 +1413,75 @@ spriteset (stadium_1_W_building) {
     [   0, 176, 66, 87, -32, -56, "ogfxplus/1483.png"]
 }
 
+spriteset (stadium_1_W_building_snow) {
+    sprite_null()
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1483.png"]
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1483-snow.png"]
+}
+
 spritelayout sprite_stadium_1_W {
     ground {
-        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+        sprite: construction_state != 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
                 : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
                     : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: stadium_1_W_ground;
+        always_draw: 1;
     }
     building {
         sprite: stadium_1_W_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: stadium_1_W_building_snow;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
 spriteset (stadium_1_S_ground) {
-    [   0, 264, 66, 87, -32, -56, "ogfx/base-1479-soccer.png"] // 1482
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1479.png"]
 }
 
 spriteset (stadium_1_S_building) {
     sprite_null()
     [   0, 264, 66, 87, -32, -56, "ogfxplus/1483.png"]
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1483.png"]
+}
+
+spriteset (stadium_1_S_building_snow) {
+    sprite_null()
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1483.png"]
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1483-snow.png"]
 }
 
 spritelayout sprite_stadium_1_S {
     ground {
-        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+        sprite: construction_state != 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
                 : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
                     : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: stadium_1_S_ground;
+        always_draw: 1;
     }
     building {
         sprite: stadium_1_S_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: stadium_1_S_building_snow;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -1436,7 +1493,7 @@ if (enable_temperate) {
             building_class: 10;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors == 0)
@@ -1720,6 +1777,7 @@ spritelayout sprite_stadium_2_N {
     }
     childsprite {
         sprite: stadium_2_N_ground;
+        always_draw: 1;
     }
     building {
         sprite: stadium_2_N_building;
@@ -1760,6 +1818,7 @@ spritelayout sprite_stadium_2_E {
     }
     childsprite {
         sprite: stadium_2_E_ground;
+        always_draw: 1;
     }
     building {
         sprite: stadium_2_E_building;
@@ -1800,6 +1859,7 @@ spritelayout sprite_stadium_2_W {
     }
     childsprite {
         sprite: stadium_2_W_ground;
+        always_draw: 1;
     }
     building {
         sprite: stadium_2_W_building;
@@ -1840,6 +1900,7 @@ spritelayout sprite_stadium_2_S {
     }
     childsprite {
         sprite: stadium_2_S_ground;
+        always_draw: 1;
     }
     building {
         sprite: stadium_2_S_building;

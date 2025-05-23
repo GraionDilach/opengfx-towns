@@ -2710,21 +2710,17 @@ if (enable_arctic) {
 spriteset (tall_office_block_7_N_ground) {
     [  68,   68,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // "4487"
     [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
-//    [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
-//    [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
 }
 
 spriteset (tall_office_block_7_N_building) {
     sprite_null()
     [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
-//    [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
     [ 212,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4491
 }
 
 spriteset (tall_office_block_7_N_building_snow) {
     sprite_null()
     [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
-//    [ 358,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4489
     [ 504,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4586
 }
 
@@ -2749,21 +2745,18 @@ spritelayout sprite_tall_office_block_7_N {
 spriteset (tall_office_block_7_W_ground) {
     [   2,   68,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // "4488"
     [   2,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4486
-//    [   2,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4486
     [ -31,   0, "ogfxplus/4486.png"] // 4486, merged black blob from unused tile to fix transparency
 }
 
 spriteset (tall_office_block_7_W_building) {
     sprite_null()
-    [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
-//    [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
+    [ 284,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4490
     [ 138,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4492
 }
 
 spriteset (tall_office_block_7_W_building_snow) {
     sprite_null()
-    [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
-//    [ 284,    2,  64, 114, -31, -84, "ogfx/morebuilding2.png"] // 4490
+    [ 284,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4490
     [ 430,    2,  64, 114, -31, -83, "ogfx/morebuilding2.png"] // 4587
 }
 

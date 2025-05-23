@@ -1,6 +1,6 @@
 modern office building - ground frame
 
-stadium 1 - desert, construction frames
+stadium 1 - construction frames
 
 tall office block 2 - ground frame
 shops_and_offices_5 - ground frame
@@ -22,3 +22,5 @@ hq stage 5? (needs two slots and I'm already near the NML 0.7.6 limit though)
 
 radio station - move remap, snow frame, ground sprites (maybe a fence?)
 boiler station - rescale building to fit into a cell
+
+just gate standard toyland buildings behind a CLIMATE_TOYLAND check after NML 0.7.6+

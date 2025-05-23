@@ -2934,16 +2934,25 @@ if (enable_tropic) {
     }
 }
 
+spriteset (houses_10b_ground) {
+    sprite_null()
+    [ -31, -23, "ogfxplus/4598-ground.png"]
+}
+
 spriteset (houses_10b_building) {
     sprite_null()
-//    sprite_null()
-    [ 146,    8,  64,  54, -31, -23, "ogfx/towns02.png"] // 4598
-//    [ 146,    8,  64,  54, -31, -23, "ogfx/towns02.png"] // 4598
+    [ -31, -23, "ogfxplus/4598.png"]
 }
 
 spritelayout sprite_houses_10b {
     ground {
-        sprite: GROUNDSPRITE_CLEARED;
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: houses_10b_ground;
+        always_draw: 1;
     }
     building {
         sprite: houses_10b_building;

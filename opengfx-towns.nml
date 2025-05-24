@@ -2953,6 +2953,12 @@ spriteset (houses_10b_building) {
     [ -31, -23, "ogfxplus/4598.png"]
 }
 
+spriteset (houses_10b_building_snow) {
+    sprite_null()
+    [ -31, -23, "ogfxplus/4598.png"]
+    [ -31, -23, "ogfxplus/4598-snow.png"]
+}
+
 spritelayout sprite_houses_10b {
     ground {
         sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
@@ -2965,6 +2971,11 @@ spritelayout sprite_houses_10b {
     }
     building {
         sprite: houses_10b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: houses_10b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -2974,7 +2985,7 @@ if (enable_tropic) {
             substitute: 0x51;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

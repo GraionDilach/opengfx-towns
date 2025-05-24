@@ -2902,10 +2902,12 @@ if (enable_tropic) {
 spriteset (houses_10a_ground) {
     sprite_null()
     [ -31,  -1, "ogfxplus/4597-ground.png"]
+    [ -31,  -1, "ogfxplus/4597-ground.png"]
 }
 
 spriteset (houses_10a_building) {
     sprite_null()
+    [ -31,  -1, "ogfxplus/4597.png"]
     [ -31,  -1, "ogfxplus/4597.png"]
 }
 
@@ -2942,10 +2944,12 @@ if (enable_tropic) {
 spriteset (houses_10b_ground) {
     sprite_null()
     [ -31, -23, "ogfxplus/4598-ground.png"]
+    [ -31, -23, "ogfxplus/4598-ground.png"]
 }
 
 spriteset (houses_10b_building) {
     sprite_null()
+    [ -31, -23, "ogfxplus/4598.png"]
     [ -31, -23, "ogfxplus/4598.png"]
 }
 

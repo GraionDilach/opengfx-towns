@@ -32752,7 +32752,9 @@ spriteset (toyland_house_2_building) {
 
 spritelayout sprite_toyland_house_2 {
     ground {
-        sprite: construction_state > 2 ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_CLEARED;
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
     building {
         sprite: toyland_house_2_building;

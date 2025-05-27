@@ -3005,11 +3005,22 @@ if (enable_tropic) {
     }
 }
 
+spriteset (houses_10c_ground) {
+    sprite_null()
+    [ -31,  -6, "ogfxplus/4599-ground.png"]
+    [ -31,  -6, "ogfxplus/4599-ground.png"]
+}
+
 spriteset (houses_10c_building) {
     sprite_null()
-//    sprite_null()
-    [ 226,    8,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4599
-//    [ 226,    8,  64,  37, -31,  -6, "ogfx/towns02.png"] // 4599
+    [ -31,  -6, "ogfxplus/4599.png"]
+    [ -31,  -6, "ogfxplus/4599.png"]
+}
+
+spriteset (houses_10c_building_snow) {
+    sprite_null()
+    [ -31,  -6, "ogfxplus/4599.png"]
+    [ -31,  -6, "ogfxplus/4599-snow.png"]
 }
 
 spritelayout sprite_houses_10c {
@@ -3018,8 +3029,17 @@ spritelayout sprite_houses_10c {
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
+    childsprite {
+        sprite: houses_10c_ground;
+        always_draw: 1;
+    }
     building {
         sprite: houses_10c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: houses_10c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -3029,7 +3049,7 @@ if (enable_tropic) {
             substitute: 0x51;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

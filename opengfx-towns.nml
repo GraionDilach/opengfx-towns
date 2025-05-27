@@ -2028,19 +2028,43 @@ spriteset (cinema_1_building_snow) {
     [   0,   0,  64,  49, -31, -18, ANIM, "ogfxplus/4405-snow.png"]
 }
 
+spriteset (cinema_1b_building) {
+    sprite_null()
+    [   0,   0,  64,  49, -31, -18, "ogfxplus/4405v1-stage1.png"]
+    [   0,   0,  64,  49, -31, -18, ANIM, "ogfxplus/4405v1.png"]
+}
+
+spriteset (cinema_1b_building_snow) {
+    sprite_null()
+    [   0,   0,  64,  49, -31, -18, "ogfxplus/4405v1-stage1.png"]
+    [   0,   0,  64,  49, -31, -18, ANIM, "ogfxplus/4405v1-snow.png"]
+}
+
 spritelayout sprite_cinema_1 {
     ground {
         sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE; // duplicated
     }
     building {
         sprite: cinema_1_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: cinema_1_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: cinema_1b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: cinema_1b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }

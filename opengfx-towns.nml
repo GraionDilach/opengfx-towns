@@ -2905,6 +2905,12 @@ spriteset (houses_10a_ground) {
     [ -31,  -1, "ogfxplus/4597-ground.png"]
 }
 
+spriteset (houses_10a_ground_snow) {
+    sprite_null()
+    [ -31,  -1, "ogfxplus/4597-ground.png"]
+    [ -31,  -1, "ogfxplus/4597-ground-snow.png"]
+}
+
 spriteset (houses_10a_building) {
     sprite_null()
     [ -31,  -1, "ogfxplus/4597.png"]
@@ -2926,6 +2932,12 @@ spritelayout sprite_houses_10a {
     childsprite {
         sprite: houses_10a_ground;
         always_draw: 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    childsprite {
+        sprite: houses_10a_ground_snow;
+        always_draw: 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
     building {
         sprite: houses_10a_building;
@@ -2958,6 +2970,12 @@ spriteset (houses_10b_ground) {
     [ -31, -23, "ogfxplus/4598-ground.png"]
 }
 
+spriteset (houses_10b_ground_snow) {
+    sprite_null()
+    [ -31, -23, "ogfxplus/4598-ground.png"]
+    [ -31, -23, "ogfxplus/4598-ground-snow.png"]
+}
+
 spriteset (houses_10b_building) {
     sprite_null()
     [ -31, -23, "ogfxplus/4598.png"]
@@ -2979,6 +2997,12 @@ spritelayout sprite_houses_10b {
     childsprite {
         sprite: houses_10b_ground;
         always_draw: 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    childsprite {
+        sprite: houses_10b_ground_snow;
+        always_draw: 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
     building {
         sprite: houses_10b_building;
@@ -3011,6 +3035,12 @@ spriteset (houses_10c_ground) {
     [ -31,  -6, "ogfxplus/4599-ground.png"]
 }
 
+spriteset (houses_10c_ground_snow) {
+    sprite_null()
+    [ -31,  -6, "ogfxplus/4599-ground.png"]
+    [ -31,  -6, "ogfxplus/4599-ground-snow.png"]
+}
+
 spriteset (houses_10c_building) {
     sprite_null()
     [ -31,  -6, "ogfxplus/4599.png"]
@@ -3032,6 +3062,12 @@ spritelayout sprite_houses_10c {
     childsprite {
         sprite: houses_10c_ground;
         always_draw: 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    childsprite {
+        sprite: houses_10c_ground_snow;
+        always_draw: 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
     building {
         sprite: houses_10c_building;

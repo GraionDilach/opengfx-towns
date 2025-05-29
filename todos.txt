@@ -15,12 +15,6 @@ ukts house 10 - eanble uncommented variant and grab a second roof for a d varian
 ukts house 13 - enable uncommented variant and grab a second roof for a d variant
 ukts house 16 - slap a second roof on UKTS variant and grab ogfx/buildings.png:848
 
-ukts offices 1 - recolor ew sprite to be a copy of ogfx 1425, code result in as cosmetic?
-ukts offices 3 - recolor ns sprite to be a copy of ogfx 1428, code result in as cosmetic?
-
-hq stage 5? (needs two slots and I'm already near the NML 0.7.6 limit though)
 
 radio station - move remap, snow frame, ground sprites (maybe a fence?)
 boiler station - rescale building to fit into a cell
-
-just gate standard toyland buildings behind a CLIMATE_TOYLAND check after NML 0.7.6+

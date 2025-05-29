@@ -6,6 +6,10 @@ tall office block 2 - ground frame
 shops_and_offices_5 - ground frame
 theater - ground frame
 
+toyland statue - wrapped frames, fix remap
+toyland teapot - fix company color
+toyland piggy bank - wrapped frames
+
 expand UKTS ground tiles with desert variants
 
 ukts house 5 - grab 5c from ogfx/buildings.png:549 and grab a second roof for a d variant

@@ -3891,6 +3891,264 @@ item(FEAT_HOUSES, item_toyland_boot, -1, HOUSE_SIZE_1X2) {
     }
 }
 
+spriteset (toyland_tall_office_block_2_building) {
+    [ 562,  152,  56, 104, -27, -74, "ogfx/toyland_wrappedhouses.png"] // 4657
+    [ 626,  152,  56,  96, -27, -66, "ogfx/toyland_wrappedhouses.png"] // 4658
+    [ 482,    8,  52,  90, -27, -61, "ogfx/toylandblds.png"] // 4659
+}
+
+spritelayout sprite_toyland_tall_office_block_2 {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_tall_office_block_2_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_tall_office_block_2) {
+    property {
+        substitute: 0x65;
+        availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    graphics {
+        default: sprite_toyland_tall_office_block_2;
+    }
+}
+
+spriteset (toyland_igloo_building) {
+    [   0,    0,  64,  60, -31, -29, "ogfx/iglu_wrapping1.png"] // 4660
+    [   0,    0,  64,  60, -31, -29, "ogfx/iglu_wrapping2.png"] // 4661
+    [  12,  104,  64,  31, -31,   0, "ogfx/iglu.png"] // 4662
+}
+
+spritelayout sprite_toyland_igloo {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_igloo_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_igloo) {
+    property {
+        substitute: 0x66;
+        availability_mask: [
+                bitmask(TOWNZONE_EDGE),
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    graphics {
+        default: sprite_toyland_igloo;
+    }
+}
+
+spriteset (toyland_tepees_building) {
+    [   0,    0,  64,  88, -31, -57, "ogfx/tipi_wrapped.png"] // 4663
+    [ 100,    0,  64,  88, -31, -57, "ogfx/tipi_wrapped.png"] // 4664
+    [   0,    0,  64,  55, -31, -24, "ogfx/tipi.png"] // 4665
+}
+
+spritelayout sprite_toyland_tepees {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_tepees_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_tepees) {
+    property {
+        substitute: 0x67;
+        availability_mask: [
+                bitmask(TOWNZONE_EDGE),
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    graphics {
+        default: sprite_toyland_tepees;
+    }
+}
+
+spriteset (toyland_shops_and_offices_1_building) {
+    [ 690,  152,  64, 106, -31, -75, "ogfx/toyland_wrappedhouses.png"] // 4666
+    [   2,  296,  64,  90, -31, -59, "ogfx/toyland_wrappedhouses.png"] // 4667
+    [ 562,    8,  48,  73, -23, -49, ANIM, "ogfx/toylandblds.png"] // 4668
+}
+
+spritelayout sprite_toyland_shops_and_offices_1 {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_shops_and_offices_1_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_shops_and_offices_1) {
+    property {
+        substitute: 0x68;
+        availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    graphics {
+        default: sprite_toyland_shops_and_offices_1;
+    }
+}
+
+spriteset (toyland_shops_and_offices_2_building) {
+    [  82,  296,  64, 106, -31, -75, "ogfx/toyland_wrappedhouses.png"] // 4669
+    [ 162,  296,  64,  96, -31, -65, "ogfx/toyland_wrappedhouses.png"] // 4670
+    [ 714,   56,  55,  81, -25, -54, ANIM, "ogfx/toylandblds.png"] // 4671
+}
+
+spritelayout sprite_toyland_shops_and_offices_2 {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_shops_and_offices_2_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_shops_and_offices_2) {
+    property {
+        substitute: 0x69;
+        availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    graphics {
+        default: sprite_toyland_shops_and_offices_2;
+    }
+}
+
+spriteset (toyland_tall_office_block_3_building) {
+    [ 242,  296,  64, 120, -31, -89, "ogfx/toyland_wrappedhouses.png"] // 4672
+    [ 322,  296,  64,  96, -31, -65, "ogfx/toyland_wrappedhouses.png"] // 4673
+    [ 642,    8,  48,  92, -22, -65, "ogfx/toylandblds.png"] // 4674
+}
+
+spritelayout sprite_toyland_tall_office_block_3 {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_tall_office_block_3_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_tall_office_block_3) {
+    property {
+        substitute: 0x6A;
+        availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    graphics {
+        default: sprite_toyland_tall_office_block_3;
+    }
+}
+
+spriteset (toyland_statue_building) {
+    sprite_null()
+    [   0,    0,  36,  80, -18, -55, ANIM, "ogfx/toyland_statue_sprite270.png"] // 4694
+}
+
+spritelayout sprite_toyland_statue {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_statue_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_statue) {
+    property {
+        substitute: 0x6B;
+        availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    if (additional_colors == 0) {
+        graphics {
+            default: sprite_toyland_statue;
+        }
+    }
+    if (additional_colors != 0) {
+        graphics {
+            default: sprite_toyland_statue;
+            colour: random_company_color();
+        }
+    }
+}
+
+spriteset (toyland_teapot_building) {
+    [ 402,  296,  64,  89, -31, -58, "ogfx/toyland_wrappedhouses.png"] // 4695
+    [ 482,  296,  64,  71, -31, -40, "ogfx/toyland_wrappedhouses.png"] // 4696
+    [ -18,  -8, "ogfxplus/4697.png"] // 4697
+}
+
+spritelayout sprite_toyland_teapot {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_teapot_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_teapot) {
+    property {
+        substitute: 0x6C;
+        availability_mask: [
+                ALL_TOWNZONES,
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    graphics {
+        default: sprite_toyland_teapot;
+    }
+}
+
+spriteset (toyland_piggybank_building) {
+    sprite_null()
+    [   0,    0,  26,  31, -12,  -9, "ogfx/Piggybank.png"] // 4697
+}
+
+spritelayout sprite_toyland_piggybank {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_piggybank_building;
+    }
+}
+
+item(FEAT_HOUSES, item_toyland_piggybank) {
+    property {
+        substitute: 0x6D;
+        availability_mask: [
+                ALL_TOWNZONES,
+                bitmask(CLIMATE_TOYLAND)
+        ];
+    }
+    graphics {
+        default: sprite_toyland_piggybank;
+    }
+}
+
 /// ==========================
 /// ==== UK Town Set v2.2 ====
 /// ==========================

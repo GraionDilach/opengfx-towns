@@ -18,8 +18,8 @@
     <https://www.gnu.org/licenses/>.
 */
 
-if (openttd_version < version_openttd(1, 9, 0)) {
-    error(FATAL, REQUIRES_OPENTTD, "1.9.0");
+if (openttd_version < version_openttd(15, 0)) {
+    error(FATAL, REQUIRES_OPENTTD, "15.0");
 }
 
 

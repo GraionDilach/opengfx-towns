@@ -15,6 +15,7 @@ STR_PARAM_NAME_ENABLE_TROPIC                :Enable Sub-Tropic houses
 STR_PARAM_NAME_ENABLE_UK_TOWN_SET           :Enable UK Town Set v2.2 houses
 
 STR_PARAM_NAME_ENABLE_TOYLAND               :Enable a sensible subset of buildings derived from OpenGFX Toyland
+STR_PARAM_DESC_ENABLE_TOYLAND               :This only affects other climates, all OpenGFX Toyland buildings are enabled regardless of this setting on Toyland.
 
 STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL    :Enable old, 32bpp render-based arctic Hotel
 

@@ -74,11 +74,11 @@ grf {
         // zbase arctic bit 6
         // zbase tropic bit 7
 
-        // OGFX Toyland in Toyland will be unconditionally enabled and set up after NML 0.7.6+
         enable_toyland {
             type: bool;
             bit: 8;
             name: string(STR_PARAM_NAME_ENABLE_TOYLAND);
+            desc: string(STR_PARAM_DESC_ENABLE_TOYLAND);
             def_value: 0;
         }
 

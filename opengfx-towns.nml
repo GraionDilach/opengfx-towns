@@ -630,6 +630,7 @@ if (disable_base_houses) {
 // 101 workshop (sawmill derivates)
 // 102 university
 // 103 courthouse
+// 104 boiler station
 
 switch (FEAT_HOUSES, SELF, stadium_construction_check, (
     stadium_limit == 2
@@ -35980,7 +35981,7 @@ if (enable_hq) {
     }
 }
 
-/*
+
 spriteset (boiler_station_building) {
     sprite_null()
     [  -31,  -4, "gfx/2048.png"] // 2048, power station
@@ -35997,6 +35998,11 @@ spritelayout sprite_boiler_station {
     }
 }
 
+switch (FEAT_HOUSES, SELF, boiler_station_construction_check,
+    has_population(2000)
+    && same_class_count_town == 0
+) {return;}
+
 if (enable_industries) {
     item(FEAT_HOUSES, item_boiler_station) {
         property {
@@ -36004,15 +36010,15 @@ if (enable_industries) {
             name: string(STR_NAME_BOILER_STATION);
             building_flags: 0;
             years_available: [1940, 65535];
+            building_class: 104;
             availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, ABOVE_SNOWLINE),
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
         graphics {
             default: sprite_boiler_station;
-            construction_check: same_house_count_town == 0;
+            construction_check: boiler_station_construction_check;
         }
     }
 }
-*/

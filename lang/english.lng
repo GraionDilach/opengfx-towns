@@ -81,10 +81,10 @@ STR_NAME_TERRACED_HOUSES                    :Terraced houses
 # Warehouse - reuses TTD string
 
 # Custom
+STR_NAME_BOILER_STATION                     :Boiler station
 STR_NAME_COURTHOUSE                         :Courthouse
 STR_NAME_LIGHTHOUSE                         :Lighthouse
 STR_NAME_RADIO_STATION                      :Radio station
 STR_NAME_TRANSMITTER                        :Transmitter
 STR_NAME_UNIVERSITY                         :University
 STR_NAME_WORKSHOP                           :Workshop
-#STR_NAME_BOILER_STATION                     :Boiler station

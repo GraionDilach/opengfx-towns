@@ -35981,9 +35981,7 @@ if (enable_hq) {
     }
 }
 
-
 spriteset (boiler_station_building) {
-    sprite_null()
     [  -31,  -4, "gfx/2048.png"] // 2048, power station
     [  -31, -26, "gfx/2049.png"] // 2049, power station
     [  -31, -33, "gfx/2050.png"] // 2050, power station
@@ -35998,16 +35996,17 @@ spritelayout sprite_boiler_station {
     }
 }
 
-switch (FEAT_HOUSES, SELF, boiler_station_construction_check,
-    has_population(2000)
-    && same_class_count_town == 0
-) {return;}
+switch (FEAT_HOUSES, SELF, boiler_station_construction_check, (
+    has_population((same_class_count_town + 1) * 2500)
+    && !nearest_house_matching_criterion(15, SEARCH_HOUSE_BY_CLASS)
+)) {return;}
 
 if (enable_industries) {
     item(FEAT_HOUSES, item_boiler_station) {
         property {
             substitute: 0x12;
             name: string(STR_NAME_BOILER_STATION);
+            accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 3]];
             building_flags: 0;
             years_available: [1940, 65535];
             building_class: 104;

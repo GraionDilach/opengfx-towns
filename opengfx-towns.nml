@@ -204,7 +204,7 @@ grf {
 }
 
 cargotable {
-    PASS, MAIL, GOOD, FOOD, TOUR, WATR
+    PASS, MAIL, GOOD, FOOD, TOUR, WATR, FZDR, SWET
 }
 
 // shared functions
@@ -213,6 +213,17 @@ cargotable {
 
 switch (FEAT_HOUSES, SELF, hotel_tourist_production, getbits(extra_callback_info1, 0, 8)) {
     0: return cargotype("TOUR")*256 + 2;
+    1: return cargotype("PASS")*256 + 2;
+    2: return cargotype("MAIL")*256 + 1;
+    return CB_RESULT_HOUSE_NO_MORE_PRODUCTION;
+}
+
+// folly castle tourist production
+
+switch (FEAT_HOUSES, SELF, folly_castle_tourist_production, getbits(extra_callback_info1, 0, 8)) {
+    0: return cargotype("TOUR")*256 + 4;
+    1: return cargotype("PASS")*256 + 2;
+    2: return cargotype("MAIL")*256 + 1;
     return CB_RESULT_HOUSE_NO_MORE_PRODUCTION;
 }
 
@@ -631,6 +642,7 @@ if (disable_base_houses) {
 // 102 university
 // 103 courthouse
 // 104 boiler station
+// 105 folly castle (toyland HQs)
 
 switch (FEAT_HOUSES, SELF, stadium_construction_check, (
     stadium_limit == 2
@@ -737,6 +749,11 @@ switch (FEAT_HOUSES, SELF, ukts_warehouse_construction_check, (
 switch (FEAT_HOUSES, SELF, school_construction_check, (
     has_population((same_class_count_town + 1) * 1000)
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
+)) {return;}
+
+switch (FEAT_HOUSES, SELF, folly_castle_construction_check, (
+    has_population(same_class_count_town * 2500)
+    && !nearest_house_matching_criterion(18, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 /// =================
@@ -35190,14 +35207,12 @@ if (enable_toyland) {
         if (additional_colors != 2) {
             graphics {
                 default: sprite_ported_toyland_tall_office_block_2;
-                protection: 1;
                 colour: random_modest_struct_color();
             }
         }
         if (additional_colors == 2) {
             graphics {
                 default: sprite_ported_toyland_tall_office_block_2;
-                protection: 1;
                 colour: ported_toyland_tall_office_block_2_random_struct_color();
             }
         }
@@ -36029,7 +36044,7 @@ spritelayout sprite_toyland_company_statue_toyland {
     }
 }
 
-if (enable_hq) {
+if (enable_hq && enable_toyland) {
     item(FEAT_HOUSES, item_toyland_company_statue_toyland) {
         property {
             substitute: 0x09;
@@ -36084,6 +36099,280 @@ if (enable_industries) {
         graphics {
             default: sprite_boiler_station;
             construction_check: boiler_station_construction_check;
+        }
+    }
+}
+
+spriteset (toyland_hq_stage_5_N_ground) {
+    sprite_null()
+    [ -31,   0, "gfx/t536.png"]
+}
+
+spriteset (toyland_hq_stage_5_N_building) {
+    sprite_null()
+    [ -31, -30, "gfx/t537.png"]
+}
+
+spritelayout sprite_toyland_hq_stage_5_N {
+    ground {
+        sprite: construction_state == 3 ? GROUNDSPRITE_GRASS : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: toyland_hq_stage_5_N_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: toyland_hq_stage_5_N_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (toyland_hq_stage_5_E_ground) {
+    sprite_null()
+    [ -31,   0, "gfx/t538.png"]
+}
+
+spriteset (toyland_hq_stage_5_E_building) {
+    sprite_null()
+    [ -1,  -7, "gfx/t539.png"]
+}
+
+spritelayout sprite_toyland_hq_stage_5_E {
+    ground {
+        sprite: construction_state == 3 ? GROUNDSPRITE_GRASS : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: toyland_hq_stage_5_E_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: toyland_hq_stage_5_E_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (toyland_hq_stage_5_W_ground) {
+    sprite_null()
+    [ -31,   0, "gfx/t540.png"]
+}
+
+spriteset (toyland_hq_stage_5_W_building) {
+    sprite_null()
+    [ -16,  -7, "gfx/t541.png"]
+}
+
+spritelayout sprite_toyland_hq_stage_5_W {
+    ground {
+        sprite: construction_state == 3 ? GROUNDSPRITE_GRASS : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: toyland_hq_stage_5_W_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: toyland_hq_stage_5_W_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (toyland_hq_stage_5_S_ground) {
+    sprite_null()
+    [ -31,   0, "gfx/t542.png"]
+}
+
+spritelayout sprite_toyland_hq_stage_5_S {
+    ground {
+        sprite: construction_state == 3 ? GROUNDSPRITE_GRASS : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: toyland_hq_stage_5_S_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_hq) {
+    item(FEAT_HOUSES, item_toyland_hq_stage_5, -1, HOUSE_SIZE_2X2) {
+        property {
+            substitute: 0x28;
+            name: string(STR_NAME_CASTLE);
+            accepted_cargos: [[PASS, 8], [MAIL, 2], [SWET, 3], [FZDR, 3]];
+            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            years_available: [0, 65535];
+            building_class: 105;
+            availability_mask: [
+                ALL_TOWNZONES,
+                bitmask(CLIMATE_TOYLAND)
+            ];
+        }
+        graphics {
+            graphics_north: sprite_toyland_hq_stage_5_N;
+            graphics_east: sprite_toyland_hq_stage_5_E;
+            graphics_west: sprite_toyland_hq_stage_5_W;
+            graphics_south: sprite_toyland_hq_stage_5_S;
+            colour: random_company_color();
+            construction_check: folly_castle_construction_check;
+        }
+    }
+}
+
+spriteset (ported_toyland_hq_stage_5_N_ground) {
+    sprite_null()
+    [ -31,   0, "gfx/t536.png"]
+}
+
+spriteset (ported_toyland_hq_stage_5_N_building) {
+    sprite_null()
+    [ -31, -30, "gfx/t537.png"]
+}
+
+spritelayout sprite_ported_toyland_hq_stage_5_N {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ported_toyland_hq_stage_5_N_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ported_toyland_hq_stage_5_N_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (ported_toyland_hq_stage_5_E_ground) {
+    sprite_null()
+    [ -31,   0, "gfx/t538.png"]
+}
+
+spriteset (ported_toyland_hq_stage_5_E_building) {
+    sprite_null()
+    [ -1,  -7, "gfx/t539.png"]
+}
+
+spritelayout sprite_ported_toyland_hq_stage_5_E {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ported_toyland_hq_stage_5_E_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ported_toyland_hq_stage_5_E_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (ported_toyland_hq_stage_5_W_ground) {
+    sprite_null()
+    [ -31,   0, "gfx/t540.png"]
+}
+
+spriteset (ported_toyland_hq_stage_5_W_building) {
+    sprite_null()
+    [ -16,  -7, "gfx/t541.png"]
+}
+
+spritelayout sprite_ported_toyland_hq_stage_5_W {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ported_toyland_hq_stage_5_W_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ported_toyland_hq_stage_5_W_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (ported_toyland_hq_stage_5_S_ground) {
+    sprite_null()
+    [ -31,   0, "gfx/t542.png"]
+}
+
+spritelayout sprite_ported_toyland_hq_stage_5_S {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ported_toyland_hq_stage_5_S_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_hq && enable_toyland) {
+    item(FEAT_HOUSES, item_ported_toyland_hq_stage_5, -1, HOUSE_SIZE_2X2) {
+        property {
+            substitute: 0x28;
+            name: string(STR_NAME_CASTLE_FOLLY);
+            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            years_available: [0, 65535];
+            building_class: 105;
+            availability_mask: [
+                ALL_TOWNZONES,
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        if (!cargotype_available("TOUR")) {
+            property {
+                accepted_cargos: [[PASS, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
+            }
+            graphics {
+                graphics_north: sprite_ported_toyland_hq_stage_5_N;
+                graphics_east: sprite_ported_toyland_hq_stage_5_E;
+                graphics_west: sprite_ported_toyland_hq_stage_5_W;
+                graphics_south: sprite_ported_toyland_hq_stage_5_S;
+                colour: random_company_color();
+                construction_check: folly_castle_construction_check;
+            }
+        }
+        if (cargotype_available("TOUR")) {
+            property {
+                accepted_cargos: [[PASS, 8], [TOUR, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
+                local_authority_impact: 65500;
+            }
+            graphics {
+                graphics_north: sprite_ported_toyland_hq_stage_5_N;
+                graphics_east: sprite_ported_toyland_hq_stage_5_E;
+                graphics_west: sprite_ported_toyland_hq_stage_5_W;
+                graphics_south: sprite_ported_toyland_hq_stage_5_S;
+                colour: random_company_color();
+                construction_check: folly_castle_construction_check;
+                cargo_production: folly_castle_tourist_production;
+                protection: 1;
+            }
         }
     }
 }

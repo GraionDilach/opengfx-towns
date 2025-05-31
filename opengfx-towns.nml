@@ -1680,8 +1680,25 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        graphics {
-            default: sprite_tall_office_block_2b;
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_tall_office_block_2b;
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_tall_office_block_2b;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_tall_office_block_2b;
+                colour: random_struct_color();
+            }
         }
     }
 }

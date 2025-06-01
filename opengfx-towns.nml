@@ -35268,10 +35268,22 @@ if (enable_toyland) {
     }
 }
 
+spriteset (ported_toyland_tepees_ground) {
+    sprite_null()
+    [ -31, -24, "gfx/4665-ground.png"]
+    [ -31, -24, "gfx/4665-ground.png"]
+}
+
+spriteset (ported_toyland_tepees_ground_snow) {
+    sprite_null()
+    [ -31, -24, "gfx/4665-ground-snow.png"]
+    [ -31, -24, "gfx/4665-ground-snow.png"]
+}
+
 spriteset (ported_toyland_tepees_building) {
     sprite_null()
-    [   0,    0,  64,  55, -31, -24, "ogfx/tipi.png"] // 4665
-    [   0,    0,  64,  55, -31, -24, "ogfx/tipi.png"] // 4665
+    [ -31, -24, "ogfx/tipi.png"] // 4665
+    [ -31, -24, "ogfx/tipi.png"] // 4665
 }
 
 spritelayout sprite_ported_toyland_tepees {
@@ -35279,6 +35291,16 @@ spritelayout sprite_ported_toyland_tepees {
         sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ported_toyland_tepees_ground;
+        always_draw: 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    childsprite {
+        sprite: ported_toyland_tepees_ground_snow;
+        always_draw: 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
     building {
         sprite: ported_toyland_tepees_building;
@@ -35289,10 +35311,11 @@ if (enable_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_tepees) {
         property {
             substitute: 0x67;
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 1]];
             availability_mask: [
                     bitmask(TOWNZONE_EDGE),
-                    bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                    bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {
@@ -35322,6 +35345,7 @@ if (enable_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_igloo) {
         property {
             substitute: 0x66;
+            years_available: [0, 65535];
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 1]];
             availability_mask: [
                     bitmask(TOWNZONE_EDGE),

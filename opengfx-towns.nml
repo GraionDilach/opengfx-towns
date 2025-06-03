@@ -35269,20 +35269,21 @@ if (enable_toyland) {
 }
 
 spriteset (ported_toyland_tepees_ground) {
-    sprite_null()
-    [ -31, -24, "gfx/4665-ground.png"]
+    [ -31, -24, "gfx/4665-ground-stage0.png"]
+    [ -31, -24, "gfx/4665-ground-stage1.png"]
     [ -31, -24, "gfx/4665-ground.png"]
 }
 
 spriteset (ported_toyland_tepees_ground_snow) {
-    sprite_null()
-    [ -31, -24, "gfx/4665-ground-snow.png"]
+    [ -31, -24, "gfx/4665-ground-stage0.png"]
+    [ -31, -24, "gfx/4665-ground-stage1.png"]
+    [ -31, -24, "gfx/4665-ground.png"]
     [ -31, -24, "gfx/4665-ground-snow.png"]
 }
 
 spriteset (ported_toyland_tepees_building) {
     sprite_null()
-    [ -31, -24, "ogfx/tipi.png"] // 4665
+    [ -31, -24, "gfx/4665-stage1.png"]
     [ -31, -24, "ogfx/tipi.png"] // 4665
 }
 

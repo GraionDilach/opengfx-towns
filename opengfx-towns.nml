@@ -36075,6 +36075,7 @@ if (enable_hq) {
 
 spriteset (toyland_company_statue_building) {
     sprite_null()
+    [   0,    0,  32,  70, -15, -46, "ogfxplus/t270-stage1.png"]
     [   0,    0,  32,  70, -15, -46, "ogfx/toysta.png"] // toyland #270
 }
 

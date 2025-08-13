@@ -35365,6 +35365,12 @@ spriteset (water_tower_building) {
     [  -23, -42, "gfx/2346.png"] // 2346
 }
 
+spriteset (water_tower_building_snow) {
+    [  -23, -42, "gfx/2344.png"] // 2344
+    [  -23, -42, "gfx/2345.png"] // 2345
+    [  -23, -42, "gfx/2346-snow.png"]
+}
+
 spritelayout sprite_water_tower {
     ground {
         sprite: GROUNDSPRITE_CLEARED;
@@ -35384,6 +35390,13 @@ spritelayout sprite_water_tower {
         sprite: water_tower_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: water_tower_building_snow;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -35397,7 +35410,7 @@ if (enable_industries && cargotype_available("WATR")) {
             accepted_cargos: [[PASS, 2], [WATR, 8]];
             availability_mask: [
                 ALL_TOWNZONES,
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors != 2) {

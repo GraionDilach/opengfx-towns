@@ -1660,12 +1660,25 @@ spriteset (tall_office_block_2b_building) {
     [   0,    0,  56,  98, -25, -69, "ogfxplus/1551.png"]
 }
 
+spriteset (tall_office_block_2b_building_snow) {
+    [   2,  456,  56,  47, -25, -18, "ogfx/temprtbuilds.png"] // 1547
+    [   0,    0,  56,  98, -25, -69, "ogfxplus/1549.png"]
+    [   0,    0,  56,  98, -25, -69, "ogfxplus/1551-snow.png"]
+}
+
 spritelayout sprite_tall_office_block_2b {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: tall_office_block_2b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: tall_office_block_2b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -1677,7 +1690,7 @@ if (enable_temperate) {
             substitute: 0x1C;
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors == 0)

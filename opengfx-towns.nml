@@ -1177,6 +1177,70 @@ if (enable_temperate || enable_uktownset) {
     }
 }
 
+spriteset (park_3_building) {
+    sprite_null()
+    [  258,  104,  64,  40, -31, -9, ANIM, "ogfx/temprtbuilds.png"] // 1456
+    [  258,  104,  64,  40, -31, -9, ANIM, "ogfx/temprtbuilds.png"] // 1456
+}
+
+spritelayout sprite_park_3 {
+    ground {
+         sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_GRASS;
+    }
+    building {
+        sprite: park_3_building;
+    }
+}
+
+if (enable_temperate || enable_uktownset) {
+    item(FEAT_HOUSES, item_park_3) {
+        property {
+            substitute: 0x0B;
+            building_class: 30;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_park_3;
+            construction_check: park_construction_check;
+        }
+    }
+}
+
+spriteset (park_4_building) {
+    sprite_null()
+    [  338,  104,  64,  40, -31, -9, "ogfx/temprtbuilds.png"] // 1457
+    [  338,  104,  64,  40, -31, -9, "ogfx/temprtbuilds.png"] // 1457
+}
+
+spritelayout sprite_park_4 {
+    ground {
+         sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_GRASS;
+    }
+    building {
+        sprite: park_4_building;
+    }
+}
+
+if (enable_temperate || enable_uktownset) {
+    item(FEAT_HOUSES, item_park_4) {
+        property {
+            substitute: 0x0C;
+            building_class: 30;
+            availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_park_4;
+            construction_check: park_construction_check;
+        }
+    }
+}
+
 spriteset (office_block_2_ground) {
     [ 434,  104,  52,  31, -25,  -3, "ogfx/temprtbuilds.png"] // 1458
 }

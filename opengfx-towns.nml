@@ -36496,9 +36496,18 @@ spriteset (ported_toyland_hq_stage_1) {
 
 spritelayout sprite_ported_toyland_hq_stage_1 {
     ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: GROUNDSPRITE_CONCRETE;
+        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
     }
     building {
         sprite: ported_toyland_hq_stage_1;
@@ -36553,9 +36562,18 @@ spriteset (ported_toyland_hq_stage_2) {
 
 spritelayout sprite_ported_toyland_hq_stage_2 {
     ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: GROUNDSPRITE_CONCRETE;
+        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
     }
     building {
         sprite: ported_toyland_hq_stage_2;
@@ -36615,9 +36633,18 @@ spriteset (ported_toyland_hq_stage_5_N_building) {
 
 spritelayout sprite_ported_toyland_hq_stage_5_N {
     ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: GROUNDSPRITE_CONCRETE;
+        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
     }
     childsprite {
         sprite: ported_toyland_hq_stage_5_N_ground;
@@ -36644,9 +36671,18 @@ spriteset (ported_toyland_hq_stage_5_E_building) {
 
 spritelayout sprite_ported_toyland_hq_stage_5_E {
     ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: GROUNDSPRITE_CONCRETE;
+        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
     }
     childsprite {
         sprite: ported_toyland_hq_stage_5_E_ground;
@@ -36673,9 +36709,18 @@ spriteset (ported_toyland_hq_stage_5_W_building) {
 
 spritelayout sprite_ported_toyland_hq_stage_5_W {
     ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: GROUNDSPRITE_CONCRETE;
+        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
     }
     childsprite {
         sprite: ported_toyland_hq_stage_5_W_ground;
@@ -36697,9 +36742,18 @@ spriteset (ported_toyland_hq_stage_5_S_ground) {
 
 spritelayout sprite_ported_toyland_hq_stage_5_S {
     ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: GROUNDSPRITE_CONCRETE;
+        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
     }
     childsprite {
         sprite: ported_toyland_hq_stage_5_S_ground;

@@ -3453,7 +3453,6 @@ spriteset (flats_4_building_snow) {
     [ -31, -43, "ogfxplus/4610-snow.png"]
 }
 
-
 spritelayout sprite_flats_4 {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;

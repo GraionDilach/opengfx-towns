@@ -3447,6 +3447,13 @@ spriteset (flats_4_building) {
     [ -31, -43, "ogfxplus/4610.png"]
 }
 
+spriteset (flats_4_building_snow) {
+    sprite_null()
+    [ -31, -43, "ogfxplus/4609.png"]
+    [ -31, -43, "ogfxplus/4610-snow.png"]
+}
+
+
 spritelayout sprite_flats_4 {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
@@ -3457,6 +3464,13 @@ spritelayout sprite_flats_4 {
     }
     building {
         sprite: flats_4_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: flats_4_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -3469,7 +3483,7 @@ if (enable_tropic) {
             accepted_cargos: [[PASS, 6], [MAIL, 2], [GOOD, 1], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if(additional_colors == 1) {

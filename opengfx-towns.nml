@@ -1312,14 +1312,14 @@ if (enable_temperate) {
 
 spriteset (modern_office_building_1_building) {
     [ 642,  104,  52, 115, -24, -88, "ogfx/temprtbuilds.png"] // 1470
-    [ 706,  104,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1471
-    [   2,  232,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1472
+    [ 706,  104,  54, 115, -26, -88, "ogfx/temprtbuilds.png"] // 1471
+    [   2,  232,  54, 115, -26, -88, "ogfx/temprtbuilds.png"] // 1472
 }
 
 spriteset (modern_office_building_1_building_snow) {
     [ 642,  104,  52, 115, -24, -88, "ogfx/temprtbuilds.png"] // 1470
-    [ 706,  104,  54, 115, -25, -88, "ogfx/temprtbuilds.png"] // 1471
-    [   0,    0,  54, 115, -25, -88, "ogfxplus/1472-snow.png"]
+    [ 706,  104,  54, 115, -26, -88, "ogfx/temprtbuilds.png"] // 1471
+    [   0,    0,  54, 115, -26, -88, "ogfxplus/1472-snow.png"]
 }
 
 spritelayout sprite_modern_office_building_1 {

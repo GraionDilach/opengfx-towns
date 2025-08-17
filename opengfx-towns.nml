@@ -35351,8 +35351,8 @@ if (enable_toyland) {
 
 spriteset (ported_toyland_tall_office_block_2_building) {
     sprite_null()
-    [  -22, -65, "gfx/4674.png"] // 4674
-    [  -22, -65, "gfx/4674.png"] // 4674
+    [  -22, -65, "gfx/4674-stage1.png"]
+    [  -22, -65, "gfx/4674.png"]
 }
 
 spritelayout sprite_ported_toyland_tall_office_block_2 {

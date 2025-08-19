@@ -36059,8 +36059,14 @@ if (enable_misc) {
 
 spriteset (large_airport_1) {
     sprite_null()
+    [ -31, -21, "gfx/2654-stage1.png"]
     [ -31, -21, "gfx/2654.png"]
-    [ -31, -21, "gfx/2654.png"]
+}
+
+spriteset (large_airport_1_snow) {
+    sprite_null()
+    [ -31, -21, "gfx/2654-stage1.png"]
+    [ -31, -21, "gfx/2654-snow.png"]
 }
 
 spritelayout sprite_large_airport_1 {
@@ -36069,25 +36075,27 @@ spritelayout sprite_large_airport_1 {
     }
     building {
         sprite: large_airport_1;
-//        hide_sprite: terrain_type == TILETYPE_SNOW;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
-//    building {
-//        sprite: large_airport_1_snow;
-//        hide_sprite: terrain_type != TILETYPE_SNOW;
-//        recolour_mode: RECOLOUR_REMAP;
-//        palette: PALETTE_USE_DEFAULT;
-//    }
+    building {
+        sprite: large_airport_1_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
 }
 
 if (enable_misc) {
     item(FEAT_HOUSES, item_large_airport_1) {
         property {
-            substitute: 0x1C;
+            substitute: 0x0F;
+            name: TTD_STR_TOWN_BUILDING_NAME_LARGE_OFFICE_BLOCK_1;
+            years_available: [1955, 65535];
             availability_mask: [
-                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors != 2) {

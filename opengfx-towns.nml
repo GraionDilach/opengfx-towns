@@ -36057,6 +36057,54 @@ if (enable_misc) {
     }
 }
 
+spriteset (large_airport_1) {
+    sprite_null()
+    [ -31, -21, "gfx/2654.png"]
+    [ -31, -21, "gfx/2654.png"]
+}
+
+spritelayout sprite_large_airport_1 {
+    ground {
+        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: large_airport_1;
+//        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+//    building {
+//        sprite: large_airport_1_snow;
+//        hide_sprite: terrain_type != TILETYPE_SNOW;
+//        recolour_mode: RECOLOUR_REMAP;
+//        palette: PALETTE_USE_DEFAULT;
+//    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_large_airport_1) {
+        property {
+            substitute: 0x1C;
+            availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_large_airport_1;
+                colour: random_modest_company_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_large_airport_1;
+                colour: random_company_color();
+            }
+        }
+    }
+}
+
 spriteset (transmitter_ground) {
     [  -30, -65, "gfx/1454-start.png"]
 }

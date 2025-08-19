@@ -35731,8 +35731,8 @@ spritelayout sprite_farm_houses {
     }
     building {
         sprite: farm_houses_building;
-//        recolour_mode: RECOLOUR_REMAP;
-//        palette: PALETTE_USE_DEFAULT;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -35747,8 +35747,17 @@ if (enable_industries) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        graphics {
-            default: sprite_farm_houses;
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_farm_houses;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_farm_houses;
+                colour: random_struct_color();
+            }
         }
     }
 }

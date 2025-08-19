@@ -35762,6 +35762,54 @@ if (enable_industries) {
     }
 }
 
+spriteset (workshop_3_building) {
+    sprite_null()
+    [ -31,  -7, "gfx/2113.png"]
+    [ -31,  -7, "gfx/2113.png"]
+}
+
+spritelayout sprite_workshop_3 {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: workshop_3_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_industries) {
+    item(FEAT_HOUSES, item_workshop_3) {
+        property {
+            substitute: 0x12;
+            name: string(STR_NAME_WORKSHOP);
+            years_available: [1930, 65535];
+            building_class: 101;
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_workshop_3;
+                construction_check: workshop_construction_check;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_workshop_3;
+                construction_check: workshop_construction_check;
+                colour: random_struct_color();
+            }
+        }
+    }
+}
+
 spriteset (university_n_ground_childsprite) {
     sprite_null()
     [ -31,   0, "gfx/2182-stage1.png"]

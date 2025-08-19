@@ -36013,8 +36013,8 @@ spritelayout sprite_small_airport {
     }
     building {
         sprite: small_airport;
-//        recolour_mode: RECOLOUR_REMAP;
-//        palette: PALETTE_USE_DEFAULT;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -36028,9 +36028,17 @@ if (enable_misc) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        graphics {
-            default: sprite_small_airport;
-//            colour: random_company_color();
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_small_airport;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_small_airport;
+                colour: random_struct_color();
+            }
         }
     }
 }

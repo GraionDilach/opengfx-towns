@@ -36212,7 +36212,7 @@ spriteset (transmitter_building) {
 
 spritelayout sprite_transmitter {
     ground {
-        sprite: construction_state < 2 ? GROUNDSPRITE_CLEARED
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }

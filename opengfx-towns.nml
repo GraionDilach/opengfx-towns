@@ -36057,6 +36057,12 @@ if (enable_misc) {
     }
 }
 
+spriteset (large_airport_1_ground) {
+    [ -31, -21, "gfx/2654-stage0.png"]
+    [ -31, -21, "gfx/2654-ground.png"]
+    [ -31, -21, "gfx/2654-ground.png"]
+}
+
 spriteset (large_airport_1) {
     sprite_null()
     [ -31, -21, "gfx/2654-stage1.png"]
@@ -36072,6 +36078,10 @@ spriteset (large_airport_1_snow) {
 spritelayout sprite_large_airport_1 {
     ground {
         sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: large_airport_1_ground;
+        always_draw: 1;
     }
     building {
         sprite: large_airport_1;

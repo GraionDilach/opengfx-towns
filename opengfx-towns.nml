@@ -36087,7 +36087,7 @@ spriteset (large_airport_1_snow) {
 
 spritelayout sprite_large_airport_1 {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: large_airport_1_ground;

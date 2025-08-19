@@ -35355,12 +35355,25 @@ spriteset (ported_toyland_tall_office_block_2_building) {
     [  -22, -65, "gfx/4674.png"]
 }
 
+spriteset (ported_toyland_tall_office_block_2_building_snow) {
+    sprite_null()
+    [  -22, -65, "gfx/4674-stage1.png"]
+    [  -22, -65, "gfx/4674-snow.png"]
+}
+
 spritelayout sprite_ported_toyland_tall_office_block_2 {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     building {
         sprite: ported_toyland_tall_office_block_2_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ported_toyland_tall_office_block_2_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -35390,7 +35403,7 @@ if (enable_toyland) {
             accepted_cargos: [[PASS, 8], [MAIL, 4], [GOOD, 3]];
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors != 2) {

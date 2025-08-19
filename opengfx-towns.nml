@@ -35707,6 +35707,52 @@ if (enable_industries) {
     }
 }
 
+spriteset (farm_houses_ground_childsprite) {
+    sprite_null()
+    [ -31, -33, "gfx/farm-houses-ground.png"]
+    [ -31, -33, "gfx/farm-houses-ground.png"]
+}
+
+spriteset (farm_houses_building) {
+    sprite_null()
+    [ -31, -33, "gfx/farm-houses.png"]
+    [ -31, -33, "gfx/farm-houses.png"]
+}
+
+spritelayout sprite_farm_houses {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: farm_houses_ground_childsprite;
+        always_draw: 1;
+    }
+    building {
+        sprite: farm_houses_building;
+//        recolour_mode: RECOLOUR_REMAP;
+//        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_industries) {
+    item(FEAT_HOUSES, item_farm_houses) {
+        property {
+            substitute: 0x06;
+            years_available: [1930, 65535];
+            accepted_cargos: [[PASS, 4], [MAIL, 1], [FOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_farm_houses;
+        }
+    }
+}
+
 spriteset (university_n_ground_childsprite) {
     sprite_null()
     [ -31,   0, "gfx/2182-stage1.png"]

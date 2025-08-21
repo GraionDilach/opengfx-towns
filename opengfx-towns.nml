@@ -661,11 +661,12 @@ if (disable_base_houses) {
 // 30 park/statue/fountain
 
 // 100 radio stuff (transmitter/radio house)
-// 101 workshop (sawmill derivates)
+// 101 workshop (sawmill/farm derivates)
 // 102 university
 // 103 courthouse
 // 104 boiler station
 // 105 folly castle (toyland HQs)
+// 106 garages (copper ore mine building), use the workshop construction check
 
 switch (FEAT_HOUSES, SELF, stadium_construction_check, (
     stadium_limit == 2
@@ -35826,6 +35827,61 @@ if (enable_industries) {
         if (additional_colors == 2) {
             graphics {
                 default: sprite_workshop_3;
+                construction_check: workshop_construction_check;
+                colour: random_struct_color();
+            }
+        }
+    }
+}
+
+spriteset (garages_1_ground) {
+    [ -31,  -4, "gfx/2039-ground.png"]
+    [ -31,  -4, "gfx/2039-ground.png"]
+    [ -31,  -4, "gfx/2039-ground.png"]
+}
+
+spriteset (garages_1_building) {
+    [ -31,  -4, "gfx/2037.png"] // 2037
+    [ -31,  -4, "gfx/2038.png"] // 2038
+    [ -31,  -4, "gfx/2039.png"] // 2039
+}
+
+spritelayout sprite_garages_1 {
+    ground {
+         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: garages_1_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: garages_1_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_industries) {
+    item(FEAT_HOUSES, item_garages_1) {
+        property {
+            substitute: 0x09;
+            name: string(STR_NAME_GARAGES);
+            building_class: 106;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_garages_1;
+                construction_check: workshop_construction_check;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_garages_1;
                 construction_check: workshop_construction_check;
                 colour: random_struct_color();
             }

@@ -667,6 +667,7 @@ if (disable_base_houses) {
 // 104 boiler station
 // 105 folly castle (toyland HQs)
 // 106 garages (copper ore mine building), use the workshop construction check
+// 107 factory (coal mine derivate)
 
 switch (FEAT_HOUSES, SELF, stadium_construction_check, (
     stadium_limit == 2
@@ -778,6 +779,12 @@ switch (FEAT_HOUSES, SELF, school_construction_check, (
 switch (FEAT_HOUSES, SELF, folly_castle_construction_check, (
     has_population(same_class_count_town * 2500)
     && !nearest_house_matching_criterion(18, SEARCH_HOUSE_BY_CLASS)
+)) {return;}
+
+switch (FEAT_HOUSES, SELF, factory_construction_check, (
+    has_population(850)
+    && has_population((same_class_count_town + 1) * 850)
+    && !nearest_house_matching_criterion(4, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 /// =================
@@ -35885,6 +35892,42 @@ if (enable_industries) {
                 construction_check: workshop_construction_check;
                 colour: random_struct_color();
             }
+        }
+    }
+}
+
+spriteset (factory_1_building) {
+    [ -31, -14, "gfx/2016.png"]
+    [ -31, -14, "gfx/2017.png"]
+    [ -31, -14, "gfx/2018.png"]
+}
+
+spritelayout sprite_factory_1 {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: factory_1_building;
+    }
+}
+
+if (enable_industries) {
+    item(FEAT_HOUSES, item_factory_1) {
+        property {
+            substitute: 0x12;
+            name: string(STR_NAME_FACTORY);
+            years_available: [0, 65535];
+            building_class: 107;
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_factory_1;
+            construction_check: factory_construction_check;
         }
     }
 }

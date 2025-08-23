@@ -35712,22 +35712,34 @@ if (enable_industries) {
     }
 }
 
-spriteset (farm_houses_ground_childsprite) {
+spriteset (farm_houses_ground) {
     sprite_null()
+    [ -31, -33, "gfx/farm-houses-ground-stage1.png"]
     [ -31, -33, "gfx/farm-houses-ground.png"]
-    [ -31, -33, "gfx/farm-houses-ground.png"]
+}
+
+spriteset (farm_houses_ground_desert) {
+    sprite_null()
+    [ -31, -33, "gfx/farm-houses-ground-stage1.png"]
+    [ -31, -33, "gfx/farm-houses-ground-stage1.png"]
 }
 
 spriteset (farm_houses_building) {
     sprite_null()
-    [ -31, -33, "gfx/farm-houses.png"]
+    [ -31, -33, "gfx/farm-houses-stage1.png"]
     [ -31, -33, "gfx/farm-houses.png"]
 }
 
 spriteset (farm_houses_building_tree) {
     sprite_null()
-    [ -31, -33, "gfx/farm-houses.png"]
+    [ -31, -33, "gfx/farm-houses-stage1.png"]
     [ -31, -33, "gfx/farm-houses-tree.png"]
+}
+
+spriteset (farm_houses_building_snow) {
+    sprite_null()
+    [ -31, -33, "gfx/farm-houses-stage1.png"]
+    [ -31, -33, "gfx/farm-houses-snow.png"]
 }
 
 spritelayout sprite_farm_houses {
@@ -35737,8 +35749,14 @@ spritelayout sprite_farm_houses {
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
     childsprite {
-        sprite: farm_houses_ground_childsprite;
+        sprite: farm_houses_ground;
         always_draw: 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT;
+    }
+    childsprite {
+        sprite: farm_houses_ground_desert;
+        always_draw: 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW && terrain_type != TILETYPE_DESERT;
     }
     building {
         sprite: farm_houses_building;
@@ -35752,6 +35770,12 @@ spritelayout sprite_farm_houses {
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+    building {
+        sprite: farm_houses_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
 }
 
 if (enable_industries) {
@@ -35762,7 +35786,7 @@ if (enable_industries) {
             accepted_cargos: [[PASS, 4], [MAIL, 1], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors != 2) {

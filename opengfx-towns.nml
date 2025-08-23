@@ -35903,6 +35903,7 @@ if (enable_industries) {
         }
         graphics {
             default: sprite_workshop_4;
+            construction_check: workshop_construction_check;
         }
     }
 }

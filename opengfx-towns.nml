@@ -35724,6 +35724,12 @@ spriteset (farm_houses_building) {
     [ -31, -33, "gfx/farm-houses.png"]
 }
 
+spriteset (farm_houses_building_tree) {
+    sprite_null()
+    [ -31, -33, "gfx/farm-houses.png"]
+    [ -31, -33, "gfx/farm-houses-tree.png"]
+}
+
 spritelayout sprite_farm_houses {
     ground {
         sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
@@ -35736,6 +35742,13 @@ spritelayout sprite_farm_houses {
     }
     building {
         sprite: farm_houses_building;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: farm_houses_building_tree;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }

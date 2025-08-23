@@ -35838,6 +35838,62 @@ if (enable_industries) {
     }
 }
 
+spriteset (workshop_4_ground) {
+    sprite_null()
+    [ -31,  -5, "gfx/2112v2-stage1.png"]
+    [ -31,  -5, "gfx/2112v2.png"]
+}
+
+spriteset (workshop_4_building) {
+    sprite_null()
+    [ -31,  -5, "gfx/2113v2.png"]
+    [ -31,  -5, "gfx/2113v2.png"]
+}
+
+spriteset (workshop_4_building_snow) {
+    sprite_null()
+    [ -31,  -5, "gfx/2113v2.png"]
+    [ -31,  -5, "gfx/2113v2-snow.png"]
+}
+
+spritelayout sprite_workshop_4 {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: workshop_4_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: workshop_4_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: workshop_4_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+if (enable_industries) {
+    item(FEAT_HOUSES, item_workshop_4) {
+        property {
+            substitute: 0x12;
+            name: string(STR_NAME_WORKSHOP);
+            years_available: [1930, 65535];
+            building_class: 101;
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_workshop_4;
+        }
+    }
+}
+
 spriteset (garages_1_ground) {
     [ -31,  -4, "gfx/2039-ground.png"]
     [ -31,  -4, "gfx/2039-ground.png"]

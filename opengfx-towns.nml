@@ -35987,10 +35987,22 @@ if (enable_industries) {
     }
 }
 
+spriteset (factory_1_ground) {
+    [ -31, -14, "gfx/2018-ground.png"]
+    [ -31, -14, "gfx/2018-ground.png"]
+    [ -31, -14, "gfx/2018-ground.png"]
+}
+
 spriteset (factory_1_building) {
     [ -31, -14, "gfx/2016.png"]
     [ -31, -14, "gfx/2017.png"]
     [ -31, -14, "gfx/2018.png"]
+}
+
+spriteset (factory_1_building_snow) {
+    [ -31, -14, "gfx/2016.png"]
+    [ -31, -14, "gfx/2017.png"]
+    [ -31, -14, "gfx/2018-snow.png"]
 }
 
 spritelayout sprite_factory_1 {
@@ -35999,8 +36011,17 @@ spritelayout sprite_factory_1 {
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
+    childsprite {
+        sprite: factory_1_ground;
+        always_draw: 1;
+    }
     building {
         sprite: factory_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: factory_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -36013,7 +36034,7 @@ if (enable_industries) {
             building_class: 107;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

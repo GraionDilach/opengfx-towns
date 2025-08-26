@@ -36236,6 +36236,12 @@ if (enable_bank) {
     }
 }
 
+spriteset (small_airport_ground) {
+    [ -31, -8, "gfx/small-airport-ground-stage0.png"]
+    [ -31, -8, "gfx/small-airport-ground-stage1.png"]
+    [ -31, -8, "gfx/small-airport-ground.png"]
+}
+
 spriteset (small_airport) {
     sprite_null()
     [ -31, -8, "gfx/small-airport-stage1.png"]
@@ -36250,7 +36256,11 @@ spriteset (small_airport_snow) {
 
 spritelayout sprite_small_airport {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: small_airport_ground;
+        always_draw: 1;
     }
     building {
         sprite: small_airport;

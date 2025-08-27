@@ -35517,10 +35517,16 @@ if (enable_toyland) {
     }
 }
 
+spriteset (ported_toyland_igloo_ground) {
+    sprite_null()
+    sprite_null()
+    [ -31,  -2, "gfx/igloo-ground.png"]
+}
+
 spriteset (ported_toyland_igloo_building) {
     sprite_null()
-    [  12,  104,  64,  31, -31,   0, "ogfx/iglu.png"] // 4662
-    [  12,  104,  64,  31, -31,   0, "ogfx/iglu.png"] // 4662
+    [ -31,  -2, "gfx/igloo.png"]
+    [ -31,  -2, "gfx/igloo.png"]
 }
 
 spritelayout sprite_ported_toyland_igloo {
@@ -35528,6 +35534,10 @@ spritelayout sprite_ported_toyland_igloo {
         sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ported_toyland_igloo_ground;
+        always_draw: 1;
     }
     building {
         sprite: ported_toyland_igloo_building;

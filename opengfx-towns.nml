@@ -36765,35 +36765,81 @@ if (enable_hq) {
     }
 }
 
+spriteset (hq_stage_5_N_ground) {
+    [ -31,   0, "gfx/hqshop5-n-ground-stage0.png"]
+    [ -31,   0, "gfx/hqshop5-n-ground-stage1.png"]
+    [ -31,   0, "gfx/hqshop5-n-ground.png"]
+}
+
 spriteset (hq_stage_5_N_building) {
     sprite_null()
-    [ 52,  6,  18, 66, -3, -36, "gfx/hqshop5.png"]
+    [   0, -41, "gfx/hqshop5-n-stage1.png"]
+    [   0, -41, "gfx/hqshop5-n.png"]
+}
+
+spriteset (hq_stage_5_N_building_snow) {
+    sprite_null()
+    [   0, -41, "gfx/hqshop5-n-stage1.png"]
+    [   0, -41, "gfx/hqshop5-n-snow.png"]
 }
 
 spritelayout sprite_hq_stage_5_N {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: hq_stage_5_N_ground;
+        always_draw: 1;
     }
     building {
         sprite: hq_stage_5_N_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: hq_stage_5_N_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
+spriteset (hq_stage_5_W_ground) {
+    [ -31,   0, "gfx/hqshop5-w-ground-stage0.png"]
+    [ -31,   0, "gfx/hqshop5-w-ground-stage1.png"]
+    [ -31,   0, "gfx/hqshop5-w-ground.png"]
+}
 
 spriteset (hq_stage_5_W_building) {
     sprite_null()
-    [  1,  1,  46, 82, -15, -58, "gfx/hqshop5.png"]
+    [ -31, -57, "gfx/hqshop5-w-stage1.png"]
+    [ -31, -57, "gfx/hqshop5-w.png"]
 }
 
+spriteset (hq_stage_5_W_building_snow) {
+    sprite_null()
+    [ -31, -57, "gfx/hqshop5-w-stage1.png"]
+    [ -31, -57, "gfx/hqshop5-w-snow.png"]
+}
 
 spritelayout sprite_hq_stage_5_W {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: hq_stage_5_W_ground;
+        always_draw: 1;
     }
     building {
         sprite: hq_stage_5_W_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: hq_stage_5_W_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -36806,7 +36852,7 @@ if (enable_hq) {
             building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

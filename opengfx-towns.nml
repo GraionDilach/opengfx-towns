@@ -36733,17 +36733,41 @@ if (enable_hq) {
     }
 }
 
-spriteset (hq_stage_4) {
+spriteset (hq_stage_4_ground) {
+    [-31, -23, "gfx/hqshop4-ground-stage0.png"]
+    [-31, -23, "gfx/hqshop4-ground.png"]
+    [-31, -23, "gfx/hqshop4-ground.png"]
+}
+
+spriteset (hq_stage_4_building) {
     sprite_null()
-    [-29, -24, "gfx/hqshop4.png"]
+    [-31, -23, "gfx/hqshop4-stage1.png"]
+    [-31, -23, "gfx/hqshop4.png"]
+}
+
+spriteset (hq_stage_4_building_snow) {
+    sprite_null()
+    [-31, -23, "gfx/hqshop4-stage1.png"]
+    [-31, -23, "gfx/hqshop4-snow.png"]
 }
 
 spritelayout sprite_hq_stage_4 {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: hq_stage_4_ground;
+        always_draw: 1;
     }
     building {
-        sprite: hq_stage_4;
+        sprite: hq_stage_4_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: hq_stage_4_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -36753,14 +36777,23 @@ if (enable_hq) {
     item(FEAT_HOUSES, item_hq_stage_4) {
         property {
             substitute: 0x40;
+            years_available: [1900, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        graphics {
-            default: sprite_hq_stage_4;
-            colour: random_company_color();
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_hq_stage_4;
+                colour: random_modest_struct_color_wo_mauve();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_hq_stage_4;
+                colour: random_struct_color();
+            }
         }
     }
 }

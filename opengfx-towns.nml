@@ -14584,7 +14584,7 @@ spritelayout sprite_ukts_ogfx_offices_18 {
     }
     building {
         sprite: ukts_ogfx_offices_18a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
     }
     building {
         sprite: ukts_ogfx_offices_18b_building;

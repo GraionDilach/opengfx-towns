@@ -6,6 +6,8 @@ tall office block 2 - ground frame
 shops_and_offices_5 - ground frame
 theater - ground frame
 
+shopping mall - snow
+
 toyland statue - wrapped frames, fix remap
 toyland teapot - fix company color
 toyland piggy bank - wrapped frames

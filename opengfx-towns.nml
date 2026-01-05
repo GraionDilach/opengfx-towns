@@ -36062,10 +36062,14 @@ spritelayout sprite_factory_1 {
     building {
         sprite: factory_1_building;
         hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: factory_1_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -36084,6 +36088,7 @@ if (enable_industries) {
         graphics {
             default: sprite_factory_1;
             construction_check: factory_construction_check;
+            colour: random_modest_struct_color(); // not gonna add rainbow to this one
         }
     }
 }

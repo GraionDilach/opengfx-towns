@@ -9325,17 +9325,15 @@ spriteset (ukts_flats_4_ground_tropic) {
 }
 
 spriteset (ukts_flats_4_building) {
-    [ 196,  169,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 196,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-//    [ 196,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 196,   57,  64,  55, -31, -24, "uktownset22/flats.png"]
+    [   1,  169,  64,  55, -31, -24, "uktownset22plus/flats_4.png"]
+    [   1,  113,  64,  55, -31, -24, "uktownset22plus/flats_4.png"]
+    [   1,   57,  64,  55, -31, -24, "uktownset22plus/flats_4.png"]
 }
 
 spriteset (ukts_flats_4_building_snow) {
-    [ 196,  169,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 196,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-//    [ 196,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 196,    1,  64,  55, -31, -24, "uktownset22/flats.png"]
+    [   1,  169,  64,  55, -31, -24, "uktownset22plus/flats_4.png"]
+    [   1,  113,  64,  55, -31, -24, "uktownset22plus/flats_4.png"]
+    [   1,    1,  64,  55, -31, -24, "uktownset22plus/flats_4.png"]
 }
 
 spritelayout sprite_ukts_flats_4 {
@@ -9376,10 +9374,14 @@ spritelayout sprite_ukts_flats_4 {
     building {
         sprite: ukts_flats_4_building;
         hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_flats_4_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -9397,8 +9399,25 @@ if (enable_uktownset) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        graphics {
-            default: sprite_ukts_flats_4;
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_ukts_flats_4;
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_ukts_flats_4;
+                colour: random_modest_struct_color_wo_mauve();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_ukts_flats_4;
+                colour: random_struct_color();
+            }
         }
     }
 }

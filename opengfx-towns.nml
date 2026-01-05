@@ -37239,7 +37239,12 @@ spriteset (ported_toyland_hq_stage_1) {
     [ -31,   -11, "gfx/hqtower1.png"]
 }
 
-spritelayout sprite_ported_toyland_hq_stage_1 {
+spriteset (ported_toyland_hq_stage_2) {
+    sprite_null()
+    [ -31,   -29, "gfx/hqtower2.png"]
+}
+
+spritelayout sprite_ported_toyland_small_hq {
     ground {
         sprite: GROUNDSPRITE_CLEARED;
     }
@@ -37258,77 +37263,18 @@ spritelayout sprite_ported_toyland_hq_stage_1 {
         sprite: ported_toyland_hq_stage_1;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
-    }
-}
-
-if (enable_hq && enable_toyland) {
-    item(FEAT_HOUSES, item_ported_toyland_hq_stage_1) {
-        property {
-            substitute: 0x3A;
-            name: string(STR_NAME_CASTLE_FOLLY);
-            years_available: [0, 65535];
-            building_class: 105;
-            availability_mask: [
-                ALL_TOWNZONES,
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
-            ];
-        }
-        if (!cargotype_available("TOUR")) {
-            property {
-                accepted_cargos: [[PASS, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
-            }
-            graphics {
-                default: sprite_ported_toyland_hq_stage_1;
-                colour: random_company_color();
-                construction_check: folly_castle_construction_check;
-            }
-        }
-        if (cargotype_available("TOUR")) {
-            property {
-                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
-                accepted_cargos: [[PASS, 8], [TOUR, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
-                local_authority_impact: 65500;
-            }
-            graphics {
-                default: sprite_ported_toyland_hq_stage_1;
-                colour: random_company_color();
-                construction_check: folly_castle_construction_check;
-                cargo_production: folly_castle_tourist_production;
-                protection: 1;
-            }
-        }
-    }
-}
-
-spriteset (ported_toyland_hq_stage_2) {
-    sprite_null()
-    [ -31,   -29, "gfx/hqtower2.png"]
-}
-
-spritelayout sprite_ported_toyland_hq_stage_2 {
-    ground {
-        sprite: GROUNDSPRITE_CLEARED;
-    }
-    childsprite {
-        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
-            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
-        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
-        always_draw: 1;
-    }
-    childsprite {
-        sprite: GROUNDSPRITE_CONCRETE;
-        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
-        always_draw: 1;
+        hide_sprite: town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT;
     }
     building {
         sprite: ported_toyland_hq_stage_2;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
+        hide_sprite: town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
     }
 }
 
 if (enable_hq && enable_toyland) {
-    item(FEAT_HOUSES, item_ported_toyland_hq_stage_2) {
+    item(FEAT_HOUSES, item_ported_toyland_small_hq) {
         property {
             substitute: 0x3A;
             name: string(STR_NAME_CASTLE_FOLLY);
@@ -37344,7 +37290,7 @@ if (enable_hq && enable_toyland) {
                 accepted_cargos: [[PASS, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
             }
             graphics {
-                default: sprite_ported_toyland_hq_stage_2;
+                default: sprite_ported_toyland_small_hq;
                 colour: random_company_color();
                 construction_check: folly_castle_construction_check;
             }
@@ -37356,7 +37302,7 @@ if (enable_hq && enable_toyland) {
                 local_authority_impact: 65500;
             }
             graphics {
-                default: sprite_ported_toyland_hq_stage_2;
+                default: sprite_ported_toyland_small_hq;
                 colour: random_company_color();
                 construction_check: folly_castle_construction_check;
                 cargo_production: folly_castle_tourist_production;

@@ -37251,64 +37251,35 @@ spriteset (toyland_hq_stage_1_building) {
     [ -31,   -11, "gfx/hqtower1.png"]
 }
 
-spritelayout sprite_toyland_hq_stage_1 {
-    ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
-            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
-    }
-    building {
-        sprite: toyland_hq_stage_1_building;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-    }
-}
-
-if (enable_hq) {
-    item(FEAT_HOUSES, item_toyland_hq_stage_1) {
-        property {
-            substitute: 0x3A;
-            name: string(STR_NAME_CASTLE);
-            accepted_cargos: [[PASS, 8], [MAIL, 2], [SWET, 3], [FZDR, 3]];
-            years_available: [0, 65535];
-            building_class: 105;
-            availability_mask: [
-                ALL_TOWNZONES,
-                bitmask(CLIMATE_TOYLAND)
-            ];
-        }
-        graphics {
-            default: sprite_toyland_hq_stage_1;
-            colour: random_company_color();
-            construction_check: folly_castle_construction_check;
-        }
-    }
-}
-
 spriteset (toyland_hq_stage_2_building) {
     sprite_null()
     [ -31,   -29, "gfx/hqtower2.png"]
 }
 
-spritelayout sprite_toyland_hq_stage_2 {
+spritelayout sprite_toyland_small_hq {
     ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
-            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
-            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_hq_stage_1_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        hide_sprite: town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT;
     }
     building {
         sprite: toyland_hq_stage_2_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
+        hide_sprite: town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
     }
 }
 
 if (enable_hq) {
-    item(FEAT_HOUSES, item_toyland_hq_stage_2) {
+    item(FEAT_HOUSES, item_toyland_small_hq) {
         property {
             substitute: 0x3A;
             name: string(STR_NAME_CASTLE);
-            accepted_cargos: [[PASS, 8], [MAIL, 2], [SWET, 3], [FZDR, 3]];
+            accepted_cargos: [[PASS, 5], [MAIL, 2], [SWET, 2], [FZDR, 4]];
             years_available: [0, 65535];
             building_class: 105;
             availability_mask: [
@@ -37317,7 +37288,7 @@ if (enable_hq) {
             ];
         }
         graphics {
-            default: sprite_toyland_hq_stage_2;
+            default: sprite_toyland_small_hq;
             colour: random_company_color();
             construction_check: folly_castle_construction_check;
         }
@@ -37336,7 +37307,7 @@ spriteset (toyland_hq_stage_5_N_building) {
 
 spritelayout sprite_toyland_hq_stage_5_N {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_GRASS : GROUNDSPRITE_CLEARED;
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
     }
     childsprite {
         sprite: toyland_hq_stage_5_N_ground;
@@ -37363,7 +37334,7 @@ spriteset (toyland_hq_stage_5_E_building) {
 
 spritelayout sprite_toyland_hq_stage_5_E {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_GRASS : GROUNDSPRITE_CLEARED;
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4676 : 4675;
     }
     childsprite {
         sprite: toyland_hq_stage_5_E_ground;
@@ -37390,7 +37361,7 @@ spriteset (toyland_hq_stage_5_W_building) {
 
 spritelayout sprite_toyland_hq_stage_5_W {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_GRASS : GROUNDSPRITE_CLEARED;
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4676 : 4675;
     }
     childsprite {
         sprite: toyland_hq_stage_5_W_ground;
@@ -37412,7 +37383,7 @@ spriteset (toyland_hq_stage_5_S_ground) {
 
 spritelayout sprite_toyland_hq_stage_5_S {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_GRASS : GROUNDSPRITE_CLEARED;
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
     }
     childsprite {
         sprite: toyland_hq_stage_5_S_ground;
@@ -37427,8 +37398,10 @@ if (enable_hq) {
         property {
             substitute: 0x28;
             name: string(STR_NAME_CASTLE);
-            accepted_cargos: [[PASS, 8], [MAIL, 2], [SWET, 3], [FZDR, 3]];
+            accepted_cargos: [[PASS, 5], [MAIL, 2], [SWET, 2], [FZDR, 4]];
             years_available: [0, 65535];
+            population: 25;
+            mail_multiplier: 20;
             building_class: 105;
             availability_mask: [
                 ALL_TOWNZONES,

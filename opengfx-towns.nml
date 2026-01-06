@@ -212,7 +212,7 @@ grf {
 }
 
 cargotable {
-    PASS, MAIL, GOOD, FOOD, TOUR, WATR, FZDR, SWET
+    PASS, MAIL, GOOD, FOOD, WATR, FZDR, SWET, TOUR, PETR
 }
 
 // shared functions
@@ -37689,6 +37689,55 @@ if (enable_hq && enable_toyland) {
                 construction_check: folly_castle_construction_check;
                 cargo_production: folly_castle_tourist_production;
                 protection: 1;
+            }
+        }
+    }
+}
+
+spriteset (petrol_station_building) {
+    [  -31, -16, "gfx/petrol-station-stage0.png"]
+    [  -31, -16, "gfx/petrol-station-stage1.png"]
+    [  -31, -16, "gfx/petrol-station.png"]
+}
+
+spritelayout sprite_petrol_station {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: petrol_station_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_industries && cargotype_available("PETR")) {
+    item(FEAT_HOUSES, item_petrol_station) {
+        property {
+            substitute: 0x09;
+            name: string(STR_NAME_PETROL_STATION);
+            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 2], [PETR, 8]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_petrol_station;
+                construction_check: same_house_count_town == 0 && has_population(500);
+                protection: 1;
+                colour: random_modest_company_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_petrol_station;
+                construction_check: same_house_count_town == 0 && has_population(500);
+                protection: 1;
+                colour: random_company_color();
             }
         }
     }

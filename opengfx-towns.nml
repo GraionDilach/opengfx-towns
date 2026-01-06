@@ -120,6 +120,14 @@ grf {
             desc: string(STR_PARAM_DESC_ENABLE_MISC);
             def_value: 0;
         }
+
+        protect_multicell {
+            type: bool;
+            bit: 15;
+            name: string(STR_PARAM_NAME_PROTECT_MULTICELL);
+            desc: string(STR_PARAM_DESC_PROTECT_MULTICELL);
+            def_value: 1;
+        }
     }
 
     param 1 {
@@ -983,6 +991,11 @@ if (enable_temperate) {
         if (cargotype_available("TOUR") && hotel_tourist == 1) {
             property {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
+            }
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             }
         }
         if (cargotype_available("TOUR") && hotel_tourist > 1) {
@@ -2384,11 +2397,15 @@ if (enable_temperate) {
         property {
             substitute: 0x28;
             accepted_cargos: [[PASS, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         if (additional_colors == 0) {
             graphics {
@@ -2769,6 +2786,11 @@ if (enable_arctic) {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
             }
         }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
+        }
         if (cargotype_available("TOUR") && hotel_tourist > 1) {
             property {
                 building_flags: bitmask(HOUSE_FLAG_PROTECTED);
@@ -3002,11 +3024,15 @@ if (enable_arctic) {
     item(FEAT_HOUSES, item_tall_office_block_7, -1, HOUSE_SIZE_2X1) {
         property {
             substitute: 0x4A;
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: sprite_tall_office_block_7_N;
@@ -3658,11 +3684,15 @@ if (enable_tropic) {
     item(FEAT_HOUSES, item_tall_office_block_8, -1, HOUSE_SIZE_2X1) {
         property {
             substitute: 0x57;
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         if (additional_colors == 0) {
             graphics {
@@ -6058,11 +6088,15 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 1]];
             building_class: 20;
             years_available: [0, 65535];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: ukts_college_1_N;
@@ -7010,11 +7044,15 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 1]];
             building_class: 20;
             years_available: [0, 65535];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: ukts_college_2_N;
@@ -7962,11 +8000,15 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 1]];
             building_class: 20;
             years_available: [0, 65535];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: ukts_college_3_N;
@@ -8914,11 +8956,15 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 1]];
             building_class: 20;
             years_available: [0, 65535];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: ukts_college_4_N;
@@ -16667,11 +16713,15 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
             building_class: 21;
             years_available: [0, 65535];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: ukts_school_1_N;
@@ -17633,11 +17683,15 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
             building_class: 21;
             years_available: [0, 65535];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: ukts_school_2_N;
@@ -18599,11 +18653,15 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
             building_class: 21;
             years_available: [0, 65535];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: ukts_school_3_N;
@@ -19565,11 +19623,15 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
             building_class: 21;
             years_available: [0, 65535];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: ukts_school_4_N;
@@ -35083,6 +35145,11 @@ if (enable_32bpp_arctic_hotel) {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
             }
         }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
+        }
         if (cargotype_available("TOUR") && hotel_tourist > 1) {
             property {
                 building_flags: bitmask(HOUSE_FLAG_PROTECTED);
@@ -36268,7 +36335,6 @@ if (enable_bank) {
         property {
             substitute: 0x4A;
             name: string(STR_NAME_UNIVERSITY);
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             building_class: 102;
             population: 255;
             mail_multiplier: 70;
@@ -36280,6 +36346,11 @@ if (enable_bank) {
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         if (additional_colors != 2) {
             graphics {
@@ -36364,7 +36435,6 @@ if (enable_bank) {
         property {
             substitute: 0x4A;
             name: string(STR_NAME_COURTHOUSE);
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             building_class: 103;
             population: 255;
             mail_multiplier: 70;
@@ -36376,6 +36446,11 @@ if (enable_bank) {
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         if (additional_colors != 2) {
             graphics {
@@ -37030,11 +37105,15 @@ if (enable_hq) {
     item(FEAT_HOUSES, item_hq_stage_5, -1, HOUSE_SIZE_2X1) {
         property {
             substitute: 0x4A;
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: sprite_hq_stage_5_N;
@@ -37331,13 +37410,17 @@ if (enable_hq) {
             substitute: 0x28;
             name: string(STR_NAME_CASTLE);
             accepted_cargos: [[PASS, 8], [MAIL, 2], [SWET, 3], [FZDR, 3]];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             years_available: [0, 65535];
             building_class: 105;
             availability_mask: [
                 ALL_TOWNZONES,
                 bitmask(CLIMATE_TOYLAND)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: sprite_toyland_hq_stage_5_N;
@@ -37575,13 +37658,17 @@ if (enable_hq && enable_toyland) {
         property {
             substitute: 0x28;
             name: string(STR_NAME_CASTLE_FOLLY);
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             years_available: [0, 65535];
             building_class: 105;
             availability_mask: [
                 ALL_TOWNZONES,
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         if (!cargotype_available("TOUR")) {
             property {
@@ -37598,6 +37685,7 @@ if (enable_hq && enable_toyland) {
         }
         if (cargotype_available("TOUR")) {
             property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
                 accepted_cargos: [[PASS, 8], [TOUR, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
                 local_authority_impact: 65500;
             }

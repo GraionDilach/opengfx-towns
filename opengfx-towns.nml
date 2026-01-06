@@ -37694,6 +37694,12 @@ if (enable_hq && enable_toyland) {
     }
 }
 
+spriteset (petrol_station_ground) {
+    [  -31, -16, "gfx/petrol-station-ground-stage0.png"]
+    [  -31, -16, "gfx/petrol-station-ground-stage1.png"]
+    [  -31, -16, "gfx/petrol-station-ground.png"]
+}
+
 spriteset (petrol_station_building) {
     [  -31, -16, "gfx/petrol-station-stage0.png"]
     [  -31, -16, "gfx/petrol-station-stage1.png"]
@@ -37702,7 +37708,11 @@ spriteset (petrol_station_building) {
 
 spritelayout sprite_petrol_station {
     ground {
-        sprite: construction_state < 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: petrol_station_ground;
+        always_draw: 1;
     }
     building {
         sprite: petrol_station_building;

@@ -656,6 +656,7 @@ if (disable_base_houses) {
 // 2 temperate cathedral
 // 3 arctic church
 // 4 tropic church
+// 5 toyland church
 
 // 10 soccer stadium
 // 11 rugby stadium
@@ -691,6 +692,10 @@ switch (FEAT_HOUSES, SELF, church_construction_check, (
         && other_class_count_town(2) == 0
         && other_class_count_town(3) == 0
         && other_class_count_town(4) == 0)
+)) {return;}
+
+switch (FEAT_HOUSES, SELF, toyland_church_construction_check, (
+    church_limit == 2 || same_class_count_town == 0
 )) {return;}
 
 // population check for UKTS
@@ -3863,12 +3868,16 @@ spritelayout sprite_toyland_church {
     }
     building {
         sprite: toyland_church_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
 item(FEAT_HOUSES, item_toyland_church) {
     property {
         substitute: 0x5B;
+        building_flags: 0;
+        building_class: 5;
         building_flags: bitmask(HOUSE_FLAG_CHURCH);
         availability_mask: [
                 ALL_TOWNZONES,
@@ -3877,6 +3886,7 @@ item(FEAT_HOUSES, item_toyland_church) {
     }
     graphics {
         default: sprite_toyland_church;
+        construction_check: toyland_church_construction_check;
     }
 }
 
@@ -4102,6 +4112,7 @@ spritelayout sprite_toyland_tall_office_block_1 {
 item(FEAT_HOUSES, item_toyland_tall_office_block_1) {
     property {
         substitute: 0x62;
+        accepted_cargos: [[PASS, 8], [MAIL, 4], [SWET, 2], [FZDR, 4]];
         availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TOYLAND)
@@ -4174,6 +4185,7 @@ spritelayout sprite_toyland_tall_office_block_2 {
 item(FEAT_HOUSES, item_toyland_tall_office_block_2) {
     property {
         substitute: 0x65;
+        accepted_cargos: [[PASS, 8], [MAIL, 4], [SWET, 2], [FZDR, 4]];
         availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TOYLAND)
@@ -4258,6 +4270,7 @@ spritelayout sprite_toyland_shops_and_offices_1 {
 item(FEAT_HOUSES, item_toyland_shops_and_offices_1) {
     property {
         substitute: 0x68;
+        accepted_cargos: [[PASS, 8], [MAIL, 4], [SWET, 2], [FZDR, 4]];
         availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TOYLAND)
@@ -4286,6 +4299,7 @@ spritelayout sprite_toyland_shops_and_offices_2 {
 item(FEAT_HOUSES, item_toyland_shops_and_offices_2) {
     property {
         substitute: 0x69;
+        accepted_cargos: [[PASS, 8], [MAIL, 4], [SWET, 2], [FZDR, 4]];
         availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TOYLAND)
@@ -4314,6 +4328,7 @@ spritelayout sprite_toyland_tall_office_block_3 {
 item(FEAT_HOUSES, item_toyland_tall_office_block_3) {
     property {
         substitute: 0x6A;
+        accepted_cargos: [[PASS, 8], [MAIL, 4], [SWET, 2], [FZDR, 4]];
         availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TOYLAND)
@@ -4335,6 +4350,8 @@ spritelayout sprite_toyland_statue {
     }
     building {
         sprite: toyland_statue_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -4389,7 +4406,7 @@ item(FEAT_HOUSES, item_toyland_teapot) {
 
 spriteset (toyland_piggybank_building) {
     sprite_null()
-    [   0,    0,  26,  31, -12,  -9, "ogfx/Piggybank.png"] // 4697
+    [   0,    0,  26,  31, -12,  -9, "ogfx/Piggybank.png"] // 4698
 }
 
 spritelayout sprite_toyland_piggybank {
@@ -4404,6 +4421,7 @@ spritelayout sprite_toyland_piggybank {
 item(FEAT_HOUSES, item_toyland_piggybank) {
     property {
         substitute: 0x6D;
+        accepted_cargos: [[PASS, 3], [MAIL, 2], [SWET, 2], [FZDR, 4]];
         availability_mask: [
                 ALL_TOWNZONES,
                 bitmask(CLIMATE_TOYLAND)

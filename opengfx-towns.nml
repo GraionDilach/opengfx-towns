@@ -12357,40 +12357,51 @@ spriteset (ukts_offices_1_ew_building_snow) {
     [  68,    1,  66,  90, -32, -59, "uktownset22/offices.png"]
 }
 
-spritelayout sprite_ukts_offices_1 {
+spritelayout sprite_ukts_offices_1_ns {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_offices_1_ns_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 2;
+    }
+    building {
+        sprite: ukts_offices_1_ns_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_offices_1_ns_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_offices_1_ew {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_offices_1_ew_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 1;
-    }
-    building {
-        sprite: ukts_offices_1_ns_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
-        sprite: ukts_offices_1_ns_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
     }
     building {
         sprite: ukts_offices_1_ew_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_offices_1_ew_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+random_switch (FEAT_HOUSES, SELF, callback_ukts_offices_1_preview) {
+    1: return sprite_ukts_offices_1_ew;
+    1: return sprite_ukts_offices_1_ns;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_offices_1, animation_frame) {
+    1: return sprite_ukts_offices_1_ew;
+    2: return sprite_ukts_offices_1_ns;
+    return callback_ukts_offices_1_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -12408,8 +12419,8 @@ if (enable_uktownset || enable_temperate) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
-            default: sprite_ukts_offices_1;
+            construction_anim: switch_check_road_initial_2_faced;
+            default: callback_ukts_offices_1;
         }
     }
 }

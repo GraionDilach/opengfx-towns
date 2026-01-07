@@ -577,18 +577,13 @@ random_switch (FEAT_HOUSES, SELF, switch_4_variants) {
     1: return 3;
     1: return 4;
 }
-/*
-aimed for mixing together the OGFX church colors with UKTS counterparts but it throws a "No free parameters available to use for internal computations" error
-random_switch (FEAT_HOUSES, SELF, switch_7_variants) {
+random_switch (FEAT_HOUSES, SELF, switch_5_variants) {
     1: return 1;
     1: return 2;
     1: return 3;
     1: return 4;
     1: return 5;
-    1: return 6;
-    1: return 7;
 }
-*/
 
 // road-aware checks:
 
@@ -4725,12 +4720,18 @@ switch (FEAT_HOUSES, SELF, ogfx_church_color, animation_frame) {
     3: return PALETTE_OGFX_CHURCH_CREAM;
     return PALETTE_USE_DEFAULT;
 }
+*/
 
 spriteset (church_1_building) {
     [  66,    8,  38,  21, -19,   3, "ogfx/temprtbuilds.png"] // 1434
     [ 114,    8,  38,  28, -19,  -4, "ogfx/temprtbuilds.png"] // 1435
     [ 162,    8,  38,  38, -19, -14, "ogfx/temprtbuilds.png"] // 1436
-    [ 162,    8,  38,  38, -19, -14, "ogfx/temprtbuilds.png"] // 1436
+}
+
+spriteset (church_1_building_snow) {
+    [  66,    8,  38,  21, -19,   3, "ogfx/temprtbuilds.png"] // 1434
+    [ 114,    8,  38,  28, -19,  -4, "ogfx/temprtbuilds.png"] // 1435
+    [ -19,  -14, "ogfxplus/1436-snow.png"]
 }
 
 spritelayout sprite_church_1 {
@@ -4770,17 +4771,24 @@ spritelayout sprite_church_1 {
     }
     building {
         sprite: church_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: church_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
-*/
 
-switch (FEAT_HOUSES, SELF, callback_ukts_church_small_1_preview, switch_4_variants()) {
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small_1_preview, switch_5_variants()) {
     1: return sprite_ukts_church_small_1a;
     2: return sprite_ukts_church_small_1b;
     3: return sprite_ukts_church_small_1c;
     4: return sprite_ukts_church_small_1d;
+    5: return sprite_church_1;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_church_small_1, animation_frame) {
@@ -4788,6 +4796,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_church_small_1, animation_frame) {
     2: return sprite_ukts_church_small_1b;
     3: return sprite_ukts_church_small_1c;
     4: return sprite_ukts_church_small_1d;
+    5: return sprite_church_1;
     return callback_ukts_church_small_1_preview;
 }
 
@@ -4804,11 +4813,10 @@ if (enable_temperate || enable_uktownset) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-
         graphics {
             default: callback_ukts_church_small_1;
             construction_check: church_construction_check;
-            construction_anim: switch_4_variants;
+            construction_anim: switch_5_variants;
         }
     }
 }

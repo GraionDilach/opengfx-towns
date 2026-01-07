@@ -668,6 +668,18 @@ random_switch (FEAT_HOUSES, SELF, switch_4_variants) {
     1: return 3;
     1: return 4;
 }
+/*
+aimed for mixing together the OGFX church colors with UKTS counterparts but it throws a "No free parameters available to use for internal computations" error
+random_switch (FEAT_HOUSES, SELF, switch_7_variants) {
+    1: return 1;
+    1: return 2;
+    1: return 3;
+    1: return 4;
+    1: return 5;
+    1: return 6;
+    1: return 7;
+}
+*/
 
 // road-aware checks:
 
@@ -2315,9 +2327,9 @@ spritelayout sprite_cinema_1b {
     }
 }
 
-random_switch (FEAT_HOUSES, SELF, callback_cinema_1_preview) {
+switch (FEAT_HOUSES, SELF, callback_cinema_1_preview, switch_2_variants()) {
     1: return sprite_cinema_1;
-    1: return sprite_cinema_1b;
+    2: return sprite_cinema_1b;
 }
 
 switch (FEAT_HOUSES, SELF, callback_cinema_1, animation_frame) {
@@ -3920,6 +3932,7 @@ if (enable_tropic) {
 // toyland can inherit everything, because I'm not touching this
 // (also, most of the buildings are unedited between OpenGFX and OpenGFX2 atm)
 // excluding their wrapping paper
+// also, toyland pavement stays on pseudo_random_bit
 
 spriteset (toyland_church_building) {
     [  66,    8,  64, 127, -31, -96, "ogfx/toyland_wrappedhouses.png"] // 4627
@@ -4585,7 +4598,7 @@ spriteset (ukts_church_small_1d_building_snow) {
     [ 326, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
-spritelayout sprite_ukts_church_small_1 {
+spritelayout sprite_ukts_church_small_1a {
     ground {
         sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
@@ -4622,37 +4635,253 @@ spritelayout sprite_ukts_church_small_1 {
     }
     building {
         sprite: ukts_church_small_1a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_small_1a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_small_1b {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
     }
     building {
         sprite: ukts_church_small_1b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_small_1b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_small_1c {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
     }
     building {
         sprite: ukts_church_small_1c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_small_1c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_small_1d {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
     }
     building {
         sprite: ukts_church_small_1d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_small_1d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
+
+/*
+PALETTE_OGFX_CHURCH_RED = reserve_sprites(1);
+replace( PALETTE_OGFX_CHURCH_RED ) {
+    recolour_sprite {
+		0x69: 0x46;
+		0x6A: 0x47;
+		0x6D: 0x4A;
+		0x6E: 0x4B;
+		0x72: 0x49;
+		0x74: 0x4C;
+		0x76: 0x4D;
+		0x77: 0x4E;
+		0x78: 0x4F;
+		0x7B: 0x48;
+	}
+}
+
+PALETTE_OGFX_CHURCH_CREAM = reserve_sprites(1);
+replace( PALETTE_OGFX_CHURCH_CREAM ) {
+    recolour_sprite {
+		0x69: 0x02;
+		0x6A: 0x21;
+		0x6D: 0x23;
+		0x6E: 0x24;
+		0x72: 0x22;
+		0x74: 0x24;
+		0x76: 0x25;
+		0x77: 0x26;
+		0x78: 0x27;
+		0x7B: 0x20;
+	}
+}
+
+switch (FEAT_HOUSES, SELF, ogfx_church_color, animation_frame) {
+    2: return PALETTE_OGFX_CHURCH_RED;
+    3: return PALETTE_OGFX_CHURCH_CREAM;
+    return PALETTE_USE_DEFAULT;
+}
+
+spriteset (church_1_building) {
+    [  66,    8,  38,  21, -19,   3, "ogfx/temprtbuilds.png"] // 1434
+    [ 114,    8,  38,  28, -19,  -4, "ogfx/temprtbuilds.png"] // 1435
+    [ 162,    8,  38,  38, -19, -14, "ogfx/temprtbuilds.png"] // 1436
+    [ 162,    8,  38,  38, -19, -14, "ogfx/temprtbuilds.png"] // 1436
+}
+
+spritelayout sprite_church_1 {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_1_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
+    }
+    building {
+        sprite: church_1_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+*/
+
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small_1_preview, switch_4_variants()) {
+    1: return sprite_ukts_church_small_1a;
+    2: return sprite_ukts_church_small_1b;
+    3: return sprite_ukts_church_small_1c;
+    4: return sprite_ukts_church_small_1d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small_1, animation_frame) {
+    1: return sprite_ukts_church_small_1a;
+    2: return sprite_ukts_church_small_1b;
+    3: return sprite_ukts_church_small_1c;
+    4: return sprite_ukts_church_small_1d;
+    return callback_ukts_church_small_1_preview;
+}
+
 
 if (enable_temperate || enable_uktownset) {
     item(FEAT_HOUSES, item_ukts_church_small_1) {
@@ -4666,9 +4895,11 @@ if (enable_temperate || enable_uktownset) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
+
         graphics {
-            default: sprite_ukts_church_small_1;
+            default: callback_ukts_church_small_1;
             construction_check: church_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -4824,6 +5055,21 @@ spritelayout sprite_ukts_church_small_2 {
         sprite: ukts_church_small_2d_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
     }
+}
+
+random_switch (FEAT_HOUSES, SELF, callback_ukts_church_small_2_preview) {
+    1: return sprite_ukts_church_small_1a;
+    1: return sprite_ukts_church_small_1b;
+    1: return sprite_ukts_church_small_1c;
+    1: return sprite_ukts_church_small_1d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small_2, animation_frame) {
+    1: return sprite_ukts_church_small_1a;
+    2: return sprite_ukts_church_small_1b;
+    3: return sprite_ukts_church_small_1c;
+    4: return sprite_ukts_church_small_1d;
+    return callback_ukts_church_small_1_preview;
 }
 
 if (enable_uktownset) {

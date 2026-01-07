@@ -584,6 +584,28 @@ random_switch (FEAT_HOUSES, SELF, switch_5_variants) {
     1: return 4;
     1: return 5;
 }
+random_switch (FEAT_HOUSES, SELF, switch_8_variants) {
+    1: return 1;
+    1: return 2;
+    1: return 3;
+    1: return 4;
+    1: return 5;
+    1: return 6;
+    1: return 7;
+    1: return 8;
+}
+random_switch (FEAT_HOUSES, SELF, switch_10_variants) {
+    1: return  1;
+    1: return  2;
+    1: return  3;
+    1: return  4;
+    1: return  5;
+    1: return  6;
+    1: return  7;
+    1: return  8;
+    1: return  9;
+    1: return 10;
+}
 
 // road-aware checks:
 
@@ -4783,44 +4805,6 @@ spritelayout sprite_church_1 {
     }
 }
 
-switch (FEAT_HOUSES, SELF, callback_ukts_church_small_1_preview, switch_5_variants()) {
-    1: return sprite_ukts_church_small_1a;
-    2: return sprite_ukts_church_small_1b;
-    3: return sprite_ukts_church_small_1c;
-    4: return sprite_ukts_church_small_1d;
-    5: return sprite_church_1;
-}
-
-switch (FEAT_HOUSES, SELF, callback_ukts_church_small_1, animation_frame) {
-    1: return sprite_ukts_church_small_1a;
-    2: return sprite_ukts_church_small_1b;
-    3: return sprite_ukts_church_small_1c;
-    4: return sprite_ukts_church_small_1d;
-    5: return sprite_church_1;
-    return callback_ukts_church_small_1_preview;
-}
-
-
-if (enable_temperate || enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_church_small_1) {
-        property {
-            substitute: 0x03;
-            building_flags: 0; // use callback instead of church flag
-            building_class: 1;
-            years_available: [0, 65535];
-            availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: callback_ukts_church_small_1;
-            construction_check: church_construction_check;
-            construction_anim: switch_5_variants;
-        }
-    }
-}
-
 spriteset (ukts_church_small_2_ground_temperate) {
     sprite_null()
     [ 66, 83, 64, 40, -31, -9, "uktownset22/churches_ground.png"]
@@ -5085,23 +5069,37 @@ spritelayout sprite_ukts_church_small_2d {
     }
 }
 
-switch (FEAT_HOUSES, SELF, callback_ukts_church_small_2_preview, switch_4_variants()) {
-    1: return sprite_ukts_church_small_2a;
-    2: return sprite_ukts_church_small_2b;
-    3: return sprite_ukts_church_small_2c;
-    4: return sprite_ukts_church_small_2d;
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small_preview, switch_10_variants()) {
+    1: return sprite_ukts_church_small_1a;
+    2: return sprite_ukts_church_small_2a;
+    3: return sprite_ukts_church_small_1b;
+    4: return sprite_ukts_church_small_2b;
+    5: return sprite_ukts_church_small_1c;
+    6: return sprite_ukts_church_small_2c;
+    7: return sprite_ukts_church_small_1d;
+    8: return sprite_ukts_church_small_2d;
+    9..10: return sprite_church_1;
 }
 
-switch (FEAT_HOUSES, SELF, callback_ukts_church_small_2, animation_frame) {
-    1: return sprite_ukts_church_small_2a;
-    2: return sprite_ukts_church_small_2b;
-    3: return sprite_ukts_church_small_2c;
-    4: return sprite_ukts_church_small_2d;
-    return callback_ukts_church_small_2_preview;
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small, animation_frame) {
+    1: return sprite_ukts_church_small_1a;
+    2: return sprite_ukts_church_small_2a;
+    3: return sprite_ukts_church_small_1b;
+    4: return sprite_ukts_church_small_2b;
+    5: return sprite_ukts_church_small_1c;
+    6: return sprite_ukts_church_small_2c;
+    7: return sprite_ukts_church_small_1d;
+    8: return sprite_ukts_church_small_2d;
+    9..10: return sprite_church_1;
+    return callback_ukts_church_small_preview;
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_church_small_2) {
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small_construction,
+    (switch_5_variants()*2 + switch_check_road_initial_2_faced()))
+    {return;}
+
+if (enable_temperate || enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_church_small_1) {
         property {
             substitute: 0x03;
             building_flags: 0; // use callback instead of church flag
@@ -5113,9 +5111,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: callback_ukts_church_small_2;
+            default: callback_ukts_church_small;
             construction_check: church_construction_check;
-            construction_anim: switch_4_variants;
+            construction_anim: callback_ukts_church_small_construction;
         }
     }
 }
@@ -5264,43 +5262,6 @@ spritelayout sprite_ukts_church_large_1d {
     }
 }
 
-switch (FEAT_HOUSES, SELF, callback_ukts_church_large_1_preview, switch_4_variants()) {
-    1: return sprite_ukts_church_large_1a;
-    2: return sprite_ukts_church_large_1b;
-    3: return sprite_ukts_church_large_1c;
-    4: return sprite_ukts_church_large_1d;
-}
-
-switch (FEAT_HOUSES, SELF, callback_ukts_church_large_1, animation_frame) {
-    1: return sprite_ukts_church_large_1a;
-    2: return sprite_ukts_church_large_1b;
-    3: return sprite_ukts_church_large_1c;
-    4: return sprite_ukts_church_large_1d;
-    return callback_ukts_church_large_1_preview;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_church_large_1) {
-        property {
-            substitute: 0x03;
-            building_flags: 0; // use callback instead of church flag
-            building_class: 2;
-            years_available: [0, 65535];
-            population: 7;
-            mail_multiplier: 2;
-            availability_mask: [
-                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: callback_ukts_church_large_1;
-            construction_check: church_construction_check;
-            construction_anim: switch_4_variants;
-        }
-    }
-}
-
 spriteset (ukts_church_large_2a_ground) {
     [ 196, 145, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
@@ -5373,66 +5334,107 @@ spriteset (ukts_church_large_2d_building_snow) {
     [ 456, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
-spritelayout sprite_ukts_church_large_2 {
+spritelayout sprite_ukts_church_large_2a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: ukts_church_large_2a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_church_large_2a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_church_large_2a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_large_2b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: ukts_church_large_2b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_church_large_2b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_church_large_2b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_large_2c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: ukts_church_large_2c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_church_large_2c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_church_large_2c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_large_2d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: ukts_church_large_2d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_church_large_2a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_church_large_2a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_church_large_2b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_church_large_2b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_church_large_2c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_church_large_2c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_church_large_2d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_large_2d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
+switch (FEAT_HOUSES, SELF, callback_ukts_church_large_preview, switch_8_variants()) {
+    1: return sprite_ukts_church_large_2a;
+    2: return sprite_ukts_church_large_1a;
+    3: return sprite_ukts_church_large_2b;
+    4: return sprite_ukts_church_large_1b;
+    5: return sprite_ukts_church_large_2c;
+    6: return sprite_ukts_church_large_1c;
+    7: return sprite_ukts_church_large_2d;
+    8: return sprite_ukts_church_large_1d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_church_large, animation_frame) {
+    1: return sprite_ukts_church_large_2a;
+    2: return sprite_ukts_church_large_1a;
+    3: return sprite_ukts_church_large_2b;
+    4: return sprite_ukts_church_large_1b;
+    5: return sprite_ukts_church_large_2c;
+    6: return sprite_ukts_church_large_1c;
+    7: return sprite_ukts_church_large_2d;
+    8: return sprite_ukts_church_large_1d;
+    return callback_ukts_church_large_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_church_large_construction,
+    (switch_4_variants()*2 + switch_check_road_initial_2_faced()))
+    {return;}
+
 if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_church_large_2) {
+    item(FEAT_HOUSES, item_ukts_church_large) {
         property {
             substitute: 0x03;
             building_flags: 0; // use callback instead of church flag
@@ -5446,8 +5448,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_church_large_2;
+            default: callback_ukts_church_large;
             construction_check: church_construction_check;
+            construction_anim: callback_ukts_church_large_construction;
         }
     }
 }

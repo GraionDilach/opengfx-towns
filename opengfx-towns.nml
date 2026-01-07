@@ -606,6 +606,24 @@ random_switch (FEAT_HOUSES, SELF, switch_10_variants) {
     1: return  9;
     1: return 10;
 }
+random_switch (FEAT_HOUSES, SELF, switch_16_variants) {
+    1: return  1;
+    1: return  2;
+    1: return  3;
+    1: return  4;
+    1: return  5;
+    1: return  6;
+    1: return  7;
+    1: return  8;
+    1: return  9;
+    1: return 10;
+    1: return 11;
+    1: return 12;
+    1: return 13;
+    1: return 14;
+    1: return 15;
+    1: return 16;
+}
 
 // road-aware checks:
 
@@ -5095,7 +5113,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_church_small, animation_frame) {
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_church_small_construction,
-    (switch_5_variants()*2 + switch_check_road_initial_2_faced()))
+    (switch_5_variants() * 2 + switch_check_road_initial_2_faced()))
     { return; }
 
 if (enable_temperate || enable_uktownset) {
@@ -5430,7 +5448,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_church_large, animation_frame) {
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_church_large_construction,
-    (switch_4_variants()*2 + switch_check_road_initial_2_faced()))
+    (switch_4_variants() * 2 + switch_check_road_initial_2_faced()))
     { return; }
 
 if (enable_uktownset) {
@@ -6441,64 +6459,6 @@ spritelayout sprite_ukts_college_1d_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, ukts_college_1_N, random_bits & 0x03) {
-        1: sprite_ukts_college_1a_N;
-        2: sprite_ukts_college_1b_N;
-        3: sprite_ukts_college_1c_N;
-        default: sprite_ukts_college_1d_N;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_1_W, random_bits & 0x03) {
-        1: sprite_ukts_college_1a_W;
-        2: sprite_ukts_college_1b_W;
-        3: sprite_ukts_college_1c_W;
-        default: sprite_ukts_college_1d_W;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_1_E, random_bits & 0x03) {
-        1: sprite_ukts_college_1a_E;
-        2: sprite_ukts_college_1b_E;
-        3: sprite_ukts_college_1c_E;
-        default: sprite_ukts_college_1d_E;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_1_S, random_bits & 0x03) {
-        1: sprite_ukts_college_1a_S;
-        2: sprite_ukts_college_1b_S;
-        3: sprite_ukts_college_1c_S;
-        default: sprite_ukts_college_1d_S;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_college_1, -1, HOUSE_SIZE_2X2) {
-        property {
-            substitute: 0x28;
-            name: string(STR_NAME_COLLEGE);
-            population: 64;
-            mail_multiplier: 4;
-            accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 1]];
-            building_class: 20;
-            years_available: [0, 65535];
-            availability_mask: [
-                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        if (protect_multicell == 1) {
-            property {
-                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
-            }
-        }
-        graphics {
-            graphics_north: ukts_college_1_N;
-            graphics_east: ukts_college_1_E;
-            graphics_south: ukts_college_1_S;
-            graphics_west: ukts_college_1_W;
-            construction_check: college_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_college_2a_N_building) {
     [ 10, 890, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 810, 64, 59, -31, -28, "uktownset22/college_split.png"]
@@ -7394,64 +7354,6 @@ spritelayout sprite_ukts_college_2d_S {
     building {
         sprite: ukts_college_2d_S_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_2_N, random_bits & 0x03) {
-        1: sprite_ukts_college_2a_N;
-        2: sprite_ukts_college_2b_N;
-        3: sprite_ukts_college_2c_N;
-        default: sprite_ukts_college_2d_N;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_2_W, random_bits & 0x03) {
-        1: sprite_ukts_college_2a_W;
-        2: sprite_ukts_college_2b_W;
-        3: sprite_ukts_college_2c_W;
-        default: sprite_ukts_college_2d_W;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_2_E, random_bits & 0x03) {
-        1: sprite_ukts_college_2a_E;
-        2: sprite_ukts_college_2b_E;
-        3: sprite_ukts_college_2c_E;
-        default: sprite_ukts_college_2d_E;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_2_S, random_bits & 0x03) {
-        1: sprite_ukts_college_2a_S;
-        2: sprite_ukts_college_2b_S;
-        3: sprite_ukts_college_2c_S;
-        default: sprite_ukts_college_2d_S;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_college_2, -1, HOUSE_SIZE_2X2) {
-        property {
-            substitute: 0x28;
-            name: string(STR_NAME_COLLEGE);
-            population: 64;
-            mail_multiplier: 4;
-            accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 1]];
-            building_class: 20;
-            years_available: [0, 65535];
-            availability_mask: [
-                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        if (protect_multicell == 1) {
-            property {
-                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
-            }
-        }
-        graphics {
-            graphics_north: ukts_college_2_N;
-            graphics_east: ukts_college_2_E;
-            graphics_south: ukts_college_2_S;
-            graphics_west: ukts_college_2_W;
-            construction_check: college_construction_check;
-        }
     }
 }
 
@@ -8353,64 +8255,6 @@ spritelayout sprite_ukts_college_3d_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, ukts_college_3_N, random_bits & 0x03) {
-        1: sprite_ukts_college_3a_N;
-        2: sprite_ukts_college_3b_N;
-        3: sprite_ukts_college_3c_N;
-        default: sprite_ukts_college_3d_N;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_3_W, random_bits & 0x03) {
-        1: sprite_ukts_college_3a_W;
-        2: sprite_ukts_college_3b_W;
-        3: sprite_ukts_college_3c_W;
-        default: sprite_ukts_college_3d_W;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_3_E, random_bits & 0x03) {
-        1: sprite_ukts_college_3a_E;
-        2: sprite_ukts_college_3b_E;
-        3: sprite_ukts_college_3c_E;
-        default: sprite_ukts_college_3d_E;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_college_3_S, random_bits & 0x03) {
-        1: sprite_ukts_college_3a_S;
-        2: sprite_ukts_college_3b_S;
-        3: sprite_ukts_college_3c_S;
-        default: sprite_ukts_college_3d_S;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_college_3, -1, HOUSE_SIZE_2X2) {
-        property {
-            substitute: 0x28;
-            name: string(STR_NAME_COLLEGE);
-            population: 64;
-            mail_multiplier: 4;
-            accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 1]];
-            building_class: 20;
-            years_available: [0, 65535];
-            availability_mask: [
-                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        if (protect_multicell == 1) {
-            property {
-                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
-            }
-        }
-        graphics {
-            graphics_north: ukts_college_3_N;
-            graphics_east: ukts_college_3_E;
-            graphics_south: ukts_college_3_S;
-            graphics_west: ukts_college_3_W;
-            construction_check: college_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_college_4a_N_building) {
     [ 10, 2170, 64, 59, -31, -28, "uktownset22/college_split.png"]
     [ 10, 2090, 64, 59, -31, -28, "uktownset22/college_split.png"]
@@ -9309,36 +9153,164 @@ spritelayout sprite_ukts_college_4d_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, ukts_college_4_N, random_bits & 0x03) {
-        1: sprite_ukts_college_4a_N;
-        2: sprite_ukts_college_4b_N;
-        3: sprite_ukts_college_4c_N;
-        default: sprite_ukts_college_4d_N;
+switch (FEAT_HOUSES, SELF, callback_ukts_college_N_preview, switch_16_variants()) {
+     1: return sprite_ukts_college_1a_N;
+     2: return sprite_ukts_college_1b_N;
+     3: return sprite_ukts_college_1c_N;
+     4: return sprite_ukts_college_1d_N;
+     5: return sprite_ukts_college_2a_N;
+     6: return sprite_ukts_college_2b_N;
+     7: return sprite_ukts_college_2c_N;
+     8: return sprite_ukts_college_2d_N;
+     9: return sprite_ukts_college_3a_N;
+    10: return sprite_ukts_college_3b_N;
+    11: return sprite_ukts_college_3c_N;
+    12: return sprite_ukts_college_3d_N;
+    13: return sprite_ukts_college_4a_N;
+    14: return sprite_ukts_college_4b_N;
+    15: return sprite_ukts_college_4c_N;
+    16: return sprite_ukts_college_4d_N;
 }
 
-switch (FEAT_HOUSES, SELF, ukts_college_4_W, random_bits & 0x03) {
-        1: sprite_ukts_college_4a_W;
-        2: sprite_ukts_college_4b_W;
-        3: sprite_ukts_college_4c_W;
-        default: sprite_ukts_college_4d_W;
+switch (FEAT_HOUSES, SELF, callback_ukts_college_N, animation_frame) {
+     1: return sprite_ukts_college_1a_N;
+     2: return sprite_ukts_college_1b_N;
+     3: return sprite_ukts_college_1c_N;
+     4: return sprite_ukts_college_1d_N;
+     5: return sprite_ukts_college_2a_N;
+     6: return sprite_ukts_college_2b_N;
+     7: return sprite_ukts_college_2c_N;
+     8: return sprite_ukts_college_2d_N;
+     9: return sprite_ukts_college_3a_N;
+    10: return sprite_ukts_college_3b_N;
+    11: return sprite_ukts_college_3c_N;
+    12: return sprite_ukts_college_3d_N;
+    13: return sprite_ukts_college_4a_N;
+    14: return sprite_ukts_college_4b_N;
+    15: return sprite_ukts_college_4c_N;
+    16: return sprite_ukts_college_4d_N;
+    return callback_ukts_college_N_preview;
 }
 
-switch (FEAT_HOUSES, SELF, ukts_college_4_E, random_bits & 0x03) {
-        1: sprite_ukts_college_4a_E;
-        2: sprite_ukts_college_4b_E;
-        3: sprite_ukts_college_4c_E;
-        default: sprite_ukts_college_4d_E;
+switch (FEAT_HOUSES, SELF, callback_ukts_college_E_preview, switch_16_variants()) {
+     1: return sprite_ukts_college_1a_E;
+     2: return sprite_ukts_college_1b_E;
+     3: return sprite_ukts_college_1c_E;
+     4: return sprite_ukts_college_1d_E;
+     5: return sprite_ukts_college_2a_E;
+     6: return sprite_ukts_college_2b_E;
+     7: return sprite_ukts_college_2c_E;
+     8: return sprite_ukts_college_2d_E;
+     9: return sprite_ukts_college_3a_E;
+    10: return sprite_ukts_college_3b_E;
+    11: return sprite_ukts_college_3c_E;
+    12: return sprite_ukts_college_3d_E;
+    13: return sprite_ukts_college_4a_E;
+    14: return sprite_ukts_college_4b_E;
+    15: return sprite_ukts_college_4c_E;
+    16: return sprite_ukts_college_4d_E;
 }
 
-switch (FEAT_HOUSES, SELF, ukts_college_4_S, random_bits & 0x03) {
-        1: sprite_ukts_college_4a_S;
-        2: sprite_ukts_college_4b_S;
-        3: sprite_ukts_college_4c_S;
-        default: sprite_ukts_college_4d_S;
+switch (FEAT_HOUSES, SELF, callback_ukts_college_E, animation_frame) {
+     1: return sprite_ukts_college_1a_E;
+     2: return sprite_ukts_college_1b_E;
+     3: return sprite_ukts_college_1c_E;
+     4: return sprite_ukts_college_1d_E;
+     5: return sprite_ukts_college_2a_E;
+     6: return sprite_ukts_college_2b_E;
+     7: return sprite_ukts_college_2c_E;
+     8: return sprite_ukts_college_2d_E;
+     9: return sprite_ukts_college_3a_E;
+    10: return sprite_ukts_college_3b_E;
+    11: return sprite_ukts_college_3c_E;
+    12: return sprite_ukts_college_3d_E;
+    13: return sprite_ukts_college_4a_E;
+    14: return sprite_ukts_college_4b_E;
+    15: return sprite_ukts_college_4c_E;
+    16: return sprite_ukts_college_4d_E;
+    return callback_ukts_college_E_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_college_W_preview, switch_16_variants()) {
+     1: return sprite_ukts_college_1a_W;
+     2: return sprite_ukts_college_1b_W;
+     3: return sprite_ukts_college_1c_W;
+     4: return sprite_ukts_college_1d_W;
+     5: return sprite_ukts_college_2a_W;
+     6: return sprite_ukts_college_2b_W;
+     7: return sprite_ukts_college_2c_W;
+     8: return sprite_ukts_college_2d_W;
+     9: return sprite_ukts_college_3a_W;
+    10: return sprite_ukts_college_3b_W;
+    11: return sprite_ukts_college_3c_W;
+    12: return sprite_ukts_college_3d_W;
+    13: return sprite_ukts_college_4a_W;
+    14: return sprite_ukts_college_4b_W;
+    15: return sprite_ukts_college_4c_W;
+    16: return sprite_ukts_college_4d_W;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_college_W, animation_frame) {
+     1: return sprite_ukts_college_1a_W;
+     2: return sprite_ukts_college_1b_W;
+     3: return sprite_ukts_college_1c_W;
+     4: return sprite_ukts_college_1d_W;
+     5: return sprite_ukts_college_2a_W;
+     6: return sprite_ukts_college_2b_W;
+     7: return sprite_ukts_college_2c_W;
+     8: return sprite_ukts_college_2d_W;
+     9: return sprite_ukts_college_3a_W;
+    10: return sprite_ukts_college_3b_W;
+    11: return sprite_ukts_college_3c_W;
+    12: return sprite_ukts_college_3d_W;
+    13: return sprite_ukts_college_4a_W;
+    14: return sprite_ukts_college_4b_W;
+    15: return sprite_ukts_college_4c_W;
+    16: return sprite_ukts_college_4d_W;
+    return callback_ukts_college_W_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_college_S_preview, switch_16_variants()) {
+     1: return sprite_ukts_college_1a_S;
+     2: return sprite_ukts_college_1b_S;
+     3: return sprite_ukts_college_1c_S;
+     4: return sprite_ukts_college_1d_S;
+     5: return sprite_ukts_college_2a_S;
+     6: return sprite_ukts_college_2b_S;
+     7: return sprite_ukts_college_2c_S;
+     8: return sprite_ukts_college_2d_S;
+     9: return sprite_ukts_college_3a_S;
+    10: return sprite_ukts_college_3b_S;
+    11: return sprite_ukts_college_3c_S;
+    12: return sprite_ukts_college_3d_S;
+    13: return sprite_ukts_college_4a_S;
+    14: return sprite_ukts_college_4b_S;
+    15: return sprite_ukts_college_4c_S;
+    16: return sprite_ukts_college_4d_S;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_college_S, animation_frame) {
+     1: return sprite_ukts_college_1a_S;
+     2: return sprite_ukts_college_1b_S;
+     3: return sprite_ukts_college_1c_S;
+     4: return sprite_ukts_college_1d_S;
+     5: return sprite_ukts_college_2a_S;
+     6: return sprite_ukts_college_2b_S;
+     7: return sprite_ukts_college_2c_S;
+     8: return sprite_ukts_college_2d_S;
+     9: return sprite_ukts_college_3a_S;
+    10: return sprite_ukts_college_3b_S;
+    11: return sprite_ukts_college_3c_S;
+    12: return sprite_ukts_college_3d_S;
+    13: return sprite_ukts_college_4a_S;
+    14: return sprite_ukts_college_4b_S;
+    15: return sprite_ukts_college_4c_S;
+    16: return sprite_ukts_college_4d_S;
+    return callback_ukts_college_S_preview;
 }
 
 if (enable_uktownset) {
-    item(FEAT_HOUSES, item_college_4, -1, HOUSE_SIZE_2X2) {
+    item(FEAT_HOUSES, item_college, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x28;
             name: string(STR_NAME_COLLEGE);
@@ -9358,11 +9330,12 @@ if (enable_uktownset) {
             }
         }
         graphics {
-            graphics_north: ukts_college_4_N;
-            graphics_east: ukts_college_4_E;
-            graphics_south: ukts_college_4_S;
-            graphics_west: ukts_college_4_W;
+            graphics_north: callback_ukts_college_N;
+            graphics_east: callback_ukts_college_E;
+            graphics_south: callback_ukts_college_S;
+            graphics_west: callback_ukts_college_W;
             construction_check: college_construction_check;
+            construction_anim: switch_16_variants;
         }
     }
 }

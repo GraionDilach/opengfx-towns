@@ -4905,7 +4905,7 @@ spriteset (ukts_church_small_2d_building_snow) {
     [ 391, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
-spritelayout sprite_ukts_church_small_2 {
+spritelayout sprite_ukts_church_small_2a {
     ground {
         sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
@@ -4942,51 +4942,162 @@ spritelayout sprite_ukts_church_small_2 {
     }
     building {
         sprite: ukts_church_small_2a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_small_2a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_small_2b {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
     }
     building {
         sprite: ukts_church_small_2b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_small_2b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_small_2c {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
     }
     building {
         sprite: ukts_church_small_2c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_small_2c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_small_2d {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_arctic;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_temperate;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_arctic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: ukts_church_small_2_ground_tropic;
+        hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
+        always_draw: 1;
     }
     building {
         sprite: ukts_church_small_2d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_small_2d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
-random_switch (FEAT_HOUSES, SELF, callback_ukts_church_small_2_preview) {
-    1: return sprite_ukts_church_small_1a;
-    1: return sprite_ukts_church_small_1b;
-    1: return sprite_ukts_church_small_1c;
-    1: return sprite_ukts_church_small_1d;
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small_2_preview, switch_4_variants()) {
+    1: return sprite_ukts_church_small_2a;
+    2: return sprite_ukts_church_small_2b;
+    3: return sprite_ukts_church_small_2c;
+    4: return sprite_ukts_church_small_2d;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_church_small_2, animation_frame) {
-    1: return sprite_ukts_church_small_1a;
-    2: return sprite_ukts_church_small_1b;
-    3: return sprite_ukts_church_small_1c;
-    4: return sprite_ukts_church_small_1d;
-    return callback_ukts_church_small_1_preview;
+    1: return sprite_ukts_church_small_2a;
+    2: return sprite_ukts_church_small_2b;
+    3: return sprite_ukts_church_small_2c;
+    4: return sprite_ukts_church_small_2d;
+    return callback_ukts_church_small_2_preview;
 }
 
 if (enable_uktownset) {
@@ -5002,8 +5113,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_church_small_2;
+            default: callback_ukts_church_small_2;
             construction_check: church_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -5080,62 +5192,91 @@ spriteset (ukts_church_large_1d_building_snow) {
     [ 261, 193, 64, 47, -31, -16, "uktownset22/churches.png"]
 }
 
-spritelayout sprite_ukts_church_large_1 {
+spritelayout sprite_ukts_church_large_1a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: ukts_church_large_1a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_church_large_1a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_church_large_1a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_large_1b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: ukts_church_large_1b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_church_large_1b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_church_large_1b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_large_1c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: ukts_church_large_1c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_church_large_1c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_church_large_1c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_church_large_1d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: ukts_church_large_1d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_church_large_1a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_church_large_1a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_church_large_1b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_church_large_1b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_church_large_1c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_church_large_1c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_church_large_1d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_church_large_1d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_church_large_1_preview, switch_4_variants()) {
+    1: return sprite_ukts_church_large_1a;
+    2: return sprite_ukts_church_large_1b;
+    3: return sprite_ukts_church_large_1c;
+    4: return sprite_ukts_church_large_1d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_church_large_1, animation_frame) {
+    1: return sprite_ukts_church_large_1a;
+    2: return sprite_ukts_church_large_1b;
+    3: return sprite_ukts_church_large_1c;
+    4: return sprite_ukts_church_large_1d;
+    return callback_ukts_church_large_1_preview;
 }
 
 if (enable_uktownset) {
@@ -5153,8 +5294,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_church_large_1;
+            default: callback_ukts_church_large_1;
             construction_check: church_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }

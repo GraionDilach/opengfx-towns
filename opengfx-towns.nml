@@ -661,34 +661,24 @@ switch (FEAT_HOUSES, SELF, switch_check_road,
 		return 9;
 }
 
-random_switch (FEAT_HOUSES, SELF, switch_check_road_4_faced_fallback) {
-    1: return 1;
-    1: return 2;
-    1: return 3;
-    1: return 4;
-}
 switch (FEAT_HOUSES, SELF, switch_check_road_4_faced, switch_check_road()) {
     7..8: return 1;
     5..6: return 2;
     3..4: return 3;
     1..2: return 4;
-    switch_check_road_4_faced_fallback;
+    switch_4_variants;
 }
 switch (FEAT_HOUSES, SELF, switch_check_road_initial_4_faced, animation_frame) {
     0:  switch_check_road_4_faced;
     CB_RESULT_DO_NOTHING;
 }
 
-random_switch (FEAT_HOUSES, SELF, switch_check_road_2_faced_fallback) {
-    1: return 1;
-    1: return 2;
-}
 switch (FEAT_HOUSES, SELF, switch_check_road_2_faced, switch_check_road()) {
     7..8: return 1;
     5..6: return 2;
     3..4: return 1;
     1..2: return 2;
-    switch_check_road_2_faced_fallback;
+    switch_2_variants;
 }
 switch (FEAT_HOUSES, SELF, switch_check_road_initial_2_faced, animation_frame) {
     0:  switch_check_road_2_faced;

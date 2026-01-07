@@ -651,6 +651,24 @@ if (disable_base_houses) {
     disable_item(FEAT_HOUSES);
 }
 
+// shared callbacks for variant selection
+
+random_switch (FEAT_HOUSES, SELF, switch_2_variants) {
+    1: return 1;
+    1: return 2;
+}
+random_switch (FEAT_HOUSES, SELF, switch_3_variants) {
+    1: return 1;
+    1: return 2;
+    1: return 3;
+}
+random_switch (FEAT_HOUSES, SELF, switch_4_variants) {
+    1: return 1;
+    1: return 2;
+    1: return 3;
+    1: return 4;
+}
+
 // road-aware checks:
 
 switch (FEAT_HOUSES, SELF, switch_check_road,
@@ -2263,32 +2281,49 @@ spriteset (cinema_1b_building_snow) {
 
 spritelayout sprite_cinema_1 {
     ground {
-        sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE; // duplicated
+        sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE;
     }
     building {
         sprite: cinema_1_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: cinema_1_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits && 0x01 == 0;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_cinema_1b {
+    ground {
+        sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE;
+    }
     building {
         sprite: cinema_1b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: cinema_1b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits && 0x01 == 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+random_switch (FEAT_HOUSES, SELF, callback_cinema_1_preview) {
+    1: return sprite_cinema_1;
+    1: return sprite_cinema_1b;
+}
+
+switch (FEAT_HOUSES, SELF, callback_cinema_1, animation_frame) {
+    1: return sprite_cinema_1;
+    2: return sprite_cinema_1b;
+    return callback_cinema_1_preview;
 }
 
 if (enable_temperate) {
@@ -2310,15 +2345,17 @@ if (enable_temperate) {
         if (additional_colors == 1)
         {
             graphics {
-                default: sprite_cinema_1;
+                default: callback_cinema_1;
                 colour: random_modest_struct_color();
+                construction_anim: switch_2_variants;
             }
         }
         if (additional_colors == 2)
         {
             graphics {
-                default: sprite_cinema_1;
+                default: callback_cinema_1;
                 colour: random_struct_color();
+                construction_anim: switch_2_variants;
             }
         }
     }

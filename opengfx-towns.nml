@@ -2276,7 +2276,7 @@ switch (FEAT_HOUSES, SELF, callback_cinema_1_preview, switch_2_variants()) {
 switch (FEAT_HOUSES, SELF, callback_cinema_1, animation_frame) {
     1: return sprite_cinema_1;
     2: return sprite_cinema_1b;
-    return callback_cinema_1_preview;
+    return  callback_cinema_1_preview;
 }
 
 if (enable_temperate) {
@@ -5106,7 +5106,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_church_small, animation_frame) {
     7: return sprite_ukts_church_small_1d;
     8: return sprite_ukts_church_small_2d;
     9..10: return sprite_church_1;
-    return callback_ukts_church_small_preview;
+    return  callback_ukts_church_small_preview;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_church_small_construction,
@@ -5441,7 +5441,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_church_large, animation_frame) {
     6: return sprite_ukts_church_large_1c;
     7: return sprite_ukts_church_large_2d;
     8: return sprite_ukts_church_large_1d;
-    return callback_ukts_church_large_preview;
+    return  callback_ukts_church_large_preview;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_church_large_construction,
@@ -9186,7 +9186,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_college_N, animation_frame) {
     14: return sprite_ukts_college_4b_N;
     15: return sprite_ukts_college_4c_N;
     16: return sprite_ukts_college_4d_N;
-    return callback_ukts_college_N_preview;
+    return  callback_ukts_college_N_preview;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_college_E_preview, switch_16_variants()) {
@@ -9225,7 +9225,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_college_E, animation_frame) {
     14: return sprite_ukts_college_4b_E;
     15: return sprite_ukts_college_4c_E;
     16: return sprite_ukts_college_4d_E;
-    return callback_ukts_college_E_preview;
+    return  callback_ukts_college_E_preview;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_college_W_preview, switch_16_variants()) {
@@ -9264,7 +9264,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_college_W, animation_frame) {
     14: return sprite_ukts_college_4b_W;
     15: return sprite_ukts_college_4c_W;
     16: return sprite_ukts_college_4d_W;
-    return callback_ukts_college_W_preview;
+    return  callback_ukts_college_W_preview;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_college_S_preview, switch_16_variants()) {
@@ -9303,7 +9303,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_college_S, animation_frame) {
     14: return sprite_ukts_college_4b_S;
     15: return sprite_ukts_college_4c_S;
     16: return sprite_ukts_college_4d_S;
-    return callback_ukts_college_S_preview;
+    return  callback_ukts_college_S_preview;
 }
 
 if (enable_uktownset) {
@@ -10798,7 +10798,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_1, animation_frame) {
     2: return sprite_ukts_house_1b;
     3: return sprite_ukts_house_1c;
     4: return sprite_ukts_house_1d;
-    return callback_ukts_house_1_preview;
+    return  callback_ukts_house_1_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -11092,7 +11092,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_2, animation_frame) {
     2: return sprite_ukts_house_2b;
     3: return sprite_ukts_house_2c;
     4: return sprite_ukts_house_2d;
-    return callback_ukts_house_2_preview;
+    return  callback_ukts_house_2_preview;
 }
 
 if (enable_uktownset || enable_temperate || enable_arctic) {
@@ -11325,7 +11325,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_3, animation_frame) {
     1: return sprite_ukts_house_3a;
     2: return sprite_ukts_house_3b;
     3: return sprite_ukts_house_3c;
-    return callback_ukts_house_3_preview;
+    return  callback_ukts_house_3_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -11560,7 +11560,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_4, animation_frame) {
     1: return sprite_ukts_house_4a;
     2: return sprite_ukts_house_4b;
     3: return sprite_ukts_house_4c;
-    return callback_ukts_house_4_preview;
+    return  callback_ukts_house_4_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -11797,7 +11797,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_5, animation_frame) {
     1: return sprite_ukts_house_5a;
     2: return sprite_ukts_house_5b;
     3: return sprite_ukts_house_5c;
-    return callback_ukts_house_5_preview;
+    return  callback_ukts_house_5_preview;
 }
 
 if (enable_uktownset || enable_arctic) {
@@ -12032,7 +12032,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_6, animation_frame) {
     1: return sprite_ukts_house_6a;
     2: return sprite_ukts_house_6b;
     3: return sprite_ukts_house_6c;
-    return callback_ukts_house_6_preview;
+    return  callback_ukts_house_6_preview;
 }
 
 if (enable_uktownset || enable_arctic) {
@@ -12210,7 +12210,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_7_preview, switch_2_variants()) {
 switch (FEAT_HOUSES, SELF, callback_ukts_house_7, animation_frame) {
     1: return sprite_ukts_house_7a;
     2: return sprite_ukts_house_7b;
-    return callback_ukts_house_7_preview;
+    return  callback_ukts_house_7_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -12445,7 +12445,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_8, animation_frame) {
     1: return sprite_ukts_house_8a;
     2: return sprite_ukts_house_8b;
     3: return sprite_ukts_house_8c;
-    return callback_ukts_house_8_preview;
+    return  callback_ukts_house_8_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -12680,7 +12680,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_9, animation_frame) {
     1: return sprite_ukts_house_9a;
     2: return sprite_ukts_house_9b;
     3: return sprite_ukts_house_9c;
-    return callback_ukts_house_9_preview;
+    return  callback_ukts_house_9_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -12917,7 +12917,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_10, animation_frame) {
     1: return sprite_ukts_house_10a;
     2: return sprite_ukts_house_10b;
     3: return sprite_ukts_house_10c;
-    return callback_ukts_house_10_preview;
+    return  callback_ukts_house_10_preview;
 }
 
 if (enable_uktownset || enable_arctic) {
@@ -13091,7 +13091,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_11_preview, switch_2_variants()) 
 switch (FEAT_HOUSES, SELF, callback_ukts_house_11, animation_frame) {
     1: return sprite_ukts_house_11a;
     2: return sprite_ukts_house_11b;
-    return callback_ukts_house_11_preview;
+    return  callback_ukts_house_11_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -13326,7 +13326,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_12, animation_frame) {
     1: return sprite_ukts_house_12a;
     2: return sprite_ukts_house_12b;
     3: return sprite_ukts_house_12c;
-    return callback_ukts_house_12_preview;
+    return  callback_ukts_house_12_preview;
 }
 
 if (enable_uktownset || enable_arctic) {
@@ -13561,7 +13561,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_13, animation_frame) {
     1: return sprite_ukts_house_13a;
     2: return sprite_ukts_house_13b;
     3: return sprite_ukts_house_13c;
-    return callback_ukts_house_13_preview;
+    return  callback_ukts_house_13_preview;
 }
 
 if (enable_uktownset || enable_temperate || enable_arctic) {
@@ -13735,7 +13735,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_14_preview, switch_2_variants()) 
 switch (FEAT_HOUSES, SELF, callback_ukts_house_14, animation_frame) {
     1: return sprite_ukts_house_14a;
     2: return sprite_ukts_house_14b;
-    return callback_ukts_house_14_preview;
+    return  callback_ukts_house_14_preview;
 }
 
 if (enable_uktownset || enable_arctic) {
@@ -14077,7 +14077,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_house_16, animation_frame) {
     1: return sprite_ukts_house_16a;
     2: return sprite_ukts_house_16b;
     3: return sprite_ukts_house_16c;
-    return callback_ukts_house_16_preview;
+    return  callback_ukts_house_16_preview;
 }
 
 if (enable_uktownset || enable_temperate) {
@@ -14181,7 +14181,7 @@ random_switch (FEAT_HOUSES, SELF, callback_ukts_offices_1_preview) {
 switch (FEAT_HOUSES, SELF, callback_ukts_offices_1, animation_frame) {
     1: return sprite_ukts_offices_1_ew;
     2: return sprite_ukts_offices_1_ns;
-    return callback_ukts_offices_1_preview;
+    return  callback_ukts_offices_1_preview;
 }
 
 if (enable_uktownset || enable_temperate) {

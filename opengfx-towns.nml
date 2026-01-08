@@ -711,6 +711,7 @@ switch (FEAT_HOUSES, SELF, switch_check_road_initial_2_faced, animation_frame) {
 // 105 folly castle (toyland HQs)
 // 106 garages (copper ore mine building), use the workshop construction check
 // 107 factory (coal mine derivate)
+// 108 petrol station (oil refinery/water supply frankenstein)
 
 switch (FEAT_HOUSES, SELF, stadium_construction_check, (
     stadium_limit == 2
@@ -737,7 +738,7 @@ switch (FEAT_HOUSES, PARENT, has_population, required, population >= required) {
 
 switch (FEAT_HOUSES, SELF, college_construction_check, (
     has_population((same_class_count_town + 1) * 3000)
-    && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
+    && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
 
 switch (FEAT_HOUSES, SELF, radio_construction_check, (
@@ -777,19 +778,25 @@ switch (FEAT_HOUSES, SELF, ukts_warehouse_construction_check, (
 )) { return; }
 
 switch (FEAT_HOUSES, SELF, school_construction_check, (
-    has_population((same_class_count_town + 1) * 1000)
-    && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
+    has_population((same_class_count_town) * 1000)
+    && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
 
 switch (FEAT_HOUSES, SELF, folly_castle_construction_check, (
-    has_population(same_class_count_town * 650)
-    && !nearest_house_matching_criterion(3, SEARCH_HOUSE_BY_CLASS)
+    has_population(same_class_count_town * 1250)
+    && !nearest_house_matching_criterion(15, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
 
 switch (FEAT_HOUSES, SELF, factory_construction_check, (
     has_population(850)
     && has_population((same_class_count_town + 1) * 850)
     && !nearest_house_matching_criterion(4, SEARCH_HOUSE_BY_CLASS)
+)) { return; }
+
+switch (FEAT_HOUSES, SELF, petrol_station_construction_check, (
+    has_population(500)
+    && has_population((same_class_count_town) * 750)
+    && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
 
 /// =================
@@ -38918,6 +38925,7 @@ if (enable_industries && cargotype_available("PETR")) {
             name: string(STR_NAME_PETROL_STATION);
             building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             years_available: [0, 65535];
+            building_class: 108;
             accepted_cargos: [[PASS, 2], [PETR, 8]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
@@ -38927,7 +38935,7 @@ if (enable_industries && cargotype_available("PETR")) {
         if (additional_colors != 2) {
             graphics {
                 default: sprite_petrol_station;
-                construction_check: same_house_count_town == 0 && has_population(500);
+                construction_check: petrol_station_construction_check;
                 protection: 1;
                 colour: random_modest_company_color();
             }
@@ -38935,7 +38943,7 @@ if (enable_industries && cargotype_available("PETR")) {
         if (additional_colors == 2) {
             graphics {
                 default: sprite_petrol_station;
-                construction_check: same_house_count_town == 0 && has_population(500);
+                construction_check: petrol_station_construction_check;
                 protection: 1;
                 colour: random_company_color();
             }

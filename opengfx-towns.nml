@@ -625,47 +625,67 @@ random_switch (FEAT_HOUSES, SELF, switch_16_variants) {
     1: return 16;
 }
 
-// road-aware checks:
+// road-aware checks (taken from Full English)
 
-switch (FEAT_HOUSES, SELF, switch_check_road,
-    ((nearby_tile_class(-1, -1) == TILE_CLASS_ROAD) || (nearby_tile_class(-1, -1) == TILE_CLASS_STATION))*1 +	// N
-    ((nearby_tile_class(-1,  0) == TILE_CLASS_ROAD) || (nearby_tile_class(-1,  0) == TILE_CLASS_STATION))*2 +	// NE
-    ((nearby_tile_class(-1,  1) == TILE_CLASS_ROAD) || (nearby_tile_class(-1,  1) == TILE_CLASS_STATION))*4 +	// E
-    ((nearby_tile_class( 0,  1) == TILE_CLASS_ROAD) || (nearby_tile_class( 0,  1) == TILE_CLASS_STATION))*8 +	// SE
-    ((nearby_tile_class( 1,  1) == TILE_CLASS_ROAD) || (nearby_tile_class( 1,  1) == TILE_CLASS_STATION))*16 +	// S
-    ((nearby_tile_class( 1,  0) == TILE_CLASS_ROAD) || (nearby_tile_class( 1,  0) == TILE_CLASS_STATION))*32 +	// SW
-    ((nearby_tile_class( 1, -1) == TILE_CLASS_ROAD) || (nearby_tile_class( 1, -1) == TILE_CLASS_STATION))*64 +	// W
-    ((nearby_tile_class( 0, -1) == TILE_CLASS_ROAD) || (nearby_tile_class( 0, -1) == TILE_CLASS_STATION))*128 	// NW
-    ) {
-    0:   return 0;  // No road or station is around house tile
-    131: return 1;  // N corner (no road present in W or E tile)
-    199: return 1;  // N corner (road present in W and E tile)
-    195: return 1;  // N corner (road present in W tile)
-    135: return 1;  // N corner (road present in E tile)
-    7:   return 2;  // NE block
-    14:  return 3;  // E corner	(no road present in N or S tile)
-    31:  return 3;  // E corner (road present in N and S tile)
-    15:  return 3;  // E corner (road present in N tile)
-    30:  return 3;  // E corner (road present in S tile)
-    28:  return 4;  // SE block
-    56:  return 5;  // S corner	(no road present in E or W tile)
-    124: return 5;  // S corner (road present in E and W tile)
-    60:  return 5;  // S corner (road present in E tile)
-    120: return 5;  // S corner (road present in W tile)
-    112: return 6;  // SW block
-    224: return 7;  // W corner (no road present in S or N tile)
-    241: return 7;  // W corner (road present in S and N tile)
-    240: return 7;  // W corner (road present in S tile)
-    225: return 7;  // W corner (road present in N tile)
-    193: return 8;  // NW block
+//8 orientation check
+//facing road to: 1 SE, 2 SW, 3, NW, 4 SE, 5 S, 6 W, 7 N, 8 E
+
+//secondary switch function, for house on 'inner corners' diagonally next to road
+switch (FEAT_HOUSES, SELF, switch_house_orientation_roadinnercorner, [
+	1 * (nearby_tile_class( 1,  1) == TILE_CLASS_ROAD) + 1 * (nearby_tile_class( 1,  1) == TILE_CLASS_STATION) +
+	2 * (nearby_tile_class( 1, -1) == TILE_CLASS_ROAD) + 2 * (nearby_tile_class( 1, -1) == TILE_CLASS_STATION) +
+	4 * (nearby_tile_class(-1, -1) == TILE_CLASS_ROAD) + 4 * (nearby_tile_class(-1, -1) == TILE_CLASS_STATION) +
+	8 * (nearby_tile_class(-1,  1) == TILE_CLASS_ROAD) + 8 * (nearby_tile_class(-1,  1) == TILE_CLASS_STATION)
+]) {
+	//One neighbouring road
+	1: return 5;
+	2: return 6;
+	4: return 7;
+	8: return 8;
     return 9;
 }
 
-switch (FEAT_HOUSES, SELF, switch_check_road_4_faced, switch_check_road()) {
-    7..8: return 1;
-    5..6: return 2;
-    3..4: return 3;
-    1..2: return 4;
+//primary switch function, for house next to road
+switch (FEAT_HOUSES, SELF, switch_house_orientation_8road, [
+	1 * (nearby_tile_class( 0,  1) == TILE_CLASS_ROAD) + 1 * (nearby_tile_class( 0,  1) == TILE_CLASS_STATION) +
+	2 * (nearby_tile_class( 1,  0) == TILE_CLASS_ROAD) + 2 * (nearby_tile_class( 1,  0) == TILE_CLASS_STATION) +
+	4 * (nearby_tile_class( 0, -1) == TILE_CLASS_ROAD) + 4 * (nearby_tile_class( 0, -1) == TILE_CLASS_STATION) +
+	8 * (nearby_tile_class(-1,  0) == TILE_CLASS_ROAD) + 8 * (nearby_tile_class(-1,  0) == TILE_CLASS_STATION)
+]) {
+	//One neighbouring road
+	1: return 1;
+	2: return 2;
+	4: return 3;
+	8: return 4;
+	//Two neighbouring roads
+	//... adjacent
+	3: return 1;
+	6: return 2;
+	12: return 3;
+	9: return 4;
+	//... opposite
+	5: return 1;
+	10: return 2;
+	//Three neighbouring roads
+	7: return 2;
+	14: return 3;
+	13: return 4;
+	11: return 1;
+	//Four neighbouring roads
+	15: return 9;
+	//No orthogonal adjacent road, so check diagonal adjacency
+	switch_house_orientation_roadinnercorner;
+}
+
+switch (FEAT_HOUSES, SELF, switch_check_road_4_faced, switch_house_orientation_8road()) {
+    1: return 3;
+    2: return 2;
+    3: return 1;
+    4: return 4;
+    5: return 3;
+    6: return 2;
+    7: return 1;
+    8: return 4;
     switch_4_variants;
 }
 switch (FEAT_HOUSES, SELF, switch_check_road_initial_4_faced, animation_frame) {
@@ -673,11 +693,14 @@ switch (FEAT_HOUSES, SELF, switch_check_road_initial_4_faced, animation_frame) {
     CB_RESULT_DO_NOTHING;
 }
 
-switch (FEAT_HOUSES, SELF, switch_check_road_2_faced, switch_check_road()) {
-    7..8: return 1;
-    5..6: return 2;
-    3..4: return 1;
-    1..2: return 2;
+switch (FEAT_HOUSES, SELF, switch_check_road_2_faced, switch_house_orientation_8road()) {
+    1..2: return;
+    3: return 1;
+    4: return 2;
+    5: return 1;
+    6: return 2;
+    7: return 3;
+    8: return 4;
     switch_2_variants;
 }
 switch (FEAT_HOUSES, SELF, switch_check_road_initial_2_faced, animation_frame) {

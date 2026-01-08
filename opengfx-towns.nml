@@ -14627,7 +14627,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_5;
         }
     }
@@ -14720,7 +14720,7 @@ if (enable_uktownset || enable_arctic) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_6;
         }
     }
@@ -14813,7 +14813,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_7;
         }
     }
@@ -14906,7 +14906,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_8;
         }
     }
@@ -14999,7 +14999,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_9;
         }
     }
@@ -15092,7 +15092,7 @@ if (enable_uktownset || enable_arctic) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_10;
         }
     }
@@ -15185,7 +15185,7 @@ if (enable_uktownset || enable_temperate) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_11;
         }
     }
@@ -15278,7 +15278,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_12;
         }
     }
@@ -15371,7 +15371,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_13;
         }
     }
@@ -15464,7 +15464,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_14;
         }
     }
@@ -15557,7 +15557,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_15;
         }
     }
@@ -15650,7 +15650,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_2_faced;
+            construction_anim: switch_check_road_initial_2_faced;
             default: sprite_ukts_offices_16;
         }
     }
@@ -21679,7 +21679,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_1;
             colour: random_company_color();
         }
@@ -21847,7 +21847,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_2;
             colour: random_company_color();
         }
@@ -22015,7 +22015,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_3;
             colour: random_company_color();
         }
@@ -22183,7 +22183,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_4;
             colour: random_company_color();
         }
@@ -22351,7 +22351,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_5;
             colour: random_company_color();
         }
@@ -22519,7 +22519,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_6;
             colour: random_company_color();
         }
@@ -22687,7 +22687,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_7;
             colour: random_company_color();
         }
@@ -22855,7 +22855,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_shops_8;
             colour: random_company_color();
         }
@@ -25768,7 +25768,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_1a;
         }
     }
@@ -25970,7 +25970,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_1b;
         }
     }
@@ -26172,7 +26172,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_1c;
         }
     }
@@ -26374,7 +26374,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_1d;
         }
     }
@@ -26624,7 +26624,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_2a;
         }
     }
@@ -26826,7 +26826,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_2b;
         }
     }
@@ -27028,7 +27028,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_2c;
         }
     }
@@ -27230,7 +27230,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_2d;
         }
     }
@@ -27481,7 +27481,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_3a;
         }
     }
@@ -27683,7 +27683,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_3b;
         }
     }
@@ -27885,7 +27885,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_3c;
         }
     }
@@ -28087,7 +28087,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_3d;
         }
     }
@@ -28337,7 +28337,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_4a;
         }
     }
@@ -28539,7 +28539,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_4b;
         }
     }
@@ -28741,7 +28741,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_4c;
         }
     }
@@ -28943,7 +28943,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_4d;
         }
     }
@@ -29193,7 +29193,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_5a;
         }
     }
@@ -29395,7 +29395,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_5b;
         }
     }
@@ -29597,7 +29597,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_5c;
         }
     }
@@ -29799,7 +29799,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_5d;
         }
     }
@@ -30049,7 +30049,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_6a;
         }
     }
@@ -30251,7 +30251,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_6b;
         }
     }
@@ -30453,7 +30453,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_6c;
         }
     }
@@ -30655,7 +30655,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_6d;
         }
     }
@@ -30905,7 +30905,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_7a;
         }
     }
@@ -31107,7 +31107,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_7b;
         }
     }
@@ -31309,7 +31309,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_7c;
         }
     }
@@ -31511,7 +31511,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_7d;
         }
     }
@@ -31761,7 +31761,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_8a;
         }
     }
@@ -31963,7 +31963,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_8b;
         }
     }
@@ -32165,7 +32165,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_8c;
         }
     }
@@ -32367,7 +32367,7 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            anim_control: switch_check_road_initial_4_faced;
+            construction_anim: switch_check_road_initial_4_faced;
             default: sprite_ukts_terraced_houses_8d;
         }
     }

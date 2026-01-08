@@ -18,11 +18,7 @@ toyland hqs - wrapped frames
 
 expand UKTS ground tiles with desert variants
 
-ukts house 9 - grab 9c from ogfx/buildings.png:645 and grab a second roof for a d variant
-ukts house 10 - eanble uncommented variant and grab a second roof for a d variant
-ukts house 13 - enable uncommented variant and grab a second roof for a d variant
-ukts house 16 - slap a second roof on UKTS variant and grab ogfx/buildings.png:848
-
+ukts house 15 - create custom variants (maybe though hueshifts?)
 
 radio station - move remap, snow frame, ground sprites (maybe a fence?)
 boiler station - rescale building to fit into a cell

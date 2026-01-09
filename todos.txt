@@ -18,6 +18,8 @@ toyland hqs - wrapped frames
 
 expand UKTS ground tiles with desert variants
 
+ukts flats 3/8 - remove brick pixels from the yellow block on the structremap variant
+
 ukts ogfx office 15b fix the building sprites somehow?!
 
 review the UKTS/OGFX offices to fix struct remap where it could be applicable

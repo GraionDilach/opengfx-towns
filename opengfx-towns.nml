@@ -813,8 +813,23 @@ switch (FEAT_HOUSES, SELF, school_construction_check, (
     && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
 
+switch (FEAT_HOUSES, SELF, university_construction_check,
+    has_population((same_class_count_town + 1) * 3000)
+    && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
+) { return; }
+
+switch (FEAT_HOUSES, SELF, courthouse_construction_check,
+    has_population((same_class_count_town + 1) * 1500)
+    && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
+) { return; }
+
 switch (FEAT_HOUSES, SELF, folly_castle_construction_check, (
     has_population(same_class_count_town * 1250)
+    && !nearest_house_matching_criterion(15, SEARCH_HOUSE_BY_CLASS)
+)) { return; }
+
+switch (FEAT_HOUSES, SELF, boiler_station_construction_check, (
+    has_population((same_class_count_town + 1) * 2500)
     && !nearest_house_matching_criterion(15, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
 
@@ -903,7 +918,7 @@ switch (FEAT_HOUSES, SELF, large_office_block_change_lift, extra_callback_info1 
     return;
 }
 
-switch (FEAT_HOUSES, SELF, large_office_block_construction_check, construction_state) {
+switch (FEAT_HOUSES, SELF, large_office_block_anim_control, construction_state) {
     3: large_office_block_change_lift;
     return 42;
 }
@@ -920,7 +935,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
         }
         graphics {
             default: sprite_large_office_block_1;
-            anim_control: large_office_block_construction_check;
+            anim_control: large_office_block_anim_control;
         }
     }
 }
@@ -38614,11 +38629,6 @@ spritelayout sprite_university_w {
     }
 }
 
-switch (FEAT_HOUSES, SELF, university_construction_check,
-    has_population((same_class_count_town + 1) * 4500)
-    && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
-) { return; }
-
 if (enable_bank) {
     item(FEAT_HOUSES, item_university, -1, HOUSE_SIZE_2X1){
         property {
@@ -38713,11 +38723,6 @@ spritelayout sprite_courthouse_w {
         palette: PALETTE_USE_DEFAULT;
     }
 }
-
-switch (FEAT_HOUSES, SELF, courthouse_construction_check,
-    has_population((same_class_count_town + 1) * 1500)
-    && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
-) { return; }
 
 if (enable_bank) {
     item(FEAT_HOUSES, item_courthouse, -1, HOUSE_SIZE_2X1){
@@ -39490,11 +39495,6 @@ spritelayout sprite_boiler_station {
         sprite: boiler_station_building;
     }
 }
-
-switch (FEAT_HOUSES, SELF, boiler_station_construction_check, (
-    has_population((same_class_count_town + 1) * 2500)
-    && !nearest_house_matching_criterion(15, SEARCH_HOUSE_BY_CLASS)
-)) { return; }
 
 if (enable_industries) {
     item(FEAT_HOUSES, item_boiler_station) {

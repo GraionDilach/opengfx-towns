@@ -10259,17 +10259,15 @@ spriteset (ukts_flats_8_ground_tropic) {
 }
 
 spriteset (ukts_flats_8_building) {
-    [ 456,  169,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 456,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-//    [ 456,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 456,   57,  64,  55, -31, -24, "uktownset22/flats.png"]
+    [   1,  169,  64,  55, -31, -24, "uktownset22plus/flats_8.png"]
+    [   1,  113,  64,  55, -31, -24, "uktownset22plus/flats_8.png"]
+    [   1,   57,  64,  55, -31, -24, "uktownset22plus/flats_8.png"]
 }
 
 spriteset (ukts_flats_8_building_snow) {
-    [ 456,  169,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 456,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-//    [ 456,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 456,    1,  64,  55, -31, -24, "uktownset22/flats.png"]
+    [   1,  169,  64,  55, -31, -24, "uktownset22plus/flats_8.png"]
+    [   1,  113,  64,  55, -31, -24, "uktownset22plus/flats_8.png"]
+    [   1,    1,  64,  55, -31, -24, "uktownset22plus/flats_8.png"]
 }
 
 spritelayout sprite_ukts_flats_8 {
@@ -10331,8 +10329,25 @@ if (enable_uktownset || enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        graphics {
-            default: sprite_ukts_flats_8;
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_ukts_flats_8;
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_ukts_flats_8;
+                colour: random_modest_struct_color_wo_mauve();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_ukts_flats_8;
+                colour: random_struct_color();
+            }
         }
     }
 }
@@ -14123,7 +14138,6 @@ if (enable_uktownset || enable_temperate) {
         }
     }
 }
-
 
 spriteset (ukts_ogfx_offices_1_ground) {
     [  98,    8,  66,  87, -32, -56, "ogfx/buildings.png"]

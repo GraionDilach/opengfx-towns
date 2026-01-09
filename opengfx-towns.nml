@@ -15202,7 +15202,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_ogfx_offices_18, animation_frame) {
 
 //custom, to keep blue
 random_switch (FEAT_HOUSES, SELF, shops_and_offices_3_color) {
-    1..2: return PALETTE_USE_DEFAULT;
+    1: return PALETTE_USE_DEFAULT;
     1: return PALETTE_STRUCT_BLUE;
     1: return PALETTE_STRUCT_WHITE;
 }

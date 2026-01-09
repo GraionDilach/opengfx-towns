@@ -39855,6 +39855,12 @@ spriteset (petrol_station_building) {
     [  -31, -16, "gfx/petrol-station.png"]
 }
 
+spriteset (petrol_station_building_snow) {
+    [  -31, -16, "gfx/petrol-station-stage0.png"]
+    [  -31, -16, "gfx/petrol-station-stage1.png"]
+    [  -31, -16, "gfx/petrol-station-snow.png"]
+}
+
 spritelayout sprite_petrol_station {
     ground {
         sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
@@ -39865,6 +39871,13 @@ spritelayout sprite_petrol_station {
     }
     building {
         sprite: petrol_station_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: petrol_station_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -39881,7 +39894,7 @@ if (enable_industries && cargotype_available("PETR")) {
             accepted_cargos: [[PASS, 2], [PETR, 8]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors != 2) {

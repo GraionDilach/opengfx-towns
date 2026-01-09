@@ -18842,64 +18842,6 @@ spritelayout sprite_ukts_school_1d_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, ukts_school_1_N, random_bits & 0x03) {
-    1: sprite_ukts_school_1a_N;
-    2: sprite_ukts_school_1b_N;
-    3: sprite_ukts_school_1c_N;
-    default: sprite_ukts_school_1d_N;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_1_W, random_bits & 0x03) {
-    1: sprite_ukts_school_1a_W;
-    2: sprite_ukts_school_1b_W;
-    3: sprite_ukts_school_1c_W;
-    default: sprite_ukts_school_1d_W;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_1_E, random_bits & 0x03) {
-    1: sprite_ukts_school_1a_E;
-    2: sprite_ukts_school_1b_E;
-    3: sprite_ukts_school_1c_E;
-    default: sprite_ukts_school_1d_E;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_1_S, random_bits & 0x03) {
-    1: sprite_ukts_school_1a_S;
-    2: sprite_ukts_school_1b_S;
-    3: sprite_ukts_school_1c_S;
-    default: sprite_ukts_school_1d_S;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_school_1, -1, HOUSE_SIZE_2X2) {
-        property {
-            substitute: 0x28;
-            name: string(STR_NAME_SCHOOL);
-            population: 64;
-            mail_multiplier: 4;
-            accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
-            building_class: 21;
-            years_available: [0, 65535];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        if (protect_multicell == 1) {
-            property {
-                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
-            }
-        }
-        graphics {
-            graphics_north: ukts_school_1_N;
-            graphics_east: ukts_school_1_E;
-            graphics_south: ukts_school_1_S;
-            graphics_west: ukts_school_1_W;
-            construction_check: school_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_school_2a_N) {
     [  10,  720,  64,  63, -31, -32, "uktownset22/school_split.png"]
     [  10,  620,  64,  63, -31, -32, "uktownset22/school_split.png"]
@@ -19809,64 +19751,6 @@ spritelayout sprite_ukts_school_2d_S {
     building {
         sprite: ukts_school_2d_S_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_2_N, random_bits & 0x03) {
-    1: sprite_ukts_school_2a_N;
-    2: sprite_ukts_school_2b_N;
-    3: sprite_ukts_school_2c_N;
-    default: sprite_ukts_school_2d_N;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_2_W, random_bits & 0x03) {
-    1: sprite_ukts_school_2a_W;
-    2: sprite_ukts_school_2b_W;
-    3: sprite_ukts_school_2c_W;
-    default: sprite_ukts_school_2d_W;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_2_E, random_bits & 0x03) {
-    1: sprite_ukts_school_2a_E;
-    2: sprite_ukts_school_2b_E;
-    3: sprite_ukts_school_2c_E;
-    default: sprite_ukts_school_2d_E;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_2_S, random_bits & 0x03) {
-    1: sprite_ukts_school_2a_S;
-    2: sprite_ukts_school_2b_S;
-    3: sprite_ukts_school_2c_S;
-    default: sprite_ukts_school_2d_S;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_school_2, -1, HOUSE_SIZE_2X2) {
-        property {
-            substitute: 0x28;
-            name: string(STR_NAME_SCHOOL);
-            population: 64;
-            mail_multiplier: 4;
-            accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
-            building_class: 21;
-            years_available: [0, 65535];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        if (protect_multicell == 1) {
-            property {
-                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
-            }
-        }
-        graphics {
-            graphics_north: ukts_school_2_N;
-            graphics_east: ukts_school_2_E;
-            graphics_south: ukts_school_2_S;
-            graphics_west: ukts_school_2_W;
-            construction_check: school_construction_check;
-        }
     }
 }
 
@@ -20782,64 +20666,6 @@ spritelayout sprite_ukts_school_3d_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, ukts_school_3_N, random_bits & 0x03) {
-    1: sprite_ukts_school_3a_N;
-    2: sprite_ukts_school_3b_N;
-    3: sprite_ukts_school_3c_N;
-    default: sprite_ukts_school_3d_N;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_3_W, random_bits & 0x03) {
-    1: sprite_ukts_school_3a_W;
-    2: sprite_ukts_school_3b_W;
-    3: sprite_ukts_school_3c_W;
-    default: sprite_ukts_school_3d_W;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_3_E, random_bits & 0x03) {
-    1: sprite_ukts_school_3a_E;
-    2: sprite_ukts_school_3b_E;
-    3: sprite_ukts_school_3c_E;
-    default: sprite_ukts_school_3d_E;
-}
-
-switch (FEAT_HOUSES, SELF, ukts_school_3_S, random_bits & 0x03) {
-    1: sprite_ukts_school_3a_S;
-    2: sprite_ukts_school_3b_S;
-    3: sprite_ukts_school_3c_S;
-    default: sprite_ukts_school_3d_S;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_school_3, -1, HOUSE_SIZE_2X2) {
-        property {
-            substitute: 0x28;
-            name: string(STR_NAME_SCHOOL);
-            population: 64;
-            mail_multiplier: 4;
-            accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
-            building_class: 21;
-            years_available: [0, 65535];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        if (protect_multicell == 1) {
-            property {
-                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
-            }
-        }
-        graphics {
-            graphics_north: ukts_school_3_N;
-            graphics_east: ukts_school_3_E;
-            graphics_south: ukts_school_3_S;
-            graphics_west: ukts_school_3_W;
-            construction_check: school_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_school_4a_N) {
     [  10, 1540,  64,  63, -31, -32, "uktownset22/school_split.png"]
     [  10, 1440,  64,  63, -31, -32, "uktownset22/school_split.png"]
@@ -21752,36 +21578,164 @@ spritelayout sprite_ukts_school_4d_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, ukts_school_4_N, random_bits & 0x03) {
-    1: sprite_ukts_school_4a_N;
-    2: sprite_ukts_school_4b_N;
-    3: sprite_ukts_school_4c_N;
-    default: sprite_ukts_school_4d_N;
+switch (FEAT_HOUSES, SELF, callback_ukts_school_N_preview, switch_16_variants()) {
+     1: return sprite_ukts_school_1a_N;
+     2: return sprite_ukts_school_1b_N;
+     3: return sprite_ukts_school_1c_N;
+     4: return sprite_ukts_school_1d_N;
+     5: return sprite_ukts_school_2a_N;
+     6: return sprite_ukts_school_2b_N;
+     7: return sprite_ukts_school_2c_N;
+     8: return sprite_ukts_school_2d_N;
+     9: return sprite_ukts_school_3a_N;
+    10: return sprite_ukts_school_3b_N;
+    11: return sprite_ukts_school_3c_N;
+    12: return sprite_ukts_school_3d_N;
+    13: return sprite_ukts_school_4a_N;
+    14: return sprite_ukts_school_4b_N;
+    15: return sprite_ukts_school_4c_N;
+    16: return sprite_ukts_school_4d_N;
 }
 
-switch (FEAT_HOUSES, SELF, ukts_school_4_W, random_bits & 0x03) {
-    1: sprite_ukts_school_4a_W;
-    2: sprite_ukts_school_4b_W;
-    3: sprite_ukts_school_4c_W;
-    default: sprite_ukts_school_4d_W;
+switch (FEAT_HOUSES, SELF, callback_ukts_school_N, animation_frame) {
+     1: return sprite_ukts_school_1a_N;
+     2: return sprite_ukts_school_1b_N;
+     3: return sprite_ukts_school_1c_N;
+     4: return sprite_ukts_school_1d_N;
+     5: return sprite_ukts_school_2a_N;
+     6: return sprite_ukts_school_2b_N;
+     7: return sprite_ukts_school_2c_N;
+     8: return sprite_ukts_school_2d_N;
+     9: return sprite_ukts_school_3a_N;
+    10: return sprite_ukts_school_3b_N;
+    11: return sprite_ukts_school_3c_N;
+    12: return sprite_ukts_school_3d_N;
+    13: return sprite_ukts_school_4a_N;
+    14: return sprite_ukts_school_4b_N;
+    15: return sprite_ukts_school_4c_N;
+    16: return sprite_ukts_school_4d_N;
+    return   callback_ukts_school_N_preview;
 }
 
-switch (FEAT_HOUSES, SELF, ukts_school_4_E, random_bits & 0x03) {
-    1: sprite_ukts_school_4a_E;
-    2: sprite_ukts_school_4b_E;
-    3: sprite_ukts_school_4c_E;
-    default: sprite_ukts_school_4d_E;
+switch (FEAT_HOUSES, SELF, callback_ukts_school_E_preview, switch_16_variants()) {
+     1: return sprite_ukts_school_1a_E;
+     2: return sprite_ukts_school_1b_E;
+     3: return sprite_ukts_school_1c_E;
+     4: return sprite_ukts_school_1d_E;
+     5: return sprite_ukts_school_2a_E;
+     6: return sprite_ukts_school_2b_E;
+     7: return sprite_ukts_school_2c_E;
+     8: return sprite_ukts_school_2d_E;
+     9: return sprite_ukts_school_3a_E;
+    10: return sprite_ukts_school_3b_E;
+    11: return sprite_ukts_school_3c_E;
+    12: return sprite_ukts_school_3d_E;
+    13: return sprite_ukts_school_4a_E;
+    14: return sprite_ukts_school_4b_E;
+    15: return sprite_ukts_school_4c_E;
+    16: return sprite_ukts_school_4d_E;
 }
 
-switch (FEAT_HOUSES, SELF, ukts_school_4_S, random_bits & 0x03) {
-    1: sprite_ukts_school_4a_S;
-    2: sprite_ukts_school_4b_S;
-    3: sprite_ukts_school_4c_S;
-    default: sprite_ukts_school_4d_S;
+switch (FEAT_HOUSES, SELF, callback_ukts_school_E, animation_frame) {
+     1: return sprite_ukts_school_1a_E;
+     2: return sprite_ukts_school_1b_E;
+     3: return sprite_ukts_school_1c_E;
+     4: return sprite_ukts_school_1d_E;
+     5: return sprite_ukts_school_2a_E;
+     6: return sprite_ukts_school_2b_E;
+     7: return sprite_ukts_school_2c_E;
+     8: return sprite_ukts_school_2d_E;
+     9: return sprite_ukts_school_3a_E;
+    10: return sprite_ukts_school_3b_E;
+    11: return sprite_ukts_school_3c_E;
+    12: return sprite_ukts_school_3d_E;
+    13: return sprite_ukts_school_4a_E;
+    14: return sprite_ukts_school_4b_E;
+    15: return sprite_ukts_school_4c_E;
+    16: return sprite_ukts_school_4d_E;
+    return   callback_ukts_school_E_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_school_W_preview, switch_16_variants()) {
+     1: return sprite_ukts_school_1a_W;
+     2: return sprite_ukts_school_1b_W;
+     3: return sprite_ukts_school_1c_W;
+     4: return sprite_ukts_school_1d_W;
+     5: return sprite_ukts_school_2a_W;
+     6: return sprite_ukts_school_2b_W;
+     7: return sprite_ukts_school_2c_W;
+     8: return sprite_ukts_school_2d_W;
+     9: return sprite_ukts_school_3a_W;
+    10: return sprite_ukts_school_3b_W;
+    11: return sprite_ukts_school_3c_W;
+    12: return sprite_ukts_school_3d_W;
+    13: return sprite_ukts_school_4a_W;
+    14: return sprite_ukts_school_4b_W;
+    15: return sprite_ukts_school_4c_W;
+    16: return sprite_ukts_school_4d_W;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_school_W, animation_frame) {
+     1: return sprite_ukts_school_1a_W;
+     2: return sprite_ukts_school_1b_W;
+     3: return sprite_ukts_school_1c_W;
+     4: return sprite_ukts_school_1d_W;
+     5: return sprite_ukts_school_2a_W;
+     6: return sprite_ukts_school_2b_W;
+     7: return sprite_ukts_school_2c_W;
+     8: return sprite_ukts_school_2d_W;
+     9: return sprite_ukts_school_3a_W;
+    10: return sprite_ukts_school_3b_W;
+    11: return sprite_ukts_school_3c_W;
+    12: return sprite_ukts_school_3d_W;
+    13: return sprite_ukts_school_4a_W;
+    14: return sprite_ukts_school_4b_W;
+    15: return sprite_ukts_school_4c_W;
+    16: return sprite_ukts_school_4d_W;
+    return   callback_ukts_school_W_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_school_S_preview, switch_16_variants()) {
+     1: return sprite_ukts_school_1a_S;
+     2: return sprite_ukts_school_1b_S;
+     3: return sprite_ukts_school_1c_S;
+     4: return sprite_ukts_school_1d_S;
+     5: return sprite_ukts_school_2a_S;
+     6: return sprite_ukts_school_2b_S;
+     7: return sprite_ukts_school_2c_S;
+     8: return sprite_ukts_school_2d_S;
+     9: return sprite_ukts_school_3a_S;
+    10: return sprite_ukts_school_3b_S;
+    11: return sprite_ukts_school_3c_S;
+    12: return sprite_ukts_school_3d_S;
+    13: return sprite_ukts_school_4a_S;
+    14: return sprite_ukts_school_4b_S;
+    15: return sprite_ukts_school_4c_S;
+    16: return sprite_ukts_school_4d_S;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_school_S, animation_frame) {
+     1: return sprite_ukts_school_1a_S;
+     2: return sprite_ukts_school_1b_S;
+     3: return sprite_ukts_school_1c_S;
+     4: return sprite_ukts_school_1d_S;
+     5: return sprite_ukts_school_2a_S;
+     6: return sprite_ukts_school_2b_S;
+     7: return sprite_ukts_school_2c_S;
+     8: return sprite_ukts_school_2d_S;
+     9: return sprite_ukts_school_3a_S;
+    10: return sprite_ukts_school_3b_S;
+    11: return sprite_ukts_school_3c_S;
+    12: return sprite_ukts_school_3d_S;
+    13: return sprite_ukts_school_4a_S;
+    14: return sprite_ukts_school_4b_S;
+    15: return sprite_ukts_school_4c_S;
+    16: return sprite_ukts_school_4d_S;
+    return   callback_ukts_school_S_preview;
 }
 
 if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_school_4, -1, HOUSE_SIZE_2X2) {
+    item(FEAT_HOUSES, item_ukts_school, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x28;
             name: string(STR_NAME_SCHOOL);
@@ -21801,11 +21755,12 @@ if (enable_uktownset) {
             }
         }
         graphics {
-            graphics_north: ukts_school_4_N;
-            graphics_east: ukts_school_4_E;
-            graphics_south: ukts_school_4_S;
-            graphics_west: ukts_school_4_W;
+            graphics_north: callback_ukts_school_N;
+            graphics_east: callback_ukts_school_E;
+            graphics_south: callback_ukts_school_S;
+            graphics_west: callback_ukts_school_W;
             construction_check: school_construction_check;
+            construction_anim: switch_16_variants;
         }
     }
 }

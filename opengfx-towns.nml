@@ -716,6 +716,29 @@ switch (FEAT_HOUSES, SELF, switch_check_road_initial_2_faced, animation_frame) {
     CB_RESULT_DO_NOTHING;
 }
 
+switch (FEAT_HOUSES, SELF, lighthouse_water_check,
+    nearby_tile_water_class(-2, -1) == WATER_CLASS_SEA
+    || nearby_tile_water_class(-2,  0) == WATER_CLASS_SEA
+    || nearby_tile_water_class(-2,  1) == WATER_CLASS_SEA
+    || nearby_tile_water_class(-1, -2) == WATER_CLASS_SEA
+    || nearby_tile_water_class(-1, -1) == WATER_CLASS_SEA
+    || nearby_tile_water_class(-1,  0) == WATER_CLASS_SEA
+    || nearby_tile_water_class(-1,  1) == WATER_CLASS_SEA
+    || nearby_tile_water_class(-1,  2) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 0, -2) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 0, -1) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 0,  1) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 0,  2) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 1, -2) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 1, -1) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 1,  0) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 1,  1) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 1,  2) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 2, -1) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 2,  0) == WATER_CLASS_SEA
+    || nearby_tile_water_class( 2,  1) == WATER_CLASS_SEA
+) { return; }
+
 // building classes:
 // 1 temperate church
 // 2 temperate cathedral
@@ -733,6 +756,8 @@ switch (FEAT_HOUSES, SELF, switch_check_road_initial_2_faced, animation_frame) {
 // 24 skyscraper (ukts)
 
 // 30 park/statue/fountain
+
+// 40 lighthouse
 
 // 100 radio stuff (transmitter/radio house)
 // 101 workshop (sawmill/farm derivates)
@@ -826,6 +851,11 @@ switch (FEAT_HOUSES, SELF, courthouse_construction_check,
 switch (FEAT_HOUSES, SELF, folly_castle_construction_check, (
     has_population(same_class_count_town * 1250)
     && !nearest_house_matching_criterion(15, SEARCH_HOUSE_BY_CLASS)
+)) { return; }
+
+switch (FEAT_HOUSES, SELF, lighthouse_construction_check, (
+    !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
+    && lighthouse_water_check()
 )) { return; }
 
 switch (FEAT_HOUSES, SELF, boiler_station_construction_check, (
@@ -39034,34 +39064,6 @@ spritelayout sprite_lighthouse {
     }
 }
 
-switch (FEAT_HOUSES, SELF, lighthouse_water_check,
-    nearby_tile_is_water(-2,-1)
-    || nearby_tile_is_water(-2, 0)
-    || nearby_tile_is_water(-2, 1)
-    || nearby_tile_is_water(-1,-2)
-    || nearby_tile_is_water(-1,-1)
-    || nearby_tile_is_water(-1, 0)
-    || nearby_tile_is_water(-1, 1)
-    || nearby_tile_is_water(-1, 2)
-    || nearby_tile_is_water( 0,-2)
-    || nearby_tile_is_water( 0,-1)
-    || nearby_tile_is_water( 0, 1)
-    || nearby_tile_is_water( 0, 2)
-    || nearby_tile_is_water( 1,-2)
-    || nearby_tile_is_water( 1,-1)
-    || nearby_tile_is_water( 1, 0)
-    || nearby_tile_is_water( 1, 1)
-    || nearby_tile_is_water( 1, 2)
-    || nearby_tile_is_water( 2,-1)
-    || nearby_tile_is_water( 2, 0)
-    || nearby_tile_is_water( 2, 1)
-) { return; }
-
-switch (FEAT_HOUSES, SELF, lighthouse_construction_check,
-    same_house_count_town == 0 &&
-    lighthouse_water_check()
-) { return; }
-
 if (enable_misc) {
     item(FEAT_HOUSES, item_lighthouse) {
         property {
@@ -39069,6 +39071,7 @@ if (enable_misc) {
             name: string(STR_NAME_LIGHTHOUSE);
             building_flags: 0;
             years_available: [0, 65535];
+            building_class: 40;
             availability_mask: [
                 ALL_TOWNZONES,
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)

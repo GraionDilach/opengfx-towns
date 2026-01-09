@@ -23805,48 +23805,6 @@ spritelayout sprite_ukts_stadium_1b_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_1_N, random_bits & 0x01) {
-    1: sprite_ukts_stadium_1a_N;
-    default: sprite_ukts_stadium_1b_N;
-}
-
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_1_W, random_bits & 0x01) {
-    1: sprite_ukts_stadium_1a_W;
-    default: sprite_ukts_stadium_1b_W;
-}
-
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_1_E, random_bits & 0x01) {
-    1: sprite_ukts_stadium_1a_E;
-    default: sprite_ukts_stadium_1b_E;
-}
-
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_1_S, random_bits & 0x01) {
-    1: sprite_ukts_stadium_1a_S;
-    default: sprite_ukts_stadium_1b_S;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_stadium_1, -1, HOUSE_SIZE_2X2) {
-        property {
-            substitute: 0x14;
-            building_flags: 0;
-            building_class: 10;
-            years_available: [0, 65535];
-            availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            graphics_north: sprite_ukts_stadium_1_N;
-            graphics_east: sprite_ukts_stadium_1_E;
-            graphics_south: sprite_ukts_stadium_1_S;
-            graphics_west: sprite_ukts_stadium_1_W;
-            construction_check: stadium_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_stadium_2_N_ground_temperate) {
     [ 410,  210,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
     [ 410,  110,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
@@ -24375,28 +24333,68 @@ spritelayout sprite_ukts_stadium_2b_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_2_N, random_bits & 0x01) {
-    1: sprite_ukts_stadium_2a_N;
-    default: sprite_ukts_stadium_2b_N;
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_small_N_preview, switch_4_variants()) {
+    1: return sprite_ukts_stadium_1a_N;
+    2: return sprite_ukts_stadium_1b_N;
+    3: return sprite_ukts_stadium_2a_N;
+    4: return sprite_ukts_stadium_2b_N;
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_2_W, random_bits & 0x01) {
-    1: sprite_ukts_stadium_2a_W;
-    default: sprite_ukts_stadium_2b_W;
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_small_W_preview, switch_4_variants()) {
+    1: return sprite_ukts_stadium_1a_W;
+    2: return sprite_ukts_stadium_1b_W;
+    3: return sprite_ukts_stadium_2a_W;
+    4: return sprite_ukts_stadium_2b_W;
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_2_E, random_bits & 0x01) {
-    1: sprite_ukts_stadium_2a_E;
-    default: sprite_ukts_stadium_2b_E;
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_small_E_preview, switch_4_variants()) {
+    1: return sprite_ukts_stadium_1a_E;
+    2: return sprite_ukts_stadium_1b_E;
+    3: return sprite_ukts_stadium_2a_E;
+    4: return sprite_ukts_stadium_2b_E;
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_2_S, random_bits & 0x01) {
-    1: sprite_ukts_stadium_2a_S;
-    default: sprite_ukts_stadium_2b_S;
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_small_S_preview, switch_4_variants()) {
+    1: return sprite_ukts_stadium_1a_S;
+    2: return sprite_ukts_stadium_1b_S;
+    3: return sprite_ukts_stadium_2a_S;
+    4: return sprite_ukts_stadium_2b_S;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_small_N, animation_frame) {
+    1: return sprite_ukts_stadium_1a_N;
+    2: return sprite_ukts_stadium_1b_N;
+    3: return sprite_ukts_stadium_2a_N;
+    4: return sprite_ukts_stadium_2b_N;
+    return  callback_ukts_stadium_small_N_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_small_W, animation_frame) {
+    1: return sprite_ukts_stadium_1a_W;
+    2: return sprite_ukts_stadium_1b_W;
+    3: return sprite_ukts_stadium_2a_W;
+    4: return sprite_ukts_stadium_2b_W;
+    return  callback_ukts_stadium_small_W_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_small_E, animation_frame) {
+    1: return sprite_ukts_stadium_1a_E;
+    2: return sprite_ukts_stadium_1b_E;
+    3: return sprite_ukts_stadium_2a_E;
+    4: return sprite_ukts_stadium_2b_E;
+    return  callback_ukts_stadium_small_E_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_small_S, animation_frame) {
+    1: return sprite_ukts_stadium_1a_S;
+    2: return sprite_ukts_stadium_1b_S;
+    3: return sprite_ukts_stadium_2a_S;
+    4: return sprite_ukts_stadium_2b_S;
+    return  callback_ukts_stadium_small_S_preview;
 }
 
 if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_stadium_2, -1, HOUSE_SIZE_2X2) {
+    item(FEAT_HOUSES, item_ukts_stadium_small, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x14;
             building_flags: 0;
@@ -24408,11 +24406,12 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            graphics_north: sprite_ukts_stadium_2_N;
-            graphics_east: sprite_ukts_stadium_2_E;
-            graphics_south: sprite_ukts_stadium_2_S;
-            graphics_west: sprite_ukts_stadium_2_W;
+            graphics_north: callback_ukts_stadium_small_N;
+            graphics_east: callback_ukts_stadium_small_E;
+            graphics_south: callback_ukts_stadium_small_S;
+            graphics_west: callback_ukts_stadium_small_W;
             construction_check: stadium_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -24945,47 +24944,6 @@ spritelayout sprite_ukts_stadium_3b_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_3_N, random_bits & 0x01) {
-    1: sprite_ukts_stadium_3a_N;
-    default: sprite_ukts_stadium_3b_N;
-}
-
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_3_W, random_bits & 0x01) {
-    1: sprite_ukts_stadium_3a_W;
-    default: sprite_ukts_stadium_3b_W;
-}
-
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_3_E, random_bits & 0x01) {
-    1: sprite_ukts_stadium_3a_E;
-    default: sprite_ukts_stadium_3b_E;
-}
-
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_3_S, random_bits & 0x01) {
-    1: sprite_ukts_stadium_3a_S;
-    default: sprite_ukts_stadium_3b_S;
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_stadium_3, -1, HOUSE_SIZE_2X2) {
-        property {
-            substitute: 0x20;
-            building_flags: 0;
-            building_class: 10;
-            availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            graphics_north: sprite_ukts_stadium_3_N;
-            graphics_east: sprite_ukts_stadium_3_E;
-            graphics_south: sprite_ukts_stadium_3_S;
-            graphics_west: sprite_ukts_stadium_3_W;
-            construction_check: stadium_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_stadium_4_N_ground_temperate) {
     [ 410,  520,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
     [ 410,  420,  64,  59, -31, -28, "uktownset22/stadium_ground_split.png"]
@@ -25514,28 +25472,68 @@ spritelayout sprite_ukts_stadium_4b_S {
     }
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_4_N, random_bits & 0x01) {
-    1: sprite_ukts_stadium_4a_N;
-    default: sprite_ukts_stadium_4b_N;
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_large_N_preview, switch_4_variants()) {
+    1: return sprite_ukts_stadium_3a_N;
+    2: return sprite_ukts_stadium_3b_N;
+    3: return sprite_ukts_stadium_4a_N;
+    4: return sprite_ukts_stadium_4b_N;
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_4_W, random_bits & 0x01) {
-    1: sprite_ukts_stadium_4a_W;
-    default: sprite_ukts_stadium_4b_W;
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_large_W_preview, switch_4_variants()) {
+    1: return sprite_ukts_stadium_3a_W;
+    2: return sprite_ukts_stadium_3b_W;
+    3: return sprite_ukts_stadium_4a_W;
+    4: return sprite_ukts_stadium_4b_W;
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_4_E, random_bits & 0x01) {
-    1: sprite_ukts_stadium_4a_E;
-    default: sprite_ukts_stadium_4b_E;
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_large_E_preview, switch_4_variants()) {
+    1: return sprite_ukts_stadium_3a_E;
+    2: return sprite_ukts_stadium_3b_E;
+    3: return sprite_ukts_stadium_4a_E;
+    4: return sprite_ukts_stadium_4b_E;
 }
 
-switch (FEAT_HOUSES, SELF, sprite_ukts_stadium_4_S, random_bits & 0x01) {
-    1: sprite_ukts_stadium_4a_S;
-    default: sprite_ukts_stadium_4b_S;
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_large_S_preview, switch_4_variants()) {
+    1: return sprite_ukts_stadium_3a_S;
+    2: return sprite_ukts_stadium_3b_S;
+    3: return sprite_ukts_stadium_4a_S;
+    4: return sprite_ukts_stadium_4b_S;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_large_N, animation_frame) {
+    1: return sprite_ukts_stadium_3a_N;
+    2: return sprite_ukts_stadium_3b_N;
+    3: return sprite_ukts_stadium_4a_N;
+    4: return sprite_ukts_stadium_4b_N;
+    return  callback_ukts_stadium_large_N_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_large_W, animation_frame) {
+    1: return sprite_ukts_stadium_3a_W;
+    2: return sprite_ukts_stadium_3b_W;
+    3: return sprite_ukts_stadium_4a_W;
+    4: return sprite_ukts_stadium_4b_W;
+    return  callback_ukts_stadium_large_W_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_large_E, animation_frame) {
+    1: return sprite_ukts_stadium_3a_E;
+    2: return sprite_ukts_stadium_3b_E;
+    3: return sprite_ukts_stadium_4a_E;
+    4: return sprite_ukts_stadium_4b_E;
+    return  callback_ukts_stadium_large_E_preview;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_stadium_large_S, animation_frame) {
+    1: return sprite_ukts_stadium_3a_S;
+    2: return sprite_ukts_stadium_3b_S;
+    3: return sprite_ukts_stadium_4a_S;
+    4: return sprite_ukts_stadium_4b_S;
+    return  callback_ukts_stadium_large_S_preview;
 }
 
 if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_stadium_4, -1, HOUSE_SIZE_2X2) {
+    item(FEAT_HOUSES, item_ukts_stadium_large, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x20;
             building_flags: 0;
@@ -25546,11 +25544,12 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            graphics_north: sprite_ukts_stadium_4_N;
-            graphics_east: sprite_ukts_stadium_4_E;
-            graphics_south: sprite_ukts_stadium_4_S;
-            graphics_west: sprite_ukts_stadium_4_W;
+            graphics_north: callback_ukts_stadium_large_N;
+            graphics_east: callback_ukts_stadium_large_E;
+            graphics_south: callback_ukts_stadium_large_S;
+            graphics_west: callback_ukts_stadium_large_W;
             construction_check: stadium_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }

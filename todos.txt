@@ -18,6 +18,8 @@ toyland hqs - wrapped frames
 
 expand UKTS ground tiles with desert variants
 
+ukts ogfx office 15b fix the building sprites somehow?!
+
 ukts house 15 - create custom variants (maybe though hueshifts?)
 
 radio station - move remap, snow frame, ground sprites (maybe a fence?)

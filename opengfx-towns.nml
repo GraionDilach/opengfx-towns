@@ -21829,86 +21829,107 @@ spriteset (ukts_shops_1_n_building_snow) {
     [ 196,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
 }
 
-spritelayout sprite_ukts_shops_1 {
+spritelayout sprite_ukts_shops_1_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: ukts_shops_1_n_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 4;
-    }
-    childsprite {
-        sprite: ukts_shops_1_e_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 3;
-    }
-    childsprite {
-        sprite: ukts_shops_1_s_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 2;
-    }
-    childsprite {
-        sprite: ukts_shops_1_w_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_shops_1_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_1_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_1_e {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_1_e_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_1_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_1_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_1_s {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_1_s_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_1_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_1_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_1_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_1_w_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_1_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_1_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_1_preview, switch_4_variants()) {
+    1: return sprite_ukts_shops_1_w;
+    2: return sprite_ukts_shops_1_s;
+    3: return sprite_ukts_shops_1_e;
+    4: return sprite_ukts_shops_1_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_1, animation_frame) {
+    1: return sprite_ukts_shops_1_w;
+    2: return sprite_ukts_shops_1_s;
+    3: return sprite_ukts_shops_1_e;
+    4: return sprite_ukts_shops_1_n;
+    return  callback_ukts_shops_1_preview;
 }
 
 if (enable_uktownset) {
@@ -21927,7 +21948,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_shops_1;
+            default: callback_ukts_shops_1;
             colour: random_company_color();
         }
     }
@@ -21997,86 +22018,107 @@ spriteset (ukts_shops_2_n_building_snow) {
     [ 456,    1,  64,  80, -31, -49, "uktownset22/shops.png"]
 }
 
-spritelayout sprite_ukts_shops_2 {
+spritelayout sprite_ukts_shops_2_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: ukts_shops_2_n_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 4;
-    }
-    childsprite {
-        sprite: ukts_shops_2_e_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 3;
-    }
-    childsprite {
-        sprite: ukts_shops_2_s_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 2;
-    }
-    childsprite {
-        sprite: ukts_shops_2_w_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_shops_2_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_2_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_2_e {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_2_e_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_2_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_2_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_2_s {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_2_s_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_2_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_2_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_2_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_2_w_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_2_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_2_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_2_preview, switch_4_variants()) {
+    1: return sprite_ukts_shops_2_w;
+    2: return sprite_ukts_shops_2_s;
+    3: return sprite_ukts_shops_2_e;
+    4: return sprite_ukts_shops_2_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_2, animation_frame) {
+    1: return sprite_ukts_shops_2_w;
+    2: return sprite_ukts_shops_2_s;
+    3: return sprite_ukts_shops_2_e;
+    4: return sprite_ukts_shops_2_n;
+    return  callback_ukts_shops_2_preview;
 }
 
 if (enable_uktownset) {
@@ -22095,7 +22137,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_shops_2;
+            default: callback_ukts_shops_2;
             colour: random_company_color();
         }
     }
@@ -22165,86 +22207,107 @@ spriteset (ukts_shops_3_n_building_snow) {
     [ 196,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
 }
 
-spritelayout sprite_ukts_shops_3 {
+spritelayout sprite_ukts_shops_3_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: ukts_shops_3_n_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 4;
-    }
-    childsprite {
-        sprite: ukts_shops_3_e_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 3;
-    }
-    childsprite {
-        sprite: ukts_shops_3_s_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 2;
-    }
-    childsprite {
-        sprite: ukts_shops_3_w_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_shops_3_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_3_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_3_e {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_3_e_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_3_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_3_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_3_s {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_3_s_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_3_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_3_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_3_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_3_w_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_3_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_3_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_3_preview, switch_4_variants()) {
+    1: return sprite_ukts_shops_3_w;
+    2: return sprite_ukts_shops_3_s;
+    3: return sprite_ukts_shops_3_e;
+    4: return sprite_ukts_shops_3_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_3, animation_frame) {
+    1: return sprite_ukts_shops_3_w;
+    2: return sprite_ukts_shops_3_s;
+    3: return sprite_ukts_shops_3_e;
+    4: return sprite_ukts_shops_3_n;
+    return  callback_ukts_shops_3_preview;
 }
 
 if (enable_uktownset) {
@@ -22263,7 +22326,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_shops_3;
+            default: callback_ukts_shops_3;
             colour: random_company_color();
         }
     }
@@ -22333,86 +22396,107 @@ spriteset (ukts_shops_4_n_building_snow) {
     [ 456,  325,  64,  80, -31, -49, "uktownset22/shops.png"]
 }
 
-spritelayout sprite_ukts_shops_4 {
+spritelayout sprite_ukts_shops_4_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: ukts_shops_4_n_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 4;
-    }
-    childsprite {
-        sprite: ukts_shops_4_e_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 3;
-    }
-    childsprite {
-        sprite: ukts_shops_4_s_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 2;
-    }
-    childsprite {
-        sprite: ukts_shops_4_w_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_shops_4_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_4_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_4_e {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_4_e_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_4_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_4_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_4_s {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_4_s_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_4_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_4_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_4_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_4_w_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_4_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_4_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_4_preview, switch_4_variants()) {
+    1: return sprite_ukts_shops_4_w;
+    2: return sprite_ukts_shops_4_s;
+    3: return sprite_ukts_shops_4_e;
+    4: return sprite_ukts_shops_4_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_4, animation_frame) {
+    1: return sprite_ukts_shops_4_w;
+    2: return sprite_ukts_shops_4_s;
+    3: return sprite_ukts_shops_4_e;
+    4: return sprite_ukts_shops_4_n;
+    return  callback_ukts_shops_4_preview;
 }
 
 if (enable_uktownset) {
@@ -22431,7 +22515,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_shops_4;
+            default: callback_ukts_shops_4;
             colour: random_company_color();
         }
     }
@@ -22501,86 +22585,107 @@ spriteset (ukts_shops_5_n_building_snow) {
     [ 196,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
 }
 
-spritelayout sprite_ukts_shops_5 {
+spritelayout sprite_ukts_shops_5_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: ukts_shops_5_n_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 4;
-    }
-    childsprite {
-        sprite: ukts_shops_5_e_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 3;
-    }
-    childsprite {
-        sprite: ukts_shops_5_s_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 2;
-    }
-    childsprite {
-        sprite: ukts_shops_5_w_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_shops_5_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_5_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_5_e {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_5_e_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_5_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_5_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_5_s {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_5_s_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_5_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_5_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_5_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_5_w_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_5_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_5_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_5_preview, switch_4_variants()) {
+    1: return sprite_ukts_shops_5_w;
+    2: return sprite_ukts_shops_5_s;
+    3: return sprite_ukts_shops_5_e;
+    4: return sprite_ukts_shops_5_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_5, animation_frame) {
+    1: return sprite_ukts_shops_5_w;
+    2: return sprite_ukts_shops_5_s;
+    3: return sprite_ukts_shops_5_e;
+    4: return sprite_ukts_shops_5_n;
+    return  callback_ukts_shops_5_preview;
 }
 
 if (enable_uktownset) {
@@ -22599,7 +22704,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_shops_5;
+            default: callback_ukts_shops_5;
             colour: random_company_color();
         }
     }
@@ -22669,86 +22774,107 @@ spriteset (ukts_shops_6_n_building_snow) {
     [ 456,  649,  64,  80, -31, -49, "uktownset22/shops.png"]
 }
 
-spritelayout sprite_ukts_shops_6 {
+spritelayout sprite_ukts_shops_6_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: ukts_shops_6_n_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 4;
-    }
-    childsprite {
-        sprite: ukts_shops_6_e_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 3;
-    }
-    childsprite {
-        sprite: ukts_shops_6_s_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 2;
-    }
-    childsprite {
-        sprite: ukts_shops_6_w_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_shops_6_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_6_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_6_e {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_6_e_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_6_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_6_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_6_s {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_6_s_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_6_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_6_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_6_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_6_w_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_6_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_6_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_6_preview, switch_4_variants()) {
+    1: return sprite_ukts_shops_6_w;
+    2: return sprite_ukts_shops_6_s;
+    3: return sprite_ukts_shops_6_e;
+    4: return sprite_ukts_shops_6_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_6, animation_frame) {
+    1: return sprite_ukts_shops_6_w;
+    2: return sprite_ukts_shops_6_s;
+    3: return sprite_ukts_shops_6_e;
+    4: return sprite_ukts_shops_6_n;
+    return  callback_ukts_shops_6_preview;
 }
 
 if (enable_uktownset) {
@@ -22767,7 +22893,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_shops_6;
+            default: callback_ukts_shops_6;
             colour: random_company_color();
         }
     }
@@ -22837,86 +22963,107 @@ spriteset (ukts_shops_7_n_building_snow) {
     [ 196,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
 }
 
-spritelayout sprite_ukts_shops_7 {
+spritelayout sprite_ukts_shops_7_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: ukts_shops_7_n_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 4;
-    }
-    childsprite {
-        sprite: ukts_shops_7_e_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 3;
-    }
-    childsprite {
-        sprite: ukts_shops_7_s_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 2;
-    }
-    childsprite {
-        sprite: ukts_shops_7_w_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_shops_7_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_7_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_7_e {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_7_e_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_7_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_7_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_7_s {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_7_s_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_7_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_7_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_7_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_7_w_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_7_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_7_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_7_preview, switch_4_variants()) {
+    1: return sprite_ukts_shops_7_w;
+    2: return sprite_ukts_shops_7_s;
+    3: return sprite_ukts_shops_7_e;
+    4: return sprite_ukts_shops_7_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_7, animation_frame) {
+    1: return sprite_ukts_shops_7_w;
+    2: return sprite_ukts_shops_7_s;
+    3: return sprite_ukts_shops_7_e;
+    4: return sprite_ukts_shops_7_n;
+    return  callback_ukts_shops_7_preview;
 }
 
 if (enable_uktownset) {
@@ -22935,7 +23082,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_shops_7;
+            default: callback_ukts_shops_7;
             colour: random_company_color();
         }
     }
@@ -23005,86 +23152,107 @@ spriteset (ukts_shops_8_n_building_snow) {
     [ 456,   973,  64,  80, -31, -49, "uktownset22/shops.png"]
 }
 
-spritelayout sprite_ukts_shops_8 {
+spritelayout sprite_ukts_shops_8_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
         sprite: ukts_shops_8_n_ground;
         always_draw: 1;
-        hide_sprite: animation_frame != 4;
-    }
-    childsprite {
-        sprite: ukts_shops_8_e_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 3;
-    }
-    childsprite {
-        sprite: ukts_shops_8_s_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 2;
-    }
-    childsprite {
-        sprite: ukts_shops_8_w_ground;
-        always_draw: 1;
-        hide_sprite: animation_frame != 1;
     }
     building {
         sprite: ukts_shops_8_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_8_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_8_e {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_8_e_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_8_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_8_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_8_s {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_8_s_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_8_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_8_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spritelayout sprite_ukts_shops_8_w {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: ukts_shops_8_w_ground;
+        always_draw: 1;
+    }
     building {
         sprite: ukts_shops_8_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_shops_8_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_8_preview, switch_4_variants()) {
+    1: return sprite_ukts_shops_8_w;
+    2: return sprite_ukts_shops_8_s;
+    3: return sprite_ukts_shops_8_e;
+    4: return sprite_ukts_shops_8_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_shops_8, animation_frame) {
+    1: return sprite_ukts_shops_8_w;
+    2: return sprite_ukts_shops_8_s;
+    3: return sprite_ukts_shops_8_e;
+    4: return sprite_ukts_shops_8_n;
+    return  callback_ukts_shops_8_preview;
 }
 
 if (enable_uktownset) {
@@ -23103,7 +23271,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_shops_8;
+            default: callback_ukts_shops_8;
             colour: random_company_color();
         }
     }

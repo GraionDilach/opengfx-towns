@@ -20,6 +20,8 @@ expand UKTS ground tiles with desert variants
 
 ukts ogfx office 15b fix the building sprites somehow?!
 
+review the UKTS/OGFX offices to fix struct remap where it could be applicable
+
 ukts house 15 - create custom variants (maybe though hueshifts?)
 
 radio station - move remap, snow frame, ground sprites (maybe a fence?)

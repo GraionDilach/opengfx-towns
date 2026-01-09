@@ -10381,17 +10381,15 @@ spriteset (ukts_flats_9_ground_tropic) {
 }
 
 spriteset (ukts_flats_9_building) {
-    [ 521,  169,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 521,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-//    [ 521,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 521,   57,  64,  55, -31, -24, "uktownset22/flats.png"]
+    [   1,  169,  64,  55, -31, -24, "uktownset22plus/flats_9.png"]
+    [   1,  113,  64,  55, -31, -24, "uktownset22plus/flats_9.png"]
+    [   1,   57,  64,  55, -31, -24, "uktownset22plus/flats_9.png"]
 }
 
 spriteset (ukts_flats_9_building_snow) {
-    [ 521,  169,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 521,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-//    [ 521,  113,  64,  55, -31, -24, "uktownset22/flats.png"]
-    [ 521,    1,  64,  55, -31, -24, "uktownset22/flats.png"]
+    [   1,  169,  64,  55, -31, -24, "uktownset22plus/flats_9.png"]
+    [   1,  113,  64,  55, -31, -24, "uktownset22plus/flats_9.png"]
+    [   1,    1,  64,  55, -31, -24, "uktownset22plus/flats_9.png"]
 }
 
 spritelayout sprite_ukts_flats_9 {
@@ -10453,8 +10451,25 @@ if (enable_uktownset) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        graphics {
-            default: sprite_ukts_flats_9;
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_ukts_flats_9;
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_ukts_flats_9;
+                colour: random_modest_struct_color_wo_mauve();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_ukts_flats_9;
+                colour: random_struct_color();
+            }
         }
     }
 }

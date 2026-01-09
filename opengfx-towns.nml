@@ -14191,7 +14191,7 @@ spriteset (ukts_ogfx_offices_1_building_snow) {
     [ 498,    8,  66,  87, -32, -56, "ogfx/buildings.png"]
 }
 
-spritelayout sprite_ukts_ogfx_offices_1 {
+spritelayout sprite_ukts_ogfx_offices_1a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
@@ -14201,16 +14201,41 @@ spritelayout sprite_ukts_ogfx_offices_1 {
     }
     building {
         sprite: ukts_ogfx_offices_1a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW  || pseudo_random_bits && 0x01 == 0;
-    }
-    building {
-        sprite: ukts_ogfx_offices_1b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW  || pseudo_random_bits && 0x01 == 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_ogfx_offices_1_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+spritelayout sprite_ukts_ogfx_offices_1b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_ogfx_offices_1_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: ukts_ogfx_offices_1b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_ogfx_offices_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_ogfx_offices_1_preview, switch_2_variants()) {
+    1: return sprite_ukts_ogfx_offices_1a;
+    2: return sprite_ukts_ogfx_offices_1b;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_ogfx_offices_1, animation_frame) {
+    1: return sprite_ukts_ogfx_offices_1a;
+    2: return sprite_ukts_ogfx_offices_1b;
+    return  callback_ukts_ogfx_offices_1_preview;
 }
 
 if (enable_temperate || enable_uktownset) {
@@ -14228,7 +14253,8 @@ if (enable_temperate || enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_ogfx_offices_1;
+            construction_anim: switch_2_variants;
+            default: callback_ukts_ogfx_offices_1;
         }
     }
 }
@@ -14318,26 +14344,6 @@ spritelayout sprite_ukts_ogfx_offices_3 {
     building {
         sprite: ukts_ogfx_offices_3_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_ogfx_offices_3) {
-        property {
-            substitute: 0x04;
-            name: TTD_STR_TOWN_BUILDING_NAME_OFFICES_1;
-            population: 72;
-            mail_multiplier: 20;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 6], [MAIL, 4], [GOOD, 3]];
-            availability_mask: [
-                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_ogfx_offices_3;
-        }
     }
 }
 
@@ -16975,16 +16981,22 @@ spritelayout sprite_ukts_offices_11_ew {
     }
 }
 
-switch (FEAT_HOUSES, SELF, callback_ukts_offices_11_preview, switch_2_variants()) {
+switch (FEAT_HOUSES, SELF, callback_ukts_offices_11_preview, switch_4_variants()) {
     1: return sprite_ukts_offices_11_ew;
     2: return sprite_ukts_offices_11_ns;
+    3..4: return sprite_ukts_ogfx_offices_3;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_offices_11, animation_frame) {
     1: return sprite_ukts_offices_11_ew;
     2: return sprite_ukts_offices_11_ns;
+    3..4: return sprite_ukts_ogfx_offices_3;
     return  callback_ukts_offices_11_preview;
 }
+
+switch (FEAT_HOUSES, SELF, callback_ukts_offices_11_construction,
+    (switch_2_variants() * 2 + switch_check_road_initial_2_faced() - 2))
+    { return; }
 
 if (enable_uktownset || enable_temperate) {
     item(FEAT_HOUSES, item_ukts_offices_11) {
@@ -17001,7 +17013,7 @@ if (enable_uktownset || enable_temperate) {
             ];
         }
         graphics {
-            construction_anim: switch_check_road_initial_2_faced;
+            construction_anim: callback_ukts_offices_11_construction;
             default: callback_ukts_offices_11;
         }
     }

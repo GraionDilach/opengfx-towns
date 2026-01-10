@@ -27083,7 +27083,7 @@ spriteset (ukts_terraced_houses_2_n_building_snow) {
     [ 456,    1,  64,  55, -31, -24, "uktownset22/terracedhouses.png"]
 }
 
-spritelayout sprite_ukts_terraced_houses_2a {
+spritelayout sprite_ukts_terraced_houses_2_a_N {
     ground {
         sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
@@ -27092,176 +27092,190 @@ spritelayout sprite_ukts_terraced_houses_2a {
     }
     childsprite {
         sprite: ukts_terraced_houses_a_n_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_n_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-        || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_n_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 4;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_n_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 4;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_n_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 4;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_a_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_e_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_e_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_e_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 3;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_e_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 3;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_e_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 3;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_a_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_s_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_s_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_s_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 2;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_s_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 2;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_s_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 2;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_a_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_w_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_w_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_w_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 1;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_w_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 1;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_a_w_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 1;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
     }
     building {
-        sprite: ukts_terraced_houses_2_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
         sprite: ukts_terraced_houses_2_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_terraced_houses_2_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_terraced_houses_2_a_preview, switch_4_variants()) {
+    1: return sprite_ukts_terraced_houses_2_a_W;
+    2: return sprite_ukts_terraced_houses_2_a_S;
+    3: return sprite_ukts_terraced_houses_2_a_E;
+    4: return sprite_ukts_terraced_houses_2_a_N;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_terraced_houses_2_a, animation_frame) {
+    1: return sprite_ukts_terraced_houses_2_a_W;
+    2: return sprite_ukts_terraced_houses_2_a_S;
+    3: return sprite_ukts_terraced_houses_2_a_E;
+    4: return sprite_ukts_terraced_houses_2_a_N;
+    return  callback_ukts_terraced_houses_2_a_preview;
 }
 
 if (enable_uktownset) {
@@ -27280,12 +27294,12 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_terraced_houses_2a;
+            default: callback_ukts_terraced_houses_2_a;
         }
     }
 }
 
-spritelayout sprite_ukts_terraced_houses_2b {
+spritelayout sprite_ukts_terraced_houses_2_b_N {
     ground {
         sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
@@ -27294,177 +27308,192 @@ spritelayout sprite_ukts_terraced_houses_2b {
     }
     childsprite {
         sprite: ukts_terraced_houses_b_n_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_n_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-        || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_n_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 4;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_n_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 4;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_n_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 4;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_b_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_e_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_e_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_e_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 3;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_e_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 3;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_e_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 3;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_b_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_s_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_s_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_s_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 2;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_s_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 2;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_s_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 2;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_b_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_w_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_w_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_w_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 1;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_w_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 1;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_b_w_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 1;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
     }
     building {
-        sprite: ukts_terraced_houses_2_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
         sprite: ukts_terraced_houses_2_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_terraced_houses_2_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
+
+switch (FEAT_HOUSES, SELF, callback_ukts_terraced_houses_2_b_preview, switch_4_variants()) {
+    1: return sprite_ukts_terraced_houses_2_b_W;
+    2: return sprite_ukts_terraced_houses_2_b_S;
+    3: return sprite_ukts_terraced_houses_2_b_E;
+    4: return sprite_ukts_terraced_houses_2_b_N;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_terraced_houses_2_b, animation_frame) {
+    1: return sprite_ukts_terraced_houses_2_b_W;
+    2: return sprite_ukts_terraced_houses_2_b_S;
+    3: return sprite_ukts_terraced_houses_2_b_E;
+    4: return sprite_ukts_terraced_houses_2_b_N;
+    return  callback_ukts_terraced_houses_2_b_preview;
+}
+
 
 if (enable_uktownset) {
     item(FEAT_HOUSES, item_ukts_terraced_houses_2b) {
@@ -27482,12 +27511,12 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_terraced_houses_2b;
+            default: callback_ukts_terraced_houses_2_b;
         }
     }
 }
 
-spritelayout sprite_ukts_terraced_houses_2c {
+spritelayout sprite_ukts_terraced_houses_2_c_N {
     ground {
         sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
@@ -27496,176 +27525,190 @@ spritelayout sprite_ukts_terraced_houses_2c {
     }
     childsprite {
         sprite: ukts_terraced_houses_c_n_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_n_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-        || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_n_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 4;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_n_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 4;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_n_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 4;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_c_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_e_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_e_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_e_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 3;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_e_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 3;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_e_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 3;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_c_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_s_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_s_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_s_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 2;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_s_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 2;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_s_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 2;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_c_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_w_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_w_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_w_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 1;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_w_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 1;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_c_w_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 1;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
     }
     building {
-        sprite: ukts_terraced_houses_2_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
         sprite: ukts_terraced_houses_2_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_terraced_houses_2_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_terraced_houses_2_c_preview, switch_4_variants()) {
+    1: return sprite_ukts_terraced_houses_2_c_W;
+    2: return sprite_ukts_terraced_houses_2_c_S;
+    3: return sprite_ukts_terraced_houses_2_c_E;
+    4: return sprite_ukts_terraced_houses_2_c_N;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_terraced_houses_2_c, animation_frame) {
+    1: return sprite_ukts_terraced_houses_2_c_W;
+    2: return sprite_ukts_terraced_houses_2_c_S;
+    3: return sprite_ukts_terraced_houses_2_c_E;
+    4: return sprite_ukts_terraced_houses_2_c_N;
+    return  callback_ukts_terraced_houses_2_c_preview;
 }
 
 if (enable_uktownset) {
@@ -27684,12 +27727,12 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_terraced_houses_2c;
+            default: callback_ukts_terraced_houses_2_c;
         }
     }
 }
 
-spritelayout sprite_ukts_terraced_houses_2d {
+spritelayout sprite_ukts_terraced_houses_2_d_N {
     ground {
         sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
@@ -27698,176 +27741,190 @@ spritelayout sprite_ukts_terraced_houses_2d {
     }
     childsprite {
         sprite: ukts_terraced_houses_d_n_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_n_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-        || animation_frame != 4;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_n_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 4;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_n_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 4;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_n_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 4;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_n_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_n_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_d_E {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_e_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_e_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 3;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_e_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 3;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_e_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 3;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_e_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 3;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_e_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_e_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_d_S {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_s_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_s_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 2;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_s_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 2;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_s_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 2;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_s_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 2;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_s_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_terraced_houses_2_s_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_terraced_houses_2_d_W {
+    ground {
+        sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+                : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT
+                    : GROUNDSPRITE_NORMAL;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_w_ground_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_w_ground_arctic;
-        hide_sprite: terrain_type != TILETYPE_DESERT
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_w_ground_temperate;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE))
-            || animation_frame != 1;
+            || !(landscape == 1 || (landscape == 0 && climate == CLIMATE_TEMPERATE));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_w_ground_arctic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC))
-            || animation_frame != 1;
+            || !(landscape == 2 || (landscape == 0 && climate == CLIMATE_ARCTIC));
         always_draw: 1;
     }
     childsprite {
         sprite: ukts_terraced_houses_d_w_ground_tropic;
         hide_sprite: terrain_type == TILETYPE_SNOW || terrain_type == TILETYPE_DESERT
-            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC))
-            || animation_frame != 1;
+            || !(landscape == 3 || (landscape == 0 && climate == CLIMATE_TROPIC));
         always_draw: 1;
     }
     building {
-        sprite: ukts_terraced_houses_2_n_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 4;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_n_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 4;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_e_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 3;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_e_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 3;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_s_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
-        sprite: ukts_terraced_houses_2_s_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 2;
-    }
-    building {
         sprite: ukts_terraced_houses_2_w_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_terraced_houses_2_w_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW
-            || animation_frame != 1;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_terraced_houses_2_d_preview, switch_4_variants()) {
+    1: return sprite_ukts_terraced_houses_2_d_W;
+    2: return sprite_ukts_terraced_houses_2_d_S;
+    3: return sprite_ukts_terraced_houses_2_d_E;
+    4: return sprite_ukts_terraced_houses_2_d_N;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_terraced_houses_2_d, animation_frame) {
+    1: return sprite_ukts_terraced_houses_2_d_W;
+    2: return sprite_ukts_terraced_houses_2_d_S;
+    3: return sprite_ukts_terraced_houses_2_d_E;
+    4: return sprite_ukts_terraced_houses_2_d_N;
+    return  callback_ukts_terraced_houses_2_d_preview;
 }
 
 if (enable_uktownset) {
@@ -27886,7 +27943,7 @@ if (enable_uktownset) {
         }
         graphics {
             construction_anim: switch_check_road_initial_4_faced;
-            default: sprite_ukts_terraced_houses_2d;
+            default: callback_ukts_terraced_houses_2_d;
         }
     }
 }

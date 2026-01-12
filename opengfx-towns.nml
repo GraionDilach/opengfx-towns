@@ -36405,62 +36405,91 @@ spriteset (ukts_skyscraper_1d_building_snow) {
     [ 240,    2,  64, 254, -31, -223, "uktownset22/Scraper2_9_snow.png"]
 }
 
-spritelayout sprite_ukts_skyscraper_1 {
+spritelayout sprite_ukts_skyscraper_1a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_1a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_skyscraper_1a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_1a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_1b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_1b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_skyscraper_1b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_1b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_1c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_1c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_skyscraper_1c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_1c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_1d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_1d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_skyscraper_1a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_1a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_1b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_1b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_1c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_skyscraper_1c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_skyscraper_1d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_skyscraper_1d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_1_preview, switch_4_variants()) {
+    1: return sprite_ukts_skyscraper_1a;
+    2: return sprite_ukts_skyscraper_1b;
+    3: return sprite_ukts_skyscraper_1c;
+    4: return sprite_ukts_skyscraper_1d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_1, animation_frame) {
+    1: return sprite_ukts_skyscraper_1a;
+    2: return sprite_ukts_skyscraper_1b;
+    3: return sprite_ukts_skyscraper_1c;
+    4: return sprite_ukts_skyscraper_1d;
+    return  callback_ukts_skyscraper_1_preview;
 }
 
 if (enable_uktownset) {
@@ -36479,8 +36508,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_skyscraper_1;
+            default: callback_ukts_skyscraper_1;
             construction_check: ukts_skyscraper_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -36557,62 +36587,91 @@ spriteset (ukts_skyscraper_2d_building_snow) {
     [ 240,    2,  64, 254, -31, -223, "uktownset22/Scraper2_14_snow.png"]
 }
 
-spritelayout sprite_ukts_skyscraper_2 {
+spritelayout sprite_ukts_skyscraper_2a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_2a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_skyscraper_2a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_2a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_2b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_2b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_skyscraper_2b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_2b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_2c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_2c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_skyscraper_2c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_2c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_2d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_2d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_skyscraper_2a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_2a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_2b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_2b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_2c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_skyscraper_2c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_skyscraper_2d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_skyscraper_2d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_2_preview, switch_4_variants()) {
+    1: return sprite_ukts_skyscraper_2a;
+    2: return sprite_ukts_skyscraper_2b;
+    3: return sprite_ukts_skyscraper_2c;
+    4: return sprite_ukts_skyscraper_2d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_2, animation_frame) {
+    1: return sprite_ukts_skyscraper_2a;
+    2: return sprite_ukts_skyscraper_2b;
+    3: return sprite_ukts_skyscraper_2c;
+    4: return sprite_ukts_skyscraper_2d;
+    return  callback_ukts_skyscraper_2_preview;
 }
 
 if (enable_uktownset) {
@@ -36631,8 +36690,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_skyscraper_2;
+            default: callback_ukts_skyscraper_2;
             construction_check: ukts_skyscraper_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -36709,62 +36769,91 @@ spriteset (ukts_skyscraper_3d_building_snow) {
     [ 240,    2,  64, 254, -31, -223, "uktownset22/Scraper2_63_snow.png"]
 }
 
-spritelayout sprite_ukts_skyscraper_3 {
+spritelayout sprite_ukts_skyscraper_3a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_3a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_skyscraper_3a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_3a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_3b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_3b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_skyscraper_3b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_3b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_3c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_3c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_skyscraper_3c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_3c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_3d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_3d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_skyscraper_3a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_3a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_3b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_3b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_3c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_skyscraper_3c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_skyscraper_3d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_skyscraper_3d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_3_preview, switch_4_variants()) {
+    1: return sprite_ukts_skyscraper_3a;
+    2: return sprite_ukts_skyscraper_3b;
+    3: return sprite_ukts_skyscraper_3c;
+    4: return sprite_ukts_skyscraper_3d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_3, animation_frame) {
+    1: return sprite_ukts_skyscraper_3a;
+    2: return sprite_ukts_skyscraper_3b;
+    3: return sprite_ukts_skyscraper_3c;
+    4: return sprite_ukts_skyscraper_3d;
+    return  callback_ukts_skyscraper_3_preview;
 }
 
 if (enable_uktownset) {
@@ -36783,8 +36872,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_skyscraper_3;
+            default: callback_ukts_skyscraper_3;
             construction_check: ukts_skyscraper_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -36861,62 +36951,91 @@ spriteset (ukts_skyscraper_4d_building_snow) {
     [ 240,    2,  64, 254, -31, -223, "uktownset22/Scraper2_68_snow.png"]
 }
 
-spritelayout sprite_ukts_skyscraper_4 {
+spritelayout sprite_ukts_skyscraper_4a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_4a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_skyscraper_4a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_4a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_4b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_4b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_skyscraper_4b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_4b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_4c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_4c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_skyscraper_4c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_4c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_4d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_4d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_skyscraper_4a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_4a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_4b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_4b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_4c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_skyscraper_4c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_skyscraper_4d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_skyscraper_4d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_4_preview, switch_4_variants()) {
+    1: return sprite_ukts_skyscraper_4a;
+    2: return sprite_ukts_skyscraper_4b;
+    3: return sprite_ukts_skyscraper_4c;
+    4: return sprite_ukts_skyscraper_4d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_4, animation_frame) {
+    1: return sprite_ukts_skyscraper_4a;
+    2: return sprite_ukts_skyscraper_4b;
+    3: return sprite_ukts_skyscraper_4c;
+    4: return sprite_ukts_skyscraper_4d;
+    return  callback_ukts_skyscraper_4_preview;
 }
 
 if (enable_uktownset) {
@@ -36935,8 +37054,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_skyscraper_4;
+            default: callback_ukts_skyscraper_4;
             construction_check: ukts_skyscraper_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -37013,62 +37133,91 @@ spriteset (ukts_skyscraper_5d_building_snow) {
     [ 240,    2,  64, 254, -31, -223, "uktownset22/Scraper2_72_snow.png"]
 }
 
-spritelayout sprite_ukts_skyscraper_5 {
+spritelayout sprite_ukts_skyscraper_5a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_5a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_skyscraper_5a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_5a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_5b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_5b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_skyscraper_5b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_5b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_5c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_5c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_skyscraper_5c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_5c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_5d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_5d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_skyscraper_5a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_5a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_5b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_5b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_5c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_skyscraper_5c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_skyscraper_5d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_skyscraper_5d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_5_preview, switch_4_variants()) {
+    1: return sprite_ukts_skyscraper_5a;
+    2: return sprite_ukts_skyscraper_5b;
+    3: return sprite_ukts_skyscraper_5c;
+    4: return sprite_ukts_skyscraper_5d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_5, animation_frame) {
+    1: return sprite_ukts_skyscraper_5a;
+    2: return sprite_ukts_skyscraper_5b;
+    3: return sprite_ukts_skyscraper_5c;
+    4: return sprite_ukts_skyscraper_5d;
+    return  callback_ukts_skyscraper_5_preview;
 }
 
 if (enable_uktownset) {
@@ -37087,8 +37236,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_skyscraper_5;
+            default: callback_ukts_skyscraper_5;
             construction_check: ukts_skyscraper_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -37165,62 +37315,91 @@ spriteset (ukts_skyscraper_6d_building_snow) {
     [ 240,    2,  64, 254, -31, -223, "uktownset22/Scraper2_100_snow.png"]
 }
 
-spritelayout sprite_ukts_skyscraper_6 {
+spritelayout sprite_ukts_skyscraper_6a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_6a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_skyscraper_6a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_6a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_6b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_6b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_skyscraper_6b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_6b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_6c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_6c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_skyscraper_6c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_6c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_6d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_6d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_skyscraper_6a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_6a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_6b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_6b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_6c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_skyscraper_6c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_skyscraper_6d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_skyscraper_6d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_6_preview, switch_4_variants()) {
+    1: return sprite_ukts_skyscraper_6a;
+    2: return sprite_ukts_skyscraper_6b;
+    3: return sprite_ukts_skyscraper_6c;
+    4: return sprite_ukts_skyscraper_6d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_6, animation_frame) {
+    1: return sprite_ukts_skyscraper_6a;
+    2: return sprite_ukts_skyscraper_6b;
+    3: return sprite_ukts_skyscraper_6c;
+    4: return sprite_ukts_skyscraper_6d;
+    return  callback_ukts_skyscraper_6_preview;
 }
 
 if (enable_uktownset) {
@@ -37239,8 +37418,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_skyscraper_6;
+            default: callback_ukts_skyscraper_6;
             construction_check: ukts_skyscraper_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -37317,62 +37497,91 @@ spriteset (ukts_skyscraper_7d_building_snow) {
     [ 240,    2,  64, 254, -31, -223, "uktownset22/Scraper2_102_snow.png"]
 }
 
-spritelayout sprite_ukts_skyscraper_7 {
+spritelayout sprite_ukts_skyscraper_7a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_7a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_skyscraper_7a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_7a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_7b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_7b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_skyscraper_7b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_7b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_7c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_7c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_skyscraper_7c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_7c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_7d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_7d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_skyscraper_7a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_7a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_7b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_7b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_7c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_skyscraper_7c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_skyscraper_7d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_skyscraper_7d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_7_preview, switch_4_variants()) {
+    1: return sprite_ukts_skyscraper_7a;
+    2: return sprite_ukts_skyscraper_7b;
+    3: return sprite_ukts_skyscraper_7c;
+    4: return sprite_ukts_skyscraper_7d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_7, animation_frame) {
+    1: return sprite_ukts_skyscraper_7a;
+    2: return sprite_ukts_skyscraper_7b;
+    3: return sprite_ukts_skyscraper_7c;
+    4: return sprite_ukts_skyscraper_7d;
+    return  callback_ukts_skyscraper_7_preview;
 }
 
 if (enable_uktownset) {
@@ -37391,8 +37600,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_skyscraper_7;
+            default: callback_ukts_skyscraper_7;
             construction_check: ukts_skyscraper_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }
@@ -37469,62 +37679,91 @@ spriteset (ukts_skyscraper_8d_building_snow) {
     [ 240,    2,  64, 254, -31, -223, "uktownset22/Scraper2_126_snow.png"]
 }
 
-spritelayout sprite_ukts_skyscraper_8 {
+spritelayout sprite_ukts_skyscraper_8a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_8a_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 0;
+    }
+    building {
+        sprite: ukts_skyscraper_8a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_8a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_8b {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_8b_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 1;
+    }
+    building {
+        sprite: ukts_skyscraper_8b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_8b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_8c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_8c_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 2;
+    }
+    building {
+        sprite: ukts_skyscraper_8c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: ukts_skyscraper_8c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+spritelayout sprite_ukts_skyscraper_8d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
         sprite: ukts_skyscraper_8d_ground;
         always_draw: 1;
-        hide_sprite: pseudo_random_bits != 3;
-    }
-    building {
-        sprite: ukts_skyscraper_8a_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_8a_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 0;
-    }
-    building {
-        sprite: ukts_skyscraper_8b_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_8b_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 1;
-    }
-    building {
-        sprite: ukts_skyscraper_8c_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 2;
-    }
-    building {
-        sprite: ukts_skyscraper_8c_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 2;
     }
     building {
         sprite: ukts_skyscraper_8d_building;
-        hide_sprite: terrain_type == TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
     }
     building {
         sprite: ukts_skyscraper_8d_building_snow;
-        hide_sprite: terrain_type != TILETYPE_SNOW || pseudo_random_bits != 3;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_8_preview, switch_4_variants()) {
+    1: return sprite_ukts_skyscraper_8a;
+    2: return sprite_ukts_skyscraper_8b;
+    3: return sprite_ukts_skyscraper_8c;
+    4: return sprite_ukts_skyscraper_8d;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_skyscraper_8, animation_frame) {
+    1: return sprite_ukts_skyscraper_8a;
+    2: return sprite_ukts_skyscraper_8b;
+    3: return sprite_ukts_skyscraper_8c;
+    4: return sprite_ukts_skyscraper_8d;
+    return  callback_ukts_skyscraper_8_preview;
 }
 
 if (enable_uktownset) {
@@ -37543,8 +37782,9 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_skyscraper_8;
+            default: callback_ukts_skyscraper_8;
             construction_check: ukts_skyscraper_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }

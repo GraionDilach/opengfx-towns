@@ -26,5 +26,7 @@ review the UKTS/OGFX offices to fix struct remap where it could be applicable
 
 ukts house 15 - create custom variants (maybe though hueshifts?)
 
+ukts warehouse 6 - rebuild somehow?
+
 radio station - move remap, snow frame, ground sprites (maybe a fence?)
 boiler station - rescale building to fit into a cell

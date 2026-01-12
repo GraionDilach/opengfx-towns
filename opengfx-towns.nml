@@ -37823,28 +37823,6 @@ spritelayout sprite_ukts_warehouse_1 {
     }
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_1) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_1;
-            construction_check: ukts_warehouse_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_warehouse_2_ground) {
     [  66,  169,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
@@ -37876,28 +37854,6 @@ spritelayout sprite_ukts_warehouse_2 {
     building {
         sprite: ukts_warehouse_2_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_2) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_2;
-            construction_check: ukts_warehouse_construction_check;
-        }
     }
 }
 
@@ -37935,28 +37891,6 @@ spritelayout sprite_ukts_warehouse_3 {
     }
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_3) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_3;
-            construction_check: ukts_warehouse_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_warehouse_4_ground) {
     [ 196,  169,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
@@ -37988,28 +37922,6 @@ spritelayout sprite_ukts_warehouse_4 {
     building {
         sprite: ukts_warehouse_4_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_4) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_4;
-            construction_check: ukts_warehouse_construction_check;
-        }
     }
 }
 
@@ -38047,28 +37959,7 @@ spritelayout sprite_ukts_warehouse_5 {
     }
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_5) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_5;
-            construction_check: ukts_warehouse_construction_check;
-        }
-    }
-}
-
+// this one seems to be an accidental semi-duplicate of the previous one, sans the snow sprite?
 spriteset (ukts_warehouse_6_ground) {
     [ 326,  169,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
@@ -38082,7 +37973,7 @@ spriteset (ukts_warehouse_6_building) {
 spriteset (ukts_warehouse_6_building_snow) {
     sprite_null()
     [ 326,  113,  64,  55, -31, -24, "uktownset22/warehouse.png"]
-    [ 326,    1,  64,  55, -31, -24, "uktownset22/warehouse.png"]
+    [ 261,    1,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
 
 spritelayout sprite_ukts_warehouse_6 {
@@ -38100,28 +37991,6 @@ spritelayout sprite_ukts_warehouse_6 {
     building {
         sprite: ukts_warehouse_6_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_6) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_6;
-            construction_check: ukts_warehouse_construction_check;
-        }
     }
 }
 
@@ -38159,28 +38028,6 @@ spritelayout sprite_ukts_warehouse_7 {
     }
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_7) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_7;
-            construction_check: ukts_warehouse_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_warehouse_8_ground) {
     [ 456,  169,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
@@ -38212,28 +38059,6 @@ spritelayout sprite_ukts_warehouse_8 {
     building {
         sprite: ukts_warehouse_8_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_8) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_8;
-            construction_check: ukts_warehouse_construction_check;
-        }
     }
 }
 
@@ -38271,28 +38096,6 @@ spritelayout sprite_ukts_warehouse_9 {
     }
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_9) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_9;
-            construction_check: ukts_warehouse_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_warehouse_10_ground) {
     [  66,  393,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
@@ -38324,28 +38127,6 @@ spritelayout sprite_ukts_warehouse_10 {
     building {
         sprite: ukts_warehouse_10_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_10) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_10;
-            construction_check: ukts_warehouse_construction_check;
-        }
     }
 }
 
@@ -38383,28 +38164,6 @@ spritelayout sprite_ukts_warehouse_11 {
     }
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_11) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_11;
-            construction_check: ukts_warehouse_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_warehouse_12_ground) {
     [ 196,  393,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
@@ -38436,28 +38195,6 @@ spritelayout sprite_ukts_warehouse_12 {
     building {
         sprite: ukts_warehouse_12_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_12) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_12;
-            construction_check: ukts_warehouse_construction_check;
-        }
     }
 }
 
@@ -38495,28 +38232,6 @@ spritelayout sprite_ukts_warehouse_13 {
     }
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_13) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_13;
-            construction_check: ukts_warehouse_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_warehouse_14_ground) {
     [ 326,  393,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
@@ -38548,28 +38263,6 @@ spritelayout sprite_ukts_warehouse_14 {
     building {
         sprite: ukts_warehouse_14_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
-    }
-}
-
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_14) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_14;
-            construction_check: ukts_warehouse_construction_check;
-        }
     }
 }
 
@@ -38607,28 +38300,6 @@ spritelayout sprite_ukts_warehouse_15 {
     }
 }
 
-if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_15) {
-        property {
-            substitute: 0x12;
-            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
-            building_class: 22;
-            population: 4;
-            mail_multiplier: 8;
-            years_available: [0, 65535];
-            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_ukts_warehouse_15;
-            construction_check: ukts_warehouse_construction_check;
-        }
-    }
-}
-
 spriteset (ukts_warehouse_16_ground) {
     [ 456,  393,  64,  55, -31, -24, "uktownset22/warehouse.png"]
 }
@@ -38663,8 +38334,25 @@ spritelayout sprite_ukts_warehouse_16 {
     }
 }
 
+// I messed up warehouses originally, so there's an index mismatch
+
+switch (FEAT_HOUSES, SELF, callback_ukts_warehouse_1_preview, switch_4_variants()) {
+    1: return sprite_ukts_warehouse_1;
+    2: return sprite_ukts_warehouse_2;
+    3: return sprite_ukts_warehouse_9;
+    4: return sprite_ukts_warehouse_10;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_warehouse_1, animation_frame) {
+    1: return sprite_ukts_warehouse_1;
+    2: return sprite_ukts_warehouse_2;
+    3: return sprite_ukts_warehouse_9;
+    4: return sprite_ukts_warehouse_10;
+    return  callback_ukts_warehouse_1_preview;
+}
+
 if (enable_uktownset) {
-    item(FEAT_HOUSES, item_ukts_warehouse_16) {
+    item(FEAT_HOUSES, item_ukts_warehouse_1) {
         property {
             substitute: 0x12;
             name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
@@ -38679,8 +38367,124 @@ if (enable_uktownset) {
             ];
         }
         graphics {
-            default: sprite_ukts_warehouse_16;
+            default: callback_ukts_warehouse_1;
             construction_check: ukts_warehouse_construction_check;
+            construction_anim: switch_4_variants;
+        }
+    }
+}
+
+
+switch (FEAT_HOUSES, SELF, callback_ukts_warehouse_2_preview, switch_4_variants()) {
+    1: return sprite_ukts_warehouse_3;
+    2: return sprite_ukts_warehouse_4;
+    3: return sprite_ukts_warehouse_11;
+    4: return sprite_ukts_warehouse_12;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_warehouse_2, animation_frame) {
+    1: return sprite_ukts_warehouse_3;
+    2: return sprite_ukts_warehouse_4;
+    3: return sprite_ukts_warehouse_11;
+    4: return sprite_ukts_warehouse_12;
+    return  callback_ukts_warehouse_2_preview;
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_warehouse_2) {
+        property {
+            substitute: 0x12;
+            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
+            building_class: 22;
+            population: 4;
+            mail_multiplier: 8;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: callback_ukts_warehouse_2;
+            construction_check: ukts_warehouse_construction_check;
+            construction_anim: switch_4_variants;
+        }
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_warehouse_3_preview, switch_4_variants()) {
+    1: return sprite_ukts_warehouse_5;
+    2: return sprite_ukts_warehouse_6;
+    3: return sprite_ukts_warehouse_13;
+    4: return sprite_ukts_warehouse_14;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_warehouse_3, animation_frame) {
+    1: return sprite_ukts_warehouse_5;
+    2: return sprite_ukts_warehouse_6;
+    3: return sprite_ukts_warehouse_13;
+    4: return sprite_ukts_warehouse_14;
+    return  callback_ukts_warehouse_3_preview;
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_warehouse_3) {
+        property {
+            substitute: 0x12;
+            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
+            building_class: 22;
+            population: 4;
+            mail_multiplier: 8;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: callback_ukts_warehouse_3;
+            construction_check: ukts_warehouse_construction_check;
+            construction_anim: switch_4_variants;
+        }
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_warehouse_4_preview, switch_4_variants()) {
+    1: return sprite_ukts_warehouse_7;
+    2: return sprite_ukts_warehouse_8;
+    3: return sprite_ukts_warehouse_15;
+    4: return sprite_ukts_warehouse_16;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_warehouse_4, animation_frame) {
+    1: return sprite_ukts_warehouse_7;
+    2: return sprite_ukts_warehouse_8;
+    3: return sprite_ukts_warehouse_15;
+    4: return sprite_ukts_warehouse_16;
+    return  callback_ukts_warehouse_4_preview;
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_warehouse_4) {
+        property {
+            substitute: 0x12;
+            name: TTD_STR_TOWN_BUILDING_NAME_WAREHOUSE_1;
+            building_class: 22;
+            population: 4;
+            mail_multiplier: 8;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 3], [MAIL, 3], [GOOD, 2]];
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: callback_ukts_warehouse_4;
+            construction_check: ukts_warehouse_construction_check;
+            construction_anim: switch_4_variants;
         }
     }
 }

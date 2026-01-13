@@ -39319,6 +39319,12 @@ spriteset (workshop_1_building) {
     [ -24, -18, "gfx/2063.png"]
 }
 
+spriteset (workshop_1_building_snow) {
+    [ -24, -18, "gfx/2061.png"]
+    [ -24, -18, "gfx/2062.png"]
+    [ -24, -18, "gfx/2063-snow.png"]
+}
+
 spritelayout sprite_workshop_1 {
     ground {
         sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
@@ -39331,6 +39337,11 @@ spritelayout sprite_workshop_1 {
     }
     building {
         sprite: workshop_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: workshop_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -39343,7 +39354,7 @@ if (enable_industries) {
             building_class: 101;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

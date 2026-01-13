@@ -39364,9 +39364,13 @@ if (enable_industries) {
     }
 }
 
+spriteset (workshop_2_ground) {
+    [ -24, -12, "gfx/2069-ground.png"]
+}
+
 spriteset (workshop_2_building) {
-    [ -25, -10, "gfx/2067.png"]
-    [ -25, -10, "gfx/2068.png"]
+    [ -24, -12, "gfx/2067.png"]
+    [ -24, -12, "gfx/2068.png"]
     [ -24, -12, "gfx/2069.png"]
 }
 
@@ -39375,6 +39379,10 @@ spritelayout sprite_workshop_2 {
         sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: workshop_2_ground;
+        always_draw: 1;
     }
     building {
         sprite: workshop_2_building;

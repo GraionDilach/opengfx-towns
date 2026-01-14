@@ -39374,6 +39374,12 @@ spriteset (workshop_2_building) {
     [ -24, -12, "gfx/2069.png"]
 }
 
+spriteset (workshop_2_building_snow) {
+    [ -24, -12, "gfx/2067.png"]
+    [ -24, -12, "gfx/2068.png"]
+    [ -24, -12, "gfx/2069-snow.png"]
+}
+
 spritelayout sprite_workshop_2 {
     ground {
         sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
@@ -39386,6 +39392,11 @@ spritelayout sprite_workshop_2 {
     }
     building {
         sprite: workshop_2_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: workshop_2_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 

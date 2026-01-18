@@ -40708,11 +40708,6 @@ if (enable_industries && 0) {
     }
 }
 
-spriteset (toyland_hq_stage_1_building) {
-    sprite_null()
-    [ -31,   -11, "gfx/hqtower1.png"]
-}
-
 spriteset (toyland_hq_stage_2_building) {
     sprite_null()
     [ -31,   -29, "gfx/hqtower2.png"]
@@ -40723,16 +40718,9 @@ spritelayout sprite_toyland_small_hq {
         sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
     }
     building {
-        sprite: toyland_hq_stage_1_building;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-        hide_sprite: town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT;
-    }
-    building {
         sprite: toyland_hq_stage_2_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
-        hide_sprite: town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
     }
 }
 

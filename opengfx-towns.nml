@@ -9763,7 +9763,7 @@ spritelayout sprite_ukts_flats_3a {
         hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
-
+/*
 spritelayout sprite_ukts_flats_3b {
     ground {
         sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
@@ -9823,7 +9823,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_flats_3, animation_frame) {
     2: return sprite_ukts_flats_3b;
     return  callback_ukts_flats_3_preview;
 }
-
+*/
 if (enable_uktownset) {
     item(FEAT_HOUSES, item_ukts_flats_3) {
         property {
@@ -9838,6 +9838,7 @@ if (enable_uktownset) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
+        /*
         if (additional_colors == 0)
         {
             graphics {
@@ -9859,6 +9860,10 @@ if (enable_uktownset) {
                 construction_anim: switch_2_variants;
                 colour: random_struct_color();
             }
+        }
+        */
+        graphics {
+            default: sprite_ukts_flats_3a;
         }
     }
 }
@@ -10463,7 +10468,7 @@ spritelayout sprite_ukts_flats_8a {
         hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
-
+/*
 spritelayout sprite_ukts_flats_8b {
     ground {
         sprite: construction_state == 0 ? GROUNDSPRITE_CLEARED
@@ -10523,7 +10528,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_flats_8, animation_frame) {
     2: return sprite_ukts_flats_8b;
     return  callback_ukts_flats_8_preview;
 }
-
+*/
 if (enable_uktownset || enable_temperate) {
     item(FEAT_HOUSES, item_ukts_flats_8) {
         property {
@@ -10538,6 +10543,7 @@ if (enable_uktownset || enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
+        /*
         if (additional_colors == 0)
         {
             graphics {
@@ -10559,6 +10565,10 @@ if (enable_uktownset || enable_temperate) {
                 construction_anim: switch_2_variants;
                 colour: random_struct_color();
             }
+        }
+        */
+        graphics {
+            default: sprite_ukts_flats_8a;
         }
     }
 }

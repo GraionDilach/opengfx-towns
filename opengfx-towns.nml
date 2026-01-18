@@ -3743,17 +3743,24 @@ if (enable_tropic) {
 // this one is derived from the old 32bpp project, so there's no real good option
 // but even 4601 is a better placeholder IMO
 
+spriteset (tall_office_block_8_N_ground) {
+    [ -31,  -4, "ogfxplus/4601.png"] // "4614"
+}
+
 spriteset (tall_office_block_8_N_building) {
-    [ 594,   88,  64,  35, -31,  -4, "ogfx/towns02.png"] // "4614"
-    [  10,   10,  32,  96,   1, -65, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4616
-//    [  10,   10,  32,  96,   1, -65, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4616
-    [ 120,   10,  32, 117,   1, -86, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4618
+    [ -31,  -4, "ogfxplus/4601.png"] // "4614"
+    [   1,  -86, "ogfxplus/4616.png"]
+    [   1,  -86, "ogfxplus/4618.png"]
 }
 
 spritelayout sprite_tall_office_block_8_N {
     ground {
-        sprite: GROUNDSPRITE_CLEARED;
+        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
+//     childsprite {
+//         sprite: tall_office_block_8_N_ground;
+//         always_draw: 1;
+//     }
     building {
         sprite: tall_office_block_8_N_building;
         recolour_mode: RECOLOUR_REMAP;
@@ -3761,17 +3768,24 @@ spritelayout sprite_tall_office_block_8_N {
     }
 }
 
+spriteset (tall_office_block_8_W_ground) {
+    [ -31,  -4, "ogfxplus/4601.png"] // "4615"
+}
+
 spriteset (tall_office_block_8_W_building) {
-    [ 594,   88,  64,  35, -31,   -4, "ogfx/towns02.png"] // "4615"
-    [  50,   10,  64, 121, -31,  -90, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4617
-//    [  50,   10,  64, 121, -31,  -90, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4617
-    [ 160,   10,  64, 133, -31, -102, "ogfx/tropical_sprites4616-19_drginaldee.png"] // 4619
+    [ -31,  -4, "ogfxplus/4601.png"] // "4614"
+    [ -31, -102, "ogfxplus/4617.png"]
+    [ -31, -102, "ogfxplus/4619.png"]
 }
 
 spritelayout sprite_tall_office_block_8_W {
     ground {
-        sprite: GROUNDSPRITE_CLEARED;
+        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
+//     childsprite {
+//         sprite: tall_office_block_8_N_ground;
+//         always_draw: 1;
+//     }
     building {
         sprite: tall_office_block_8_W_building;
         recolour_mode: RECOLOUR_REMAP;

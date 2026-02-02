@@ -4,7 +4,7 @@ A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being co
 
 ## Previews
 
-!(./screenshots/ogfx2arcticwuch.png) !(./screenshots/ttdtoyland.png)
+![](./screenshots/ogfx2arcticwuch.png) ![](./screenshots/ttdtoyland.png)
 
 ## Features
 

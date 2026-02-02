@@ -1,6 +1,10 @@
 # OpenGFX+ Towns
 
-A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being combined with other base sets and offer additional polish. Buildings shared between both sourced use UKTS statistics.
+A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being combined with other base sets and offer additional polish. Buildings shared between both sourced use UKTS statistics. Requires OpenTTD 15.0 or equvivalent.
+
+## Previews
+
+!(./screenshots/ogfx2arcticwuch.png) !(./screenshots/ttdtoyland.png)
 
 ## Features
 
@@ -32,7 +36,7 @@ A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being co
 
 GPLv2, source available at https://github.com/GraionDilach/opengfx-towns
 
-## Artwork/contributions:
+## Artwork/contributions
 
 Zephyris: UK Town Set
 
@@ -42,6 +46,6 @@ EmperorJake: NewCC gradients
 
 PikkaBird: inspiration from Suburban Renewal Houses
 
-## Author:
+## Author
 
 Graion Dilach

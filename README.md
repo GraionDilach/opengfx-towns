@@ -35,8 +35,12 @@ GPLv2, source available at https://github.com/GraionDilach/opengfx-towns
 ## Artwork/contributions:
 
 Zephyris: UK Town Set
+
 OpenGFX contributors (see individual document for detailed list)
+
 EmperorJake: NewCC gradients
+
+PikkaBird: inspiration from Suburban Renewal Houses
 
 ## Author:
 

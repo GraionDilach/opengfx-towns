@@ -8,7 +8,7 @@ A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being co
 
 ## Features
 
- - 16 cargo in/out support (flats accept both foods and goods, all Toyland shops and offices accept both fizzy drinks and candy). [^1] [^2] [^3]
+ - 16 cargo in/out support (generally, all flats accept both foods and goods, Temperate houses accept food, all Toyland shops and offices accept both fizzy drinks and candy). [^1] [^2] [^3]
  - Optionally allow using both vanilla and NewCC color gradients on both company and structure remap and bypass TTD 4-color-variations limit. [^1] [^2] [^3]
  - External parameter over stadium and church count. [^1] [^2] [^3]
  - Optionally protect multicell buildings inside inner town zones from town autoreplacement to prevent them being heavily underrepresented in an ongoing game. [^1] [^2] [^3]

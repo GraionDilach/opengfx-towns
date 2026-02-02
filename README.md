@@ -8,8 +8,8 @@ A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being co
 
 ## Features
 
- - 16 cargo in/out support (generally, all flats accept both foods and goods, Temperate houses accept food, all Toyland shops and offices accept both fizzy drinks and candy). [^1] [^2] [^3]
- - Optionally allow using both vanilla and NewCC color gradients on both company and structure remap and bypass TTD 4-color-variations limit. [^1] [^2] [^3]
+ - Reasonable extended cargo support (generally, all flats accept both foods and goods, Temperate houses accept food, all Toyland shops and offices accept both fizzy drinks and candy) utilizing the 16 cargo I/O feature. [^1] [^2] [^3]
+ - Optionally allow using both vanilla and NewCC color gradients on both company and structure remap and bypass TTD 4-color-variations limit where applicable. [^1] [^2] [^3]
  - External parameter over stadium and church count. [^1] [^2] [^3]
  - Optionally protect multicell buildings inside inner town zones from town autoreplacement to prevent them being heavily underrepresented in an ongoing game. [^1] [^2] [^3]
  - Allow mixing various climates together. [^1] [^2]
@@ -38,13 +38,15 @@ GPLv2, source available at https://github.com/GraionDilach/opengfx-towns
 
 ## Artwork/contributions
 
-Zephyris: UK Town Set
+Zephyris: UK Town Set, tropic shack dirt puddle outline (taken from OpenGFX2), road-aware rotational code from Full English
 
 OpenGFX contributors (see individual document for detailed list)
 
 EmperorJake: NewCC gradients
 
 PikkaBird: inspiration from Suburban Renewal Houses
+
+2TallTyler: misc. subroutine examples
 
 ## Author
 

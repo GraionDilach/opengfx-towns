@@ -17,7 +17,7 @@ A NewGRF which OpenGFX default houses with UK Town Set v2.2 to allow combination
  - Split each building class into their individual buildings for a better integration with the place building tool. [^3]
  - Landscape support, allow customizing the grass shade for OpenGFX2/OpenGFX+ Landscape. [^3]
 
-[^1]: This feature is shared with sister project [https://github.com/GraionDilach/universal-climate-houses](Universal Climate Houses).
+[^1]: This feature is shared with sister project [Universal Climate Houses](https://github.com/GraionDilach/universal-climate-houses).
 [^2]: Change compared against OpenGFX houses.
 [^3]: Change compared against UK Town Set.
 

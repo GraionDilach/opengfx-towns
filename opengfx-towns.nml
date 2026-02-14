@@ -40394,8 +40394,21 @@ if (enable_misc && 0) {
     }
 }
 
-spriteset (hq_stage_1) {
+spriteset (hq_stage_1_ground) {
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-ground-stage0.png"]
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-ground.png"]
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-ground.png"]
+}
+
+spriteset (hq_stage_1_building) {
     sprite_null()
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-stage1.png"]
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1.png"]
+}
+
+spriteset (hq_stage_1_building_snow) {
+    sprite_null()
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-stage1.png"]
     [   1,   0,  64,  38, -31, -7, "gfx/hqshop1.png"]
 }
 
@@ -40405,27 +40418,46 @@ spritelayout sprite_hq_stage_1 {
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
+    childsprite {
+        sprite: hq_stage_1_ground;
+        always_draw: 1;
+    }
     building {
-        sprite: hq_stage_1;
+        sprite: hq_stage_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: hq_stage_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
-if (enable_hq && 0) {
+if (enable_hq) {
     item(FEAT_HOUSES, item_hq_stage_1) {
         property {
-            substitute: 0x06;
+            substitute: 0x19;
             years_available: [0, 65535];
-            accepted_cargos: [[PASS, 4], [MAIL, 1], [FOOD, 2]];
+            accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
             availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        graphics {
-            default: sprite_hq_stage_1;
-            colour: random_company_color();
+        if (additional_colors != 2) {
+            graphics {
+                default: sprite_hq_stage_1;
+                colour: random_modest_struct_color_wo_mauve();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: sprite_hq_stage_1;
+                colour: random_struct_color();
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being co
  - Rework ground sprites so that all ground sprites are composited from an overlay on top of a baseset sprite to prevent drawing artifacts appearing on the edges of cells against extra-zoom basesets. [^2] [^3]
  - Fix quantization errors and utilize struct remap on structures which could either use such in original TTD/OpenGFX2 or dominated by remapable colors. [^2] [^3]
  - Enable unused houses and frames scattered around the files. [^2]
+ - OpenGFX2 Toyland complementing option - limit OGFX roster to only the ones already redrawn in OpenGFX2. [^2]
  - Add new buildings derived from selected industry structures and similar objects to towns. (Note, some of these buildings require selected cargos to be available.) [^2]
  - Various additional snow, transparency or construction frames. [^2]
  - Split each building class into their individual buildings for a better integration with the place building tool. [^3]

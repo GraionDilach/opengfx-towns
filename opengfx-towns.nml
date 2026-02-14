@@ -73,25 +73,43 @@ grf {
         // zbase temperate bit 5
         // zbase arctic bit 6
         // zbase tropic bit 7
+    }
 
-        enable_toyland {
+    param 1 {
+        toyland {
+            type: int;
+            name: string(STR_PARAM_NAME_TOYLAND);
+            desc: string(STR_PARAM_DESC_TOYLAND);
+            min_value: 0;
+            max_value: 2;
+            def_value: 1;
+            names: {
+                0: string(STR_PARAM_TOYLAND_DISABLE);
+                1: string(STR_PARAM_TOYLAND_OPENGFX2);
+                2: string(STR_PARAM_TOYLAND_ALL);
+            };
+        }
+    }
+
+    param 2 {
+        enable_converted_toyland {
             type: bool;
-            bit: 8;
-            name: string(STR_PARAM_NAME_ENABLE_TOYLAND);
-            desc: string(STR_PARAM_DESC_ENABLE_TOYLAND);
+            bit: 0;
+            name: string(STR_PARAM_NAME_ENABLE_CONVERTED_TOYLAND);
+            desc: string(STR_PARAM_DESC_ENABLE_CONVERTED_TOYLAND);
             def_value: 0;
         }
 
         enable_32bpp_arctic_hotel {
             type: bool;
-            bit: 9;
+            bit: 1;
             name: string(STR_PARAM_NAME_ENABLE_32BPP_ARCTIC_HOTEL);
             def_value: 0;
         }
 
         enable_bank {
             type: bool;
-            bit: 10;
+            bit: 2;
             name: string(STR_PARAM_NAME_ENABLE_BANK);
             desc: string(STR_PARAM_DESC_ENABLE_BANK);
             def_value: 0;
@@ -99,7 +117,7 @@ grf {
 
         enable_industries {
             type: bool;
-            bit: 11;
+            bit: 3;
             name: string(STR_PARAM_NAME_ENABLE_INDUSTRIES);
             desc: string(STR_PARAM_DESC_ENABLE_INDUSTRIES);
             def_value: 0;
@@ -107,7 +125,7 @@ grf {
 
         enable_hq {
             type: bool;
-            bit: 12;
+            bit: 4;
             name: string(STR_PARAM_NAME_ENABLE_HQ);
             desc: string(STR_PARAM_DESC_ENABLE_HQ);
             def_value: 0;
@@ -115,7 +133,7 @@ grf {
 
         enable_misc {
             type: bool;
-            bit: 13;
+            bit: 5;
             name: string(STR_PARAM_NAME_ENABLE_MISC);
             desc: string(STR_PARAM_DESC_ENABLE_MISC);
             def_value: 0;
@@ -123,14 +141,14 @@ grf {
 
         protect_multicell {
             type: bool;
-            bit: 15;
+            bit: 6;
             name: string(STR_PARAM_NAME_PROTECT_MULTICELL);
             desc: string(STR_PARAM_DESC_PROTECT_MULTICELL);
             def_value: 1;
         }
     }
 
-    param 1 {
+    param 3 {
         landscape {
             type: int;
             name: string(STR_PARAM_NAME_LANDSCAPE);
@@ -147,7 +165,7 @@ grf {
         }
     }
 
-    param 2 {
+    param 4 {
         additional_colors {
             type: int;
             name: string(STR_PARAM_NAME_ADDITIONAL_COLORS);
@@ -163,7 +181,7 @@ grf {
         }
     }
 
-    param 3 {
+    param 5 {
         church_limit {
             type: int;
             name: string(STR_PARAM_NAME_CHURCH_LIMIT);
@@ -178,7 +196,7 @@ grf {
         }
     }
 
-    param 4 {
+    param 6 {
         stadium_limit {
             type: int;
             name: string(STR_PARAM_NAME_STADIUM_LIMIT);
@@ -193,7 +211,7 @@ grf {
         }
     }
 
-    param 5 {
+    param 7 {
         hotel_tourist {
             type: int;
             name: string(STR_PARAM_NAME_HOTEL_TOURIST);
@@ -38886,7 +38904,7 @@ spritelayout sprite_ported_toyland_house_2 {
     }
 }
 
-if (enable_toyland && 0) {
+if (enable_converted_toyland && 0) {
     item(FEAT_HOUSES, item_ported_toyland_house_2) {
         property {
             substitute: 0x12; // 0x5D
@@ -38922,7 +38940,7 @@ spritelayout sprite_ported_toyland_house_6 {
     }
 }
 
-if (enable_toyland && 0) {
+if (enable_converted_toyland && 0) {
     item(FEAT_HOUSES, item_ported_toyland_house_6) {
         property {
             substitute: 0x1B; //0x61
@@ -38979,7 +38997,7 @@ spritelayout sprite_ported_toyland_tall_office_block_1 {
     }
 }
 
-if (enable_toyland) {
+if (enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_tall_office_block_1) {
         property {
             substitute: 0x62;
@@ -39020,7 +39038,7 @@ spritelayout sprite_ported_toyland_shops_and_offices_2 {
     }
 }
 
-if (enable_toyland && 0) {
+if (enable_converted_toyland && 0) {
     item(FEAT_HOUSES, item_ported_toyland_shops_and_offices_2) {
         property {
             substitute: 0x69;
@@ -39083,7 +39101,7 @@ random_switch (FEAT_HOUSES, SELF, ported_toyland_tall_office_block_2_random_stru
     1: return PALETTE_NEWSTRUCT_BROWN;
 }
 
-if (enable_toyland) {
+if (enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_tall_office_block_2) {
         property {
             substitute: 0x6A;
@@ -39149,7 +39167,7 @@ spritelayout sprite_ported_toyland_tepees {
     }
 }
 
-if (enable_toyland) {
+if (enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_tepees) {
         property {
             substitute: 0x67;
@@ -39193,7 +39211,7 @@ spritelayout sprite_ported_toyland_igloo {
     }
 }
 
-if (enable_toyland) {
+if (enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_igloo) {
         property {
             substitute: 0x66;
@@ -40625,7 +40643,7 @@ spritelayout sprite_toyland_company_statue {
     }
 }
 
-if (enable_hq && enable_toyland) {
+if (enable_hq && enable_converted_toyland) {
     item(FEAT_HOUSES, item_toyland_company_statue) {
         property {
             substitute: 0x09;
@@ -40654,7 +40672,7 @@ spritelayout sprite_toyland_company_statue_toyland {
     }
 }
 
-if (enable_hq && enable_toyland) {
+if (enable_hq && enable_converted_toyland) {
     item(FEAT_HOUSES, item_toyland_company_statue_toyland) {
         property {
             substitute: 0x09;
@@ -40913,7 +40931,7 @@ spritelayout sprite_ported_toyland_small_hq {
     }
 }
 
-if (enable_hq && enable_toyland && 0) {
+if (enable_hq && enable_converted_toyland && 0) {
     item(FEAT_HOUSES, item_ported_toyland_small_hq) {
         property {
             substitute: 0x3A;
@@ -41094,7 +41112,7 @@ spritelayout sprite_ported_toyland_hq_stage_5_S {
     }
 }
 
-if (enable_hq && enable_toyland && 0) {
+if (enable_hq && enable_converted_toyland && 0) {
     item(FEAT_HOUSES, item_ported_toyland_hq_stage_5, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x28;

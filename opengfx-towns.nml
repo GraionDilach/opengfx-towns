@@ -38922,8 +38922,8 @@ if (enable_tropic && enable_misc) {
 
 spriteset (ported_toyland_churcha_building) {
     sprite_null()
-    [-31, -64, "ogfxplus/4629-stage1.png"]
-    [-31, -64, "ogfxplus/4629.png"]
+    [-31, -64, "gfx/4629-stage1.png"]
+    [-31, -64, "gfx/4629.png"]
 }
 
 spritelayout sprite_ported_toyland_churcha {
@@ -38939,8 +38939,8 @@ spritelayout sprite_ported_toyland_churcha {
 
 spriteset (ported_toyland_churchb_building) {
     sprite_null()
-    [-31, -64, "ogfxplus/4629b-stage1.png"]
-    [-31, -64, "ogfxplus/4629b.png"]
+    [-31, -64, "gfx/4629b-stage1.png"]
+    [-31, -64, "gfx/4629b.png"]
 }
 
 spritelayout sprite_ported_toyland_churchb {

@@ -1,6 +1,6 @@
 # OpenGFX+ Towns
 
-A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being combined with other base sets and offer additional polish. Buildings shared between both sourced use UKTS statistics. Requires OpenTTD 15.0 or equvivalent.
+A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being combined with other base sets and offer additional polish. Buildings shared between both sources use UKTS statistics. Requires OpenTTD 15.0 or equvivalent.
 
 ## Previews
 
@@ -9,7 +9,7 @@ A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being co
 ## Features
 
  - Reasonable extended cargo support (generally, all flats accept both foods and goods, Temperate houses accept food, all Toyland shops and offices accept both fizzy drinks and candy) utilizing the 16 cargo I/O feature. [^1] [^2] [^3]
- - Optionally allow using both vanilla and NewCC color gradients on both company and structure remap and bypass TTD 4-color-variations limit where applicable. [^1] [^2] [^3]
+ - Allow either a sensible subselection or all combinations of vanilla and NewCC color gradients on both company and structure remap to bypass TTD 4-color-variations limit where possible. [^1] [^2] [^3]
  - External parameter over stadium and church count. [^1] [^2] [^3]
  - Optionally protect multicell buildings inside inner town zones from town autoreplacement to prevent them being heavily underrepresented in an ongoing game. [^1] [^2] [^3]
  - Allow mixing various climates together. [^1] [^2]
@@ -17,7 +17,7 @@ A NewGRF which mixes OpenGFX houses with UK Town Set v2.2 to allow them being co
  - Rework ground sprites so that all ground sprites are composited from an overlay on top of a baseset sprite to prevent drawing artifacts appearing on the edges of cells against extra-zoom basesets. [^2] [^3]
  - Fix quantization errors and utilize struct remap on structures which could either use such in original TTD/OpenGFX2 or dominated by remapable colors. [^2] [^3]
  - Enable unused houses and frames scattered around the files. [^2]
- - OpenGFX2 Toyland complementing option - limit OGFX roster to only the ones already redrawn in OpenGFX2. [^2]
+ - OpenGFX2 Toyland complementing option - limit additions to Toyland roster to only the buildings already redrawn in OpenGFX2. [^2]
  - Add new buildings derived from selected industry structures and similar objects to towns. (Note, some of these buildings require selected cargos to be available.) [^2]
  - Various additional snow, transparency or construction frames. [^2]
  - Split each building class into their individual buildings for a better integration with the place building tool. [^3]

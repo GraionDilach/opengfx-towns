@@ -38920,24 +38920,52 @@ if (enable_tropic && enable_misc) {
     }
 }
 
-spriteset (ported_toyland_church_building) {
+spriteset (ported_toyland_churcha_building) {
     sprite_null()
-    [   0,   00,  64,  95, -31, -64, "ogfx/toyland_church_base4629.png"] // 4629
-    [   0,   00,  64,  95, -31, -64, "ogfx/toyland_church_base4629.png"] // 4629
+    [-31, -64, "ogfxplus/4629-stage1.png"]
+    [-31, -64, "ogfxplus/4629.png"]
 }
 
-spritelayout sprite_ported_toyland_church {
+spritelayout sprite_ported_toyland_churcha {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     building {
-        sprite: ported_toyland_church_building;
+        sprite: ported_toyland_churcha_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
-if (enable_converted_toyland && 0) {
+spriteset (ported_toyland_churchb_building) {
+    sprite_null()
+    [-31, -64, "ogfxplus/4629b-stage1.png"]
+    [-31, -64, "ogfxplus/4629b.png"]
+}
+
+spritelayout sprite_ported_toyland_churchb {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: ported_toyland_churchb_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ported_toyland_church_preview, switch_4_variants()) {
+    1:    return sprite_ported_toyland_churcha;
+    2..4: return sprite_ported_toyland_churchb;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ported_toyland_church, animation_frame) {
+    1:    return sprite_ported_toyland_churcha;
+    2..4: return sprite_ported_toyland_churchb;
+    return     callback_ported_toyland_church_preview;
+}
+
+if (enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_church) {
         property {
             substitute: 0x53; //0x5B;
@@ -38949,9 +38977,24 @@ if (enable_converted_toyland && 0) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        graphics {
-            default: sprite_ported_toyland_church;
-            construction_check: church_construction_check;
+        if (additional_colors == 0) {
+            graphics {
+                default: sprite_ported_toyland_churchb;
+            }
+        }
+        if (additional_colors == 1) {
+            graphics {
+                default: callback_ported_toyland_church;
+                colour: random_modest_struct_color();
+                construction_anim: switch_4_variants;
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: callback_ported_toyland_church;
+                colour: random_struct_color();
+                construction_anim: switch_4_variants;
+            }
         }
     }
 }

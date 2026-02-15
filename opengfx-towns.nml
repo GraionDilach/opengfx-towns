@@ -3528,8 +3528,13 @@ spriteset (flats_3_ground) {
 spriteset (flats_3_building) {
     sprite_null()
     [ -31, -81, "ogfxplus/4602.png"] // 4602
-//    [ 674,   88,  64, 112, -31, -81, "ogfx/towns02.png"] // 4602
     [ -31, -74, "ogfxplus/4603.png"] // 4603
+}
+
+spriteset (flats_3_building_snow) {
+    sprite_null()
+    [ -31, -81, "ogfxplus/4602.png"] // 4602
+    [ -31, -74, "ogfxplus/4603-snow.png"]
 }
 
 spritelayout sprite_flats_3 {
@@ -3542,6 +3547,11 @@ spritelayout sprite_flats_3 {
     }
     building {
         sprite: flats_3_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: flats_3_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -3553,7 +3563,7 @@ if (enable_tropic) {
             accepted_cargos: [[PASS, 7], [MAIL, 2], [GOOD, 2], [FOOD, 3]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

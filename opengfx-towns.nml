@@ -38842,13 +38842,19 @@ if (enable_misc) {
 }
 
 spriteset (flats_3_mini_ground) {
-    [ -32,  -41, "ogfxplus/4601-mini.png"] // 4601
+    [ -32,  -41, "ogfxplus/4601-mini.png"]
 }
 
 spriteset (flats_3_mini_building) {
     sprite_null()
-    [ -32, -41, "ogfxplus/4602-mini.png"] // 4602
-    [ -32, -41, "ogfxplus/4603-mini.png"] // 4603
+    [ -32, -41, "ogfxplus/4602-mini.png"]
+    [ -32, -41, "ogfxplus/4603-mini.png"]
+}
+
+spriteset (flats_3_mini_building_snow) {
+    sprite_null()
+    [ -32, -41, "ogfxplus/4602-mini.png"]
+    [ -32, -41, "ogfxplus/4603-mini-snow.png"]
 }
 
 spritelayout sprite_flats_3_mini {
@@ -38861,6 +38867,11 @@ spritelayout sprite_flats_3_mini {
     }
     building {
         sprite: flats_3_mini_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: flats_3_mini_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -38872,7 +38883,7 @@ if (enable_tropic && enable_misc) {
             accepted_cargos: [[PASS, 6], [MAIL, 2], [GOOD, 1], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

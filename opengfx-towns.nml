@@ -801,11 +801,8 @@ switch (FEAT_HOUSES, SELF, church_construction_check, (
     || (church_limit == 0 && other_class_count_town(1) == 0
         && other_class_count_town(2) == 0
         && other_class_count_town(3) == 0
-        && other_class_count_town(4) == 0)
-)) { return; }
-
-switch (FEAT_HOUSES, SELF, toyland_church_construction_check, (
-    church_limit == 2 || same_class_count_town == 0
+        && other_class_count_town(4) == 0
+        && other_class_count_town(5) == 0)
 )) { return; }
 
 // population check for UKTS
@@ -4007,7 +4004,6 @@ if (enable_toyland > 1) {
             substitute: 0x5B;
             building_flags: 0;
             building_class: 5;
-            building_flags: bitmask(HOUSE_FLAG_CHURCH);
             availability_mask: [
                     ALL_TOWNZONES,
                     bitmask(CLIMATE_TOYLAND)
@@ -4015,7 +4011,7 @@ if (enable_toyland > 1) {
         }
         graphics {
             default: sprite_toyland_church;
-            construction_check: toyland_church_construction_check;
+            construction_check: church_construction_check;
         }
     }
 }
@@ -38920,6 +38916,42 @@ if (enable_tropic && enable_misc) {
         }
         graphics {
             default: sprite_flats_3_mini2;
+        }
+    }
+}
+
+spriteset (ported_toyland_church_building) {
+    sprite_null()
+    [   0,   00,  64,  95, -31, -64, "ogfx/toyland_church_base4629.png"] // 4629
+    [   0,   00,  64,  95, -31, -64, "ogfx/toyland_church_base4629.png"] // 4629
+}
+
+spritelayout sprite_ported_toyland_church {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: ported_toyland_church_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_converted_toyland && 0) {
+    item(FEAT_HOUSES, item_ported_toyland_church) {
+        property {
+            substitute: 0x53; //0x5B;
+            building_flags: 0; // use callback instead of church flag
+            building_class: 5;
+            years_available: [0, 65535];
+            availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_ported_toyland_church;
+            construction_check: church_construction_check;
         }
     }
 }

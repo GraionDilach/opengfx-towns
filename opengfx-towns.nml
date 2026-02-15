@@ -38980,6 +38980,7 @@ if (enable_converted_toyland) {
         if (additional_colors == 0) {
             graphics {
                 default: sprite_ported_toyland_churchb;
+                construction_check: church_construction_check;
             }
         }
         if (additional_colors == 1) {
@@ -38987,6 +38988,7 @@ if (enable_converted_toyland) {
                 default: callback_ported_toyland_church;
                 colour: random_modest_struct_color();
                 construction_anim: switch_4_variants;
+                construction_check: church_construction_check;
             }
         }
         if (additional_colors == 2) {
@@ -38994,6 +38996,7 @@ if (enable_converted_toyland) {
                 default: callback_ported_toyland_church;
                 colour: random_struct_color();
                 construction_anim: switch_4_variants;
+                construction_check: church_construction_check;
             }
         }
     }

@@ -758,6 +758,11 @@ switch (FEAT_HOUSES, SELF, lighthouse_water_check,
     || nearby_tile_water_class( 2,  1) == WATER_CLASS_SEA
 ) { return; }
 
+// generic checks
+switch (FEAT_HOUSES, PARENT, has_population, required, population >= required) { return; }
+
+switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) { return; }
+
 // building classes:
 // 1 temperate church
 // 2 temperate cathedral
@@ -789,14 +794,16 @@ switch (FEAT_HOUSES, SELF, lighthouse_water_check,
 // 108 petrol station (oil refinery/water supply frankenstein)
 
 switch (FEAT_HOUSES, SELF, stadium_construction_check, (
-    stadium_limit == 2
+    (stadium_limit == 2 && has_population((same_class_count_town + 1) * 2000)
+        && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS))
     || (stadium_limit == 1 && same_class_count_town == 0)
     || (stadium_limit == 0 && other_class_count_town(10) == 0
         && other_class_count_town(11) == 0)
 )) { return; }
 
 switch (FEAT_HOUSES, SELF, church_construction_check, (
-    church_limit == 2
+    (church_limit == 2 && has_population((same_class_count_town + 1) * 1000)
+        && !nearest_house_matching_criterion(5, SEARCH_HOUSE_BY_CLASS))
     || (church_limit == 1 && same_class_count_town == 0)
     || (church_limit == 0 && other_class_count_town(1) == 0
         && other_class_count_town(2) == 0
@@ -804,9 +811,6 @@ switch (FEAT_HOUSES, SELF, church_construction_check, (
         && other_class_count_town(4) == 0
         && other_class_count_town(5) == 0)
 )) { return; }
-
-// population check for UKTS
-switch (FEAT_HOUSES, PARENT, has_population, required, population >= required) { return; }
 
 switch (FEAT_HOUSES, SELF, college_construction_check, (
     has_population((same_class_count_town + 1) * 3000)
@@ -817,8 +821,6 @@ switch (FEAT_HOUSES, SELF, radio_construction_check, (
     has_population((same_class_count_town + 1) * 2000)
     && !nearest_house_matching_criterion(12, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
-
-switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) { return; }
 
 switch (FEAT_HOUSES, SELF, amenities_construction_check, (
     has_houses((same_class_count_town + 1) * 20)

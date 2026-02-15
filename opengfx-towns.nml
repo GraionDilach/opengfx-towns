@@ -40490,7 +40490,7 @@ spriteset (hq_stage_1a_building) {
 spriteset (hq_stage_1a_building_snow) {
     sprite_null()
     [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-stage1.png"]
-    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1.png"]
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-snow.png"]
 }
 
 spritelayout sprite_hq_stage_1a {
@@ -40526,7 +40526,7 @@ spriteset (hq_stage_1b_building) {
 spriteset (hq_stage_1b_building_snow) {
     sprite_null()
     [   1,   0,  64,  38, -31, -7, "gfx/hqshop1b-stage1.png"]
-    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1b.png"]
+    [   1,   0,  64,  38, -31, -7, "gfx/hqshop1b-snow.png"]
 }
 
 spritelayout sprite_hq_stage_1b {
@@ -40572,7 +40572,7 @@ if (enable_hq) {
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors != 2) {

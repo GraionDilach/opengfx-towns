@@ -1789,14 +1789,9 @@ if (enable_temperate) {
 
 // 0x1B variant B is ukts_flats_8, skipped
 
-// all of these are concrete clones in OpenGFX
-
-// spriteset (tall_office_block_2_ground) {
-//     [  66,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1530
-//     [ 226,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1532
-//     [ 386,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1534
-//     [ 386,    8,  64,  31, -31,   0, "ogfx/morebuildings.png"] // 1534
-// }
+spriteset (tall_office_block_2_ground) {
+    [   0,    0,  64, 106, -31, -75, "ogfxplus/1535-ground.png"]
+}
 
 spriteset (tall_office_block_2a_building) {
     [ 146,    8,  64,  45, -31, -14, "ogfx/morebuildings.png"] // 1531
@@ -1925,8 +1920,6 @@ if (enable_temperate) {
 // 0x1D var A is a variant of UKTS offices
 
 // 0x1D var B is a variant of UKTS offices
-
-//all of these are concrete clones in OpenGFX
 
 spriteset (shops_and_offices_5_ground) {
     [   0,    0,  62,  83, -30, -55, "ogfxplus/1545-ground.png"]

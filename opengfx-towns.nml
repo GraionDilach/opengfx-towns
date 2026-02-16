@@ -38943,6 +38943,12 @@ if (enable_tropic && enable_misc) {
     }
 }
 
+spriteset (ported_toyland_church_ground) {
+    [-31, -64, "gfx/4629-ground-stage0.png"]
+    [-31, -64, "gfx/4629-ground.png"]
+    [-31, -64, "gfx/4629-ground.png"]
+}
+
 spriteset (ported_toyland_churcha_building) {
     sprite_null()
     [-31, -64, "gfx/4629-stage1.png"]
@@ -38951,7 +38957,11 @@ spriteset (ported_toyland_churcha_building) {
 
 spritelayout sprite_ported_toyland_churcha {
     ground {
-        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ported_toyland_church_ground;
+        always_draw: 1;
     }
     building {
         sprite: ported_toyland_churcha_building;
@@ -38968,7 +38978,11 @@ spriteset (ported_toyland_churchb_building) {
 
 spritelayout sprite_ported_toyland_churchb {
     ground {
-        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ported_toyland_church_ground;
+        always_draw: 1;
     }
     building {
         sprite: ported_toyland_churchb_building;

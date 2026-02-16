@@ -1976,21 +1976,31 @@ if (enable_temperate || enable_tropic) {
     }
 }
 
+spriteset (theater_1_ground) {
+    [-31, -24, "ogfxplus/1553-ground-stage0.png"]
+    [-31, -24, "ogfxplus/1553-ground.png"]
+    [-31, -24, "ogfxplus/1553-ground.png"]
+}
+
 spriteset (theater_1_building) {
     sprite_null()
-    [   0,    0,  64,  55, -31, -24, "ogfxplus/1553-stage1.png"]
-    [   0,    0,  64,  55, -31, -24, ANIM, "ogfxplus/1553.png"]
+    [-31, -24, "ogfxplus/1553-stage1.png"]
+    [-31, -24, ANIM, "ogfxplus/1553.png"]
 }
 
 spriteset (theater_1_building_snow) {
     sprite_null()
-    [   0,    0,  64,  55, -31, -24, "ogfxplus/1553-stage1.png"]
-    [   0,    0,  64,  55, -31, -24, ANIM, "ogfxplus/1553-snow.png"]
+    [-31, -24, "ogfxplus/1553-stage1.png"]
+    [-31, -24, ANIM, "ogfxplus/1553-snow.png"]
 }
 
 spritelayout sprite_theater_1 {
     ground {
-        sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_CONCRETE; // uses a copy of this already, no point duplicating it
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: theater_1_ground;
+        always_draw: 1;
     }
     building {
         sprite: theater_1_building;

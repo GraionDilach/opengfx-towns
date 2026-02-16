@@ -1928,12 +1928,9 @@ if (enable_temperate) {
 
 //all of these are concrete clones in OpenGFX
 
-// spriteset (shops_and_offices_5_ground) {
-//     [ 178,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1540
-//     [ 338,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1542
-//     [ 498,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1544
-//     [ 498,  360,  64,  31, -31,   0, "ogfx/temprtbuilds.png"] // 1544
-// }
+spriteset (shops_and_offices_5_ground) {
+    [   0,    0,  62,  83, -30, -55, "ogfxplus/1545-ground.png"]
+}
 
 spriteset (shops_and_offices_5_building) {
     [ 258,  360,  62,  48, -30, -20, "ogfx/temprtbuilds.png"] // 1541
@@ -1950,6 +1947,10 @@ spriteset (shops_and_offices_5_building_snow) {
 spritelayout sprite_shops_and_offices_5 {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: shops_and_offices_5_ground;
+        always_draw: 1;
     }
     building {
         sprite: shops_and_offices_5_building;

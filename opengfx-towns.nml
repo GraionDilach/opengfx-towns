@@ -39384,6 +39384,10 @@ if (enable_converted_toyland) {
     }
 }
 
+spriteset (water_tower_ground) {
+    [  -23, -42, "gfx/2344-ground.png"]
+}
+
 spriteset (water_tower_building) {
     [  -23, -42, "gfx/2344.png"] // 2344
     [  -23, -42, "gfx/2345.png"] // 2345
@@ -39409,6 +39413,10 @@ spritelayout sprite_water_tower {
     childsprite {
         sprite: GROUNDSPRITE_CONCRETE;
         hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: water_tower_ground;
         always_draw: 1;
     }
     building {

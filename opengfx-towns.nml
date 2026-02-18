@@ -39626,13 +39626,13 @@ if (enable_industries) {
 }
 
 spriteset (farm_houses_ground) {
-    sprite_null()
+    [ -31, -33, "gfx/farm-houses-ground-stage0.png"]
     [ -31, -33, "gfx/farm-houses-ground-stage1.png"]
     [ -31, -33, "gfx/farm-houses-ground.png"]
 }
 
 spriteset (farm_houses_ground_desert) {
-    sprite_null()
+    [ -31, -33, "gfx/farm-houses-ground-stage0.png"]
     [ -31, -33, "gfx/farm-houses-ground-stage1.png"]
     [ -31, -33, "gfx/farm-houses-ground-stage1.png"]
 }
@@ -39718,7 +39718,7 @@ if (enable_industries) {
 }
 
 spriteset (workshop_3_ground) {
-    sprite_null()
+    [ -31,  -7, "gfx/2112-stage0.png"]
     [ -31,  -7, "gfx/2112-stage1.png"]
     [ -31,  -7, "gfx/2112.png"]
 }
@@ -39789,7 +39789,7 @@ if (enable_industries) {
 }
 
 spriteset (workshop_4_ground) {
-    sprite_null()
+    [ -31,  -5, "gfx/2112v2-stage0.png"]
     [ -31,  -5, "gfx/2112v2-stage1.png"]
     [ -31,  -5, "gfx/2112v2.png"]
 }

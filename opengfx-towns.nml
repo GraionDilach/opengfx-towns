@@ -41473,3 +41473,97 @@ if (enable_industries && cargotype_available("PETR")) {
         }
     }
 }
+
+spriteset (toyland_shopping_mall_N_building) {
+    sprite_null()
+    sprite_null()
+    sprite_null()
+}
+
+spritelayout sprite_toyland_shopping_mall_N {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_shopping_mall_N_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (toyland_shopping_mall_E_building) {
+    [  96,   22,  32,  88,   1, -57, "ogfx/sweetfactory_fullwrap.png"] //4677
+    [ 170,   17,  32,  88,   1, -57, "ogfx/sweetfactory.png"] // 4680
+    [ 170,  140,  32,  88,   1, -57, "ogfx/sweetfactory.png"] // 4683
+}
+
+spritelayout sprite_toyland_shopping_mall_E {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4676 : 4675;
+    }
+    building {
+        sprite: toyland_shopping_mall_E_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (toyland_shopping_mall_S_building) {
+    [  32,    6,  64, 120, -31, -89, "ogfx/sweetfactory_fullwrap.png"] //4678
+    [ 104,    1,  64, 120, -31, -89, "ogfx/sweetfactory.png"] // 4681
+    [ 104,  124,  64, 120, -31, -89, "ogfx/sweetfactory.png"] // 4684
+}
+
+spritelayout sprite_toyland_shopping_mall_S {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4675 : 4676;
+    }
+    building {
+        sprite: toyland_shopping_mall_S_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (toyland_shopping_mall_W_building) {
+    [   0,   22,  32,  88, -31, -57, "ogfx/sweetfactory_fullwrap.png"] //4679
+    [  70,   17,  32,  88, -31, -57, "ogfx/sweetfactory.png"] // 4682
+    [  70,  140,  32,  88, -31, -57, "ogfx/sweetfactory.png"] // 4685
+}
+
+spritelayout sprite_toyland_shopping_mall_W {
+    ground {
+        sprite: pseudo_random_bits && 0x01 == 0 ? 4676 : 4675;
+    }
+    building {
+        sprite: toyland_shopping_mall_W_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_toyland > 1 && enable_industries) {
+    item(FEAT_HOUSES, item_toyland_shopping_mall_1, -1, HOUSE_SIZE_2X2) {
+        property {
+            substitute: 0x28;
+            accepted_cargos: [[PASS, 8], [MAIL, 2], [SWET, 3], [FZDR, 3]];
+            years_available: [0, 65535];
+            availability_mask: [
+                ALL_TOWNZONES,
+                bitmask(CLIMATE_TOYLAND)
+            ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
+        }
+        graphics {
+            graphics_north: sprite_toyland_shopping_mall_N;
+            graphics_east:  sprite_toyland_shopping_mall_E;
+            graphics_south: sprite_toyland_shopping_mall_S;
+            graphics_west:  sprite_toyland_shopping_mall_W;
+            colour: random_company_color();
+        }
+    }
+}

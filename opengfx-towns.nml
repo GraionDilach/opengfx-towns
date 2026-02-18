@@ -39043,38 +39043,92 @@ if (enable_converted_toyland) {
     }
 }
 
-spriteset (ported_toyland_house_2_building) {
-    sprite_null()
-    [  -28, -16, "gfx/4635.png"] // 4635
-    [  -28, -16, "gfx/4635.png"] // 4635
+spriteset (ported_toyland_house_2_ground) {
+    [  -28, -16, "gfx/4635-ground-stage0.png"]
+    [  -28, -16, "gfx/4635-ground.png"]
+    [  -28, -16, "gfx/4635-ground.png"]
 }
 
-spritelayout sprite_ported_toyland_house_2 {
+spriteset (ported_toyland_house_2a_building) {
+    sprite_null()
+    [  -28, -16, "gfx/4635-stage1.png"]
+    [  -28, -16, "gfx/4635.png"]
+}
+
+spriteset (ported_toyland_house_2b_building) {
+    sprite_null()
+    [  -28, -16, "gfx/4635v2-stage1.png"]
+    [  -28, -16, "gfx/4635v2.png"]
+}
+
+spritelayout sprite_ported_toyland_house_2a {
     ground {
         sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
+    childsprite {
+        sprite: ported_toyland_house_2_ground;
+        always_draw: 1;
+    }
     building {
-        sprite: ported_toyland_house_2_building;
+        sprite: ported_toyland_house_2a_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
-if (enable_converted_toyland && 0) {
+spritelayout sprite_ported_toyland_house_2b {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: ported_toyland_house_2_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: ported_toyland_house_2b_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ported_toyland_house_2_preview, switch_2_variants()) {
+    1: return sprite_ported_toyland_house_2a;
+    2: return sprite_ported_toyland_house_2b;
+}
+
+switch (FEAT_HOUSES, SELF, callback_ported_toyland_house_2, animation_frame) {
+    1: return sprite_ported_toyland_house_2a;
+    2: return sprite_ported_toyland_house_2b;
+    return  callback_ported_toyland_house_2_preview;
+}
+
+if (enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_house_2) {
         property {
-            substitute: 0x12; // 0x5D
-            name: string(STR_NAME_WORKSHOP);
+            substitute: 0x2E; // 0x5D
             years_available: [0, 65535];
-            building_class: 101;
             availability_mask: [
-                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
-        graphics {
-            default: sprite_ported_toyland_house_2;
-            construction_check: workshop_construction_check;
+        if (additional_colors < 2) {
+            graphics {
+                default: callback_ported_toyland_house_2;
+                colour: random_modest_struct_color();
+                construction_anim: switch_2_variants;
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                default: callback_ported_toyland_house_2;
+                colour: random_struct_color();
+                construction_anim: switch_2_variants;
+            }
         }
     }
 }

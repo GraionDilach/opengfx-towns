@@ -41131,11 +41131,6 @@ if (enable_hq && enable_toyland > 0) {
     }
 }
 
-spriteset (ported_toyland_hq_stage_1) {
-    sprite_null()
-    [ -31,   -11, "gfx/hqtower1.png"]
-}
-
 spriteset (ported_toyland_hq_stage_2) {
     sprite_null()
     [ -31,   -29, "gfx/hqtower2.png"]
@@ -41157,16 +41152,9 @@ spritelayout sprite_ported_toyland_small_hq {
         always_draw: 1;
     }
     building {
-        sprite: ported_toyland_hq_stage_1;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-        hide_sprite: town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT;
-    }
-    building {
         sprite: ported_toyland_hq_stage_2;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
-        hide_sprite: town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
     }
 }
 
@@ -41178,7 +41166,7 @@ if (enable_hq && enable_converted_toyland && 0) {
             years_available: [0, 65535];
             building_class: 105;
             availability_mask: [
-                ALL_TOWNZONES,
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }

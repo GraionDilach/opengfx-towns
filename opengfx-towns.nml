@@ -41476,8 +41476,6 @@ if (enable_industries && cargotype_available("PETR")) {
 
 spriteset (toyland_shopping_mall_N_building) {
     sprite_null()
-    sprite_null()
-    sprite_null()
 }
 
 spritelayout sprite_toyland_shopping_mall_N {

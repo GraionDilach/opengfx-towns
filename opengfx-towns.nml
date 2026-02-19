@@ -1789,7 +1789,7 @@ if (enable_temperate) {
 
 // 0x1B variant B is ukts_flats_8, skipped
 
-spriteset (tall_office_block_2_ground) {
+spriteset (tall_office_block_2a_ground) {
     [   0,    0,  64, 106, -31, -75, "ogfxplus/1535-ground.png"]
 }
 
@@ -1808,6 +1808,10 @@ spriteset (tall_office_block_2a_building_snow) {
 spritelayout sprite_tall_office_block_2a {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: tall_office_block_2a_ground;
+        always_draw: 1;
     }
     building {
         sprite: tall_office_block_2a_building;

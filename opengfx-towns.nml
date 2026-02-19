@@ -1859,6 +1859,10 @@ if (enable_temperate) {
     }
 }
 
+spriteset (tall_office_block_2b_ground) {
+    [   0,    0,  56,  98, -25, -69, "ogfxplus/1551-ground.png"]
+}
+
 spriteset (tall_office_block_2b_building) {
     [   2,  456,  56,  47, -25, -18, "ogfx/temprtbuilds.png"] // 1547
     [   0,    0,  56,  98, -25, -69, "ogfxplus/1549.png"]
@@ -1874,6 +1878,10 @@ spriteset (tall_office_block_2b_building_snow) {
 spritelayout sprite_tall_office_block_2b {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: tall_office_block_2b_ground;
+        always_draw: 1;
     }
     building {
         sprite: tall_office_block_2b_building;

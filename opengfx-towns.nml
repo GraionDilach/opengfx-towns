@@ -3191,7 +3191,7 @@ spriteset (houses_7_building) {
 spriteset (houses_7_building_snow) {
     [ -31, -32, "ogfxplus/4588.png"] // 4588
     [ -31, -32, "ogfxplus/4589.png"] // 4589
-    [ -31, -32, "ogfxplus/4590-snow.png"] // 4590
+    [ -31, -32, "ogfxplus/4590-snow.png"]
 }
 
 spritelayout sprite_houses_7 {
@@ -3230,11 +3230,22 @@ if (enable_tropic) {
     }
 }
 
+spriteset (houses_8_ground) {
+    [-31, -12, "ogfxplus/4591-ground.png"]
+    [-31, -12, "ogfxplus/4592-ground.png"]
+    [-31, -12, "ogfxplus/4592-ground.png"]
+}
+
 spriteset (houses_8_building) {
-    [ 642,    8,  64,  31, -31,   0, "ogfx/towns02.png"] // 4591
-    [ 722,    8,  64,  43, -31, -12, "ogfx/towns02.png"] // 4592
-//    [ 722,    8,  64,  43, -31, -12, "ogfx/towns02.png"] // 4592
-    [   2,   88,  64,  40, -31,  -9, "ogfx/towns02.png"] // 4593
+    [-31, -12, "ogfxplus/4591.png"] // 4591
+    [-31, -12, "ogfxplus/4592.png"] // 4592
+    [-31, -12, "ogfxplus/4593.png"] // 4593
+}
+
+spriteset (houses_8_building_snow) {
+    [-31, -12, "ogfxplus/4591.png"] // 4591
+    [-31, -12, "ogfxplus/4592.png"] // 4592
+    [-31, -12, "ogfxplus/4593-snow.png"]
 }
 
 spritelayout sprite_houses_8 {
@@ -3243,8 +3254,17 @@ spritelayout sprite_houses_8 {
             : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
             : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
     }
+    childsprite {
+        sprite: houses_8_ground;
+        always_draw: 1;
+    }
     building {
         sprite: houses_8_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: houses_8_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -3255,7 +3275,7 @@ if (enable_tropic) {
             years_available: [1939, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB), //CENTRE omitted, to keep it a "town houses" counterpart
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

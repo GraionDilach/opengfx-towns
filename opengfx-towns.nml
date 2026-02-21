@@ -596,6 +596,7 @@ random_switch (FEAT_HOUSES, SELF, switch_4_variants) {
     1: return 3;
     1: return 4;
 }
+/*
 random_switch (FEAT_HOUSES, SELF, switch_5_variants) {
     1: return 1;
     1: return 2;
@@ -603,6 +604,7 @@ random_switch (FEAT_HOUSES, SELF, switch_5_variants) {
     1: return 4;
     1: return 5;
 }
+*/
 random_switch (FEAT_HOUSES, SELF, switch_6_variants) {
     1: return 1;
     1: return 2;
@@ -621,6 +623,18 @@ random_switch (FEAT_HOUSES, SELF, switch_8_variants) {
     1: return 7;
     1: return 8;
 }
+random_switch (FEAT_HOUSES, SELF, switch_9_variants) {
+    1: return 1;
+    1: return 2;
+    1: return 3;
+    1: return 4;
+    1: return 5;
+    1: return 6;
+    1: return 7;
+    1: return 8;
+    1: return 9;
+}
+/*
 random_switch (FEAT_HOUSES, SELF, switch_10_variants) {
     1: return  1;
     1: return  2;
@@ -633,6 +647,7 @@ random_switch (FEAT_HOUSES, SELF, switch_10_variants) {
     1: return  9;
     1: return 10;
 }
+*/
 random_switch (FEAT_HOUSES, SELF, switch_16_variants) {
     1: return  1;
     1: return  2;
@@ -5293,7 +5308,7 @@ spritelayout sprite_ukts_church_small_2d {
     }
 }
 
-switch (FEAT_HOUSES, SELF, callback_ukts_church_small_preview, switch_10_variants()) {
+switch (FEAT_HOUSES, SELF, callback_ukts_church_small_preview, switch_9_variants()) {
     1: return sprite_ukts_church_small_1a;
     2: return sprite_ukts_church_small_2a;
     3: return sprite_ukts_church_small_1b;
@@ -5302,7 +5317,7 @@ switch (FEAT_HOUSES, SELF, callback_ukts_church_small_preview, switch_10_variant
     6: return sprite_ukts_church_small_2c;
     7: return sprite_ukts_church_small_1d;
     8: return sprite_ukts_church_small_2d;
-    9..10: return sprite_church_1;
+    9: return sprite_church_1;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_church_small, animation_frame) {
@@ -5314,13 +5329,9 @@ switch (FEAT_HOUSES, SELF, callback_ukts_church_small, animation_frame) {
     6: return sprite_ukts_church_small_2c;
     7: return sprite_ukts_church_small_1d;
     8: return sprite_ukts_church_small_2d;
-    9..10: return sprite_church_1;
+    9: return sprite_church_1;
     return  callback_ukts_church_small_preview;
 }
-
-switch (FEAT_HOUSES, SELF, callback_ukts_church_small_construction,
-    ((switch_5_variants() - 1) * 2 + switch_check_road_initial_2_faced()))
-    { return; }
 
 if (enable_temperate || enable_uktownset) {
     item(FEAT_HOUSES, item_ukts_church_small_1) {
@@ -5337,7 +5348,7 @@ if (enable_temperate || enable_uktownset) {
         graphics {
             default: callback_ukts_church_small;
             construction_check: church_construction_check;
-            construction_anim: callback_ukts_church_small_construction;
+            construction_anim: switch_9_variants;
         }
     }
 }
@@ -5653,10 +5664,6 @@ switch (FEAT_HOUSES, SELF, callback_ukts_church_large, animation_frame) {
     return  callback_ukts_church_large_preview;
 }
 
-switch (FEAT_HOUSES, SELF, callback_ukts_church_large_construction,
-    ((switch_4_variants() - 1) * 2 + switch_check_road_initial_2_faced()))
-    { return; }
-
 if (enable_uktownset) {
     item(FEAT_HOUSES, item_ukts_church_large) {
         property {
@@ -5674,7 +5681,7 @@ if (enable_uktownset) {
         graphics {
             default: callback_ukts_church_large;
             construction_check: church_construction_check;
-            construction_anim: callback_ukts_church_large_construction;
+            construction_anim: switch_8_variants;
         }
     }
 }

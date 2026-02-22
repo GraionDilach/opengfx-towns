@@ -3702,8 +3702,13 @@ if (enable_tropic) {
 spriteset (church_3_building) {
     sprite_null()
     [ -31, -25, "ogfxplus/4604.png"] // 4604
-//    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
-//    [   0,    0,  64,  56, -31, -25, "ogfx/trop_4604_church.png"] // 4604
+    [ -31, -25, "ogfxplus/4604.png"] // 4604
+}
+
+spriteset (church_3_building_snow) {
+    sprite_null()
+    [ -31, -25, "ogfxplus/4604.png"] // 4604
+    [ -31, -25, "ogfxplus/4604-snow.png"]
 }
 
 spritelayout sprite_church_3 {
@@ -3712,6 +3717,11 @@ spritelayout sprite_church_3 {
     }
     building {
         sprite: church_3_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: church_3_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
     }
 }
 
@@ -3724,7 +3734,7 @@ if (enable_tropic) {
             years_available: [0, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         graphics {

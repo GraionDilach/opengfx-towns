@@ -3197,6 +3197,12 @@ spriteset (houses_7_ground) {
     [ -31, -32, "ogfxplus/4589-ground.png"]
 }
 
+spriteset (houses_7_ground_desert) {
+    [ -31, -32, "ogfxplus/4588-ground.png"]
+    [ -31, -32, "ogfxplus/4589-ground.png"]
+    [ -31, -32, "ogfxplus/4590-ground-desert.png"]
+}
+
 spriteset (houses_7_building) {
     [ -31, -32, "ogfxplus/4588.png"] // 4588
     [ -31, -32, "ogfxplus/4589.png"] // 4589
@@ -3218,6 +3224,12 @@ spritelayout sprite_houses_7 {
     childsprite {
         sprite: houses_7_ground;
         always_draw: 1;
+        hide_sprite: terrain_type == TILETYPE_DESERT;
+    }
+    childsprite {
+        sprite: houses_7_ground_desert;
+        always_draw: 1;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
     }
     building {
         sprite: houses_7_building;
@@ -3251,6 +3263,12 @@ spriteset (houses_8_ground) {
     [-31, -12, "ogfxplus/4592-ground.png"]
 }
 
+spriteset (houses_8_ground_desert) {
+    [-31, -12, "ogfxplus/4591-ground.png"]
+    [-31, -12, "ogfxplus/4592-ground.png"]
+    [-31, -12, "ogfxplus/4593-ground-desert.png"]
+}
+
 spriteset (houses_8_building) {
     [-31, -12, "ogfxplus/4591.png"] // 4591
     [-31, -12, "ogfxplus/4592.png"] // 4592
@@ -3272,6 +3290,12 @@ spritelayout sprite_houses_8 {
     childsprite {
         sprite: houses_8_ground;
         always_draw: 1;
+        hide_sprite: terrain_type == TILETYPE_DESERT;
+    }
+    childsprite {
+        sprite: houses_8_ground_desert;
+        always_draw: 1;
+        hide_sprite: terrain_type != TILETYPE_DESERT;
     }
     building {
         sprite: houses_8_building;

@@ -741,8 +741,8 @@ switch (FEAT_HOUSES, SELF, switch_check_road_2_faced, switch_house_orientation_8
     4: return 2;
     5: return 1;
     6: return 2;
-    7: return 3;
-    8: return 4;
+    7: return 1;
+    8: return 2;
     switch_2_variants;
 }
 switch (FEAT_HOUSES, SELF, switch_check_road_initial_2_faced, animation_frame) {

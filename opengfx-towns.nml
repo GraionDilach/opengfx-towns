@@ -3936,55 +3936,93 @@ if (enable_tropic) {
     }
 }
 
-// 4614 and 4615 are copied from tall_office_block_7 over in OpenGFX
-// this one is derived from the old 32bpp project, so there's no real good option
-// but even 4601 is a better placeholder IMO
-
 spriteset (tall_office_block_8_N_ground) {
-    [ -31,  -4, "ogfxplus/4601.png"] // "4614"
+    [ -31,   0, "ogfxplus/4614.png"]
+    [ -31,   0, "ogfxplus/4614-transparent.png"]
+    [ -31,   0, "ogfxplus/4614-transparent.png"]
 }
 
 spriteset (tall_office_block_8_N_building) {
-    [ -31,  -4, "ogfxplus/4601.png"] // "4614"
-    [   1,  -86, "ogfxplus/4616.png"]
-    [   1,  -86, "ogfxplus/4618.png"]
+    sprite_null()
+    [   0,  -86, "ogfxplus/4616.png"]
+    [   0,  -86, "ogfxplus/4618.png"]
+}
+
+spriteset (tall_office_block_8_N_building_snow) {
+    sprite_null()
+    [   0,  -86, "ogfxplus/4616.png"]
+    [   0,  -86, "ogfxplus/4618-snow.png"]
 }
 
 spritelayout sprite_tall_office_block_8_N {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
     }
-//     childsprite {
-//         sprite: tall_office_block_8_N_ground;
-//         always_draw: 1;
-//     }
+    childsprite {
+        sprite: tall_office_block_8_N_ground;
+        always_draw: 1;
+    }
     building {
         sprite: tall_office_block_8_N_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: tall_office_block_8_N_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
 spriteset (tall_office_block_8_W_ground) {
-    [ -31,  -4, "ogfxplus/4601.png"] // "4615"
+    [ -31,   0, "ogfxplus/4615.png"]
+    [ -31,   0, "ogfxplus/4615-transparent.png"]
+    [ -31,   0, "ogfxplus/4615-transparent-flowerbed.png"]
+}
+
+spriteset (tall_office_block_8_W_ground_snow) {
+    [ -31,   0, "ogfxplus/4615.png"]
+    [ -31,   0, "ogfxplus/4615-transparent.png"]
+    [ -31,   0, "ogfxplus/4615-transparent.png"]
 }
 
 spriteset (tall_office_block_8_W_building) {
-    [ -31,  -4, "ogfxplus/4601.png"] // "4614"
+    sprite_null()
     [ -31, -102, "ogfxplus/4617.png"]
     [ -31, -102, "ogfxplus/4619.png"]
 }
 
+spriteset (tall_office_block_8_W_building_snow) {
+    sprite_null()
+    [ -31, -102, "ogfxplus/4617.png"]
+    [ -31, -102, "ogfxplus/4619-snow.png"]
+}
+
 spritelayout sprite_tall_office_block_8_W {
     ground {
-        sprite: construction_state == 3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+        sprite: GROUNDSPRITE_CONCRETE;
     }
-//     childsprite {
-//         sprite: tall_office_block_8_N_ground;
-//         always_draw: 1;
-//     }
+    childsprite {
+        sprite: tall_office_block_8_W_ground;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        always_draw: 1;
+    }
+    childsprite {
+        sprite: tall_office_block_8_W_ground_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        always_draw: 1;
+    }
     building {
         sprite: tall_office_block_8_W_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: tall_office_block_8_W_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -3996,7 +4034,7 @@ if (enable_tropic) {
             substitute: 0x57;
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (protect_multicell == 1) {

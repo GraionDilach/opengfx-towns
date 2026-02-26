@@ -1573,6 +1573,8 @@ if (enable_temperate) {
 // 0x13 is a variant of UKTS offices_11
 
 spriteset (stadium_1_N_ground) {
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1479-stage0.png"]
+    [   0,   0, 66, 87, -32, -56, "ogfxplus/1479-stage1.png"]
     [   0,   0, 66, 87, -32, -56, "ogfxplus/1479.png"]
 }
 
@@ -1614,6 +1616,8 @@ spritelayout sprite_stadium_1_N {
 }
 
 spriteset (stadium_1_E_ground) {
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1479-stage0.png"]
+    [   0,  88, 66, 87, -32, -56, "ogfxplus/1479-stage1.png"]
     [   0,  88, 66, 87, -32, -56, "ogfxplus/1479.png"]
 }
 
@@ -1655,6 +1659,8 @@ spritelayout sprite_stadium_1_E {
 }
 
 spriteset (stadium_1_W_ground) {
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1479-stage0.png"]
+    [   0, 176, 66, 87, -32, -56, "ogfxplus/1479-stage1.png"]
     [   0, 176, 66, 87, -32, -56, "ogfxplus/1479.png"]
 }
 
@@ -1696,6 +1702,8 @@ spritelayout sprite_stadium_1_W {
 }
 
 spriteset (stadium_1_S_ground) {
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1479-stage0.png"]
+    [   0, 264, 66, 87, -32, -56, "ogfxplus/1479-stage1.png"]
     [   0, 264, 66, 87, -32, -56, "ogfxplus/1479.png"]
 }
 

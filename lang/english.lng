@@ -1,7 +1,7 @@
 ##grflangid 0x00
 ##plural 0
 STR_GRF_NAME                                :OpenGFX+ Towns {VERSION}
-STR_GRF_DESCRIPTION                         :Merges OpenGFX houses with UK Town Set v2.2 to allow combinations with other base sets and offer additional polish prevented due to being tied to TTD's own spritesheet. Includes all options from Universal Climate Houses.{}{}License: GPLv2{}Artwork: Zephyris and OpenGFX contributors{}Code author: Graion Dilach
+STR_GRF_DESCRIPTION                         :Merges OpenGFX houses with UK Town Set v2.2 to allow combinations with other base sets and offer additional polish prevented due to being tied to TTD's own spritesheet. Includes all options from Universal Climate Houses.{}License: GPLv2{}Artwork: Zephyris and OpenGFX contributors{}Specific thanks to EmperorJake, PikkaBird and 2TallTyler{}Code author: Graion Dilach
 STR_GRF_URL                                 :https://github.com/GraionDilach/opengfx-towns
 
 STR_PARAM_NAME_DISABLE_BASE_HOUSES          :Disable default OpenTTD houses

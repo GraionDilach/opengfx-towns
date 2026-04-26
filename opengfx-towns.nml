@@ -14662,6 +14662,13 @@ if (enable_uktownset || enable_temperate) {
     }
 }
 
+random_switch (FEAT_HOUSES, SELF, vanilla_ukts_office_color) {
+    1: return PALETTE_USE_DEFAULT;
+    1: return PALETTE_STRUCT_BROWN;
+    1: return PALETTE_STRUCT_WHITE;
+    1: return PALETTE_STRUCT_CONCRETE;
+}
+
 spriteset (ukts_ogfx_offices_1_ground) {
     [  98,    8,  66,  87, -32, -56, "ogfx/buildings.png"]
 }

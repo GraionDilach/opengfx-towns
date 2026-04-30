@@ -14964,19 +14964,19 @@ if (enable_uktownset) {
 }
 
 spriteset (ukts_ogfx_offices_5_ground) {
-    [ 194,  344,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_5-ground.png"]
 }
 
 spriteset (ukts_ogfx_offices_5_building) {
     sprite_null()
-    [ 274,  344,  66,  87, -32, -56, "ogfx/buildings.png"]
-    [ 354,  344,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_5-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_5.png"]
 }
 
 spriteset (ukts_ogfx_offices_5_building_snow) {
     sprite_null()
-    [ 274,  344,  66,  87, -32, -56, "ogfx/buildings.png"]
-    [ 594,  344,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_5-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_5-snow.png"]
 }
 
 spritelayout sprite_ukts_ogfx_offices_5 {
@@ -14986,14 +14986,20 @@ spritelayout sprite_ukts_ogfx_offices_5 {
     childsprite {
         sprite: ukts_ogfx_offices_5_ground;
         always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_ogfx_offices_5_building;
         hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_ogfx_offices_5_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -15011,8 +15017,26 @@ if (enable_uktownset) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        graphics {
-            default: sprite_ukts_ogfx_offices_5;
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_ukts_ogfx_offices_5;
+                colour: vanilla_ukts_office_color();
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_ukts_ogfx_offices_5;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_ukts_ogfx_offices_5;
+                colour: random_struct_color();
+            }
         }
     }
 }

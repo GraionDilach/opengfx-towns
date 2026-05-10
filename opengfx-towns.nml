@@ -15612,19 +15612,19 @@ if (enable_arctic || enable_uktownset) {
 }
 
 spriteset (ukts_ogfx_offices_13_ground) {
-    [ 354, 1016,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_13-ground.png"]
 }
 
 spriteset (ukts_ogfx_offices_13_building) {
     sprite_null()
-    [ 434, 1016,  66,  87, -32, -56, "ogfx/buildings.png"]
-    [ 514, 1016,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_13-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_13.png"]
 }
 
 spriteset (ukts_ogfx_offices_13_building_snow) {
     sprite_null()
-    [ 434, 1016,  66,  87, -32, -56, "ogfx/buildings.png"]
-    [   2, 1128,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_13-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_13-snow.png"]
 }
 
 spritelayout sprite_ukts_ogfx_offices_13 {
@@ -15634,14 +15634,20 @@ spritelayout sprite_ukts_ogfx_offices_13 {
     childsprite {
         sprite: ukts_ogfx_offices_13_ground;
         always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_ogfx_offices_13_building;
         hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_ogfx_offices_13_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 

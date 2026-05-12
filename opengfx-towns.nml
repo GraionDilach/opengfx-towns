@@ -16328,19 +16328,19 @@ if (enable_arctic || enable_tropic || enable_uktownset) {
 }
 
 spriteset (ukts_ogfx_offices_21_ground) {
-    [ 514, 1688,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_21-ground.png"]
 }
 
 spriteset (ukts_ogfx_offices_21_building) {
     sprite_null()
-    [ 594, 1688,  66,  87, -32, -56, "ogfx/buildings.png"]
-    [ 674, 1688,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_21-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_21.png"]
 }
 
 spriteset (ukts_ogfx_offices_21_building_snow) {
     sprite_null()
-    [ 594, 1688,  66,  87, -32, -56, "ogfx/buildings.png"]
-    [ 162, 1800,  66,  87, -32, -56, "ogfx/buildings.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_21-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_21-snow.png"]
 }
 
 spritelayout sprite_ukts_ogfx_offices_21 {
@@ -16350,14 +16350,20 @@ spritelayout sprite_ukts_ogfx_offices_21 {
     childsprite {
         sprite: ukts_ogfx_offices_21_ground;
         always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_ogfx_offices_21_building;
         hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
     building {
         sprite: ukts_ogfx_offices_21_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -16375,8 +16381,26 @@ if (enable_uktownset) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        graphics {
-            default: sprite_ukts_ogfx_offices_21;
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_ukts_ogfx_offices_21;
+                colour: vanilla_ukts_office_color();
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_ukts_ogfx_offices_21;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_ukts_ogfx_offices_21;
+                colour: random_struct_color();
+            }
         }
     }
 }

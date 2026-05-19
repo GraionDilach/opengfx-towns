@@ -14669,26 +14669,26 @@ random_switch (FEAT_HOUSES, SELF, vanilla_ukts_office_color) {
     1: return PALETTE_STRUCT_CONCRETE;
 }
 
-spriteset (ukts_ogfx_offices_1_ground) {
-    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1_ground.png"]
+spriteset (ukts_ogfx_offices_1a_ground) {
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1a-ground.png"]
 }
 
 spriteset (ukts_ogfx_offices_1a_building) {
     sprite_null()
-    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1a-stage1.png"]
     [ -32, -56, "ogfxplus/ukts_ogfx_offices_1a.png"]
 }
 
 spriteset (ukts_ogfx_offices_1b_building) {
     sprite_null()
-    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1a-stage1.png"]
     [ -32, -56, "ogfxplus/ukts_ogfx_offices_1b.png"]
 }
 
-spriteset (ukts_ogfx_offices_1_building_snow) {
+spriteset (ukts_ogfx_offices_1a_building_snow) {
     sprite_null()
-    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1-stage1.png"]
-    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1-snow.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1a-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1a-snow.png"]
 }
 
 spritelayout sprite_ukts_ogfx_offices_1a {
@@ -14696,7 +14696,7 @@ spritelayout sprite_ukts_ogfx_offices_1a {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
-        sprite: ukts_ogfx_offices_1_ground;
+        sprite: ukts_ogfx_offices_1a_ground;
         always_draw: 1;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
@@ -14708,7 +14708,7 @@ spritelayout sprite_ukts_ogfx_offices_1a {
         palette: PALETTE_USE_DEFAULT;
     }
     building {
-        sprite: ukts_ogfx_offices_1_building_snow;
+        sprite: ukts_ogfx_offices_1a_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
@@ -14720,7 +14720,7 @@ spritelayout sprite_ukts_ogfx_offices_1b {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
-        sprite: ukts_ogfx_offices_1_ground;
+        sprite: ukts_ogfx_offices_1a_ground;
         always_draw: 1;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
@@ -14732,21 +14732,95 @@ spritelayout sprite_ukts_ogfx_offices_1b {
         palette: PALETTE_USE_DEFAULT;
     }
     building {
-        sprite: ukts_ogfx_offices_1_building_snow;
+        sprite: ukts_ogfx_offices_1a_building_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
-switch (FEAT_HOUSES, SELF, callback_ukts_ogfx_offices_1_preview, switch_2_variants()) {
+spriteset (ukts_ogfx_offices_1c_ground) {
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1c-ground.png"]
+}
+
+spriteset (ukts_ogfx_offices_1c_building) {
+    sprite_null()
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1c-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1c.png"]
+}
+
+spriteset (ukts_ogfx_offices_1d_building) {
+    sprite_null()
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1c-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1d.png"]
+}
+
+spriteset (ukts_ogfx_offices_1c_building_snow) {
+    sprite_null()
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1c-stage1.png"]
+    [ -32, -56, "ogfxplus/ukts_ogfx_offices_1c-snow.png"]
+}
+
+spritelayout sprite_ukts_ogfx_offices_1c {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_ogfx_offices_1c_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_ogfx_offices_1c_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_ogfx_offices_1c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spritelayout sprite_ukts_ogfx_offices_1d {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_ogfx_offices_1c_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_ogfx_offices_1d_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_ogfx_offices_1c_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_ukts_ogfx_offices_1_preview, switch_4_variants()) {
     1: return sprite_ukts_ogfx_offices_1a;
     2: return sprite_ukts_ogfx_offices_1b;
+    3: return sprite_ukts_ogfx_offices_1c;
+    4: return sprite_ukts_ogfx_offices_1d;
 }
 
 switch (FEAT_HOUSES, SELF, callback_ukts_ogfx_offices_1, animation_frame) {
     1: return sprite_ukts_ogfx_offices_1a;
     2: return sprite_ukts_ogfx_offices_1b;
+    3: return sprite_ukts_ogfx_offices_1c;
+    4: return sprite_ukts_ogfx_offices_1d;
     return  callback_ukts_ogfx_offices_1_preview;
 }
 
@@ -14767,7 +14841,7 @@ if (enable_temperate || enable_uktownset) {
         if (additional_colors == 0)
         {
             graphics {
-                construction_anim: switch_2_variants;
+                construction_anim: switch_4_variants;
                 default: callback_ukts_ogfx_offices_1;
                 colour: vanilla_ukts_office_color();
             }
@@ -14775,7 +14849,7 @@ if (enable_temperate || enable_uktownset) {
         if (additional_colors == 1)
         {
             graphics {
-                construction_anim: switch_2_variants;
+                construction_anim: switch_4_variants;
                 default: callback_ukts_ogfx_offices_1;
                 colour: random_modest_struct_color();
             }
@@ -14783,7 +14857,7 @@ if (enable_temperate || enable_uktownset) {
         if (additional_colors == 2)
         {
             graphics {
-                construction_anim: switch_2_variants;
+                construction_anim: switch_4_variants;
                 default: callback_ukts_ogfx_offices_1;
                 colour: random_struct_color();
             }

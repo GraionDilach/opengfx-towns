@@ -779,6 +779,11 @@ switch (FEAT_HOUSES, PARENT, has_population, required, population >= required) {
 switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) { return; }
 
 // building classes:
+
+// NOTE THAT IF THE CLASS IS BEING USED WITH OTHER_CLASS_COUNT_TOWN/MAP
+// IT NEEDS AN EXPLICIT HOUSE WITH A FIXED HOUSE ID, BECAUSE OCCT/OCCM
+// TAKES HOUSE IDS AS PARAM, NOT CLASS IDS!
+
 // 1 temperate church
 // 2 temperate cathedral
 // 3 arctic church
@@ -908,6 +913,129 @@ switch (FEAT_HOUSES, SELF, petrol_station_construction_check, (
     && has_population((same_class_count_town) * 750)
     && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
+
+/// ============================================
+/// ==== Dummies for other_class_count_town ====
+/// ==== These are fixed house IDs with ========
+/// ==== their class ID for simplification =====
+/// ==== and permanently enabled with a ========
+/// ==== bitmask(7) availability mask to =======
+/// ==== generate an invalid mask so that ======
+/// ==== they remain hidden in the Place =======
+/// ==== houses list. ==========================
+/// ============================================
+
+spriteset (spriteset_null) {
+    sprite_null()
+}
+
+spritelayout spritelayout_null {
+    ground {
+        sprite: GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite:  spriteset_null;
+    }
+}
+
+item(FEAT_HOUSES, class_1, 1) {
+    property {
+        substitute: 0x09;
+        building_class: 1;
+        availability_mask: [
+            bitmask(7),
+            bitmask(7)
+        ];
+    }
+    graphics {
+        default: spritelayout_null;
+    }
+}
+
+item(FEAT_HOUSES, class_2, 2) {
+    property {
+        substitute: 0x09;
+        building_class: 2;
+        availability_mask: [
+            bitmask(7),
+            bitmask(7)
+        ];
+    }
+    graphics {
+        default: spritelayout_null;
+    }
+}
+
+item(FEAT_HOUSES, class_3, 3) {
+    property {
+        substitute: 0x09;
+        building_class: 3;
+        availability_mask: [
+            bitmask(7),
+            bitmask(7)
+        ];
+    }
+    graphics {
+        default: spritelayout_null;
+    }
+}
+
+item(FEAT_HOUSES, class_4, 4) {
+    property {
+        substitute: 0x09;
+        building_class: 4;
+        availability_mask: [
+            bitmask(7),
+            bitmask(7)
+        ];
+    }
+    graphics {
+        default: spritelayout_null;
+    }
+}
+
+item(FEAT_HOUSES, class_5, 5) {
+    property {
+        substitute: 0x09;
+        building_class: 5;
+        availability_mask: [
+            bitmask(7),
+            bitmask(7)
+        ];
+    }
+    graphics {
+        default: spritelayout_null;
+    }
+}
+
+item(FEAT_HOUSES, class_10, 10) {
+    property {
+        substitute: 0x09;
+        building_class: 10;
+        availability_mask: [
+            bitmask(7),
+            bitmask(7)
+        ];
+    }
+    graphics {
+        default: spritelayout_null;
+    }
+}
+
+item(FEAT_HOUSES, class_11, 11) {
+    property {
+        substitute: 0x09;
+        building_class: 11;
+        availability_mask: [
+            bitmask(7),
+            bitmask(7)
+        ];
+    }
+    graphics {
+        default: spritelayout_null;
+    }
+}
+
 
 /// =================
 /// ==== OpenGFX ====

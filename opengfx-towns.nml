@@ -257,91 +257,117 @@ switch (FEAT_HOUSES, SELF, folly_castle_tourist_production, getbits(extra_callba
 //company colors are redefined from scratch to be independent against NewCC
 PALETTE_COMPANY_COLORS = reserve_sprites(29);
 replace( PALETTE_COMPANY_COLORS ){
+    // PALETTE_CC_DARK_BLUE
     recolour_sprite {
         0xC6..0xCD: 0xC6..0xCD;
     }
+    // PALETTE_CC_PALE_GREEN
     recolour_sprite {
         0xC6..0xCD: 0x60..0x67;
     }
+    // PALETTE_CC_PINK
     recolour_sprite {
         0xC6..0xCD: 0x2A..0x31;
     }
+    // PALETTE_CC_YELLOW
     recolour_sprite {
         0xC6..0xCD: 0x3E..0x45;
     }
+    // PALETTE_CC_RED
     recolour_sprite {
         0xC6..0xCA: 0xB3..0xB7;
         0xCB..0xCD: 0xA4..0xA6;
     }
+    // PALETTE_CC_LIGHT_BLUE
     recolour_sprite {
         0xC6..0xCD: 0x9A..0xA1;
     }
+    // PALETTE_CC_GREEN
     recolour_sprite {
         0xC6..0xC9: 0x52..0x55;
         0xCA..0xCD: 0xCE..0xD1;
     }
+    // PALETTE_CC_DARK_GREEN
     recolour_sprite {
         0xC6: 0x60;
         0xC7..0xCD: 0x59..0x5F;
     }
+    // PALETTE_CC_BLUE
     recolour_sprite {
         0xC6..0xCD: 0x92..0x99;
     }
+    // PALETTE_CC_CREAM
     recolour_sprite {
         0xC6..0xCD: 0x72..0x79;
     }
+    // PALETTE_CC_MAUVE
     recolour_sprite {
         0xC6..0xCD: 0x80..0x87;
     }
+    // PALETTE_CC_PURPLE
     recolour_sprite {
         0xC6: 0xAA;
         0xC7..0xCD: 0x89..0x8F;
     }
+    // PALETTE_CC_ORANGE
     recolour_sprite {
         0xC6: 0x40;
         0xC7..0xCC: 0xC0..0xC5;
         0xCD: 0x27;
     }
+    // PALETTE_CC_BROWN
     recolour_sprite {
         0xC6..0xC7: 0x35..0x36;
         0xC8..0xCD: 0x22..0x27;
     }
+    // PALETTE_CC_GREY
     recolour_sprite {
         0xC6..0xCD: 0x04..0x0B;
     }
+    // PALETTE_CC_WHITE
     recolour_sprite {
         0xC6..0xCD: 0x08..0x0F;
     }
+    // PALETTE_NEWCC_BRIGHT_DARK_BLUE
     recolour_sprite {
         0xC6..0xCD: 0x90..0x97;
     }
+    // PALETTE_NEWCC_BRIGHT_PINK
     recolour_sprite {
         0xC6..0xC8: 0xB4..0xB6;
         0xC9..0xCD: 0xA3..0xA7;
     }
+    // PALETTE_NEWCC_BRIGHT_YELLOW
     recolour_sprite {
         0xC6..0xCD: 0x3E..0x45;
     }
+    // PALETTE_NEWCC_BRIGHT_RED
     recolour_sprite {
         0xC6..0xCC: 0xB2..0xB8;
         0xCD: 0xA4;
     }
+    // PALETTE_NEWCC_BRIGHT_DARK_GREEN
     recolour_sprite {
         0xC6..0xCD: 0x50..0x57;
     }
+    // PALETTE_NEWCC_BRIGHT_BLACK
     recolour_sprite {
         0xC6: 0x01;
         0xC7..0xCD: 0x01..0x07;
     }
+    // PALETTE_NEWCC_BRIGHT_CREAM
     recolour_sprite {
         0xC6..0xCD: 0x20..0x27;
     }
+    // PALETTE_NEWCC_BRIGHT_MAUVE
     recolour_sprite {
         0xC6..0xCD: 0x47..0x4E;
     }
+    // PALETTE_NEWCC_BRIGHT_PURPLE
     recolour_sprite {
         0xC6..0xCD: 0xAA..0xB1;
     }
+    // PALETTE_NEWCC_BRIGHT_ORANGE
     recolour_sprite {
         0xC6..0xC9: 0xB8..0xBB;
         0xCA: 0xC2;
@@ -349,12 +375,15 @@ replace( PALETTE_COMPANY_COLORS ){
         0xCC: 0xC3;
         0xCD: 0xC4;
     }
+    // PALETTE_NEWCC_BRIGHT_BROWN
     recolour_sprite {
         0xC6..0xCD: 0x3C..0x43;
     }
+    // PALETTE_NEWCC_CLASSIC_BROWN
     recolour_sprite {
         0xC6..0xCD: 0x68..0x6F;
     }
+    // PALETTE_NEWCC_CLASSIC_WHITE
     recolour_sprite {
         0xC6..0xCD: 0x06..0x0D;
     }
@@ -494,36 +523,48 @@ random_switch (FEAT_HOUSES, SELF, modest_skyscraper_color_wo_mauve) {
 
 PALETTE_NEWSTRUCTS = reserve_sprites(12);
 replace( PALETTE_NEWSTRUCTS ) {
+    // PALETTE_STRUCT_BLUE
 	recolour_sprite {
 		0x46: 0x90;
 		0x47..0x4F: 0x90..0x98;
 	}
+    // PALETTE_STRUCT_BROWN
 	recolour_sprite {
 		0x46..0x4D: 0x68..0x6F;
 		0x4E..0x4F: 0x25..0x26;
 	}
+    // PALETTE_STRUCT_WHITE
 	recolour_sprite {
+        0x46: 0x01;
 		0x47: 0x03;
 		0x48: 0x05;
 		0x49: 0x07;
 		0x4A: 0x08;
 		0x4B..0x4F: 0x0A..0x0E;
 	}
+    // PALETTE_STRUCT_RED
 	recolour_sprite {
+        0x46: 0x01;
 		0x47..0x4A: 0xB2..0xB5;
 		0x4B..0x4F: 0xA2..0xA6;
 	}
+    // PALETTE_STRUCT_GREEN
 	recolour_sprite {
+        0x46: 0x01;
 		0x47: 0x60;
 		0x48..0x4F: 0x60..0x67;
 	}
+    // PALETTE_STRUCT_CONCRETE
 	recolour_sprite {
+        0x46: 0x01;
 		0x47..0x4E: 0x10..0x17;
 		0x4F: 0x0E;
 	}
+    // PALETTE_STRUCT_YELLOW
 	recolour_sprite {
 		0x46..0x4F: 0x3C..0x45;
 	}
+    // PALETTE_NEWSTRUCT_CRASH
     recolour_sprite {
         0x46: 0x01;
         0x47: 0x02;
@@ -536,22 +577,26 @@ replace( PALETTE_NEWSTRUCTS ) {
         0x4E: 0x07;
         0x4F: 0x08;
     }
+    // PALETTE_NEWSTRUCT_CREAM
     recolour_sprite {
         0x46: 0x01;
         0x47: 0x72;
         0x48..0x4F: 0x72..0x79;
     }
+    // PALETTE_NEWSTRUCT_MAUVE
     recolour_sprite {
         0x46: 0x01;
         0x47: 0x80;
         0x48..0x4F: 0x80..0x87;
     }
+    // PALETTE_NEWSTRUCT_BLACK
     recolour_sprite {
         0x46: 0x01;
         0x47: 0x01;
         0x48: 0x01;
         0x49..0x4F: 0x01..0x07;
     }
+    // PALETTE_NEWSTRUCT_BROWN2
     recolour_sprite {
         0x46: 0x01;
         0x47: 0x20;

@@ -19615,6 +19615,84 @@ if (enable_uktownset) {
     }
 }
 
+spriteset (ukts_offices_plus_1_ground) {
+    [ -32, -59, "uktownset22plus/offices_plus_1-ground.png"]
+}
+
+spriteset (ukts_offices_plus_1_building) {
+    sprite_null()
+    [ -32, -59, "uktownset22plus/offices_plus_1-stage1.png"]
+    [ -32, -59, "uktownset22plus/offices_plus_1.png"]
+}
+
+spriteset (ukts_offices_plus_1_building_snow) {
+    sprite_null()
+    [ -32, -59, "uktownset22plus/offices_plus_1-stage1.png"]
+    [ -32, -59, "uktownset22plus/offices_plus_1-snow.png"]
+}
+
+spritelayout sprite_ukts_offices_plus_1 {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: ukts_offices_plus_1_ground;
+        always_draw: 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_offices_plus_1_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ukts_offices_plus_1_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_uktownset) {
+    item(FEAT_HOUSES, item_ukts_offices_plus_1) {
+        property {
+            substitute: 0x04;
+            name: TTD_STR_TOWN_BUILDING_NAME_OFFICES_1;
+            population: 72;
+            mail_multiplier: 20;
+            years_available: [0, 65535];
+            accepted_cargos: [[PASS, 6], [MAIL, 4], [GOOD, 3]];
+            availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        if (additional_colors == 0)
+        {
+            graphics {
+                default: sprite_ukts_offices_plus_1;
+                colour: vanilla_ukts_office_color();
+            }
+        }
+        if (additional_colors == 1)
+        {
+            graphics {
+                default: sprite_ukts_offices_plus_1;
+                colour: random_modest_struct_color();
+            }
+        }
+        if (additional_colors == 2)
+        {
+            graphics {
+                default: sprite_ukts_offices_plus_1;
+                colour: random_struct_color();
+            }
+        }
+    }
+}
+
 spriteset (ukts_school_1_N_ground_temperate) {
     [  10,  210,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]
     [  10,  110,  64,  59, -31, -28, "uktownset22/school_ground_split.png"]

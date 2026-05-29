@@ -683,6 +683,8 @@ random_switch (FEAT_HOUSES, SELF, vanilla_ukts_office_color) {
     1: return PALETTE_NEWSTRUCT_BROWN;
     1: return PALETTE_NEWSTRUCT_WHITE;
     1: return PALETTE_NEWSTRUCT_CONCRETE;
+    1: return PALETTE_NEWSTRUCT_CREAM;
+    1: return PALETTE_NEWSTRUCT_BROWN2;
 }
 
 random_switch (FEAT_HOUSES, SELF, modest_shops_and_offices_3_color) {

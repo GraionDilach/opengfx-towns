@@ -521,7 +521,7 @@ random_switch (FEAT_HOUSES, SELF, modest_skyscraper_color_wo_mauve) {
     1: return PALETTE_NEWCC_CLASSIC_WHITE;
 }
 
-PALETTE_NEWSTRUCTS = reserve_sprites(13);
+PALETTE_NEWSTRUCTS = reserve_sprites(14);
 replace( PALETTE_NEWSTRUCTS ) {
     // PALETTE_STRUCT_BLUE
 	recolour_sprite {
@@ -608,6 +608,13 @@ replace( PALETTE_NEWSTRUCTS ) {
         0x46: 0x01;
         0x47..0x4F: 0x29..0x31;
     }
+    // PALETTE_NEWSTRUCT_GREEN2
+    recolour_sprite {
+        0x46: 0x01;
+		0x47: 0x60;
+        0x48: 0x60;
+        0x49..0x4F: 0x59..0x5F;
+    }
 }
 
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BLUE,     (PALETTE_NEWSTRUCTS +  0)) { return ;}
@@ -623,6 +630,7 @@ switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_MAUVE,    (PALETTE_NEWSTRUCTS +  9)
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BLACK,    (PALETTE_NEWSTRUCTS + 10)) { return ;}
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BROWN2,   (PALETTE_NEWSTRUCTS + 11)) { return ;}
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_PINK,     (PALETTE_NEWSTRUCTS + 12)) { return ;}
+switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_GREEN2,   (PALETTE_NEWSTRUCTS + 13)) { return ;}
 
 random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_USE_DEFAULT;
@@ -639,6 +647,7 @@ random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_NEWSTRUCT_BLACK;
     1: return PALETTE_NEWSTRUCT_BROWN2;
     1: return PALETTE_NEWSTRUCT_PINK;
+    1: return PALETTE_NEWSTRUCT_GREEN2;
 }
 
 random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
@@ -652,6 +661,7 @@ random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
     1: return PALETTE_NEWSTRUCT_MAUVE;
     1: return PALETTE_NEWSTRUCT_BROWN2;
     1: return PALETTE_NEWSTRUCT_PINK;
+    1: return PALETTE_NEWSTRUCT_GREEN2;
 }
 
 // drop MAUVE on some building's modest because that's what the windows use
@@ -665,6 +675,7 @@ random_switch (FEAT_HOUSES, SELF, random_modest_struct_color_wo_mauve) {
     1: return PALETTE_NEWSTRUCT_CREAM;
     1: return PALETTE_NEWSTRUCT_BROWN2;
     1: return PALETTE_NEWSTRUCT_PINK;
+    1: return PALETTE_NEWSTRUCT_GREEN2;
 }
 
 random_switch (FEAT_HOUSES, SELF, vanilla_ukts_office_color) {
@@ -686,6 +697,7 @@ random_switch (FEAT_HOUSES, SELF, modest_shops_and_offices_3_color) {
     1: return PALETTE_NEWSTRUCT_MAUVE;
     1: return PALETTE_NEWSTRUCT_BROWN2;
     1: return PALETTE_NEWSTRUCT_PINK;
+    1: return PALETTE_NEWSTRUCT_GREEN2;
 }
 
 // drop yellow, because it's just too bright on this one
@@ -703,6 +715,7 @@ random_switch (FEAT_HOUSES, SELF, ported_toyland_tall_office_block_2_random_stru
     1: return PALETTE_NEWSTRUCT_BLACK;
     1: return PALETTE_NEWSTRUCT_BROWN2;
     1: return PALETTE_NEWSTRUCT_PINK;
+    1: return PALETTE_NEWSTRUCT_GREEN2;
 }
 
 // null sprite

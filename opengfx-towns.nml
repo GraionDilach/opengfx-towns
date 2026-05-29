@@ -521,7 +521,7 @@ random_switch (FEAT_HOUSES, SELF, modest_skyscraper_color_wo_mauve) {
     1: return PALETTE_NEWCC_CLASSIC_WHITE;
 }
 
-PALETTE_NEWSTRUCTS = reserve_sprites(12);
+PALETTE_NEWSTRUCTS = reserve_sprites(13);
 replace( PALETTE_NEWSTRUCTS ) {
     // PALETTE_STRUCT_BLUE
 	recolour_sprite {
@@ -603,6 +603,11 @@ replace( PALETTE_NEWSTRUCTS ) {
         0x47: 0x20;
         0x48..0x4F: 0x20..0x27;
     }
+    // PALETTE_NEWSTRUCT_PINK
+    recolour_sprite {
+        0x46: 0x01;
+        0x47..0x4F: 0x29..0x31;
+    }
 }
 
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BLUE,     (PALETTE_NEWSTRUCTS +  0)) { return ;}
@@ -617,6 +622,7 @@ switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_CREAM,    (PALETTE_NEWSTRUCTS +  8)
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_MAUVE,    (PALETTE_NEWSTRUCTS +  9)) { return ;}
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BLACK,    (PALETTE_NEWSTRUCTS + 10)) { return ;}
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BROWN2,   (PALETTE_NEWSTRUCTS + 11)) { return ;}
+switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_PINK,     (PALETTE_NEWSTRUCTS + 12)) { return ;}
 
 random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_USE_DEFAULT;
@@ -632,6 +638,7 @@ random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_NEWSTRUCT_MAUVE;
     1: return PALETTE_NEWSTRUCT_BLACK;
     1: return PALETTE_NEWSTRUCT_BROWN2;
+    1: return PALETTE_NEWSTRUCT_PINK;
 }
 
 random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
@@ -644,6 +651,7 @@ random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
     1: return PALETTE_NEWSTRUCT_CREAM;
     1: return PALETTE_NEWSTRUCT_MAUVE;
     1: return PALETTE_NEWSTRUCT_BROWN2;
+    1: return PALETTE_NEWSTRUCT_PINK;
 }
 
 // drop MAUVE on some building's modest because that's what the windows use
@@ -656,6 +664,45 @@ random_switch (FEAT_HOUSES, SELF, random_modest_struct_color_wo_mauve) {
     1: return PALETTE_NEWSTRUCT_CRASH;
     1: return PALETTE_NEWSTRUCT_CREAM;
     1: return PALETTE_NEWSTRUCT_BROWN2;
+    1: return PALETTE_NEWSTRUCT_PINK;
+}
+
+random_switch (FEAT_HOUSES, SELF, vanilla_ukts_office_color) {
+    1: return PALETTE_USE_DEFAULT;
+    1: return PALETTE_NEWSTRUCT_BROWN;
+    1: return PALETTE_NEWSTRUCT_WHITE;
+    1: return PALETTE_NEWSTRUCT_CONCRETE;
+}
+
+random_switch (FEAT_HOUSES, SELF, modest_shops_and_offices_3_color) {
+    1: return PALETTE_USE_DEFAULT;
+    1: return PALETTE_NEWSTRUCT_BLUE;
+    1: return PALETTE_NEWSTRUCT_BROWN;
+    1: return PALETTE_NEWSTRUCT_WHITE;
+    1: return PALETTE_NEWSTRUCT_GREEN;
+    1: return PALETTE_NEWSTRUCT_CONCRETE;
+    1: return PALETTE_NEWSTRUCT_CRASH;
+    1: return PALETTE_NEWSTRUCT_CREAM;
+    1: return PALETTE_NEWSTRUCT_MAUVE;
+    1: return PALETTE_NEWSTRUCT_BROWN2;
+    1: return PALETTE_NEWSTRUCT_PINK;
+}
+
+// drop yellow, because it's just too bright on this one
+random_switch (FEAT_HOUSES, SELF, ported_toyland_tall_office_block_2_random_struct_color) {
+    1: return PALETTE_USE_DEFAULT;
+    1: return PALETTE_NEWSTRUCT_BLUE;
+    1: return PALETTE_NEWSTRUCT_BROWN;
+    1: return PALETTE_NEWSTRUCT_WHITE;
+    1: return PALETTE_NEWSTRUCT_RED;
+    1: return PALETTE_NEWSTRUCT_GREEN;
+    1: return PALETTE_NEWSTRUCT_CONCRETE;
+    1: return PALETTE_NEWSTRUCT_CRASH;
+    1: return PALETTE_NEWSTRUCT_CREAM;
+    1: return PALETTE_NEWSTRUCT_MAUVE;
+    1: return PALETTE_NEWSTRUCT_BLACK;
+    1: return PALETTE_NEWSTRUCT_BROWN2;
+    1: return PALETTE_NEWSTRUCT_PINK;
 }
 
 // null sprite
@@ -14878,13 +14925,6 @@ if (enable_uktownset || enable_temperate) {
     }
 }
 
-random_switch (FEAT_HOUSES, SELF, vanilla_ukts_office_color) {
-    1: return PALETTE_USE_DEFAULT;
-    1: return PALETTE_NEWSTRUCT_BROWN;
-    1: return PALETTE_NEWSTRUCT_WHITE;
-    1: return PALETTE_NEWSTRUCT_CONCRETE;
-}
-
 spriteset (ukts_ogfx_offices_1a_ground) {
     [ -32, -56, "ogfxplus/ukts_ogfx_offices_1a-ground.png"]
 }
@@ -16605,19 +16645,6 @@ random_switch (FEAT_HOUSES, SELF, shops_and_offices_3_color) {
     1: return PALETTE_USE_DEFAULT;
     1: return PALETTE_NEWSTRUCT_BLUE;
     1: return PALETTE_NEWSTRUCT_WHITE;
-}
-
-random_switch (FEAT_HOUSES, SELF, modest_shops_and_offices_3_color) {
-    1: return PALETTE_USE_DEFAULT;
-    1: return PALETTE_NEWSTRUCT_BLUE;
-    1: return PALETTE_NEWSTRUCT_BROWN;
-    1: return PALETTE_NEWSTRUCT_WHITE;
-    1: return PALETTE_NEWSTRUCT_GREEN;
-    1: return PALETTE_NEWSTRUCT_CONCRETE;
-    1: return PALETTE_NEWSTRUCT_CRASH;
-    1: return PALETTE_NEWSTRUCT_CREAM;
-    1: return PALETTE_NEWSTRUCT_MAUVE;
-    1: return PALETTE_NEWSTRUCT_BROWN2;
 }
 
 random_switch (FEAT_HOUSES, SELF, color_ukts_ogfx_offices_18_mode_0_fallback) {
@@ -40927,22 +40954,6 @@ spritelayout sprite_ported_toyland_tall_office_block_2 {
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
-}
-
-// drop yellow, because it's just too bright on this one
-random_switch (FEAT_HOUSES, SELF, ported_toyland_tall_office_block_2_random_struct_color) {
-    1: return PALETTE_USE_DEFAULT;
-    1: return PALETTE_NEWSTRUCT_BLUE;
-    1: return PALETTE_NEWSTRUCT_BROWN;
-    1: return PALETTE_NEWSTRUCT_WHITE;
-    1: return PALETTE_NEWSTRUCT_RED;
-    1: return PALETTE_NEWSTRUCT_GREEN;
-    1: return PALETTE_NEWSTRUCT_CONCRETE;
-    1: return PALETTE_NEWSTRUCT_CRASH;
-    1: return PALETTE_NEWSTRUCT_CREAM;
-    1: return PALETTE_NEWSTRUCT_MAUVE;
-    1: return PALETTE_NEWSTRUCT_BLACK;
-    1: return PALETTE_NEWSTRUCT_BROWN2;
 }
 
 if (enable_converted_toyland) {

@@ -524,46 +524,46 @@ random_switch (FEAT_HOUSES, SELF, modest_skyscraper_color_wo_mauve) {
 PALETTE_NEWSTRUCTS = reserve_sprites(14);
 replace( PALETTE_NEWSTRUCTS ) {
     // PALETTE_STRUCT_BLUE
-	recolour_sprite {
-		0x46: 0x90;
-		0x47..0x4F: 0x90..0x98;
-	}
+    recolour_sprite {
+        0x46: 0x90;
+        0x47..0x4F: 0x90..0x98;
+    }
     // PALETTE_STRUCT_BROWN
-	recolour_sprite {
-		0x46..0x4D: 0x68..0x6F;
-		0x4E..0x4F: 0x25..0x26;
-	}
+    recolour_sprite {
+        0x46..0x4D: 0x68..0x6F;
+        0x4E..0x4F: 0x25..0x26;
+    }
     // PALETTE_STRUCT_WHITE
-	recolour_sprite {
+    recolour_sprite {
         0x46: 0x01;
-		0x47: 0x03;
-		0x48: 0x05;
-		0x49: 0x07;
-		0x4A: 0x08;
-		0x4B..0x4F: 0x0A..0x0E;
-	}
+        0x47: 0x03;
+        0x48: 0x05;
+        0x49: 0x07;
+        0x4A: 0x08;
+        0x4B..0x4F: 0x0A..0x0E;
+    }
     // PALETTE_STRUCT_RED
-	recolour_sprite {
+    recolour_sprite {
         0x46: 0x01;
-		0x47..0x4A: 0xB2..0xB5;
-		0x4B..0x4F: 0xA2..0xA6;
-	}
+        0x47..0x4A: 0xB2..0xB5;
+        0x4B..0x4F: 0xA2..0xA6;
+    }
     // PALETTE_STRUCT_GREEN
-	recolour_sprite {
+    recolour_sprite {
         0x46: 0x01;
-		0x47: 0x60;
-		0x48..0x4F: 0x60..0x67;
-	}
+        0x47: 0x60;
+        0x48..0x4F: 0x60..0x67;
+    }
     // PALETTE_STRUCT_CONCRETE
-	recolour_sprite {
+    recolour_sprite {
         0x46: 0x01;
-		0x47..0x4E: 0x10..0x17;
-		0x4F: 0x0E;
-	}
+        0x47..0x4E: 0x10..0x17;
+        0x4F: 0x0E;
+    }
     // PALETTE_STRUCT_YELLOW
-	recolour_sprite {
-		0x46..0x4F: 0x3C..0x45;
-	}
+    recolour_sprite {
+        0x46..0x4F: 0x3C..0x45;
+    }
     // PALETTE_NEWSTRUCT_CRASH
     recolour_sprite {
         0x46: 0x01;
@@ -611,7 +611,7 @@ replace( PALETTE_NEWSTRUCTS ) {
     // PALETTE_NEWSTRUCT_GREEN2
     recolour_sprite {
         0x46: 0x01;
-		0x47: 0x60;
+        0x47: 0x60;
         0x48: 0x60;
         0x49..0x4F: 0x59..0x5F;
     }
@@ -823,49 +823,49 @@ random_switch (FEAT_HOUSES, SELF, switch_16_variants) {
 
 //secondary switch function, for house on 'inner corners' diagonally next to road
 switch (FEAT_HOUSES, SELF, switch_house_orientation_roadinnercorner, [
-	1 * (nearby_tile_class( 1,  1) == TILE_CLASS_ROAD) + 1 * (nearby_tile_class( 1,  1) == TILE_CLASS_STATION) +
-	2 * (nearby_tile_class( 1, -1) == TILE_CLASS_ROAD) + 2 * (nearby_tile_class( 1, -1) == TILE_CLASS_STATION) +
-	4 * (nearby_tile_class(-1, -1) == TILE_CLASS_ROAD) + 4 * (nearby_tile_class(-1, -1) == TILE_CLASS_STATION) +
-	8 * (nearby_tile_class(-1,  1) == TILE_CLASS_ROAD) + 8 * (nearby_tile_class(-1,  1) == TILE_CLASS_STATION)
+    1 * (nearby_tile_class( 1,  1) == TILE_CLASS_ROAD) + 1 * (nearby_tile_class( 1,  1) == TILE_CLASS_STATION) +
+    2 * (nearby_tile_class( 1, -1) == TILE_CLASS_ROAD) + 2 * (nearby_tile_class( 1, -1) == TILE_CLASS_STATION) +
+    4 * (nearby_tile_class(-1, -1) == TILE_CLASS_ROAD) + 4 * (nearby_tile_class(-1, -1) == TILE_CLASS_STATION) +
+    8 * (nearby_tile_class(-1,  1) == TILE_CLASS_ROAD) + 8 * (nearby_tile_class(-1,  1) == TILE_CLASS_STATION)
 ]) {
-	//One neighbouring road
-	1: return 5;
-	2: return 6;
-	4: return 7;
-	8: return 8;
+    //One neighbouring road
+    1: return 5;
+    2: return 6;
+    4: return 7;
+    8: return 8;
     return 9;
 }
 
 //primary switch function, for house next to road
 switch (FEAT_HOUSES, SELF, switch_house_orientation_8road, [
-	1 * (nearby_tile_class( 0,  1) == TILE_CLASS_ROAD) + 1 * (nearby_tile_class( 0,  1) == TILE_CLASS_STATION) +
-	2 * (nearby_tile_class( 1,  0) == TILE_CLASS_ROAD) + 2 * (nearby_tile_class( 1,  0) == TILE_CLASS_STATION) +
-	4 * (nearby_tile_class( 0, -1) == TILE_CLASS_ROAD) + 4 * (nearby_tile_class( 0, -1) == TILE_CLASS_STATION) +
-	8 * (nearby_tile_class(-1,  0) == TILE_CLASS_ROAD) + 8 * (nearby_tile_class(-1,  0) == TILE_CLASS_STATION)
+    1 * (nearby_tile_class( 0,  1) == TILE_CLASS_ROAD) + 1 * (nearby_tile_class( 0,  1) == TILE_CLASS_STATION) +
+    2 * (nearby_tile_class( 1,  0) == TILE_CLASS_ROAD) + 2 * (nearby_tile_class( 1,  0) == TILE_CLASS_STATION) +
+    4 * (nearby_tile_class( 0, -1) == TILE_CLASS_ROAD) + 4 * (nearby_tile_class( 0, -1) == TILE_CLASS_STATION) +
+    8 * (nearby_tile_class(-1,  0) == TILE_CLASS_ROAD) + 8 * (nearby_tile_class(-1,  0) == TILE_CLASS_STATION)
 ]) {
-	//One neighbouring road
-	1: return 1;
-	2: return 2;
-	4: return 3;
-	8: return 4;
-	//Two neighbouring roads
-	//... adjacent
-	3: return 1;
-	6: return 2;
-	12: return 3;
-	9: return 4;
-	//... opposite
-	5: return 1;
-	10: return 2;
-	//Three neighbouring roads
-	7: return 2;
-	14: return 3;
-	13: return 4;
-	11: return 1;
-	//Four neighbouring roads
-	15: return 9;
-	//No orthogonal adjacent road, so check diagonal adjacency
-	switch_house_orientation_roadinnercorner;
+    //One neighbouring road
+    1: return 1;
+    2: return 2;
+    4: return 3;
+    8: return 4;
+    //Two neighbouring roads
+    //... adjacent
+    3: return 1;
+    6: return 2;
+    12: return 3;
+    9: return 4;
+    //... opposite
+    5: return 1;
+    10: return 2;
+    //Three neighbouring roads
+    7: return 2;
+    14: return 3;
+    13: return 4;
+    11: return 1;
+    //Four neighbouring roads
+    15: return 9;
+    //No orthogonal adjacent road, so check diagonal adjacency
+    switch_house_orientation_roadinnercorner;
 }
 
 switch (FEAT_HOUSES, SELF, switch_check_road_4_faced, switch_house_orientation_8road()) {
@@ -5368,33 +5368,33 @@ spritelayout sprite_ukts_church_small_1d {
 PALETTE_OGFX_CHURCH_RED = reserve_sprites(1);
 replace( PALETTE_OGFX_CHURCH_RED ) {
     recolour_sprite {
-		0x69: 0x46;
-		0x6A: 0x47;
-		0x6D: 0x4A;
-		0x6E: 0x4B;
-		0x72: 0x49;
-		0x74: 0x4C;
-		0x76: 0x4D;
-		0x77: 0x4E;
-		0x78: 0x4F;
-		0x7B: 0x48;
-	}
+        0x69: 0x46;
+        0x6A: 0x47;
+        0x6D: 0x4A;
+        0x6E: 0x4B;
+        0x72: 0x49;
+        0x74: 0x4C;
+        0x76: 0x4D;
+        0x77: 0x4E;
+        0x78: 0x4F;
+        0x7B: 0x48;
+    }
 }
 
 PALETTE_OGFX_CHURCH_CREAM = reserve_sprites(1);
 replace( PALETTE_OGFX_CHURCH_CREAM ) {
     recolour_sprite {
-		0x69: 0x02;
-		0x6A: 0x21;
-		0x6D: 0x23;
-		0x6E: 0x24;
-		0x72: 0x22;
-		0x74: 0x24;
-		0x76: 0x25;
-		0x77: 0x26;
-		0x78: 0x27;
-		0x7B: 0x20;
-	}
+        0x69: 0x02;
+        0x6A: 0x21;
+        0x6D: 0x23;
+        0x6E: 0x24;
+        0x72: 0x22;
+        0x74: 0x24;
+        0x76: 0x25;
+        0x77: 0x26;
+        0x78: 0x27;
+        0x7B: 0x20;
+    }
 }
 
 switch (FEAT_HOUSES, SELF, ogfx_church_color, animation_frame) {

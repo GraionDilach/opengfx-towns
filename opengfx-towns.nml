@@ -42972,34 +42972,55 @@ if (enable_hq && enable_toyland > 0) {
     }
 }
 
+spriteset (ported_toyland_hq_stage_2_ground) {
+    [ -31, -29, "gfx/hqtower2-ground-stage0.png"]
+    [ -31, -29, "gfx/hqtower2-ground-stage1.png"]
+    [ -31, -29, "gfx/hqtower2-ground.png"]
+}
+
 spriteset (ported_toyland_hq_stage_2) {
     sprite_null()
-    [ -31,   -29, "gfx/hqtower2.png"]
+    [ -31, -29, "gfx/hqtower2-stage1.png"]
+    [ -31, -29, "gfx/hqtower2.png"]
+}
+
+spriteset (ported_toyland_hq_stage_2_snow) {
+    sprite_null()
+    [ -31, -29, "gfx/hqtower2-stage1.png"]
+    [ -31, -29, "gfx/hqtower2-snow.png"]
 }
 
 spritelayout sprite_ported_toyland_small_hq {
     ground {
-        sprite: GROUNDSPRITE_CLEARED;
+        sprite: construction_state != 3
+            ? GROUNDSPRITE_CLEARED
+            : (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT)
+                ? GROUNDSPRITE_CONCRETE
+                : terrain_type == TILETYPE_SNOW
+                    ? GROUNDSPRITE_SNOW
+                    : terrain_type == TILETYPE_DESERT
+                        ? GROUNDSPRITE_DESERT
+                        : GROUNDSPRITE_NORMAL;
     }
     childsprite {
-        sprite: terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
-            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
-        hide_sprite: construction_state < 2 || (town_zone != TOWNZONE_EDGE && town_zone != TOWNZONE_OUTSKIRT);
-        always_draw: 1;
-    }
-    childsprite {
-        sprite: GROUNDSPRITE_CONCRETE;
-        hide_sprite: construction_state < 2 || town_zone == TOWNZONE_EDGE || town_zone == TOWNZONE_OUTSKIRT;
+        sprite: ported_toyland_hq_stage_2_ground;
         always_draw: 1;
     }
     building {
         sprite: ported_toyland_hq_stage_2;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ported_toyland_hq_stage_2_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
-if (enable_hq && enable_converted_toyland && 0) {
+if (enable_hq && enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_small_hq) {
         property {
             substitute: 0x3A;
@@ -43008,7 +43029,7 @@ if (enable_hq && enable_converted_toyland && 0) {
             building_class: 105;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (!cargotype_available("TOUR")) {

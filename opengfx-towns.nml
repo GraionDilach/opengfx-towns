@@ -40847,21 +40847,33 @@ if (enable_converted_toyland) {
 }
 
 spriteset (ported_toyland_house_2_ground) {
-    [  -28, -16, "gfx/4635-ground-stage0.png"]
-    [  -28, -16, "gfx/4635-ground.png"]
-    [  -28, -16, "gfx/4635-ground.png"]
+    [  -31, -21, "gfx/4635-ground-stage0.png"]
+    [  -31, -21, "gfx/4635-ground-stage1.png"]
+    [  -31, -21, "gfx/4635-ground.png"]
 }
 
 spriteset (ported_toyland_house_2a_building) {
     sprite_null()
-    [  -28, -16, "gfx/4635-stage1.png"]
-    [  -28, -16, "gfx/4635.png"]
+    [  -31, -21, "gfx/4635-stage1.png"]
+    [  -31, -21, "gfx/4635.png"]
 }
 
 spriteset (ported_toyland_house_2b_building) {
     sprite_null()
-    [  -28, -16, "gfx/4635v2-stage1.png"]
-    [  -28, -16, "gfx/4635v2.png"]
+    [  -31, -21, "gfx/4635v2-stage1.png"]
+    [  -31, -21, "gfx/4635v2.png"]
+}
+
+spriteset (ported_toyland_house_2a_building_snow) {
+    sprite_null()
+    [  -31, -21, "gfx/4635-stage1.png"]
+    [  -31, -21, "gfx/4635-snow.png"]
+}
+
+spriteset (ported_toyland_house_2b_building_snow) {
+    sprite_null()
+    [  -31, -21, "gfx/4635v2-stage1.png"]
+    [  -31, -21, "gfx/4635-snow.png"]
 }
 
 spritelayout sprite_ported_toyland_house_2a {
@@ -40876,6 +40888,13 @@ spritelayout sprite_ported_toyland_house_2a {
     }
     building {
         sprite: ported_toyland_house_2a_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ported_toyland_house_2a_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -40893,6 +40912,13 @@ spritelayout sprite_ported_toyland_house_2b {
     }
     building {
         sprite: ported_toyland_house_2b_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: ported_toyland_house_2b_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
@@ -40916,7 +40942,7 @@ if (enable_converted_toyland) {
             years_available: [0, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
         if (additional_colors < 2) {

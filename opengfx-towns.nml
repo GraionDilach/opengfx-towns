@@ -9975,8 +9975,9 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 1]];
             building_class: 20;
             years_available: [0, 65535];
+            probability: 4;
             availability_mask: [
-                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
@@ -23823,6 +23824,7 @@ if (enable_uktownset) {
             accepted_cargos: [[PASS, 2], [MAIL, 1], [FOOD, 1]];
             building_class: 21;
             years_available: [0, 65535];
+            probability: 4;
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -41908,8 +41910,9 @@ if (enable_bank) {
             local_authority_impact: 300;
             removal_cost_multiplier: 250;
             years_available: [0, 65535];
+            probability: 2;
             availability_mask: [
-                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
@@ -42003,6 +42006,7 @@ if (enable_bank) {
             local_authority_impact: 300;
             removal_cost_multiplier: 250;
             years_available: [0, 65535];
+            probability: 2;
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)

@@ -42742,6 +42742,73 @@ if (enable_hq) {
     }
 }
 
+spriteset (company_statue_building) {
+    sprite_null()
+    [   0,    0,  18,  35,  -8, -16, "gfx/2632-stage1.png"]
+    [ 530,  568,  18,  35,  -8, -16, "ogfx/temprtbuilds.png"] // 2632
+}
+
+spritelayout sprite_company_statue {
+    ground {
+         sprite: construction_state!=0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: company_statue_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spritelayout sprite_company_statue_on_bush {
+    ground {
+        sprite: construction_state == 0
+        ? GROUNDSPRITE_CLEARED
+        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : 4000;
+    }
+    building {
+        sprite: company_statue_building;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_hq) {
+    item(FEAT_HOUSES, item_company_statue) {
+        property {
+            substitute: 0x09;
+            building_class: 30;
+            availability_mask: [
+                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_company_statue;
+            construction_check: amenities_construction_check;
+            colour: random_company_color();
+        }
+    }
+}
+
+if (enable_hq) {
+    item(FEAT_HOUSES, item_company_statue_on_bush) {
+        property {
+            substitute: 0x09;
+            building_class: 30;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_company_statue_on_bush;
+            construction_check: amenities_construction_check;
+            colour: random_company_color();
+        }
+    }
+}
+
 spriteset (toyland_company_statue_building) {
     sprite_null()
     [   0,    0,  32,  70, -15, -46, "ogfxplus/t270-stage1.png"]

@@ -1501,10 +1501,14 @@ if (enable_temperate) {
 
 spriteset (statue_1_building) {
     sprite_null()
-//    sprite_null()
     [   0,    0,  22,  26,  -10, -5, "ogfxplus/statuebase.png"]
     [  18,   21,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
-//    [  18,   21,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
+}
+
+spriteset (statue_2_building) {
+    sprite_null()
+    [   0,     0,  22,  26,  -10, -5, "ogfxplus/statuebase.png"]
+    [ 545,   143,  22,  26,  -10, -5, "ogfx/statuefountain.png"]
 }
 
 spritelayout sprite_statue_1 {
@@ -1514,6 +1518,26 @@ spritelayout sprite_statue_1 {
     building {
         sprite: statue_1_building;
     }
+}
+
+spritelayout sprite_statue_2 {
+    ground {
+         sprite: construction_state!=0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: statue_2_building;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_statue_1_preview, switch_2_variants()) {
+    1: return sprite_statue_1;
+    2: return sprite_statue_2;
+}
+
+switch (FEAT_HOUSES, SELF, callback_statue_1, animation_frame) {
+    1: return sprite_statue_1;
+    2: return sprite_statue_2;
+    return  callback_statue_1_preview;
 }
 
 if (enable_temperate || enable_arctic || enable_tropic || enable_uktownset) {
@@ -1526,9 +1550,83 @@ if (enable_temperate || enable_arctic || enable_tropic || enable_uktownset) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
-        graphics {
-            default: sprite_statue_1;
-            construction_check: amenities_construction_check;
+            graphics {
+                default: sprite_statue_1;
+                construction_check: amenities_construction_check;
+            }
+        if (additional_colors == 0) {
+            graphics {
+                default: sprite_statue_1;
+                construction_check: amenities_construction_check;
+            }
+        }
+        if (additional_colors != 0) {
+            graphics {
+                default: callback_statue_1;
+                construction_anim: switch_2_variants;
+                construction_check: amenities_construction_check;
+            }
+        }
+    }
+}
+
+spritelayout sprite_statue_1_on_bush {
+    ground {
+        sprite: construction_state == 0
+        ? GROUNDSPRITE_CLEARED
+        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : 4000;
+    }
+    building {
+        sprite: statue_1_building;
+    }
+}
+
+spritelayout sprite_statue_2_on_bush {
+    ground {
+        sprite: construction_state == 0
+        ? GROUNDSPRITE_CLEARED
+        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : 4000;
+    }
+    building {
+        sprite: statue_2_building;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_statue_1_on_bush_preview, switch_2_variants()) {
+    1: return sprite_statue_1_on_bush;
+    2: return sprite_statue_2_on_bush;
+}
+
+switch (FEAT_HOUSES, SELF, callback_statue_1_on_bush, animation_frame) {
+    1: return sprite_statue_1_on_bush;
+    2: return sprite_statue_2_on_bush;
+    return  callback_statue_1_on_bush_preview;
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_statue_1_on_bush) {
+        property {
+            substitute: 0x09;
+            building_class: 30;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        if (additional_colors == 0) {
+            graphics {
+                default: sprite_statue_1_on_bush;
+                construction_check: amenities_construction_check;
+            }
+        }
+        if (additional_colors != 0) {
+            graphics {
+                default: callback_statue_1_on_bush;
+                construction_anim: switch_2_variants;
+                construction_check: amenities_construction_check;
+            }
         }
     }
 }
@@ -40522,96 +40620,6 @@ if (enable_32bpp_arctic_hotel) {
                 cargo_production: hotel_tourist_production;
                 protection: 1;
             }
-        }
-    }
-}
-
-spriteset (statue_2_building) {
-    sprite_null()
-    [   0,     0,  22,  26,  -10, -5, "ogfxplus/statuebase.png"]
-    [ 545,   143,  22,  26,  -10, -5, "ogfx/statuefountain.png"] // 1454
-}
-
-spritelayout sprite_statue_2 {
-    ground {
-         sprite: construction_state!=0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
-    }
-    building {
-        sprite: statue_2_building;
-    }
-}
-
-if (enable_misc) {
-    item(FEAT_HOUSES, item_statue_2) {
-        property {
-            substitute: 0x09;
-            building_class: 30;
-            availability_mask: [
-                bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_statue_2;
-            construction_check: amenities_construction_check;
-        }
-    }
-}
-
-spritelayout sprite_statue_1_on_bush {
-    ground {
-        sprite: construction_state == 0
-        ? GROUNDSPRITE_CLEARED
-        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
-        : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : 4000;
-    }
-    building {
-        sprite: statue_1_building;
-    }
-}
-
-if (enable_misc) {
-    item(FEAT_HOUSES, item_statue_1_on_bush) {
-        property {
-            substitute: 0x09;
-            building_class: 30;
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_statue_1_on_bush;
-            construction_check: amenities_construction_check;
-        }
-    }
-}
-
-spritelayout sprite_statue_2_on_bush {
-    ground {
-        sprite: construction_state == 0
-        ? GROUNDSPRITE_CLEARED
-        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
-        : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : 4000;
-    }
-    building {
-        sprite: statue_2_building;
-    }
-}
-
-if (enable_misc) {
-    item(FEAT_HOUSES, item_statue_2_bush) {
-        property {
-            substitute: 0x09;
-            building_class: 30;
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        graphics {
-            default: sprite_statue_2_on_bush;
-            construction_check: amenities_construction_check;
         }
     }
 }

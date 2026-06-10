@@ -1843,6 +1843,11 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
+        if (additional_colors == 0) {
+            graphics {
+                default: sprite_office_block_2;
+            }
+        }
         if (additional_colors == 1) {
             graphics {
                 default: sprite_office_block_2;

@@ -3198,7 +3198,7 @@ spriteset (church_2_ground) {
 spriteset (church_2_building) {
     sprite_null()
     [ -31, -13, "ogfxplus/4464.png"] // 4464
-    [   0,    0,  64,  87, -31, -56, "ogfx/base-4465-arctic-church.png"] // 4465
+    [   0,    0,  64,  87, -32, -56, "ogfx/base-4465-arctic-church.png"] // 4465
 }
 
 spriteset (church_2_building_snow) {

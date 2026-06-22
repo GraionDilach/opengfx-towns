@@ -41088,7 +41088,7 @@ spritelayout sprite_ported_toyland_house_6 {
     }
 }
 
-if (enable_converted_toyland && 0) {
+if (enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_house_6) {
         property {
             substitute: 0x1B; //0x61
@@ -41186,7 +41186,7 @@ spritelayout sprite_ported_toyland_shops_and_offices_2 {
     }
 }
 
-if (enable_converted_toyland && 0) {
+if (enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_shops_and_offices_2) {
         property {
             substitute: 0x69;
@@ -42466,7 +42466,7 @@ spritelayout sprite_radio_station_E {
     }
 }
 
-if (enable_misc && 0) {
+if (enable_misc) {
     item(FEAT_HOUSES, item_radio_station, -1, HOUSE_SIZE_1X2) {
         property {
             substitute: 0x42;
@@ -42993,7 +42993,7 @@ spritelayout sprite_boiler_station {
     }
 }
 
-if (enable_industries && 0) {
+if (enable_industries) {
     item(FEAT_HOUSES, item_boiler_station) {
         property {
             substitute: 0x12;
@@ -43405,7 +43405,7 @@ spritelayout sprite_ported_toyland_hq_stage_5_S {
     }
 }
 
-if (enable_hq && enable_converted_toyland && 0) {
+if (enable_hq && enable_converted_toyland) {
     item(FEAT_HOUSES, item_ported_toyland_hq_stage_5, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x28;

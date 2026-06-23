@@ -978,7 +978,7 @@ switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) { ret
 // 101 workshop (sawmill/farm derivates)
 // 102 courthouse
 // 103 UNUSED (was the other bank)
-// 104 boiler station
+// 104 UNUSED (was boiler station)
 // 105 folly castle (toyland HQs)
 // 106 garages (copper ore mine building), uses the workshop construction check
 // 107 factory (coal mine derivate)
@@ -1061,11 +1061,6 @@ switch (FEAT_HOUSES, SELF, folly_castle_construction_check, (
 switch (FEAT_HOUSES, SELF, lighthouse_construction_check, (
     !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
     && lighthouse_water_check()
-)) { return; }
-
-switch (FEAT_HOUSES, SELF, boiler_station_construction_check, (
-    has_population((same_class_count_town + 1) * 2500)
-    && !nearest_house_matching_criterion(15, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
 
 switch (FEAT_HOUSES, SELF, factory_construction_check, (
@@ -42997,42 +42992,6 @@ if (enable_hq && enable_toyland > 0) {
         graphics {
             default: sprite_toyland_company_statue_toyland;
             colour: random_company_color();
-        }
-    }
-}
-
-spriteset (boiler_station_building) {
-    [  -31,  -4, "gfx/2048.png"] // 2048, power station
-    [  -31, -26, "gfx/2049.png"] // 2049, power station
-    [  -31, -33, "gfx/2050.png"] // 2050, power station
-}
-
-spritelayout sprite_boiler_station {
-    ground {
-        sprite: construction_state != 0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
-    }
-    building {
-        sprite: boiler_station_building;
-    }
-}
-
-if (enable_industries) {
-    item(FEAT_HOUSES, item_boiler_station) {
-        property {
-            substitute: 0x12;
-            name: string(STR_NAME_BOILER_STATION);
-            accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 3]];
-            building_flags: 0;
-            years_available: [1940, 65535];
-            building_class: 104;
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
-            ];
-        }
-        graphics {
-            default: sprite_boiler_station;
-            construction_check: boiler_station_construction_check;
         }
     }
 }

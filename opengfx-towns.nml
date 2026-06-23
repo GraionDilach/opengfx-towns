@@ -42452,73 +42452,6 @@ if (enable_misc) {
     }
 }
 
-spriteset (radio_station_N_building) {
-    sprite_null()
-    [ -31, 0, "gfx/2093.png"] // 2093, oil refinery
-    [ -31, 0, "gfx/2094.png"] // 2094, oil refinery
-    [ -31, 0, "gfx/2095.png"] // 2095, oil refinery
-}
-
-spritelayout sprite_radio_station_N {
-    ground {
-        sprite: GROUNDSPRITE_CONCRETE;
-    }
-    building {
-        sprite: radio_station_N_building;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-    }
-}
-
-spritelayout sprite_radio_station_E {
-    ground {
-        sprite: GROUNDSPRITE_CONCRETE;
-    }
-    childsprite {
-        sprite: transmitter_ground;
-        always_draw: 1;
-    }
-    building {
-        sprite: transmitter_building;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-    }
-}
-
-if (enable_misc) {
-    item(FEAT_HOUSES, item_radio_station, -1, HOUSE_SIZE_1X2) {
-        property {
-            substitute: 0x42;
-            name: string(STR_NAME_RADIO_STATION);
-            accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 4]];
-            years_available: [1945, 65535];
-            population: 18;
-            mail_multiplier: 2;
-            building_class: 100;
-            availability_mask: [
-                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
-            ];
-        }
-        if (additional_colors != 2) {
-            graphics {
-                graphics_north: sprite_radio_station_N;
-                graphics_east: sprite_radio_station_E;
-                construction_check: radio_construction_check;
-                colour: modest_skyscraper_color();
-            }
-        }
-        if (additional_colors == 2) {
-            graphics {
-                graphics_north: sprite_radio_station_N;
-                graphics_east: sprite_radio_station_E;
-                construction_check: radio_construction_check;
-                colour: random_company_color();
-            }
-        }
-    }
-}
-
 spriteset (hq_stage_1_ground) {
     [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-ground-stage0.png"]
     [   1,   0,  64,  38, -31, -7, "gfx/hqshop1-ground.png"]
@@ -43657,6 +43590,124 @@ if (enable_misc) {
         graphics {
             default: sprite_antennae;
             construction_check: radio_construction_check;
+        }
+    }
+}
+
+spriteset (radio_station_N_ground) {
+    [  -31, -67, "airports/radio-station-ground-stage0.png"]
+    [  -31, -67, "airports/radio-station-ground.png"]
+    [  -31, -67, "airports/radio-station-ground.png"]
+}
+
+spriteset (radio_station_N_building) {
+    sprite_null()
+    [  -31, -67, "airports/radio-station-stage1.png"]
+    [  -31, -67, ANIM, "airports/radio-station.png"]
+}
+
+spriteset (radio_station_N_building_snow) {
+    sprite_null()
+    [  -31, -67, "airports/radio-station-stage1.png"]
+    [  -31, -67, ANIM, "airports/radio-station-snow.png"]
+}
+
+spritelayout sprite_radio_station_N {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: radio_station_N_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: radio_station_N_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: radio_station_N_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (antennae_station_building) {
+    sprite_null()
+    [  -31, -67, "airports/antennae-stage1.png"]
+    [  -31, -67, "airports/antennae-stage2.png"]
+    [  -31, -67, ANIM, "airports/antennae-station.png"]
+}
+
+spriteset (antennae_station_building_snow) {
+    sprite_null()
+    [  -31, -67, "airports/antennae-stage1.png"]
+    [  -31, -67, "airports/antennae-stage2.png"]
+    [  -31, -67, ANIM, "airports/antennae-station-snow.png"]
+}
+
+spritelayout sprite_radio_station_E {
+    ground {
+        sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    childsprite {
+        sprite: antennae_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: antennae_station_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: antennae_station_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_radio_station, -1, HOUSE_SIZE_1X2) {
+        property {
+            substitute: 0x42;
+            name: string(STR_NAME_RADIO_STATION);
+            // statistics are copied from cinema/theater
+            accepted_cargos: [[PASS, 6], [MAIL, 3], [GOOD, 4]];
+            years_available: [1945, 65535];
+            population: 35;
+            mail_multiplier: 23;
+            local_authority_impact: 230;
+            removal_cost_multiplier: 210;
+            building_class: 100;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
+        }
+        if (additional_colors != 2) {
+            graphics {
+                graphics_north: sprite_radio_station_N;
+                graphics_east: sprite_radio_station_E;
+                construction_check: radio_construction_check;
+                colour: modest_skyscraper_color();
+            }
+        }
+        if (additional_colors == 2) {
+            graphics {
+                graphics_north: sprite_radio_station_N;
+                graphics_east: sprite_radio_station_E;
+                construction_check: radio_construction_check;
+                colour: random_company_color();
+            }
         }
     }
 }

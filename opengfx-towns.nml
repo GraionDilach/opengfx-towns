@@ -3498,8 +3498,9 @@ if (enable_arctic) {
 // also 4487 and 4488 are flipped in OpenGFX
 
 spriteset (tall_office_block_7_N_ground) {
-    [  68,   68,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // "4487"
-    [  68,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4485
+    [ -31,   0, "ogfxplus/4485-stage0.png"]
+    [ -31,   0, "ogfxplus/4485.png"]
+    [ -31,   0, "ogfxplus/4485.png"]
 }
 
 spriteset (tall_office_block_7_N_building) {
@@ -3533,9 +3534,9 @@ spritelayout sprite_tall_office_block_7_N {
 }
 
 spriteset (tall_office_block_7_W_ground) {
-    [   2,   68,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // "4488"
-    [   2,   35,  64,  31, -31,   0, "ogfx/morebuilding2.png"] // was 4486
-    [ -31,   0, "ogfxplus/4486.png"] // 4486, merged black blob from unused tile to fix transparency
+    [ -31,   0, "ogfxplus/4486-stage0.png"]
+    [ -31,   0, "ogfxplus/4486-stage1.png"]
+    [ -31,   0, "ogfxplus/4486.png"]
 }
 
 spriteset (tall_office_block_7_W_building) {

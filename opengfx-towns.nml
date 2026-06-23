@@ -43407,6 +43407,7 @@ if (enable_hq && enable_converted_toyland) {
             name: string(STR_NAME_CASTLE_FOLLY);
             years_available: [0, 65535];
             building_class: 105;
+            probability: 4;
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)

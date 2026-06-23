@@ -43603,3 +43603,60 @@ if (enable_toyland > 1 && enable_industries) {
         }
     }
 }
+
+spriteset (antennae_ground) {
+    [  -31, -67, "airports/antennae-stage0.png"]
+}
+
+spriteset (antennae_building) {
+    sprite_null()
+    [  -31, -67, "airports/antennae-stage1.png"]
+    [  -31, -67, "airports/antennae-stage2.png"]
+    [  -31, -67, ANIM, "airports/antennae.png"]
+}
+
+spriteset (antennae_building_snow) {
+    sprite_null()
+    [  -31, -67, "airports/antennae-stage1.png"]
+    [  -31, -67, "airports/antennae-stage2.png"]
+    [  -31, -67, ANIM, "airports/antennae-snow.png"]
+}
+
+spritelayout sprite_antennae {
+    ground {
+        sprite: construction_state < 3 ? GROUNDSPRITE_CLEARED
+            : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+            : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : GROUNDSPRITE_NORMAL;
+    }
+    childsprite {
+        sprite: antennae_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: antennae_building;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+    }
+    building {
+        sprite: antennae_building_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+    }
+}
+
+if (enable_misc) {
+    item(FEAT_HOUSES, item_antennae) {
+        property {
+            substitute: 0x09;
+            name: string(STR_NAME_TRANSMITTER);
+            years_available: [1930, 65535];
+            building_class: 100;
+            availability_mask: [
+                bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_antennae;
+            construction_check: radio_construction_check;
+        }
+    }
+}

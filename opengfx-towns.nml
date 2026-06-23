@@ -976,11 +976,11 @@ switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) { ret
 
 // 100 radio stuff (transmitter/radio house)
 // 101 workshop (sawmill/farm derivates)
-// 102 university
-// 103 courthouse
+// 102 courthouse
+// 103 UNUSED (was the other bank)
 // 104 boiler station
 // 105 folly castle (toyland HQs)
-// 106 garages (copper ore mine building), use the workshop construction check
+// 106 garages (copper ore mine building), uses the workshop construction check
 // 107 factory (coal mine derivate)
 // 108 petrol station (oil refinery/water supply frankenstein)
 
@@ -1048,12 +1048,7 @@ switch (FEAT_HOUSES, SELF, school_construction_check, (
     && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
 )) { return; }
 
-switch (FEAT_HOUSES, SELF, university_construction_check,
-    has_population((same_class_count_town + 1) * 3000)
-    && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
-) { return; }
-
-switch (FEAT_HOUSES, SELF, courthouse_construction_check,
+switch (FEAT_HOUSES, SELF, bank_construction_check,
     has_population((same_class_count_town + 1) * 1500)
     && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_CLASS)
 ) { return; }
@@ -41951,65 +41946,65 @@ if (enable_industries) {
     }
 }
 
-spriteset (university_n_ground_childsprite) {
+spriteset (temperate_bank_n_ground_childsprite) {
     sprite_null()
     [ -31,   0, "gfx/2182-stage1.png"]
     [ -31,   0, "gfx/2182.png"]
 }
 
-spriteset (university_n_building) {
+spriteset (temperate_bank_n_building) {
     sprite_null()
     [ -31, -16, "gfx/2180-stage1.png"]
     [ -31, -16, "gfx/2180.png"]
 }
 
-spritelayout sprite_university_n {
+spritelayout sprite_temperate_bank_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
-        sprite: university_n_ground_childsprite;
+        sprite: temperate_bank_n_ground_childsprite;
         always_draw: 1;
     }
     building {
-        sprite: university_n_building;
+        sprite: temperate_bank_n_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
-spriteset (university_w_ground_childsprite) {
+spriteset (temperate_bank_w_ground_childsprite) {
     sprite_null()
     [ -31,   0, "gfx/2183-stage1.png"]
     [ -31,   0, "gfx/2183.png"]
 }
 
-spriteset (university_w_building) {
+spriteset (temperate_bank_w_building) {
     sprite_null()
     [ -31, -18, "gfx/2181-stage1.png"]
     [ -31, -18, "gfx/2181.png"]
 }
 
-spritelayout sprite_university_w {
+spritelayout sprite_temperate_bank_w {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
-        sprite: university_w_ground_childsprite;
+        sprite: temperate_bank_w_ground_childsprite;
         always_draw: 1;
     }
     building {
-        sprite: university_w_building;
+        sprite: temperate_bank_w_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
 if (enable_bank) {
-    item(FEAT_HOUSES, item_university, -1, HOUSE_SIZE_2X1){
+    item(FEAT_HOUSES, item_temperate_bank, -1, HOUSE_SIZE_2X1){
         property {
             substitute: 0x4A;
-            name: string(STR_NAME_UNIVERSITY);
+            name: string(STR_NAME_COURTHOUSE);
             building_class: 102;
             population: 255;
             mail_multiplier: 70;
@@ -42030,83 +42025,83 @@ if (enable_bank) {
         }
         if (additional_colors != 2) {
             graphics {
-                graphics_north: sprite_university_n;
-                graphics_west: sprite_university_w;
-                construction_check: university_construction_check;
+                graphics_north: sprite_temperate_bank_n;
+                graphics_west: sprite_temperate_bank_w;
+                construction_check: bank_construction_check;
                 colour: random_modest_struct_color();
             }
         }
         if (additional_colors == 2) {
             graphics {
-                graphics_north: sprite_university_n;
-                graphics_west: sprite_university_w;
-                construction_check: university_construction_check;
+                graphics_north: sprite_temperate_bank_n;
+                graphics_west: sprite_temperate_bank_w;
+                construction_check: bank_construction_check;
                 colour: random_struct_color();
             }
         }
     }
 }
 
-spriteset (courthouse_n_ground_childsprite) {
+spriteset (arctic_bank_n_ground_childsprite) {
     sprite_null()
     [ -31,   0, "gfx/2184-stage1.png"]
     [ -31,   0, "gfx/2184.png"]
 }
 
-spriteset (courthouse_n_building) {
+spriteset (arctic_bank_n_building) {
     sprite_null()
     [   1, -19, "gfx/2186-stage1.png"]
     [   1, -19, "gfx/2186.png"]
 }
 
-spritelayout sprite_courthouse_n {
+spritelayout sprite_arctic_bank_n {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
-        sprite: courthouse_n_ground_childsprite;
+        sprite: arctic_bank_n_ground_childsprite;
         always_draw: 1;
     }
     building {
-        sprite: courthouse_n_building;
+        sprite: arctic_bank_n_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
-spriteset (courthouse_w_ground_childsprite) {
+spriteset (arctic_bank_w_ground_childsprite) {
     sprite_null()
     [ -31,   0, "gfx/2185-stage1.png"]
     [ -31,   0, "gfx/2185.png"]
 }
 
-spriteset (courthouse_w_building) {
+spriteset (arctic_bank_w_building) {
     sprite_null()
     [ -20, -39, "gfx/2187-stage1.png"]
     [ -20, -39, "gfx/2187.png"]
 }
 
-spritelayout sprite_courthouse_w {
+spritelayout sprite_arctic_bank_w {
     ground {
         sprite: construction_state > 2 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
     }
     childsprite {
-        sprite: courthouse_w_ground_childsprite;
+        sprite: arctic_bank_w_ground_childsprite;
         always_draw: 1;
     }
     building {
-        sprite: courthouse_w_building;
+        sprite: arctic_bank_w_building;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
 }
 
 if (enable_bank) {
-    item(FEAT_HOUSES, item_courthouse, -1, HOUSE_SIZE_2X1){
+    item(FEAT_HOUSES, item_arctic_bank, -1, HOUSE_SIZE_2X1){
         property {
             substitute: 0x4A;
             name: string(STR_NAME_COURTHOUSE);
-            building_class: 103;
+            building_class: 102;
             population: 255;
             mail_multiplier: 70;
             accepted_cargos: [[PASS, 8],[MAIL, 8]];
@@ -42126,17 +42121,17 @@ if (enable_bank) {
         }
         if (additional_colors != 2) {
             graphics {
-                graphics_north: sprite_courthouse_n;
-                graphics_west: sprite_courthouse_w;
-                construction_check: courthouse_construction_check;
+                graphics_north: sprite_arctic_bank_n;
+                graphics_west: sprite_arctic_bank_w;
+                construction_check: bank_construction_check;
                 colour: random_modest_struct_color();
             }
         }
         if (additional_colors == 2) {
             graphics {
-                graphics_north: sprite_courthouse_n;
-                graphics_west: sprite_courthouse_w;
-                construction_check: courthouse_construction_check;
+                graphics_north: sprite_arctic_bank_n;
+                graphics_west: sprite_arctic_bank_w;
+                construction_check: bank_construction_check;
                 colour: random_struct_color();
             }
         }

@@ -42293,44 +42293,179 @@ if (enable_misc) {
     }
 }
 
-spriteset (large_airport_2_ground) {
-    [ -31, -21, "gfx/2653-stage0.png"]
-    [ -31, -21, "gfx/2653-ground.png"]
-    [ -31, -21, "gfx/2653-ground.png"]
+spriteset (large_airport_2_e_ground) {
+    [ -31, -21, "airports/2653-ground-stage0.png"]
+    [ -31, -21, "airports/2653_e-ground.png"]
+    [ -31, -21, "airports/2653_e-ground.png"]
 }
 
-spriteset (large_airport_2) {
+spriteset (large_airport_2_e) {
     sprite_null()
-    [ -31, -21, "gfx/2653-stage1.png"]
-    [ -31, -21, "gfx/2653.png"]
+    [ -31, -21, "airports/2653_e-stage1.png"]
+    [ -31, -21, "airports/2653_e.png"]
 }
 
-spriteset (large_airport_2_snow) {
+spriteset (large_airport_2_e_snow) {
     sprite_null()
-    [ -31, -21, "gfx/2653-stage1.png"]
-    [ -31, -21, "gfx/2653-snow.png"]
+    [ -31, -21, "airports/2653_e-stage1.png"]
+    [ -31, -21, "airports/2653_e-snow.png"]
 }
 
-spritelayout sprite_large_airport_2 {
+spritelayout sprite_large_airport_2_e {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
     }
     childsprite {
-        sprite: large_airport_2_ground;
+        sprite: large_airport_2_e_ground;
         always_draw: 1;
     }
     building {
-        sprite: large_airport_2;
+        sprite: large_airport_2_e;
         hide_sprite: terrain_type == TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
     building {
-        sprite: large_airport_2_snow;
+        sprite: large_airport_2_e_snow;
         hide_sprite: terrain_type != TILETYPE_SNOW;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
+}
+
+spriteset (large_airport_2_s_ground) {
+    [ -31, -21, "airports/2653-ground-stage0.png"]
+    [ -31, -21, "airports/2653_s-ground.png"]
+    [ -31, -21, "airports/2653_s-ground.png"]
+}
+
+spriteset (large_airport_2_s) {
+    sprite_null()
+    [ -31, -21, "airports/2653_s-stage1.png"]
+    [ -31, -21, "airports/2653_s.png"]
+}
+
+spriteset (large_airport_2_s_snow) {
+    sprite_null()
+    [ -31, -21, "airports/2653_s-stage1.png"]
+    [ -31, -21, "airports/2653_s-snow.png"]
+}
+
+spritelayout sprite_large_airport_2_s {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: large_airport_2_s_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: large_airport_2_s;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: large_airport_2_s_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (large_airport_2_w_ground) {
+    [ -31, -21, "airports/2653-ground-stage0.png"]
+    [ -31, -21, "airports/2653_w-ground.png"]
+    [ -31, -21, "airports/2653_w-ground.png"]
+}
+
+spriteset (large_airport_2_w) {
+    sprite_null()
+    [ -31, -21, "airports/2653_w-stage1.png"]
+    [ -31, -21, "airports/2653_w.png"]
+}
+
+spriteset (large_airport_2_w_snow) {
+    sprite_null()
+    [ -31, -21, "airports/2653_w-stage1.png"]
+    [ -31, -21, "airports/2653_w-snow.png"]
+}
+
+spritelayout sprite_large_airport_2_w {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: large_airport_2_w_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: large_airport_2_w;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: large_airport_2_w_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+spriteset (large_airport_2_n_ground) {
+    [ -31, -21, "airports/2653-ground-stage0.png"]
+    [ -31, -21, "airports/2653_n-ground.png"]
+    [ -31, -21, "airports/2653_n-ground.png"]
+}
+
+spriteset (large_airport_2_n) {
+    sprite_null()
+    [ -31, -21, "airports/2653_n-stage1.png"]
+    [ -31, -21, "airports/2653_n.png"]
+}
+
+spriteset (large_airport_2_n_snow) {
+    sprite_null()
+    [ -31, -21, "airports/2653_n-stage1.png"]
+    [ -31, -21, "airports/2653_n-snow.png"]
+}
+
+spritelayout sprite_large_airport_2_n {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    childsprite {
+        sprite: large_airport_2_n_ground;
+        always_draw: 1;
+    }
+    building {
+        sprite: large_airport_2_n;
+        hide_sprite: terrain_type == TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+    building {
+        sprite: large_airport_2_n_snow;
+        hide_sprite: terrain_type != TILETYPE_SNOW;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
+switch (FEAT_HOUSES, SELF, callback_large_airport_2_preview, switch_4_variants()) {
+    1: return sprite_large_airport_2_w;
+    2: return sprite_large_airport_2_s;
+    3: return sprite_large_airport_2_e;
+    4: return sprite_large_airport_2_n;
+}
+
+switch (FEAT_HOUSES, SELF, callback_large_airport_2, animation_frame) {
+    1: return sprite_large_airport_2_w;
+    2: return sprite_large_airport_2_s;
+    3: return sprite_large_airport_2_e;
+    4: return sprite_large_airport_2_n;
+    return  callback_large_airport_2_preview;
 }
 
 if (enable_misc) {
@@ -42346,13 +42481,15 @@ if (enable_misc) {
         }
         if (additional_colors != 2) {
             graphics {
-                default: sprite_large_airport_2;
+                construction_anim: switch_check_road_initial_4_faced;
+                default: callback_large_airport_2;
                 colour: random_modest_company_color();
             }
         }
         if (additional_colors == 2) {
             graphics {
-                default: sprite_large_airport_2;
+                construction_anim: switch_check_road_initial_4_faced;
+                default: callback_large_airport_2;
                 colour: random_company_color();
             }
         }
